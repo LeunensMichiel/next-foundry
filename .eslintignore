@@ -4,3 +4,5 @@ node_modules
 .next
 # don't lint nyc coverage output
 coverage
+# The eslintrc file itself
+.eslintrc.js
