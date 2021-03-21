@@ -1,0 +1,12 @@
+@use 'colors/paletteDark';
+
+[data-theme='dark'] {
+  --primary: #000000;
+  --primary-2: #111;
+  --secondary: #ffffff;
+  --secondary-2: #f1f3f5;
+
+  --text-base: red;
+  --text-primary: white;
+  --text-secondary: black;
+}

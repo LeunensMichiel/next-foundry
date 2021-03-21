@@ -1,9 +1,14 @@
-import '../styles/globals.scss';
-
 import { AppProps } from 'next/app';
+import { ThemeProvider } from 'next-themes';
+
+import '@styles/app.scss';
 
 function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <ThemeProvider enableSystem enableColorScheme defaultTheme="system" themes={['light', 'dark']}>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
 }
 
 export default App;

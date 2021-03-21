@@ -1,0 +1,22 @@
+@use 'reset';
+@use '../theme/animations';
+@use '../theme/breakpoints';
+@use '../theme/spacing';
+@use '../theme/typography';
+
+html {
+  height: 100%;
+}
+
+html,
+body {
+  // font-family: var(--font-sans);
+  // background-color: var(--primary);
+  // color: var(--text-primary);
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+  margin: 0;
+}
