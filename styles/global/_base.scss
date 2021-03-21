@@ -1,8 +1,8 @@
 @use 'reset';
-@use '../theme/animations';
-@use '../theme/breakpoints';
-@use '../theme/spacing';
-@use '../theme/typography';
+
+@use '../theme/common';
+@use '../theme/dark';
+@use '../theme/light';
 
 html {
   height: 100%;
