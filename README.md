@@ -20,12 +20,14 @@ This is an opinionated starter template in `Next.js v10` which uses all best pra
 - :white_check_mark: `scss`-modules
 - :white_check_mark: Modern `reset.scss`
 - :x: Fully featured design-system _(colors, typography,...)_
-- :white_check_mark: Theming with `next-theming` (Complete with dark mode)
+- :white_check_mark: Theming with `next-theming` (Complete with dark theme)
 - :x: Animations with `Framer Motion`
+- :x: Easy class toggling
 
 ### Components & Functionalities
 
 - :x: Responsive skeleton
+- :x: Dynamic layout
 - :x: SEO-wrapper
 - :x: Cookie consent
 - :x: Internationalization (i18n)
@@ -45,8 +47,9 @@ This is an opinionated starter template in `Next.js v10` which uses all best pra
 - :x: Button
 - :x: Links
 - :x: Form
-- :x: Input fields
-- :x: Loading
+- :x: Input fields w/ checkbox and switch
+- :x: Loading Placeholder
+- :x: Spinner
 - :x: Responsive Grid-system
 
 ### Other
@@ -60,15 +63,18 @@ This is an opinionated starter template in `Next.js v10` which uses all best pra
 - :x: Smooth scrolling with polyfill
 - :x: Lighthouse optimizations
 - :x: Chrome transitions bug fix
-- :x: Inter-os compatibility (no weird styling issues between MacOs & Windows)
+- :x: Inter-OS compatibility (no weird styling issues between MacOs & Windows)
 - :x: Inter-browser compatibility
 - :x: IE-11 no-support warning
+- :x: Caching
+- :x: Cookie management
 
 ### Maybe
 
 - :x: Carousel
 - :x: Page-transitions
 - :x: Mapbox
+- :x: Client-Authentication
 
 ## Getting Started
 
