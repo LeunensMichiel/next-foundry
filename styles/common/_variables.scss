@@ -1,4 +1,6 @@
 // General variables
+
+// Media-query breakpoints
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
@@ -7,3 +9,36 @@ $grid-breakpoints: (
   xl: 1200px,
   xxl: 1400px,
 );
+
+// Z-index
+$z-negative: -1;
+$z-low: 10;
+$z-mid: 100;
+$z-high: 1000;
+$z-ultra: 10000;
+$z-extreme: 9999999999;
+
+// Transitions
+$default-transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
+$default-transition-duration: 300ms;
+
+@mixin transition($props...) {
+  $result: ();
+
+  @for $i from 1 through length($props) {
+    $prop: nth($props, $i);
+    $result: append($result, $prop);
+    $result: append($result, $default-transition-timing $default-transition-duration);
+
+    @if $i != length($props) {
+      $result: append(
+        $result,
+        unquote(
+          $string: ',',
+        )
+      );
+    }
+  }
+
+  transition: $result;
+}

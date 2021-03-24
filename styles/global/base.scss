@@ -15,8 +15,9 @@ html {
 html,
 body {
   // font-family: var(--font-sans);
-  background-color: var(--primary);
   // color: var(--text-primary);
+  background-color: var(--primary);
+  @include theme.transition(background-color);
 }
 
 body {

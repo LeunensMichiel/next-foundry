@@ -1,7 +1,7 @@
 // We follow bootstraps' breakpoint guideline
 // https://getbootstrap.com/docs/5.0/layout/breakpoints/
-@use 'variables';
 @use "sass:map";
+@use 'variables';
 
 @mixin breakpoint-up($size) {
   @if $size == sm {
