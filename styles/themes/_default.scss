@@ -1,0 +1,12 @@
+@use '@styles/common/colors';
+
+:root {
+  --primary: snow;
+  --primary-2: #f1f3f5;
+  --secondary: #000000;
+  --secondary-2: #111;
+
+  // --text-base: #{colors.$gray900};
+  // --text-primary: #{colors.$gray900};
+  --text-secondary: white;
+}

@@ -1,4 +1,29 @@
-@use 'breakpoints';
+// Cross-browser reset
+@use 'reset';
+// Themes
+// Always import default first, as it holds the base :root{}
+@use '@styles/themes/default';
+@use '@styles/themes/dark';
+// Global theme constants
+@use '@styles/theme.scss';
+
+// Define your global styles here
+html {
+  height: 100%;
+}
+
+html,
+body {
+  // font-family: var(--font-sans);
+  background-color: var(--primary);
+  // color: var(--text-primary);
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+  margin: 0;
+}
 
 h1 {
   font-style: normal;

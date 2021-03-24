@@ -1,0 +1,28 @@
+// We follow bootstraps' breakpoint guideline
+// https://getbootstrap.com/docs/5.0/layout/breakpoints/
+@use 'variables';
+@use "sass:map";
+
+@mixin breakpoint-up($size) {
+  @if $size == sm {
+    @media (min-width: map.get(variables.$grid-breakpoints, sm)) {
+      @content;
+    }
+  } @else if $size == md {
+    @media (min-width: map.get(variables.$grid-breakpoints, md)) {
+      @content;
+    }
+  } @else if $size == lg {
+    @media (min-width: map.get(variables.$grid-breakpoints, lg)) {
+      @content;
+    }
+  } @else if $size == xl {
+    @media (min-width: map.get(variables.$grid-breakpoints, xl)) {
+      @content;
+    }
+  } @else if $size == xxl {
+    @media (min-width: map.get(variables.$grid-breakpoints, xxl)) {
+      @content;
+    }
+  }
+}

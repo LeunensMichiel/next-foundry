@@ -61,6 +61,7 @@ This is an opinionated starter template in `Next.js v10` which uses all best pra
 - :x: Scaled favicons
 - :x: Dynamic imports
 - :x: Smooth scrolling with polyfill
+- :x: Responsive (with proper meta)
 - :x: Lighthouse optimizations
 - :x: Chrome transitions bug fix
 - :x: Inter-OS compatibility (no weird styling issues between MacOs & Windows)
@@ -75,6 +76,7 @@ This is an opinionated starter template in `Next.js v10` which uses all best pra
 - :x: Page-transitions
 - :x: Mapbox
 - :x: Client-Authentication
+- :x: Dockerize
 
 ## Getting Started
 
@@ -107,21 +109,45 @@ yarn format
 ## Theming
 
 This projects makes use of `next-theming`, which is a handly lightweight plugin that takes care of all modern theming-relatable features and fixes SSR hydratation problems.
-To define a new theme, navigate to `styles/theme`. In the `colors` subfolder, make a `_paletteThemeName.scss`. Then make a `_theme.scss file` in the `theme` root.
+We make use of global css variables (next to our scss variables) because of how easy and lightweight it is to switch themes this way. (eg: Google, Facebook and Github use this).
 
+`_default.scss` is the main theme file. This scss file contains all `root:` css variables. For better reusability & readability, all `css` variables reference `scss`-variables in the `styles/common` folder.
+
+The `styles/global` folder contains a modern cross-browser `reset` stylesheet, applis global styles and imports your themes.
+The `styles/pages` folder contains all the scss-modules for the Next's `src/pages` folder.
+The `styles/common` folder contains all scss mixins and variables, like colors and breakpoints.
+The `styles/theme.scss` file forwards all scss mixins and variables from `styles/common`. In your scoped module, you can import them like this:
+
+```scss
+// In _components/button.module.scss
+@use '@styles/theme.scss';
+
+.warning {
+  @include theme.breakpoint-up(md) {
+    color: purple;
+  }
+}
+```
+
+### Create a theme
+
+To create a new theme, navigate to `styles/themes`, then make a `_myTheme.scss file` in the `themes` root.
 Define your variables like this:
 
 ```scss
-@use 'colors/paletteThemeName';
+// in _myTheme.scss
+@use '@styles/common/colors';
+@use ...;
 
 [data-theme='myTheme'] {
-  --primary: #{paletteLight.$myColor};
+  --primary: #{colors.$myColor};
   ...
 }
 ```
 
-The variables will overwrite those defined in `_light.scss`, which is the default theme.
-Lastly, navigate to `pages/_app.tsx` and add your theme to the `ThemeProvider.themes` array.
+The variables will overwrite those defined in `_default.scss`.
+Navigate to `styles/global/base.scss` and import your new stylesheet so it gets globally loaded. **Import it after the default theme.**
+Lastly, navigate to `pages/_app.tsx` and add your new theme to the `ThemeProvider.themes` array.
 
 ## Learn More
 
