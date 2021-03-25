@@ -3,6 +3,7 @@
 @use "sass:map";
 @use 'variables';
 
+// Mobile first (preferable)
 @mixin breakpoint-up($size) {
   @if $size == sm {
     @media (min-width: map.get(variables.$grid-breakpoints, sm)) {
@@ -22,6 +23,31 @@
     }
   } @else if $size == xxl {
     @media (min-width: map.get(variables.$grid-breakpoints, xxl)) {
+      @content;
+    }
+  }
+}
+
+// Desktop first
+@mixin breakpoint-down($size) {
+  @if $size == xs {
+    @media (max-width: map.get(variables.$grid-breakpoints-desktop-first, xs)) {
+      @content;
+    }
+  } @else if $size == sm {
+    @media (max-width: map.get(variables.$grid-breakpoints-desktop-first, sm)) {
+      @content;
+    }
+  } @else if $size == md {
+    @media (max-width: map.get(variables.$grid-breakpoints-desktop-first, md)) {
+      @content;
+    }
+  } @else if $size == lg {
+    @media (max-width: map.get(variables.$grid-breakpoints-desktop-first, lg)) {
+      @content;
+    }
+  } @else if $size == xl {
+    @media (max-width: map.get(variables.$grid-breakpoints-desktop-first, xl)) {
       @content;
     }
   }

@@ -39,6 +39,7 @@ This is an opinionated starter template in `Next.js v10` which uses all best pra
 
 ### UI-components
 
+- :x: Responsive Grid-system
 - :x: Navigation
 - :x: Footer
 - :x: Modern, accessible Modal
@@ -50,7 +51,8 @@ This is an opinionated starter template in `Next.js v10` which uses all best pra
 - :x: Input fields w/ checkbox and switch
 - :x: Loading Placeholder
 - :x: Spinner
-- :x: Responsive Grid-system
+- :x: Accordion
+- :x: Dropdown
 
 ### Other
 

@@ -10,6 +10,14 @@ $grid-breakpoints: (
   xxl: 1400px,
 );
 
+$grid-breakpoints-desktop-first: (
+  xs: 575.98px,
+  sm: 767.98px,
+  md: 991.98px,
+  lg: 1199.98px,
+  xl: 1399.98px,
+);
+
 // Z-index
 $z-negative: -1;
 $z-low: 10;
@@ -17,6 +25,63 @@ $z-mid: 100;
 $z-high: 1000;
 $z-ultra: 10000;
 $z-extreme: 9999999999;
+
+// Drop-and-box-shadows
+// https://shadows.brumm.af/
+$box-shadow-xs: 0 0px 3.6px rgba(0, 0, 0, 0.01), 0 0px 10px rgba(0, 0, 0, 0.015), 0 0px 24.1px rgba(0, 0, 0, 0.02),
+  0 0px 80px rgba(0, 0, 0, 0.03);
+$box-shadow-sm: 0 1.4px 3.6px rgba(0, 0, 0, 0.014), 0 4px 10px rgba(0, 0, 0, 0.02), 0 9.6px 24.1px rgba(0, 0, 0, 0.026),
+  0 32px 80px rgba(0, 0, 0, 0.04);
+$box-shadow-md: 0 2.5px 3.6px rgba(0, 0, 0, 0.017), 0 7px 10px rgba(0, 0, 0, 0.025),
+  0 16.9px 24.1px rgba(0, 0, 0, 0.033), 0 56px 80px rgba(0, 0, 0, 0.05);
+$box-shadow-lg: 0 4.5px 3.6px rgba(0, 0, 0, 0.024), 0 12.5px 10px rgba(0, 0, 0, 0.035),
+  0 30.1px 24.1px rgba(0, 0, 0, 0.046), 0 100px 80px rgba(0, 0, 0, 0.07);
+$box-shadow-xl: 0 4px 10.5px rgba(0, 0, 0, 0.028), 0 11.1px 28.9px rgba(0, 0, 0, 0.04),
+  0 26.8px 69.6px rgba(0, 0, 0, 0.052), 0 89px 231px rgba(0, 0, 0, 0.08);
+
+$drop-shadow-xs: drop-shadow(0 0px 3.6px rgba(0, 0, 0, 0.01)) drop-shadow(0 0px 10px rgba(0, 0, 0, 0.015))
+  drop-shadow(0 0px 24.1px rgba(0, 0, 0, 0.02)) drop-shadow(0 0px 80px rgba(0, 0, 0, 0.03));
+$drop-shadow-sm: drop-shadow(0 1.4px 3.6px rgba(0, 0, 0, 0.014)) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.02))
+  drop-shadow(0 9.6px 24.1px rgba(0, 0, 0, 0.026)) drop-shadow(0 32px 80px rgba(0, 0, 0, 0.04));
+$drop-shadow-md: drop-shadow(0 2.5px 3.6px rgba(0, 0, 0, 0.017)) drop-shadow(0 7px 10px rgba(0, 0, 0, 0.025))
+  drop-shadow(0 16.9px 24.1px rgba(0, 0, 0, 0.033)) drop-shadow(0 56px 80px rgba(0, 0, 0, 0.05));
+$drop-shadow-lg: drop-shadow(0 4.5px 3.6px rgba(0, 0, 0, 0.024)) drop-shadow(0 12.5px 10px rgba(0, 0, 0, 0.035))
+  drop-shadow(0 30.1px 24.1px rgba(0, 0, 0, 0.046)) drop-shadow(0 100px 80px rgba(0, 0, 0, 0.07));
+$drop-shadow-xl: drop-shadow(0 4px 10.5px rgba(0, 0, 0, 0.028)) drop-shadow(0 11.1px 28.9px rgba(0, 0, 0, 0.04))
+  drop-shadow(0 26.8px 69.6px rgba(0, 0, 0, 0.052)) drop-shadow(0 89px 231px rgba(0, 0, 0, 0.08));
+
+@mixin drop-shadow-colored($size, $color) {
+  @if $size == xs {
+    filter: drop-shadow(0 0px 3.6px $color)
+      drop-shadow(0 0px 10px $color)
+      drop-shadow(0 0px 24.1px $color)
+      drop-shadow(0 0px 80px $color);
+  }
+  @if $size == sm {
+    filter: drop-shadow(0 1.4px 3.6px $color)
+      drop-shadow(0 4px 10px $color)
+      drop-shadow(0 9.6px 24.1px $color)
+      drop-shadow(0 32px 80px $color);
+  }
+  @if $size == md {
+    filter: drop-shadow(0 2.5px 3.6px $color)
+      drop-shadow(0 7px 10px $color)
+      drop-shadow(0 16.9px 24.1px $color)
+      drop-shadow(0 56px 80px $color);
+  }
+  @if $size == lg {
+    filter: drop-shadow(0 4.5px 3.6px $color)
+      drop-shadow(0 12.5px 10px $color)
+      drop-shadow(0 30.1px 24.1px $color)
+      drop-shadow(0 100px 80px $color);
+  }
+  @if $size == xl {
+    filter: drop-shadow(0 4px 10.5px $color)
+      drop-shadow(0 11.1px 28.9px $color)
+      drop-shadow(0 26.8px 69.6px $color)
+      drop-shadow(0 89px 231px $color);
+  }
+}
 
 // Transitions
 $default-transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
