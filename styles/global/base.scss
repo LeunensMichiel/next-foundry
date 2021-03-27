@@ -8,6 +8,11 @@
 @use '@styles/theme.scss';
 
 // Define your global styles here
+::selection {
+  color: var(--text-info);
+  background-color: var(--background-info);
+}
+
 html {
   height: 100%;
 }
@@ -17,7 +22,7 @@ body {
   font-family: var(--font-family-base);
   color: var(--text-primary);
   background-color: var(--background-0);
-  @include theme.transition(background-color, color);
+  @include theme.transition(background-color, color, border-color);
 }
 
 body {

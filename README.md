@@ -65,7 +65,7 @@ This is an opinionated starter template in `Next.js v10` which uses all best pra
 - :x: Smooth scrolling with polyfill
 - :x: Responsive (with proper meta)
 - :x: Lighthouse optimizations
-- :x: Chrome transitions bug fix
+- :white_check_mark: Chrome transitions bug fix
 - :x: Inter-OS compatibility (no weird styling issues between MacOs & Windows)
 - :x: Inter-browser compatibility
 - :x: IE-11 no-support warning
@@ -122,7 +122,7 @@ The `styles/theme.scss` file forwards all scss mixins and variables from `styles
 
 ```scss
 // In _components/button.module.scss
-@use '@styles/theme.scss';
+@use '@styles/theme';
 
 .warning {
   @include theme.breakpoint-up(md) {
@@ -139,7 +139,6 @@ Define your variables like this:
 ```scss
 // in _myTheme.scss
 @use '@styles/theme';
-@use ...;
 
 [data-theme='myTheme'] {
   --yourVariable: #{theme.$myVariable};
@@ -150,6 +149,30 @@ Define your variables like this:
 The variables will overwrite those defined in `_default.scss`.
 Navigate to `styles/global/base.scss` and import your new stylesheet so it gets globally loaded. **Import it after the default theme.**
 Lastly, navigate to `pages/_app.tsx` and add your new theme to the `ThemeProvider.themes` array.
+
+### Self host fonts
+
+Want to self-host your fonts? (recommended!), you can easily set this up:
+
+Download your `.woff2` font(s) from eg: [Google webfont helper](`https://google-webfonts-helper.herokuapp.com/fonts`).
+
+`.woff2` [will suffice for support]('https://caniuse.com/woff2'). If you want to support older browsers, _like IE11_, you can download the `.woff` variant as well as a fallback.
+
+1. Put your fonts in the `global/fonts` folder. Create one if it does not exist yet.
+2. Navigate to `styles/common/_typography.scss` and uncomment the `@font-face` code-block.
+   1. !! Duplicate the @font-face for each font-style your're serving (eg 400, 400i, 700,...)
+   2. Add your font to the scss variables of choice. eg: `$font-family-base: 'My Font', $font-family-system;`. You can add it to your `_theme.scss` file as well instead, if you want a different font per theme.
+3. Lasly, navigate to `components/common/Head` and add this `<link>` tag **for EACH font-file you added in the fonts folder.** Enjoy the free lighthouse/performance improvements.
+
+```jsx
+<link
+  rel="preload"
+  href="/fonts/myFont.woff2"
+  as="font"
+  type="font/woff2"
+  crossOrigin="anonymous"
+/>
+```
 
 ## Learn More
 

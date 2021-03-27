@@ -13,6 +13,8 @@ module.exports = {
   plugins: ['@typescript-eslint'],
   extends: ['airbnb-typescript', 'prettier'],
   rules: {
+    // Project-specific
+    'import/prefer-default-export': 0,
     // React-specific
     'react/jsx-props-no-spreading': 0,
     // This disables the 'React' must be in scope when using JSX error for React 17+
