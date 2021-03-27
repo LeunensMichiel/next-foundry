@@ -113,7 +113,7 @@ yarn format
 This projects makes use of `next-theming`, which is a handly lightweight plugin that takes care of all modern theming-relatable features and fixes SSR hydratation problems.
 We make use of global css variables (next to our scss variables) because of how easy and lightweight it is to switch themes this way. (eg: Google, Facebook and Github use this).
 
-`_default.scss` is the main theme file. This scss file contains all `root:` css variables. For better reusability & readability, all `css` variables reference `scss`-variables in the `styles/common` folder.
+`_default.scss` is the main theme file. This scss file contains all `root:` css variables. For better reusability & readability, all `css` variables reference `scss`-variables in the `styles/common` folder. I strongly recommend to look at the variables so you know which one's are already available to you.
 
 The `styles/global` folder contains a modern cross-browser `reset` stylesheet, applis global styles and imports your themes.
 The `styles/pages` folder contains all the scss-modules for the Next's `src/pages` folder.
@@ -150,17 +150,151 @@ The variables will overwrite those defined in `_default.scss`.
 Navigate to `styles/global/base.scss` and import your new stylesheet so it gets globally loaded. **Import it after the default theme.**
 Lastly, navigate to `pages/_app.tsx` and add your new theme to the `ThemeProvider.themes` array.
 
+### Custom theming features
+
+To include functions, constants and mixins in your globally scoped scss files:
+
+```scss
+// In _components/button.module.scss
+// Import the theme file
+@use '@styles/theme';
+
+.warning {
+  @include theme.breakpoint-up(md) {
+    color: purple;
+  }
+}
+```
+
+#### Breakpoints
+
+This styling system includes a `breakpoint-up`(mobile first) and a `breakpoint-down` (desktop-first) mixin.
+
+The breakpoint mixin takes a size paramater, which refers to the breakpoints defined in the `/styles/common/_variables.scss`. You can alter or add breakpoints there if you prefer to do so.
+
+1. `breakpoint-up($size)`
+   1. sm
+   2. md
+   3. lg
+   4. xl
+   5. xxl
+2. `breakpoint-down($size)`
+   1. xs
+   2. sm
+   3. md
+   4. lg
+   5. xl
+
+#### Colors
+
+In `styles/common/_colors.scss` you should define your color palette. I personally the Material-design guidelines somewhat. You can access these colors then in your `_theme.scss` files.
+
+#### Typography
+
+This project strongly follows accessible font-size guidelines. We don't set a base font-size in the `html` tag and use `rem` everywhere.
+
+In `styles/common/_typography.scss` you'll find some global variables about typography which you can change to your liking. It also provides a **type-scale function**, which you can access in the `_default.scss` theme file. The _Major Second_ scale is better suited for mobile devices, so I recommend using t hat first. You can overwrite the scale and base-font-size for larger sizes.
+
+```scss
+// Will default to 16px or the user's preferred size.
+--font-size: 100%;
+--ratio: #{theme.type-ratio('majorSecond')};
+
+// Will scale the base font-size a bit more for large-screens. A different ratio is also used.
+@include theme.breakpoint-up(xxl) {
+  --font-size: 112.5%;
+  --ratio: #{theme.type-ratio('perfectFourth')};
+}
+```
+
+#### Variables
+
+The `styles/common/_variables.scss` file contains some leftover handy functions and constants.
+
+##### Z-index
+
+```scss
+$z-negative: -1;
+$z-low: 10;
+$z-mid: 100;
+$z-high: 1000;
+$z-ultra: 10000;
+$z-extreme: 9999999999;
+```
+
+##### Border-radius
+
+```scss
+$border-radius: 0.25rem;
+```
+
+##### Box-and-drop shadows
+
+The theme provides both a drop-and-box shadow variant of each shadow.
+
+```scss
+$box-shadow-xs
+$box-shadow-sm
+$box-shadow-md
+$box-shadow-lg
+$box-shadow-xl
+
+$drop-shadow-xs
+$drop-shadow-sm
+$drop-shadow-md
+$drop-shadow-lg
+$drop-shadow-xl
+```
+
+There is also a handy drop-shadow mixin, so you can have custom colored drop-shadows.
+It takes a `$size` and a custom `$color` param.
+
+```scss
+// In _components/button.module.scss
+// Import the theme file
+@use '@styles/theme';
+
+.warning {
+  @include theme.drop-shadow-colored($size, $color);
+}
+```
+
+1. `$size`
+   1. xs
+   2. sm
+   3. md
+   4. lg
+   5. xl
+
+##### Transitions
+
+The theme defines a global transition duration and easing.
+
+```scss
+$transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
+$transition-duration: 330ms;
+```
+
+A transition-mixin is provided, to easily apply a transition with abovementioned values for different css-properties.
+
+```scss
+// in styles/global/base.scss
+.body {
+  @include theme.transition(background-color, color, border-color);
+}
+```
+
 ### Self host fonts
 
 Want to self-host your fonts? (recommended!), you can easily set this up:
 
-Download your `.woff2` font(s) from eg: [Google webfont helper](`https://google-webfonts-helper.herokuapp.com/fonts`).
+Download your `.woff2` font(s) from eg: [Google webfont helper](https://google-webfonts-helper.herokuapp.com/fonts).
 
-`.woff2` [will suffice for support]('https://caniuse.com/woff2'). If you want to support older browsers, _like IE11_, you can download the `.woff` variant as well as a fallback.
+`.woff2` [will suffice for support](https://caniuse.com/woff2). If you want to support older browsers, _like IE11_, you can download the `.woff` variant as well as a fallback.
 
 1. Put your fonts in the `global/fonts` folder. Create one if it does not exist yet.
 2. Navigate to `styles/common/_typography.scss` and uncomment the `@font-face` code-block.
-   1. !! Duplicate the @font-face for each font-style your're serving (eg 400, 400i, 700,...)
+   1. :warning: Duplicate the @font-face for each font-style your're serving (eg 400, 400i, 700,...)
    2. Add your font to the scss variables of choice. eg: `$font-family-base: 'My Font', $font-family-system;`. You can add it to your `_theme.scss` file as well instead, if you want a different font per theme.
 3. Lasly, navigate to `components/common/Head` and add this `<link>` tag **for EACH font-file you added in the fonts folder.** Enjoy the free lighthouse/performance improvements.
 
