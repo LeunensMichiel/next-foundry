@@ -16,4 +16,8 @@
   --text-primary: #{theme.$white};
   --text-secondary: #{theme.$gray-50};
   --text-tertiary: #{theme.$gray-100};
+  --text-accent: #{theme.$amber-500};
+  --text-link: #{theme.$amber-500};
+  --text-hover: #{theme.$amber-300};
+  --text-active: #{theme.$amber-700};
 }

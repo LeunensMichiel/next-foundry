@@ -19,7 +19,7 @@ This is an opinionated starter template in `Next.js v10` which uses all best pra
 
 - :white_check_mark: `scss`-modules
 - :white_check_mark: Modern `reset.scss`
-- :x: Fully featured design-system _(colors, typography,...)_
+- :white_check_mark: Fully featured design-system (colors, typography,...)
 - :white_check_mark: Theming with `next-theming` (Complete with dark theme)
 - :x: Animations with `Framer Motion`
 - :x: Easy class toggling
