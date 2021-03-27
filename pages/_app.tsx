@@ -5,7 +5,12 @@ import '@styles/global/base.scss';
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider enableSystem enableColorScheme defaultTheme="system" themes={['light', 'dark']}>
+    <ThemeProvider
+      enableSystem
+      enableColorScheme
+      defaultTheme="system"
+      themes={['light', 'dark']}
+    >
       <Component {...pageProps} />
     </ThemeProvider>
   );
