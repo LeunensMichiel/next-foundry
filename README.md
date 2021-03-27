@@ -4,7 +4,7 @@ This is an opinionated starter template in `Next.js v10` which uses all best pra
 
 > :bulb: This project contains a lot of custom components. Everything is loosely coupled, so you can easily delete what you don't need. :warning: **IE11 is not supported**.
 
-## Current Features :fire:
+## :fire: Current Features
 
 ### Development
 
@@ -117,7 +117,7 @@ We make use of global css variables (next to our scss variables) because of how 
 
 The `styles/global` folder contains a modern cross-browser `reset` stylesheet, applis global styles and imports your themes.
 The `styles/pages` folder contains all the scss-modules for the Next's `src/pages` folder.
-The `styles/common` folder contains all scss mixins and variables, like colors and breakpoints.
+The `styles/common` folder contains all scss mixins and variables, like typography values and breakpoints.
 The `styles/theme.scss` file forwards all scss mixins and variables from `styles/common`. In your scoped module, you can import them like this:
 
 ```scss
@@ -138,11 +138,11 @@ Define your variables like this:
 
 ```scss
 // in _myTheme.scss
-@use '@styles/common/colors';
+@use '@styles/theme';
 @use ...;
 
 [data-theme='myTheme'] {
-  --primary: #{colors.$myColor};
+  --yourVariable: #{theme.$myVariable};
   ...
 }
 ```

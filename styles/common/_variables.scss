@@ -3,19 +3,19 @@
 // Media-query breakpoints
 $grid-breakpoints: (
   xs: 0,
-  sm: 576px,
+  sm: 640px,
   md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px,
+  lg: 1024px,
+  xl: 1280px,
+  xxl: 1536px,
 );
 
 $grid-breakpoints-desktop-first: (
-  xs: 575.98px,
+  xs: 639.98px,
   sm: 767.98px,
-  md: 991.98px,
-  lg: 1199.98px,
-  xl: 1399.98px,
+  md: 1023.98px,
+  lg: 1279.98px,
+  xl: 1535.98px,
 );
 
 // Z-index
@@ -25,6 +25,9 @@ $z-mid: 100;
 $z-high: 1000;
 $z-ultra: 10000;
 $z-extreme: 9999999999;
+
+// Border-radii
+$border-radius: 0.25rem;
 
 // Drop-and-box-shadows
 // https://shadows.brumm.af/

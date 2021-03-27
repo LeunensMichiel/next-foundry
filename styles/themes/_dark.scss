@@ -1,12 +1,19 @@
 @use '@styles/theme';
 
 [data-theme='dark'] {
-  --primary: black;
-  --primary-2: #111;
-  --secondary: #ffffff;
-  --secondary-2: #f1f3f5;
+  --background-0: #{theme.$black};
+  --background-1: #{theme.$gray-900};
+  --background-2: #{theme.$gray-800};
+  --background-3: #{theme.$gray-700};
+  --background-4: #{theme.$gray-600};
 
-  --text-base: red;
-  --text-primary: white;
-  --text-secondary: black;
+  --border-0: #{theme.$gray-900};
+  --border-1: #{theme.$gray-800};
+  --border-2: #{theme.$gray-700};
+  --border-3: #{theme.$gray-600};
+  --border-4: #{theme.$gray-500};
+
+  --text-primary: #{theme.$white};
+  --text-secondary: #{theme.$gray-50};
+  --text-tertiary: #{theme.$gray-100};
 }
