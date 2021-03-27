@@ -1,18 +1,28 @@
 import { AppProps } from 'next/app';
 import { ThemeProvider } from 'next-themes';
+import { useEffect } from 'react';
+import { Head } from '@components/common';
 
 import '@styles/global/base.scss';
+import '@styles/global/chrome-bug.css';
 
 function App({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    document.body.classList?.remove('loading');
+  }, []);
+
   return (
-    <ThemeProvider
-      enableSystem
-      enableColorScheme
-      defaultTheme="system"
-      themes={['light', 'dark']}
-    >
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <>
+      <Head />
+      <ThemeProvider
+        enableSystem
+        enableColorScheme
+        defaultTheme="system"
+        themes={['light', 'dark']}
+      >
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </>
   );
 }
 
