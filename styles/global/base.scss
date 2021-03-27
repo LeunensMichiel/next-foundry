@@ -14,7 +14,7 @@ html {
 
 html,
 body {
-  // font-family: var(--font-sans);
+  font-family: var(--font-family-base);
   // color: var(--text-primary);
   background-color: var(--primary);
   @include theme.transition(background-color);
@@ -26,43 +26,104 @@ body {
   margin: 0;
 }
 
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+small,
+li,
+strong,
+em,
+blockquote,
+q,
+mark,
+ins,
+del,
+sup,
+sub,
+i,
+b {
+  word-break: break-word;
+  hyphens: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-style: normal;
   font-weight: bold;
-  font-size: 34px;
-  line-height: 1.2em;
-  margin: 0;
+  line-height: theme.$line-height-headings;
+}
+
+p,
+small,
+li,
+strong,
+em,
+blockquote,
+q,
+mark,
+ins,
+del,
+sup,
+sub,
+i,
+b {
+  font-family: var(--font-family-alt);
+  line-height: theme.$line-height-paragraphs;
+}
+
+h1 {
+  font-size: var(--h1);
 }
 
 h2 {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 36px;
-  line-height: 43px;
+  font-size: var(--h2);
 }
 
 h3 {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 125%;
-  margin: 0;
+  font-size: var(--h3);
 }
 
 h4 {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 125%;
-  margin: 0;
+  font-size: var(--h4);
+}
+
+h5 {
+  font-size: var(--h5);
+}
+
+h6 {
+  font-size: var(--h6);
 }
 
 p {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: var(--font-size);
+}
+
+small {
+  font-size: var(--small);
+}
+
+li {
+  font-size: var(--font-size);
 }
 
 a {
+  font-size: var(--font-size);
+}
+
+code {
+  font-family: theme.$font-family-mono;
+  white-space: pre;
+  line-height: theme.$line-height-paragraphs;
+  background: var(--primary-2);
+  border-radius: 5px;
+  padding: 0.75rem;
 }

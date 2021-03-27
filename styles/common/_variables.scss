@@ -84,8 +84,8 @@ $drop-shadow-xl: drop-shadow(0 4px 10.5px rgba(0, 0, 0, 0.028)) drop-shadow(0 11
 }
 
 // Transitions
-$default-transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
-$default-transition-duration: 300ms;
+$transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
+$transition-duration: 300ms;
 
 @mixin transition($props...) {
   $result: ();
@@ -93,7 +93,7 @@ $default-transition-duration: 300ms;
   @for $i from 1 through length($props) {
     $prop: nth($props, $i);
     $result: append($result, $prop);
-    $result: append($result, $default-transition-timing $default-transition-duration);
+    $result: append($result, $transition-timing $transition-duration);
 
     @if $i != length($props) {
       $result: append(
