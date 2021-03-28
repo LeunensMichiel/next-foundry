@@ -312,7 +312,7 @@ Download your `.woff2` font(s) from eg: [Google webfont helper](https://google-w
 
 This template is configured with [Next-SEO](https://github.com/garmeeh/next-seo) to bring out the best of Next.js. Follow the documentation for more information on how to customize this to your liking.
 
-The default `seo-default` configuration is located in the `/config` folder. Change it to your liking. This file is then imported in the `components/common/Head` file.
+The default `seo-default` configuration is located in the `components/common/Head` file. Change it to your liking.
 Don't forget to add your _google-site-verification_ meta-tag!
 
 You can add an og:image for each page, but a default image is configured in the default settings as wel. This image is named `card.jpg`, and can be found under `/global/`. Swap this image out with your custom `card.jpg`.

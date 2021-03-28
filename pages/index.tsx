@@ -1,24 +1,30 @@
 import { useTheme } from 'next-themes';
 import { NextSeo } from 'next-seo';
+import useTranslation from 'next-translate/useTranslation';
+import setLanguage from 'next-translate/setLanguage';
 
-import styles from '../styles/pages/index.module.scss';
+import styles from '@styles/pages/index.module.scss';
+import i18nConfig from 'i18n.json';
+
+const { locales } = i18nConfig;
 
 export default function Home() {
   const { setTheme, theme } = useTheme();
+  const { t } = useTranslation('home');
   return (
     <>
       <NextSeo
-        title="Simple Usage Example"
-        description="A short description goes here."
+        title={t('seo.title')}
+        description={t('seo.description')}
         openGraph={{
-          title: 'Simple Usage Example',
-          description: 'A short description goes here.',
+          title: t('seo.title'),
+          description: t('seo.description'),
         }}
       />
       <div className={styles.container}>
         <main className={styles.main}>
           <h1 className={styles.title}>
-            Welcome to{' '}
+            {t('welcome')}{' '}
             <a
               href="https://nextjs.org"
               rel="nofollow noopener noreferrer"
@@ -29,8 +35,7 @@ export default function Home() {
           </h1>
 
           <p className={styles.description}>
-            Opinionated starter template by{' '}
-            <code className={styles.code}>Michiel Leunens</code>
+            {t('intro')} <code className={styles.code}>Michiel Leunens</code>
           </p>
 
           <div className={styles.grid}>
@@ -40,8 +45,8 @@ export default function Home() {
               rel="nofollow noopener noreferrer"
               target="_blank"
             >
-              <h3>Documentation &rarr;</h3>
-              <p>Find in-depth information about this project.</p>
+              <h3>{t('features.documentation.title')}</h3>
+              <p>{t('features.documentation.description')}</p>
             </a>
 
             <a
@@ -50,8 +55,8 @@ export default function Home() {
               rel="nofollow noopener noreferrer"
               target="_blank"
             >
-              <h3>Learn Next.js &rarr;</h3>
-              <p>Learn about Next.js by getting started in the docs</p>
+              <h3>{t('features.next.title')}</h3>
+              <p>{t('features.next.description')}</p>
             </a>
 
             <button
@@ -60,10 +65,12 @@ export default function Home() {
               onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
             >
               <h3>
-                {`Toggle ${theme === 'light' ? 'dark' : 'light'} mode \u2192`}
+                {t('features.theme.title', {
+                  theme: theme === 'light' ? 'dark' : 'light',
+                })}
               </h3>
               <p>
-                Themes out of the box with{' '}
+                {t('features.theme.description')}{' '}
                 <a
                   href="https://www.npmjs.com/package/next-themes"
                   rel="nofollow noopener noreferrer"
@@ -75,13 +82,15 @@ export default function Home() {
               </p>
             </button>
 
-            <a
-              href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              className={styles.card}
-            >
-              <h3>Change language &rarr;</h3>
-              <p>i18n support out of the box.</p>
-            </a>
+            <div className={styles.card}>
+              <h3>{t('features.internationalization.title')}</h3>
+              <p>{t('features.internationalization.description')}</p>
+              {locales.map((lng) => (
+                <button type="button" onClick={async () => setLanguage(lng)}>
+                  {t(`features.internationalization.${lng}`)}
+                </button>
+              ))}
+            </div>
           </div>
         </main>
 
@@ -91,7 +100,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Powered by{' '}
+            {t('common:footer.powered')}{' '}
             <img src="/logo.svg" alt="Logo" className={styles.logo} />
           </a>
         </footer>

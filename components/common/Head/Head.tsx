@@ -1,10 +1,34 @@
 import NextHead from 'next/head';
 import { DefaultSeo } from 'next-seo';
-import config from '@config/seo-default.json';
 
 const Head = () => (
   <>
-    <DefaultSeo {...config} />
+    <DefaultSeo
+      title="My website | Starter Template"
+      titleTemplate="%s | Starter Template"
+      defaultTitle="My website | Starter Template"
+      description="An opinionated starter project for your Next.js projects"
+      openGraph={{
+        title: 'My website | Starter Template',
+        description: 'An opinionated starter project for your Next.js projects',
+        type: 'website',
+        url: 'https://mywebsite.com',
+        site_name: 'My Website',
+        images: [
+          {
+            url: '/card.jpg',
+            width: 1200,
+            height: 630,
+            alt: 'My Website',
+          },
+        ],
+      }}
+      twitter={{
+        handle: '@michielleunens',
+        site: '@michielleunens',
+        cardType: 'summary_large_image',
+      }}
+    />
     <NextHead>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="manifest" href="/meta/site.webmanifest" key="site-manifest" />

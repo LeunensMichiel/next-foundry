@@ -1,0 +1,29 @@
+{
+  "seo": {
+    "title": "Michiel Leunens Next.js startsjabloon",
+    "description": "Dit is een opiniërende starter template in Next.js 10 die alle best practices vanaf 2021 gebruikt. Op deze manier kunt u meer (statische) websites maken met minder code."
+  },
+  "welcome": "Welkom bij",
+  "intro": "Opiniërend startsjabloon door",
+  "features": {
+    "documentation": {
+      "title": "Documentatie \u2192",
+      "description": "Zoek uitgebreide informatie over dit project."
+    },
+    "next": {
+      "title": "Leer Next.js \u2192",
+      "description": "Leer meer over Next.js door aan de slag te gaan in de docs."
+    },
+    "theme": {
+      "title": "Schakel {{theme}} modus \u2192",
+      "description": "Wisselen van thema's dankzij"
+    },
+    "internationalization": {
+      "title": "Taal veranderen \u2192",
+      "description": "I18n ondersteuning",
+      "fr": "Français",
+      "nl": "Nederlands",
+      "en": "English"
+    }
+  }
+}

@@ -26,16 +26,16 @@
   justify-content: center;
   align-items: center;
   @include theme.transition(border-color);
-}
 
-.footer img {
-  margin-left: 0.5rem;
-}
+  img {
+    margin-left: 0.5rem;
+  }
 
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .title {
@@ -55,7 +55,6 @@
 
 .grid {
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   max-width: 800px;
@@ -72,24 +71,29 @@
   border-radius: var(--border-radius);
   background-color: var(--background-0);
   @include theme.transition(border-color, color, background-color);
-}
 
-.card:hover,
-.card:focus,
-.card:active {
-  color: var(--text-active);
-  border-color: var(--border-accent-1);
-  cursor: pointer;
-}
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--text-active);
+    border-color: var(--border-accent-1);
+    cursor: pointer;
+  }
 
-.card h3 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
+  h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.25rem;
+  }
 
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
+  p {
+    margin: 0;
+    font-size: 1.25rem;
+  }
+
+  button {
+    margin-top: 0.5rem;
+    margin-right: 0.25rem;
+  }
 }
 
 .logo {

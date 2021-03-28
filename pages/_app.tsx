@@ -7,6 +7,7 @@ import '@styles/global/base.scss';
 import '@styles/global/chrome-bug.css';
 
 function App({ Component, pageProps }: AppProps) {
+  // Chrome-transition-bug
   useEffect(() => {
     document.body.classList?.remove('loading');
   }, []);
