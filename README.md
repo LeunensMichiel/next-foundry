@@ -28,7 +28,7 @@ This is an opinionated starter template in `Next.js v10` which uses all best pra
 
 - :x: Responsive skeleton
 - :x: Dynamic layout
-- :x: SEO-wrapper
+- :white_check_mark: SEO-component with `next-seo`
 - :x: Cookie consent
 - :x: Internationalization (i18n)
 - :x: Form validation
@@ -58,18 +58,18 @@ This is an opinionated starter template in `Next.js v10` which uses all best pra
 
 - :x: `sitemap.xml`
 - :x: `robots.txt`
-- :x: SEO optimizations with custom image
+- :white_check_mark: SEO optimizations with custom image
 - :white_check_mark: Web manifest
 - :white_check_mark: Scaled favicons
 - :x: Dynamic imports
 - :x: Smooth scrolling with polyfill
-- :x: Responsive (with proper meta)
 - :x: Lighthouse optimizations
 - :white_check_mark: Chrome transitions bug fix
 - :x: Inter-OS compatibility (no weird styling issues between MacOs & Windows)
 - :x: Inter-browser compatibility
 - :x: IE-11 no-support warning
 - :x: Caching
+- :x: Body Scroll Lock
 - :x: Cookie management
 
 ### Maybe
@@ -309,6 +309,13 @@ Download your `.woff2` font(s) from eg: [Google webfont helper](https://google-w
 ```
 
 ## SEO
+
+This template is configured with [Next-SEO](https://github.com/garmeeh/next-seo) to bring out the best of Next.js. Follow the documentation for more information on how to customize this to your liking.
+
+The default `seo-default` configuration is located in the `/config` folder. Change it to your liking. This file is then imported in the `components/common/Head` file.
+Don't forget to add your _google-site-verification_ meta-tag!
+
+You can add an og:image for each page, but a default image is configured in the default settings as wel. This image is named `card.jpg`, and can be found under `/global/`. Swap this image out with your custom `card.jpg`.
 
 ### Favicons en Webmanifest
 

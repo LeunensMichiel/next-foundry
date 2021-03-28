@@ -1,10 +1,10 @@
 import NextHead from 'next/head';
-// import { DefaultSeo } from 'next-seo'
-// import config from '@config/seo.json'
+import { DefaultSeo } from 'next-seo';
+import config from '@config/seo-default.json';
 
 const Head = () => (
   <>
-    {/* <DefaultSeo {...config} /> */}
+    <DefaultSeo {...config} />
     <NextHead>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="manifest" href="/meta/site.webmanifest" key="site-manifest" />
@@ -37,17 +37,17 @@ const Head = () => (
       <meta name="msapplication-TileColor" content="#603cba" />
       <meta name="msapplication-config" content="/meta/browserconfig.xml" />
       <meta name="theme-color" content="#1a1a1a" />
-      {/* <link
+      {/* ENABLE THIS IF SELF-HOSTING FONTS
+      <link
         rel="preload"
         href="/fonts/myFont.woff2"
         as="font"
         type="font/woff2"
         crossOrigin="anonymous"
-        ENABLE THIS IF SELF-HOSTING FONTS
       /> */}
-      {/* 
+      {/* Add your google-site-verification id here
       <meta
-        content="eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw"
+        content="..."
         name="google-site-verification"
       /> */}
     </NextHead>
