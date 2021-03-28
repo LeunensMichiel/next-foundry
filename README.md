@@ -82,7 +82,13 @@ This is an opinionated starter template in `Next.js v10` which uses all best pra
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies:
+
+```bash
+yarn
+```
+
+Run the development server:
 
 ```bash
 yarn dev
