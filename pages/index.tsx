@@ -18,47 +18,69 @@ export default function Home() {
       <div className={styles.container}>
         <main className={styles.main}>
           <h1 className={styles.title}>
-            Welcome to <a href="https://nextjs.org">Next.js!</a>
+            Welcome to{' '}
+            <a
+              href="https://nextjs.org"
+              rel="nofollow noopener noreferrer"
+              target="_blank"
+            >
+              Next.js!
+            </a>
           </h1>
 
           <p className={styles.description}>
-            Get started by <code className={styles.code}>switching themes</code>
+            Opinionated starter template by{' '}
+            <code className={styles.code}>Michiel Leunens</code>
           </p>
 
-          <button
-            type="button"
-            onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-          >
-            Switch Theme
-          </button>
-
           <div className={styles.grid}>
-            <a href="https://nextjs.org/docs" className={styles.card}>
+            <a
+              href="https://github.com/LeunensMichiel/nextjs-starter-template/blob/master/README.md"
+              className={styles.card}
+              rel="nofollow noopener noreferrer"
+              target="_blank"
+            >
               <h3>Documentation &rarr;</h3>
-              <p>Find in-depth information about Next.js features and API.</p>
-            </a>
-
-            <a href="https://nextjs.org/learn" className={styles.card}>
-              <h3>Learn &rarr;</h3>
-              <p>Learn about Next.js in an interactive course with quizzes!</p>
+              <p>Find in-depth information about this project.</p>
             </a>
 
             <a
-              href="https://github.com/vercel/next.js/tree/master/examples"
+              href="https://nextjs.org/docs/getting-started"
               className={styles.card}
+              rel="nofollow noopener noreferrer"
+              target="_blank"
             >
-              <h3>Examples &rarr;</h3>
-              <p>Discover and deploy boilerplate example Next.js projects.</p>
+              <h3>Learn Next.js &rarr;</h3>
+              <p>Learn about Next.js by getting started in the docs</p>
             </a>
+
+            <button
+              className={styles.card}
+              type="button"
+              onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+            >
+              <h3>
+                {`Toggle ${theme === 'light' ? 'dark' : 'light'} mode \u2192`}
+              </h3>
+              <p>
+                Themes out of the box with{' '}
+                <a
+                  href="https://www.npmjs.com/package/next-themes"
+                  rel="nofollow noopener noreferrer"
+                  target="_blank"
+                >
+                  Next Themes
+                </a>
+                .
+              </p>
+            </button>
 
             <a
               href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
               className={styles.card}
             >
-              <h3>Deploy &rarr;</h3>
-              <p>
-                Instantly deploy your Next.js site to a public URL with Vercel.
-              </p>
+              <h3>Change language &rarr;</h3>
+              <p>i18n support out of the box.</p>
             </a>
           </div>
         </main>

@@ -102,7 +102,7 @@ $drop-shadow-xl: drop-shadow(0 4px 10.5px rgba(0, 0, 0, 0.028))
 
 // Transitions
 $transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
-$transition-duration: 330ms;
+$transition-duration: 500ms;
 
 @mixin transition($props...) {
   $result: ();

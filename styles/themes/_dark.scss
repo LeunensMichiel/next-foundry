@@ -12,6 +12,9 @@
   --border-2: #{theme.$gray-700};
   --border-3: #{theme.$gray-600};
   --border-4: #{theme.$gray-500};
+  --border-accent-0: #{theme.$amber-300};
+  --border-accent-1: #{theme.$amber-500};
+  --border-accent-2: #{theme.$amber-700};
 
   --text-primary: #{theme.$white};
   --text-secondary: #{theme.$gray-50};
@@ -19,5 +22,5 @@
   --text-accent: #{theme.$amber-500};
   --text-link: #{theme.$amber-500};
   --text-hover: #{theme.$amber-300};
-  --text-active: #{theme.$amber-700};
+  --text-active: #{theme.$amber-500};
 }

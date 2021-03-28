@@ -124,6 +124,12 @@ a {
   color: var(--text-link);
 }
 
+button {
+  &:focus {
+    outline: var(--border-accent-1);
+  }
+}
+
 code {
   font-family: theme.$font-family-mono;
   white-space: pre;
