@@ -71,7 +71,7 @@
   border: 2px solid var(--border-1);
   border-radius: var(--border-radius);
   background-color: var(--background-0);
-  @include theme.transition(border-color, color);
+  @include theme.transition(border-color, color, background-color);
 }
 
 .card:hover,

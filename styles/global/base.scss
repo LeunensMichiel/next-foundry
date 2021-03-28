@@ -135,6 +135,7 @@ code {
   white-space: pre;
   line-height: theme.$line-height-paragraphs;
   background-color: var(--background-2);
+  @include theme.transition(background-color);
   border-radius: theme.$border-radius;
   padding: 0.75rem;
 }
