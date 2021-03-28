@@ -59,8 +59,8 @@ This is an opinionated starter template in `Next.js v10` which uses all best pra
 - :x: `sitemap.xml`
 - :x: `robots.txt`
 - :x: SEO optimizations with custom image
-- :x: Web manifest
-- :x: Scaled favicons
+- :white_check_mark: Web manifest
+- :white_check_mark: Scaled favicons
 - :x: Dynamic imports
 - :x: Smooth scrolling with polyfill
 - :x: Responsive (with proper meta)
@@ -307,6 +307,15 @@ Download your `.woff2` font(s) from eg: [Google webfont helper](https://google-w
   crossOrigin="anonymous"
 />
 ```
+
+## SEO
+
+### Favicons en Webmanifest
+
+Go to a favicon generator like [favicongenerator](https://realfavicongenerator.net/). For this generator, in the last step, you can provide a custom directory. Enter the `/meta/` directory and download your files. Place them in the `public/meta/` folder.
+If the generator also created a `webmanifest`, put it there as well. Otherwise, you'll need to create one yourself. (Recommended).
+
+Lastly, copy the `<link>` and `<meta>` tags and overwrite the current ones in `components/common/Head`.
 
 ## Learn More
 
