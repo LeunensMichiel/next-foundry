@@ -1,5 +1,15 @@
 {
-  "title": "Starter template",
+  "seo": {
+    "title": "My website | Next.js Starter Template",
+    "titleTemplate": "%s | Next.js Starter Template",
+    "defaultTitle": "My website | Next.js Starter Template",
+    "description": "An opinionated starter project for your Next.js projects",
+    "og": {
+      "title": "My website | Next.js Starter Template",
+      "description": "An opinionated starter project for your Next.js projects",
+      "imgAlt": "My Website"
+    }
+  },
   "footer": {
     "powered": "Powered by "
   }

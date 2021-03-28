@@ -1,5 +1,15 @@
 {
-  "title": "Startsjabloon",
+  "seo": {
+    "title": "Mijn website | Next.js Starterssjabloon",
+    "titleTemplate": "%s | Next.js Starterssjabloon",
+    "defaultTitle": "Mijn website | Next.js Starterssjabloon",
+    "description": "Dit is een opiniërende starter template in Next.js 10 die alle best practices vanaf 2021 gebruikt.",
+    "og": {
+      "title": "Mijn website | Next.js Starterssjabloon",
+      "description": "Dit is een opiniërende starter template in Next.js 10 die alle best practices vanaf 2021 gebruikt.",
+      "imgAlt": "Mijn Website"
+    }
+  },
   "footer": {
     "powered": "Aangedreven door"
   }

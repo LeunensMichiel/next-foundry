@@ -86,7 +86,11 @@ export default function Home() {
               <h3>{t('features.internationalization.title')}</h3>
               <p>{t('features.internationalization.description')}</p>
               {locales.map((lng) => (
-                <button type="button" onClick={async () => setLanguage(lng)}>
+                <button
+                  key={lng}
+                  type="button"
+                  onClick={async () => setLanguage(lng)}
+                >
                   {t(`features.internationalization.${lng}`)}
                 </button>
               ))}

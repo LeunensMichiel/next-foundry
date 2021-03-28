@@ -1,5 +1,15 @@
 {
-  "title": "Modèle de base",
+  "seo": {
+    "title": "Mon site web | Exemple Next.js",
+    "titleTemplate": "%s | Exemple Next.js",
+    "defaultTitle": "Mon site web | Exemple Next.js",
+    "description": "Un projet de démarrage pour vos projets Next.js.",
+    "og": {
+      "title": "Mon site web | Exemple Next.js",
+      "description": "Un projet de démarrage pour vos projets Next.js.",
+      "imgAlt": "Mon site web"
+    }
+  },
   "footer": {
     "powered": "Actionné par"
   }

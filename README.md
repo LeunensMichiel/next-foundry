@@ -30,7 +30,7 @@ This is an opinionated starter template in `Next.js v10` which uses all best pra
 - :x: Dynamic layout
 - :white_check_mark: SEO-component with `next-seo`
 - :x: Cookie consent
-- :x: Internationalization (i18n)
+- :white_check_mark: Internationalization (i18n)
 - :x: Form validation
 - :x: 404 page
 - :x: Error page
@@ -316,6 +316,11 @@ The default `seo-default` configuration is located in the `components/common/Hea
 Don't forget to add your _google-site-verification_ meta-tag!
 
 You can add an og:image for each page, but a default image is configured in the default settings as wel. This image is named `card.jpg`, and can be found under `/global/`. Swap this image out with your custom `card.jpg`.
+
+## Internationalization (i18n)
+
+Translation is provided by Next's build-in internationalization's + a neat little package called [Next-translate](https://github.com/vinissimus/next-translate). Easy to follow documentation.
+The default provided languages in this template are `English`, `Dutch` and `French` as I'm Belgian :smile:.
 
 ### Favicons en Webmanifest
 
