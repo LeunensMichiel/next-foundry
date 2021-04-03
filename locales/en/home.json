@@ -1,7 +1,7 @@
 {
   "seo": {
     "title": "Michiel Leunens",
-    "description": "This is an opinionated starter template in Next.js 10 which uses all best practices as of 2021. This way you can churn more (static) websites with less code."
+    "description": "This is an opinionated starter template in Next.js 10.1 which uses all best practices as of 2021. This way you can churn more (static) websites with less code."
   },
   "welcome": "Welcome to",
   "intro": "Opinionated starter template by",

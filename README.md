@@ -1,6 +1,6 @@
 # Michiel Leunens -- Next.js template
 
-This is an opinionated starter template in `Next.js v10` which uses all best practices as of 2021. This way you can churn more (static) websites with less code.
+This is an opinionated starter template in `Next.js v10.1` which uses all best practices as of 2021. This way you can churn more (static) websites with less code.
 
 > :bulb: This project contains a lot of custom components. Everything is loosely coupled, so you can easily delete what you don't need. :warning: **IE11 is not supported**.
 
@@ -20,7 +20,7 @@ This is an opinionated starter template in `Next.js v10` which uses all best pra
 - :white_check_mark: `scss`-modules
 - :white_check_mark: Modern `reset.scss`
 - :white_check_mark: Fully featured design-system (colors, typography,...)
-- :white_check_mark: Theming with `next-theming` (Complete with dark theme)
+- :white_check_mark: Theming with `next-theming` (complete with dark theme)
 - :x: Animations with `Framer Motion`
 - :white_check_mark: Easy class toggling
 
@@ -32,6 +32,8 @@ This is an opinionated starter template in `Next.js v10` which uses all best pra
 - :x: Cookie consent
 - :white_check_mark: Internationalization (i18n)
 - :x: Form validation
+- :x: Navigation
+- :white_check_mark: Footer
 - :x: 404 page
 - :x: Error page
 - :x: Thank you page (forms)
@@ -40,8 +42,6 @@ This is an opinionated starter template in `Next.js v10` which uses all best pra
 ### UI-components
 
 - :white_check_mark: Responsive Grid-system
-- :x: Navigation
-- :x: Footer
 - :x: Modern, accessible Modal
 - :x: Snackbar
 - :x: Logo
@@ -54,6 +54,7 @@ This is an opinionated starter template in `Next.js v10` which uses all best pra
 - :x: Spinner
 - :x: Accordion
 - :x: Dropdown
+- :x: Language Switcher
 
 ### Other
 
