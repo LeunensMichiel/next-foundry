@@ -69,17 +69,7 @@ export default function Home() {
                   theme: theme === 'light' ? 'dark' : 'light',
                 })}
               </h3>
-              <p>
-                {t('features.theme.description')}{' '}
-                <a
-                  href="https://www.npmjs.com/package/next-themes"
-                  rel="nofollow noopener noreferrer"
-                  target="_blank"
-                >
-                  Next Themes
-                </a>
-                .
-              </p>
+              <p>{t('features.theme.description')} Next Themes .</p>
             </button>
 
             <div className={styles.card}>
