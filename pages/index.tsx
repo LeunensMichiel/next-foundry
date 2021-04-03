@@ -2,9 +2,12 @@ import { useTheme } from 'next-themes';
 import { NextSeo } from 'next-seo';
 import useTranslation from 'next-translate/useTranslation';
 import setLanguage from 'next-translate/setLanguage';
+import Image from 'next/image';
 
 import styles from '@styles/pages/index.module.scss';
+import { Layout } from '@components/common';
 import i18nConfig from 'i18n.json';
+import classNames from 'classnames';
 
 const { locales } = i18nConfig;
 
@@ -21,74 +24,80 @@ export default function Home() {
           description: t('seo.description'),
         }}
       />
-      <div className={styles.container}>
-        <main className={styles.main}>
-          <h1 className={styles.title}>
-            {t('welcome')}{' '}
-            <a
-              href="https://nextjs.org"
-              rel="nofollow noopener noreferrer"
-              target="_blank"
-            >
-              Next.js!
-            </a>
-          </h1>
+      <h1 className={styles.title}>
+        {t('welcome')}{' '}
+        <a
+          href="https://nextjs.org"
+          rel="nofollow noopener noreferrer"
+          target="_blank"
+        >
+          Next.js!
+        </a>
+      </h1>
 
-          <p className={styles.description}>
-            {t('intro')} <code className={styles.code}>Michiel Leunens</code>
-          </p>
+      <p className={styles.description}>
+        {t('intro')} <code className={styles.code}>Michiel Leunens</code>
+      </p>
 
-          <div className={styles.grid}>
-            <a
-              href="https://github.com/LeunensMichiel/nextjs-starter-template/blob/master/README.md"
-              className={styles.card}
-              rel="nofollow noopener noreferrer"
-              target="_blank"
-            >
-              <h3>{t('features.documentation.title')}</h3>
-              <p>{t('features.documentation.description')}</p>
-            </a>
+      <div style={{ position: 'relative', width: '100%', height: '250px' }}>
+        <Image
+          alt="Mountains"
+          src="/test.jpg"
+          layout="fill"
+          objectFit="cover"
+        />
+      </div>
 
-            <a
-              href="https://nextjs.org/docs/getting-started"
-              className={styles.card}
-              rel="nofollow noopener noreferrer"
-              target="_blank"
-            >
-              <h3>{t('features.next.title')}</h3>
-              <p>{t('features.next.description')}</p>
-            </a>
+      <div className={classNames(styles.grid, 'container')}>
+        <a
+          href="https://github.com/LeunensMichiel/nextjs-starter-template/blob/master/README.md"
+          className={styles.card}
+          rel="nofollow noopener noreferrer"
+          target="_blank"
+        >
+          <h3>{t('features.documentation.title')}</h3>
+          <p>{t('features.documentation.description')}</p>
+        </a>
 
+        <a
+          href="https://nextjs.org/docs/getting-started"
+          className={styles.card}
+          rel="nofollow noopener noreferrer"
+          target="_blank"
+        >
+          <h3>{t('features.next.title')}</h3>
+          <p>{t('features.next.description')}</p>
+        </a>
+
+        <button
+          className={styles.card}
+          type="button"
+          onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+        >
+          <h3>
+            {t('features.theme.title', {
+              theme: theme === 'light' ? 'dark' : 'light',
+            })}
+          </h3>
+          <p>{t('features.theme.description')} Next Themes .</p>
+        </button>
+
+        <div className={styles.card}>
+          <h3>{t('features.internationalization.title')}</h3>
+          <p>{t('features.internationalization.description')}</p>
+          {locales.map((lng) => (
             <button
-              className={styles.card}
+              key={lng}
               type="button"
-              onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+              onClick={async () => setLanguage(lng)}
             >
-              <h3>
-                {t('features.theme.title', {
-                  theme: theme === 'light' ? 'dark' : 'light',
-                })}
-              </h3>
-              <p>{t('features.theme.description')} Next Themes .</p>
+              {t(`features.internationalization.${lng}`)}
             </button>
+          ))}
+        </div>
+      </div>
 
-            <div className={styles.card}>
-              <h3>{t('features.internationalization.title')}</h3>
-              <p>{t('features.internationalization.description')}</p>
-              {locales.map((lng) => (
-                <button
-                  key={lng}
-                  type="button"
-                  onClick={async () => setLanguage(lng)}
-                >
-                  {t(`features.internationalization.${lng}`)}
-                </button>
-              ))}
-            </div>
-          </div>
-        </main>
-
-        <footer className={styles.footer}>
+      {/* <footer className={styles.footer}>
           <a
             href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             target="_blank"
@@ -97,8 +106,9 @@ export default function Home() {
             {t('common:footer.powered')}{' '}
             <img src="/logo.svg" alt="Logo" className={styles.logo} />
           </a>
-        </footer>
-      </div>
+        </footer> */}
     </>
   );
 }
+
+Home.Layout = Layout;

@@ -1,23 +1,5 @@
 @use '@styles/theme';
 
-.container {
-  min-height: 100vh;
-  padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.main {
-  padding: 5rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .footer {
   width: 100%;
   height: 100px;
@@ -57,14 +39,13 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 800px;
   margin-top: 3rem;
 }
 
 .card {
   margin: 1rem;
-  flex-basis: 45%;
   padding: 1.5rem;
+  flex-basis: 100%;
   text-align: left;
   color: inherit;
   border: 2px solid var(--border-1);
@@ -94,15 +75,12 @@
     margin-top: 0.5rem;
     margin-right: 0.25rem;
   }
+
+  @include theme.breakpoint-up(md) {
+    flex-basis: 45%;
+  }
 }
 
 .logo {
   height: 1em;
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
 }

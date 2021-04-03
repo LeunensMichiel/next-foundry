@@ -1,0 +1,28 @@
+@use "sass:map";
+@use "breakpoints";
+@use "variables";
+
+// Containers
+.container {
+  width: 100%;
+  @each $size, $bp in variables.$grid-breakpoints {
+    @if $size != xs {
+      @include breakpoints.breakpoint-up($size) {
+        max-width: $bp;
+      }
+    }
+  }
+}
+
+@each $size, $bp in variables.$grid-breakpoints {
+  @if $size != xs {
+    .container-#{$size} {
+      width: 100%;
+      max-width: $bp;
+    }
+  }
+}
+
+.container-fluid {
+  width: 100%;
+}
