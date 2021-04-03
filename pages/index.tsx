@@ -24,28 +24,36 @@ export default function Home() {
           description: t('seo.description'),
         }}
       />
-      <h1 className={styles.title}>
-        {t('welcome')}{' '}
-        <a
-          href="https://nextjs.org"
-          rel="nofollow noopener noreferrer"
-          target="_blank"
-        >
-          Next.js!
-        </a>
-      </h1>
-
-      <p className={styles.description}>
-        {t('intro')} <code className={styles.code}>Michiel Leunens</code>
-      </p>
-
-      <div style={{ position: 'relative', width: '100%', height: '250px' }}>
+      <div
+        style={{
+          position: 'relative',
+          height: '0',
+          overflow: 'hidden',
+          paddingTop: '25%',
+        }}
+      >
         <Image
           alt="Mountains"
-          src="/test.jpg"
+          src="/assets/test.jpg"
           layout="fill"
           objectFit="cover"
+          objectPosition="50% 60%"
         />
+      </div>
+      <div className="container-lg mx-auto">
+        <h1 className={styles.title}>
+          {t('welcome')}{' '}
+          <a
+            href="https://nextjs.org"
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+          >
+            Next.js!
+          </a>
+        </h1>
+        <p className={styles.description}>
+          {t('intro')} <code className={styles.code}>Michiel Leunens</code>
+        </p>
       </div>
 
       <div className={classNames(styles.grid, 'container-lg', 'mx-auto')}>
@@ -79,7 +87,7 @@ export default function Home() {
               theme: theme === 'light' ? 'dark' : 'light',
             })}
           </h3>
-          <p>{t('features.theme.description')} Next Themes .</p>
+          <p>{t('features.theme.description')} Next Themes.</p>
         </button>
 
         <div className={styles.card}>

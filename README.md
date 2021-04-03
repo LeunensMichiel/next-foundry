@@ -22,12 +22,12 @@ This is an opinionated starter template in `Next.js v10` which uses all best pra
 - :white_check_mark: Fully featured design-system (colors, typography,...)
 - :white_check_mark: Theming with `next-theming` (Complete with dark theme)
 - :x: Animations with `Framer Motion`
-- :x: Easy class toggling
+- :white_check_mark: Easy class toggling
 
 ### Components & Functionalities
 
-- :x: Responsive skeleton
-- :x: Dynamic layout
+- :white_check_mark: Responsive skeleton
+- :white_check_mark: Dynamic layout
 - :white_check_mark: SEO-component with `next-seo`
 - :x: Cookie consent
 - :white_check_mark: Internationalization (i18n)
@@ -39,13 +39,14 @@ This is an opinionated starter template in `Next.js v10` which uses all best pra
 
 ### UI-components
 
-- :x: Responsive Grid-system
+- :white_check_mark: Responsive Grid-system
 - :x: Navigation
 - :x: Footer
 - :x: Modern, accessible Modal
 - :x: Snackbar
 - :x: Logo
 - :x: Button
+- :x: Next-Image w/ Aspect Ratio hack
 - :x: Links
 - :x: Form
 - :x: Input fields w/ checkbox and switch
