@@ -48,7 +48,7 @@ export default function Home() {
         />
       </div>
 
-      <div className={classNames(styles.grid, 'container')}>
+      <div className={classNames(styles.grid, 'container-lg', 'mx-auto')}>
         <a
           href="https://github.com/LeunensMichiel/nextjs-starter-template/blob/master/README.md"
           className={styles.card}
