@@ -23,4 +23,10 @@
   --text-link: #{theme.$amber-500};
   --text-hover: #{theme.$amber-300};
   --text-active: #{theme.$amber-500};
+
+  --icon-primary: #{theme.$white};
+  --icon-accent: #{theme.$purple-600};
+  --icon-contrasted: #{theme.$white};
+  --icon-hover: #{theme.$purple-400};
+  --icon-active: #{theme.$purple-600};
 }

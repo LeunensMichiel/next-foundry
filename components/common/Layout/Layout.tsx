@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { FC, ReactNode } from 'react';
-import { Footer } from '@components/common';
+import { Footer, Navbar } from '@components/common';
 
 import styles from './Layout.module.scss';
 
@@ -10,7 +10,7 @@ type Props = {
 
 const Layout: FC<Props> = ({ children }: Props) => (
   <>
-    {/* <Navbar /> */}
+    <Navbar />
     <main className={classNames(styles.mainContainer)}>{children}</main>
     <Footer />
   </>

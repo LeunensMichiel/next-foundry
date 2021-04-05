@@ -2,7 +2,6 @@ import { useTheme } from 'next-themes';
 import { NextSeo } from 'next-seo';
 import useTranslation from 'next-translate/useTranslation';
 import setLanguage from 'next-translate/setLanguage';
-import Image from 'next/image';
 
 import styles from '@styles/pages/index.module.scss';
 import { Layout } from '@components/common';
@@ -24,14 +23,7 @@ export default function Home() {
           description: t('seo.description'),
         }}
       />
-      <div
-        style={{
-          position: 'relative',
-          height: '0',
-          overflow: 'hidden',
-          paddingTop: '25%',
-        }}
-      >
+      {/* <div className={styles.hero}>
         <Image
           alt="Mountains"
           src="/assets/test.jpg"
@@ -39,8 +31,8 @@ export default function Home() {
           objectFit="cover"
           objectPosition="50% 60%"
         />
-      </div>
-      <div className="container-lg mx-auto">
+      </div> */}
+      <div className={classNames(styles.intro, 'container-lg', 'mx-auto')}>
         <h1 className={styles.title}>
           {t('welcome')}{' '}
           <a

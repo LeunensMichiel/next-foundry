@@ -22,5 +22,8 @@
 }
 
 .logo {
-  height: 1em;
+  height: 18px;
+  path {
+    @include theme.transition(fill);
+  }
 }

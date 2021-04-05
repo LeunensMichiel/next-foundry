@@ -56,7 +56,6 @@ sub,
 i,
 b {
   word-break: break-word;
-  hyphens: auto;
 }
 
 h1,
@@ -133,6 +132,17 @@ button {
   padding: 0.25rem 0.5rem;
   &:focus {
     outline: var(--border-accent-1);
+  }
+
+  &.reset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 

@@ -44,7 +44,7 @@ This is an opinionated starter template in `Next.js v10.1` which uses all best p
 - :white_check_mark: Responsive Grid-system
 - :x: Modern, accessible Modal
 - :x: Snackbar
-- :x: Logo
+- :white_check_mark: Logo
 - :x: Button
 - :x: Next-Image w/ Aspect Ratio hack
 - :x: Links

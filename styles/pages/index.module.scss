@@ -1,5 +1,8 @@
 @use '@styles/theme';
 
+.intro {
+  padding: 0 1rem;
+}
 .title {
   margin: 1.5rem 0;
   line-height: 1.15;
@@ -15,11 +18,17 @@
   margin-bottom: 1rem;
 }
 
+.hero {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  padding-top: 33%;
+}
+
 .grid {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 3rem;
 }
 
 .card {
@@ -49,10 +58,11 @@
   p {
     margin: 0;
     font-size: 1.25rem;
+    margin-bottom: 0.25rem;
   }
 
   button {
-    margin-top: 0.5rem;
+    margin-top: 0.25rem;
     margin-right: 0.25rem;
   }
 

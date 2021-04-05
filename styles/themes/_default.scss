@@ -26,6 +26,12 @@
   --text-active: #{theme.$purple-600};
   --text-contrasted: #{theme.$white};
 
+  --icon-primary: #{theme.$black};
+  --icon-accent: #{theme.$purple-600};
+  --icon-contrasted: #{theme.$white};
+  --icon-hover: #{theme.$purple-400};
+  --icon-active: #{theme.$purple-600};
+
   --primary-50: #{theme.$amber-50};
   --primary-100: #{theme.$amber-100};
   --primary-200: #{theme.$amber-200};
