@@ -32,12 +32,11 @@ This is an opinionated starter template in `Next.js v10.1` which uses all best p
 - :x: Cookie consent
 - :white_check_mark: Internationalization (i18n)
 - :x: Form validation
-- :x: Navigation
+- :white_check_mark: Navigation
 - :white_check_mark: Footer
 - :x: 404 page
 - :x: Error page
 - :x: Thank you page (forms)
-- :x: Inline SVG support
 
 ### UI-components
 
@@ -71,7 +70,7 @@ This is an opinionated starter template in `Next.js v10.1` which uses all best p
 - :x: Inter-browser compatibility
 - :x: IE-11 no-support warning
 - :x: Caching
-- :x: Body Scroll Lock
+- :white_check_mark: Body Scroll Lock
 - :x: Cookie management
 
 ### Maybe

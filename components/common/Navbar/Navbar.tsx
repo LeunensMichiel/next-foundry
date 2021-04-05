@@ -1,7 +1,5 @@
-import { Chevron, Moon, Sun } from '@components/icons';
-import { Logo } from '@components/ui';
+import { Logo, ThemeToggle } from '@components/ui';
 import cx from 'classnames';
-import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import {
@@ -13,9 +11,9 @@ import {
 import MenuToggle from './MenuToggle';
 
 import styles from './Navbar.module.scss';
+import MenuItems from './MenuItems';
 
 const Navbar = ({ isTransparent = false }) => {
-  const { setTheme, theme } = useTheme();
   const [navDrawerOpen, setNavDrawerOpen] = useState(false);
   const ref = useRef() as React.MutableRefObject<HTMLDivElement>;
 
@@ -38,6 +36,7 @@ const Navbar = ({ isTransparent = false }) => {
         [styles.headerTransparent]: isTransparent,
         [styles.navContainerOpen]: navDrawerOpen,
       })}
+      ref={ref}
     >
       <div className={cx(styles.headerContainer, 'container-lg')}>
         <nav
@@ -50,15 +49,11 @@ const Navbar = ({ isTransparent = false }) => {
               <Logo className={styles.logo} />
             </Link>
             <div className={cx(styles.toolbarIcons)}>
-              <button
+              <ThemeToggle
                 className={cx('reset', styles.toolbarGeneralIcon, {
                   [styles.menuButtonTransparent]: isTransparent,
                 })}
-                type="button"
-                onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-              >
-                {theme === 'light' ? <Moon /> : <Sun />}
-              </button>
+              />
               <MenuToggle
                 className={cx('reset', styles.hamburger, {
                   [styles.menuButtonTransparent]: isTransparent,
@@ -68,29 +63,10 @@ const Navbar = ({ isTransparent = false }) => {
                 }
               />
             </div>
-            <div
-              className={cx(styles.navMenuContainer, {
-                [styles.navContainerOpen]: navDrawerOpen,
-                [styles.navigationTransparent]: isTransparent,
-              })}
-              ref={ref}
-            >
-              <ul className={cx(styles.navMenuOne)}>
-                <li>
-                  <Link href="/">Page 1</Link>
-                  <Chevron />
-                </li>
-                <li>
-                  <Link href="/">Page 2</Link>
-                </li>
-                <li>
-                  <Link href="/">Page 3</Link>
-                </li>
-                <li>
-                  <Link href="/">Page 4</Link>
-                </li>
-              </ul>
-            </div>
+            <MenuItems
+              isTransparent={isTransparent}
+              navDrawerOpen={navDrawerOpen}
+            />
           </div>
         </nav>
       </div>

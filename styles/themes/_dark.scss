@@ -12,21 +12,21 @@
   --border-2: #{theme.$gray-700};
   --border-3: #{theme.$gray-600};
   --border-4: #{theme.$gray-500};
-  --border-accent-0: #{theme.$amber-300};
-  --border-accent-1: #{theme.$amber-500};
-  --border-accent-2: #{theme.$amber-700};
+  --border-accent-0: #{theme.$purple-300};
+  --border-accent-1: #{theme.$purple-500};
+  --border-accent-2: #{theme.$purple-700};
 
   --text-primary: #{theme.$white};
   --text-secondary: #{theme.$gray-50};
   --text-tertiary: #{theme.$gray-100};
-  --text-accent: #{theme.$amber-500};
-  --text-link: #{theme.$amber-500};
-  --text-hover: #{theme.$amber-300};
-  --text-active: #{theme.$amber-500};
+  --text-accent: #{theme.$purple-500};
+  --text-link: #{theme.$purple-500};
+  --text-hover: #{theme.$purple-400};
+  --text-active: #{theme.$purple-500};
 
   --icon-primary: #{theme.$white};
-  --icon-accent: #{theme.$purple-600};
+  --icon-accent: #{theme.$purple-500};
   --icon-contrasted: #{theme.$white};
   --icon-hover: #{theme.$purple-400};
-  --icon-active: #{theme.$purple-600};
+  --icon-active: #{theme.$purple-500};
 }
