@@ -130,6 +130,7 @@ a {
 
 button {
   padding: 0.25rem 0.5rem;
+  @include theme.transition(background);
   &:focus {
     outline: var(--border-accent-1);
   }

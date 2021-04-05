@@ -12,6 +12,10 @@
   &.headerTransparent {
     background-color: transparent;
   }
+
+  &.navContainerOpen {
+    position: fixed;
+  }
 }
 
 .headerContainer {
@@ -20,13 +24,27 @@
   padding: 0 0.5rem 0 1rem;
 }
 
+.navigation {
+  padding: 1rem 1rem;
+
+  &.navigationTransparent {
+    padding: 2.5rem 1rem 1rem;
+  }
+
+  @include theme.breakpoint-up(lg) {
+    display: flex;
+    align-items: center;
+  }
+}
+
 .toolbar {
   position: relative;
-  z-index: 1000000;
+  z-index: theme.$z-high;
   display: flex;
   justify-content: space-between;
   align-items: center;
   min-height: 56px;
+  width: 100%;
 }
 
 .toolbarIcons {
@@ -40,44 +58,65 @@
     &.menuButtonTransparent {
       background: rgba(255, 255, 255, 0.15) !important;
     }
+    &.toolbarGeneralIcon {
+      svg {
+        @include theme.transition(color, fill, stroke);
+        &:hover {
+          color: var(--icon-accent);
+          stroke: var(--icon-accent);
+        }
+      }
+    }
+  }
+
+  @include theme.breakpoint-up(lg) {
+    order: 2;
+    .hamburger {
+      display: none;
+    }
   }
 }
 
 .logo {
+  cursor: pointer;
   path {
     @include theme.transition(fill);
   }
-}
-
-.navigation {
-  padding: 1rem 1rem;
-
-  &.navigationTransparent {
-    padding: 2.5rem 1rem 1rem;
+  @include theme.breakpoint-up(lg) {
+    width: 8rem;
+    height: auto;
   }
 }
 
-.navContainer {
+.navMenuContainer {
   position: fixed;
-  top: 0;
+  top: 5.5rem;
   right: 0;
   left: 0;
   bottom: 0;
   width: 100%;
   z-index: theme.$z-mid;
-  padding-top: 6.5rem;
   padding-bottom: 1rem;
   overflow-y: auto;
   background-color: var(--background-0);
   transform: translateX(100%);
-  @include theme.transition(transform);
+  @include theme.transition(transform, background-color);
 
   &.navContainerOpen {
     transform: translateX(0);
   }
 
   &.navigationTransparent {
-    padding-top: 8rem;
+    top: 7rem;
+  }
+
+  @include theme.breakpoint-up(lg) {
+    position: static;
+    transform: none;
+    padding: 0;
+    padding-left: 2.5rem;
+    background-color: transparent;
+    order: 1;
   }
 }
 
@@ -106,6 +145,31 @@
       font-size: 1.125rem;
       color: var(--text-primary);
       @include theme.transition(color);
+    }
+  }
+
+  @include theme.breakpoint-up(lg) {
+    padding: 0;
+    display: flex;
+    li {
+      padding: 0.5rem 1rem;
+      &:hover,
+      &:focus {
+        background-color: transparent;
+        a {
+          color: var(--text-link);
+        }
+        svg {
+          transform: rotate(-90deg);
+        }
+      }
+      a {
+        font-size: 1rem;
+      }
+      svg {
+        transform: rotate(90deg);
+        @include theme.transition(transform, color, fill, stroke);
+      }
     }
   }
 }

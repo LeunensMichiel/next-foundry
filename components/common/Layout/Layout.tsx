@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import cx from 'classnames';
 import { FC, ReactNode } from 'react';
 import { Footer, Navbar } from '@components/common';
 
@@ -11,7 +11,7 @@ type Props = {
 const Layout: FC<Props> = ({ children }: Props) => (
   <>
     <Navbar />
-    <main className={classNames(styles.mainContainer)}>{children}</main>
+    <main className={cx(styles.mainContainer)}>{children}</main>
     <Footer />
   </>
 );

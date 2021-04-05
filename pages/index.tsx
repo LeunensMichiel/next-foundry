@@ -2,11 +2,11 @@ import { useTheme } from 'next-themes';
 import { NextSeo } from 'next-seo';
 import useTranslation from 'next-translate/useTranslation';
 import setLanguage from 'next-translate/setLanguage';
+import cx from 'classnames';
 
 import styles from '@styles/pages/index.module.scss';
 import { Layout } from '@components/common';
 import i18nConfig from 'i18n.json';
-import classNames from 'classnames';
 
 const { locales } = i18nConfig;
 
@@ -32,7 +32,7 @@ export default function Home() {
           objectPosition="50% 60%"
         />
       </div> */}
-      <div className={classNames(styles.intro, 'container-lg', 'mx-auto')}>
+      <div className={cx(styles.intro, 'container-lg', 'mx-auto')}>
         <h1 className={styles.title}>
           {t('welcome')}{' '}
           <a
@@ -48,7 +48,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className={classNames(styles.grid, 'container-lg', 'mx-auto')}>
+      <div className={cx(styles.grid, 'container-lg', 'mx-auto')}>
         <a
           href="https://github.com/LeunensMichiel/nextjs-starter-template/blob/master/README.md"
           className={styles.card}

@@ -36,6 +36,7 @@ const Navbar = ({ isTransparent = false }) => {
     <header
       className={cx(styles.header, {
         [styles.headerTransparent]: isTransparent,
+        [styles.navContainerOpen]: navDrawerOpen,
       })}
     >
       <div className={cx(styles.headerContainer, 'container-lg')}>
@@ -50,7 +51,7 @@ const Navbar = ({ isTransparent = false }) => {
             </Link>
             <div className={cx(styles.toolbarIcons)}>
               <button
-                className={cx('reset', {
+                className={cx('reset', styles.toolbarGeneralIcon, {
                   [styles.menuButtonTransparent]: isTransparent,
                 })}
                 type="button"
@@ -59,7 +60,7 @@ const Navbar = ({ isTransparent = false }) => {
                 {theme === 'light' ? <Moon /> : <Sun />}
               </button>
               <MenuToggle
-                className={cx('reset', {
+                className={cx('reset', styles.hamburger, {
                   [styles.menuButtonTransparent]: isTransparent,
                 })}
                 handleToggle={() =>
@@ -67,28 +68,29 @@ const Navbar = ({ isTransparent = false }) => {
                 }
               />
             </div>
-          </div>
-          <div
-            className={cx(styles.navContainer, {
-              [styles.navContainerOpen]: navDrawerOpen,
-              [styles.navigationTransparent]: isTransparent,
-            })}
-            ref={ref}
-          >
-            <ul className={cx(styles.navMenuOne)}>
-              <li>
-                <Link href="/">Page 1</Link>
-                <Chevron />
-              </li>
-              <li>
-                <Link href="/">Page 2</Link>
-                <Chevron />
-              </li>
-              <li>
-                <Link href="/">Page 3</Link>
-                <Chevron />
-              </li>
-            </ul>
+            <div
+              className={cx(styles.navMenuContainer, {
+                [styles.navContainerOpen]: navDrawerOpen,
+                [styles.navigationTransparent]: isTransparent,
+              })}
+              ref={ref}
+            >
+              <ul className={cx(styles.navMenuOne)}>
+                <li>
+                  <Link href="/">Page 1</Link>
+                  <Chevron />
+                </li>
+                <li>
+                  <Link href="/">Page 2</Link>
+                </li>
+                <li>
+                  <Link href="/">Page 3</Link>
+                </li>
+                <li>
+                  <Link href="/">Page 4</Link>
+                </li>
+              </ul>
+            </div>
           </div>
         </nav>
       </div>
