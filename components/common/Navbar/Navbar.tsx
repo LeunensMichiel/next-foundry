@@ -8,14 +8,23 @@ import {
   clearAllBodyScrollLocks,
 } from 'body-scroll-lock';
 
+import { useRouter } from 'next/router';
 import MenuToggle from './MenuToggle';
+import NavItems from './NavItems';
 
 import styles from './Navbar.module.scss';
-import MenuItems from './MenuItems';
 
 const Navbar = ({ isTransparent = false }) => {
+  const router = useRouter();
+
   const [navDrawerOpen, setNavDrawerOpen] = useState(false);
   const ref = useRef() as React.MutableRefObject<HTMLDivElement>;
+
+  useEffect(() => {
+    if (navDrawerOpen) {
+      setNavDrawerOpen(false);
+    }
+  }, [router.asPath]);
 
   useEffect(() => {
     if (ref.current) {
@@ -50,12 +59,12 @@ const Navbar = ({ isTransparent = false }) => {
             </Link>
             <div className={cx(styles.toolbarIcons)}>
               <ThemeToggle
-                className={cx('reset', styles.toolbarGeneralIcon, {
+                className={cx('buttonReset', styles.toolbarGeneralIcon, {
                   [styles.menuButtonTransparent]: isTransparent,
                 })}
               />
               <MenuToggle
-                className={cx('reset', styles.hamburger, {
+                className={cx('buttonReset', styles.hamburger, {
                   [styles.menuButtonTransparent]: isTransparent,
                 })}
                 handleToggle={() =>
@@ -63,7 +72,7 @@ const Navbar = ({ isTransparent = false }) => {
                 }
               />
             </div>
-            <MenuItems
+            <NavItems
               isTransparent={isTransparent}
               navDrawerOpen={navDrawerOpen}
             />

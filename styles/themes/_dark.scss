@@ -19,14 +19,14 @@
   --text-primary: #{theme.$white};
   --text-secondary: #{theme.$gray-50};
   --text-tertiary: #{theme.$gray-100};
-  --text-accent: #{theme.$purple-500};
-  --text-link: #{theme.$purple-500};
+  --text-accent: #{theme.$purple-400};
+  --text-link: #{theme.$purple-400};
   --text-hover: #{theme.$purple-400};
-  --text-active: #{theme.$purple-500};
+  --text-active: #{theme.$purple-400};
 
   --icon-primary: #{theme.$white};
   --icon-accent: #{theme.$purple-500};
   --icon-contrasted: #{theme.$white};
   --icon-hover: #{theme.$purple-400};
-  --icon-active: #{theme.$purple-500};
+  --icon-active: #{theme.$purple-400};
 }

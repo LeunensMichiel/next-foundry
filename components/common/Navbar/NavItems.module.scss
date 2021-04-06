@@ -1,0 +1,49 @@
+@use '@styles/theme';
+
+.navMenuContainer {
+  position: fixed;
+  top: 5.5rem;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: theme.$z-mid;
+  padding-bottom: 1rem;
+  overflow-y: auto;
+  background-color: var(--background-0);
+  transform: translateX(100%);
+  @include theme.transition(transform, background-color);
+
+  &.navContainerOpen {
+    transform: translateX(0);
+  }
+
+  &.navigationTransparent {
+    top: 7rem;
+  }
+
+  @include theme.breakpoint-up(lg) {
+    position: static;
+    transform: none;
+    padding: 0;
+    padding-left: 2.5rem;
+    background-color: transparent;
+    order: 1;
+    overflow-y: visible;
+  }
+}
+
+.menuLevelOne {
+  padding: 0 1rem;
+  width: 100%;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  cursor: pointer;
+
+  @include theme.breakpoint-up(lg) {
+    padding: 0;
+    display: flex;
+  }
+}
