@@ -1,13 +1,13 @@
 @use '@styles/theme';
 
 .linkContainer {
-  padding: 1rem;
   border-radius: theme.$border-radius;
   outline: none;
   @include theme.transition(background-color);
 
   a,
   button {
+    padding: 1rem !important;
     display: block;
     width: 100%;
     font-weight: 700;
@@ -30,12 +30,12 @@
         display: block;
       }
     }
-    padding: 0.5rem 1rem;
     a,
     button {
       &:hover {
         color: var(--text-link);
       }
+      padding: 0.5rem 1rem !important;
       font-size: 1rem !important;
     }
     svg {

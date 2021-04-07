@@ -40,7 +40,6 @@
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  cursor: pointer;
 
   @include theme.breakpoint-up(lg) {
     padding: 0;
