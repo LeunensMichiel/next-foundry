@@ -12,21 +12,29 @@
   --border-2: #{theme.$gray-700};
   --border-3: #{theme.$gray-600};
   --border-4: #{theme.$gray-500};
-  --border-accent-0: #{theme.$purple-300};
-  --border-accent-1: #{theme.$purple-500};
-  --border-accent-2: #{theme.$purple-700};
+  --border-contrasted: #{theme.$white};
+  --border-primary-0: #{theme.$purple-200};
+  --border-primary-1: #{theme.$purple-400};
+  --border-primary-2: #{theme.$purple-600};
 
-  --text-primary: #{theme.$white};
-  --text-secondary: #{theme.$gray-50};
-  --text-tertiary: #{theme.$gray-100};
-  --text-accent: #{theme.$purple-400};
+  --text-0: #{theme.$white};
+  --text-1: #{theme.$gray-500};
+  --text-2: #{theme.$gray-100};
+  --text-3: #{theme.$gray-200};
+  --text-primary: #{theme.$purple-400};
+  --text-secondary: #{theme.$amber-500};
   --text-link: #{theme.$purple-400};
   --text-hover: #{theme.$purple-400};
   --text-active: #{theme.$purple-400};
 
-  --icon-primary: #{theme.$white};
-  --icon-accent: #{theme.$purple-500};
-  --icon-contrasted: #{theme.$white};
+  --icon-0: #{theme.$white};
+  --icon-primary: #{theme.$purple-600};
+  --icon-secondary: #{theme.$amber-600};
   --icon-hover: #{theme.$purple-400};
   --icon-active: #{theme.$purple-400};
+
+  --button-primary: #{theme.$purple-400};
+  --button-neutral: #{theme.$gray-900};
+
+  --button-neutral-disabled: #{theme.$gray-200};
 }

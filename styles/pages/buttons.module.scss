@@ -1,3 +1,5 @@
+@use '@styles/theme';
+
 .buttonsContainer {
   margin: 3rem 0;
 }
@@ -10,4 +12,9 @@
   background-color: var(--background-2);
   border-radius: var(--border-radius);
   padding: 1.5rem;
+  @include theme.transition(background-color);
+
+  &.dark {
+    background: linear-gradient(to right, #7f00ff, #e100ff);
+  }
 }

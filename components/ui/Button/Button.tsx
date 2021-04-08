@@ -30,6 +30,7 @@ interface Props<C extends React.ElementType> {
   disabled?: boolean;
   active?: boolean;
   stretched?: boolean;
+  uppercased?: boolean;
   iconLeft?: ComponentPropsWithoutRef<'svg'> | string;
   iconRight?: ComponentPropsWithoutRef<'svg'> | string;
 }
@@ -50,20 +51,26 @@ const Button = <C extends React.ElementType = 'button'>({
   outlined = false,
   size = 'md',
   stretched = false,
+  uppercased = false,
   variant = 'primary',
   ...rest
 }: ButtonProps<C>) => {
   const Component = as || 'button';
   const rootClassName = cn(
-    styles.root,
+    styles.buttonBase,
+    // styles['button-primary'],
     {
-      [`${variant}`]: true,
-      [`${size}`]: true,
+      [styles[`button-${variant}`]]: true,
+      [styles[`button-${size}`]]: true,
       [styles.stretched]: stretched,
-      [styles.circular]: circular,
+      [styles['button-circular']]: circular && !children,
+      [styles['button-rounded']]: circular && children,
       [styles.loading]: loading,
       [styles.outlined]: outlined,
       [styles.disabled]: disabled,
+      [styles.uppercased]: uppercased,
+      [styles[`button-icon-left`]]: !!iconLeft && children,
+      [styles[`button-icon-right`]]: !!iconRight && children,
     },
     className
   );
@@ -73,12 +80,14 @@ const Button = <C extends React.ElementType = 'button'>({
       aria-pressed={active}
       className={rootClassName}
       data-variant={variant}
+      aria-disabled={disabled}
       disabled={disabled}
+      tabIndex={disabled ? -1 : 0}
       {...rest}
     >
-      {iconLeft}
+      <span>{iconLeft}</span>
       {children}
-      {iconRight}
+      <span>{iconRight}</span>
       {/* {loading && (
         <i className="pl-2 m-0 flex">
           <LoadingDots />

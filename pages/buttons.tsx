@@ -1,4 +1,5 @@
 import { Layout } from '@components/common';
+import { Chevron, Moon, Sun } from '@components/icons';
 import { Button } from '@components/ui';
 
 import styles from '@styles/pages/buttons.module.scss';
@@ -29,9 +30,6 @@ const Page2 = () => (
         <Button type="button" variant="info">
           Info
         </Button>
-        <Button type="button" variant="transparent">
-          Transparent
-        </Button>
       </div>
       <div className={styles.buttonRow}>
         <Button type="button" variant="primary" outlined>
@@ -55,20 +53,35 @@ const Page2 = () => (
         <Button type="button" variant="info" outlined>
           Info
         </Button>
+      </div>
+      <div className={`${styles.buttonRow} ${styles.dark}`}>
+        <Button type="button" variant="transparent">
+          Transparent
+        </Button>
         <Button type="button" variant="transparent" outlined>
           Transparent
         </Button>
       </div>
       <div className={styles.buttonRow}>
-        <Button type="button">Icon Left</Button>
-        <Button type="button">Icon Right</Button>
+        <Button type="button" iconLeft={<Moon />}>
+          Icon Left
+        </Button>
+        <Button type="button" iconRight={<Chevron />}>
+          Icon Right
+        </Button>
         <Button type="button">🔥</Button>
         <Button type="button" iconLeft="🔥">
           Emoji
         </Button>
       </div>
       <div className={styles.buttonRow}>
-        <Button type="button" iconLeft="🔥" circular />
+        <Button type="button" iconLeft={<Sun />} circular />
+        <Button type="button" circular>
+          Rounded
+        </Button>
+        <Button type="button" uppercased>
+          uppercased
+        </Button>
         <Button
           as="a"
           href="https://leunesmedia.com"
@@ -112,6 +125,13 @@ const Page2 = () => (
         <Button type="button" iconLeft="🔥" circular size="md" />
         <Button type="button" iconLeft="🔥" circular size="lg" />
         <Button type="button" iconLeft="🔥" circular size="xl" />
+      </div>
+      <div className={styles.buttonRow}>
+        <Button type="button" iconLeft={<Moon />} circular size="xs" />
+        <Button type="button" iconLeft={<Moon />} circular size="sm" />
+        <Button type="button" iconLeft={<Moon />} circular size="md" />
+        <Button type="button" iconLeft={<Moon />} circular size="lg" />
+        <Button type="button" iconLeft={<Moon />} circular size="xl" />
       </div>
     </div>
   </div>

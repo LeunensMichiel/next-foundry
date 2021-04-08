@@ -45,7 +45,7 @@ This is an opinionated starter template in `Next.js v10.1` which uses all best p
 - :x: Modern, accessible Modal
 - :x: Snackbar
 - :white_check_mark: Logo
-- :x: Button
+- :white_check_mark: Button
 - :x: Next-Image w/ Aspect Ratio hack
 - :x: Links
 - :x: Form

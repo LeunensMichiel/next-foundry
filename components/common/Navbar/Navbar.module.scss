@@ -56,14 +56,14 @@
     margin-left: 0.5rem !important;
     border-radius: theme.$border-radius;
     &.menuButtonTransparent {
-      background: rgba(255, 255, 255, 0.15) !important;
+      background: var(--background-transparent) !important;
     }
     &.toolbarGeneralIcon {
       svg {
         @include theme.transition(color, fill, stroke);
         &:hover {
-          color: var(--icon-accent);
-          stroke: var(--icon-accent);
+          color: var(--icon-primary);
+          stroke: var(--icon-primary);
         }
       }
     }

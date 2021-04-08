@@ -20,7 +20,7 @@ html {
 html,
 body {
   font-family: var(--font-family-base);
-  color: var(--text-primary);
+  color: var(--text-0);
   background-color: var(--background-0);
   @include theme.transition(background-color, color, border-color);
 }
@@ -132,7 +132,7 @@ button {
   padding: 0.25rem 0.5rem;
   @include theme.transition(background);
   &:focus {
-    outline: var(--border-accent-1);
+    outline: var(--border-primary-1);
   }
 
   &.buttonReset {
