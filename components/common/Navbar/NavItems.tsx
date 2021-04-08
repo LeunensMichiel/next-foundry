@@ -14,24 +14,20 @@ const NavItems = ({ navDrawerOpen = false, isTransparent = false }) => (
     <ul className={cx(styles.menuLevelOne)}>
       <NavItem label="Page 1">
         <DropdownMenu>
-          <DropdownMenuItem label="Subpage 1" internalLink={{ href: '/' }} />
+          <DropdownMenuItem label="#test" internalLink={{ href: '/#test' }} />
           <DropdownMenuItem
-            label="Subpage 2"
-            internalLink={{ href: '/#test' }}
+            label="External to Next.js"
+            externalLink={{
+              href: 'https://nextjs.org',
+              target: '_blank',
+              rel: 'nofollow noopener noreferrer',
+            }}
           />
-          <DropdownMenuItem label="Subpage 3" internalLink={{ href: '/' }} />
+          <DropdownMenuItem label="😎 Emoji" internalLink={{ href: '/' }} />
         </DropdownMenu>
       </NavItem>
-      <NavItem label="Page 2" link={{ href: '/page-2' }} />
+      <NavItem label="Buttons" link={{ href: '/buttons' }} />
       <NavItem label="Page 3" link={{ href: '/' }} />
-      <NavItem label="Page 4">
-        <DropdownMenu>
-          <DropdownMenuItem label="Subpage 1" internalLink={{ href: '/' }} />
-          <DropdownMenuItem label="Subpage 2" internalLink={{ href: '/' }} />
-          <DropdownMenuItem label="Subpage 3" internalLink={{ href: '/' }} />
-        </DropdownMenu>
-      </NavItem>
-      <NavItem label="Page 5" link={{ href: '/' }} />
     </ul>
   </div>
 );

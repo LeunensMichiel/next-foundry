@@ -1,0 +1,13 @@
+.buttonsContainer {
+  margin: 3rem 0;
+}
+.buttonRow {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+  background-color: var(--background-2);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+}

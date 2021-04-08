@@ -10,7 +10,7 @@ import i18nConfig from 'i18n.json';
 
 const { locales } = i18nConfig;
 
-export default function Home() {
+const Home = () => {
   const { setTheme, theme } = useTheme();
   const { t } = useTranslation('home');
   return (
@@ -98,6 +98,8 @@ export default function Home() {
       </div>
     </>
   );
-}
+};
+
+export default Home;
 
 Home.Layout = Layout;
