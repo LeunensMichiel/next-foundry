@@ -5,6 +5,7 @@ import {
   ComponentPropsWithRef,
   ComponentPropsWithoutRef,
 } from 'react';
+import { Spinner } from '..';
 
 import styles from './Button.module.scss';
 
@@ -17,7 +18,6 @@ interface Props<C extends React.ElementType> {
   variant?:
     | 'primary'
     | 'secondary'
-    | 'neutral'
     | 'success'
     | 'danger'
     | 'warning'
@@ -52,23 +52,23 @@ const Button = <C extends React.ElementType = 'button'>({
   size = 'md',
   stretched = false,
   uppercased = false,
-  variant = 'neutral',
+  variant,
   ...rest
 }: ButtonProps<C>) => {
   const Component = as || 'button';
   const rootClassName = cn(
     styles.buttonBase,
     {
-      [styles[`button-${variant}`]]: true,
+      [styles[`button-${variant}`]]: !!variant,
+      [styles.outlined]: outlined,
+      [styles.loading]: loading,
+      [styles.disabled]: disabled,
       [styles[`button-${size}`]]: true,
-      [styles.stretched]: stretched,
       [styles['button-circular']]: circular && !children,
       [styles['button-rounded']]: circular && children,
-      [styles.loading]: loading,
-      [styles.outlined]: outlined,
-      [styles.disabled]: disabled,
+      [styles.stretched]: stretched,
       [styles.uppercased]: uppercased,
-      [styles[`button-icon-left`]]: !!iconLeft && children,
+      [styles[`button-icon-left`]]: (!!iconLeft || loading) && children,
       [styles[`button-icon-right`]]: !!iconRight && children,
     },
     className
@@ -84,14 +84,9 @@ const Button = <C extends React.ElementType = 'button'>({
       tabIndex={disabled ? -1 : 0}
       {...rest}
     >
-      <span>{iconLeft}</span>
+      <span>{loading ? <Spinner /> : iconLeft}</span>
       {children}
       <span>{iconRight}</span>
-      {/* {loading && (
-        <i className="pl-2 m-0 flex">
-          <LoadingDots />
-        </i>
-      )} */}
     </Component>
   );
 };

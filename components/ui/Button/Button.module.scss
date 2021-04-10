@@ -1,7 +1,6 @@
 @use '@styles/theme';
 
 .buttonBase {
-  border: none;
   margin: 0;
   line-height: 1;
   padding: 0.25rem 0.5rem;
@@ -10,9 +9,105 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
+  border: 0.125rem solid var(--color-btn-border);
   border-radius: var(--border-radius);
+  background-color: var(--color-btn-bg);
   cursor: pointer;
-  @include theme.transition(background-color, color, border-color);
+  color: var(--color-btn-text);
+  @include theme.transition(background-color, border, color, filter);
+  @include theme.drop-shadow-colored(sm, var(--color-btn-shadow));
+
+  svg {
+    stroke: var(--color-btn-icon);
+  }
+
+  &:hover {
+    border: 0.125rem solid var(--color-btn-hover-border);
+    background-color: var(--color-btn-hover-bg);
+    color: var(--color-btn-hover-text);
+    @include theme.drop-shadow-colored(md, var(--color-btn-shadow));
+    svg {
+      stroke: var(--color-btn-hover-icon);
+    }
+  }
+  &:focus {
+    border: 0.125rem solid var(--color-btn-focus-border);
+    background-color: var(--color-btn-focus-bg);
+    color: var(--color-btn-focus-text);
+    @include theme.drop-shadow-colored(sm, var(--color-btn-shadow));
+    svg {
+      stroke: var(--color-btn-focus-icon);
+    }
+  }
+  &:active {
+    border: 0.125rem solid var(--color-btn-active-border);
+    background-color: var(--color-btn-active-bg);
+    color: var(--color-btn-active-text);
+    @include theme.drop-shadow-colored(sm, var(--color-btn-shadow));
+    svg {
+      stroke: var(--color-btn-active-icon);
+    }
+  }
+
+  &.outlined {
+    background-color: transparent;
+    color: var(--color-btn-border);
+    border: 0.125rem solid var(--color-btn-border);
+    filter: none;
+    svg {
+      stroke: var(--color-btn-border);
+    }
+    &:hover {
+      border: 0.125rem solid var(--color-btn-hover-border);
+      background-color: none;
+      color: var(--color-btn-hover-border);
+      filter: none;
+    }
+    &:focus {
+      border: 0.125rem solid var(--color-btn-focus-border);
+      background-color: none;
+      color: var(--color-btn-focus-border);
+      filter: none;
+    }
+    &:active {
+      border: 0.125rem solid var(--color-btn-active-border);
+      background-color: none;
+      color: var(--color-btn-active-border);
+      filter: none;
+    }
+    &.disabled {
+      border: 0.125rem solid var(--color-btn-disabled-border);
+      background-color: transparent;
+      color: var(--color-btn-disabled-text);
+      svg {
+        stroke: var(--color-btn-disabled-icon);
+      }
+      &:hover,
+      &:focus,
+      &:active {
+        border: 0.125rem solid var(--color-btn-disabled-border);
+        background-color: transparent;
+        color: var(--color-btn-disabled-text);
+      }
+    }
+  }
+  &.disabled {
+    border: 0.125rem solid var(--color-btn-disabled-border);
+    background-color: var(--color-btn-disabled-bg);
+    color: var(--color-btn-disabled-text);
+    filter: none;
+    svg {
+      stroke: var(--color-btn-disabled-icon);
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      border: 0.125rem solid var(--color-btn-disabled-border);
+      background-color: var(--color-btn-disabled-bg);
+      color: var(--color-btn-disabled-text);
+    }
+  }
 
   &.stretched {
     width: 100%;
@@ -35,183 +130,116 @@
 }
 
 // Different variants
-.button-primary {
-  &:hover {
-  }
+$variants: primary, secondary, success, danger, warning, info, 'transparent';
+@each $variant in $variants {
+  .button-#{$variant} {
+    border: 0.125rem solid var(--color-btn-#{$variant}-border);
+    background-color: var(--color-btn-#{$variant}-bg);
+    color: var(--color-btn-#{$variant}-text);
+    @include theme.drop-shadow-colored(xs, var(--color-btn-shadow));
 
-  border: 0.125rem solid var(--border-primary);
-  background-color: var(--button-primary);
-  color: var(--text-white);
+    svg {
+      stroke: var(--color-btn-#{$variant}-icon);
+    }
 
-  &.disabled {
-    background-color: var(--button-primary-disabled);
-    border: 0.125rem solid var(--button-primary-disabled);
-    svg {
-      opacity: 0.66;
+    &:hover {
+      border: 0.125rem solid var(--color-btn-#{$variant}-hover-border);
+      background-color: var(--color-btn-#{$variant}-hover-bg);
+      color: var(--color-btn-#{$variant}-hover-text);
+      @include theme.drop-shadow-colored(md, var(--color-btn-shadow));
+      svg {
+        stroke: var(--color-btn-#{$variant}-hover-icon);
+      }
     }
-  }
-  &.outlined {
-    background-color: transparent;
-    color: var(--text-primary);
-    svg {
-      stroke: var(--icon-primary);
+    &:focus {
+      border: 0.125rem solid var(--color-btn-#{$variant}-focus-border);
+      background-color: var(--color-btn-#{$variant}-focus-bg);
+      color: var(--color-btn-#{$variant}-focus-text);
+      @include theme.drop-shadow-colored(sm, var(--color-btn-shadow));
+      svg {
+        stroke: var(--color-btn-#{$variant}-focus-icon);
+      }
     }
-  }
-  svg {
-    stroke: var(--icon-white);
-  }
-}
-.button-secondary {
-  border: 0.125rem solid var(--border-secondary);
-  background-color: var(--button-secondary);
-  color: var(--text-black);
+    &:active {
+      border: 0.125rem solid var(--color-btn-#{$variant}-active-border);
+      background-color: var(--color-btn-#{$variant}-active-bg);
+      color: var(--color-btn-#{$variant}-active-text);
+      @include theme.drop-shadow-colored(sm, var(--color-btn-shadow));
+      svg {
+        stroke: var(--color-btn-#{$variant}-active-icon);
+      }
+    }
 
-  &.disabled {
-    background-color: var(--button-secondary-disabled);
-    border: 0.125rem solid var(--button-secondary-disabled);
-    svg {
-      opacity: 0.66;
+    &.outlined {
+      background-color: transparent;
+      @if $variant != 'transparent' {
+        color: var(--color-btn-#{$variant}-border);
+      } @else {
+        color: var(--color-btn-transparent-text);
+      }
+      border: 0.125rem solid var(--color-btn-#{$variant}-border);
+      svg {
+        stroke: var(--color-btn-#{$variant}-border);
+      }
+      &:hover {
+        border: 0.125rem solid var(--color-btn-#{$variant}-hover-border);
+        background-color: none;
+        @if $variant != 'transparent' {
+          color: var(--color-btn-#{$variant}-hover-border);
+        } @else {
+          color: var(--color-btn-transparent-text);
+        }
+      }
+      &:focus {
+        border: 0.125rem solid var(--color-btn-#{$variant}-focus-border);
+        background-color: none;
+        @if $variant != 'transparent' {
+          color: var(--color-btn-#{$variant}-focus-border);
+        } @else {
+          color: var(--color-btn-transparent-text);
+        }
+      }
+      &:active {
+        border: 0.125rem solid var(--color-btn-#{$variant}-active-border);
+        background-color: none;
+        @if $variant != 'transparent' {
+          color: var(--color-btn-#{$variant}-active-border);
+        } @else {
+          color: var(--color-btn-transparent-text);
+        }
+      }
+      &.disabled {
+        border: 0.125rem solid var(--color-btn-#{$variant}-disabled-border);
+        background-color: transparent;
+        color: var(--color-btn-#{$variant}-disabled-text);
+        svg {
+          stroke: var(--color-btn-#{$variant}-disabled-icon);
+        }
+        &:hover,
+        &:focus,
+        &:active {
+          border: 0.125rem solid var(--color-btn-#{$variant}-disabled-border);
+          background-color: transparent;
+          color: var(--color-btn-#{$variant}-disabled-text);
+        }
+      }
     }
-  }
-  &.outlined {
-    background-color: transparent;
-    color: var(--text-secondary);
-    svg {
-      stroke: var(--icon-secondary);
+    &.disabled {
+      border: 0.125rem solid var(--color-btn-#{$variant}-disabled-border);
+      background-color: var(--color-btn-#{$variant}-disabled-bg);
+      color: var(--color-btn-#{$variant}-disabled-text);
+      filter: none;
+      svg {
+        stroke: var(--color-btn-#{$variant}-disabled-icon);
+      }
+      &:hover,
+      &:focus,
+      &:active {
+        border: 0.125rem solid var(--color-btn-#{$variant}-disabled-border);
+        background-color: var(--color-btn-#{$variant}-disabled-bg);
+        color: var(--color-btn-#{$variant}-disabled-text);
+      }
     }
-  }
-  svg {
-    stroke: var(--icon-black);
-  }
-}
-.button-neutral {
-  border: 0.125rem solid var(--border-0);
-  background-color: var(--button-neutral);
-  color: var(--text-0);
-
-  &.disabled {
-    background-color: var(--button-neutral-disabled);
-    border: 0.125rem solid var(--button-neutral-disabled);
-    svg {
-      opacity: 0.66;
-    }
-  }
-  &.outlined {
-    border: 0.125rem solid var(--border-contrasted);
-    background-color: transparent;
-    color: var(--text-0);
-    svg {
-      stroke: var(--icon-0);
-    }
-  }
-  svg {
-    stroke: var(--icon-0);
-  }
-}
-.button-success {
-  border: 0.125rem solid var(--button-success);
-  background-color: var(--button-success);
-  color: var(--text-white);
-
-  &.disabled {
-    background-color: var(--button-success-disabled);
-    border: 0.125rem solid var(--button-success-disabled);
-    svg {
-      opacity: 0.66;
-    }
-  }
-  &.outlined {
-    background-color: transparent;
-    color: var(--button-success);
-    svg {
-      stroke: var(--icon-success);
-    }
-  }
-  svg {
-    stroke: var(--icon-white);
-  }
-}
-.button-danger {
-  border: 0.125rem solid var(--button-danger);
-  background-color: var(--button-danger);
-  color: var(--text-white);
-
-  &.disabled {
-    background-color: var(--button-danger-disabled);
-    border: 0.125rem solid var(--button-danger-disabled);
-    svg {
-      opacity: 0.66;
-    }
-  }
-  &.outlined {
-    background-color: transparent;
-    color: var(--button-danger);
-    svg {
-      stroke: var(--icon-danger);
-    }
-  }
-  svg {
-    stroke: var(--icon-white);
-  }
-}
-.button-warning {
-  border: 0.125rem solid var(--button-warning);
-  background-color: var(--button-warning);
-  color: var(--text-white);
-
-  &.disabled {
-    background-color: var(--button-warning-disabled);
-    border: 0.125rem solid var(--button-warning-disabled);
-    svg {
-      opacity: 0.66;
-    }
-  }
-  &.outlined {
-    background-color: transparent;
-    color: var(--button-warning);
-    svg {
-      stroke: var(--icon-warning);
-    }
-  }
-  svg {
-    stroke: var(--icon-white);
-  }
-}
-.button-info {
-  border: 0.125rem solid var(--button-info);
-  background-color: var(--button-info);
-  color: var(--text-black);
-
-  &.disabled {
-    background-color: var(--button-info-disabled);
-    border: 0.125rem solid var(--button-info-disabled);
-    svg {
-      opacity: 0.66;
-    }
-  }
-  &.outlined {
-    background-color: transparent;
-    color: var(--button-info);
-    svg {
-      stroke: var(--icon-info);
-    }
-  }
-  svg {
-    stroke: var(--icon-black);
-  }
-}
-.button-transparent {
-  background-color: var(--background-transparent) !important;
-  color: var(--text-white);
-
-  &.disabled {
-    background-color: var(--button-neutral-disabled);
-    svg {
-      opacity: 0.66;
-    }
-  }
-  svg {
-    stroke: var(--icon-white);
   }
 }
 

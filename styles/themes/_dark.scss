@@ -48,26 +48,26 @@
   --color-border-info: var(--color-amber-700);
   --color-border-inversed: var(--color-gray-200);
   // Shadows
-  --color-shadow-primary: var(--color-white-fade-15);
+  --color-shadow-primary: var(--color-black-fade-15);
 
   // Buttons
-  --color-btn-text: var(--color-white);
-  --color-btn-icon: var(--color-white);
-  --color-btn-bg: var(--color-gray-700);
-  --color-btn-border: var(--color-gray-700);
+  --color-btn-text: var(--color-black);
+  --color-btn-icon: var(--color-black);
+  --color-btn-bg: var(--color-gray-200);
+  --color-btn-border: var(--color-gray-200);
   --color-btn-shadow: var(--color-shadow-primary);
-  --color-btn-hover-text: var(--color-white);
-  --color-btn-hover-icon: var(--color-white);
-  --color-btn-hover-bg: var(--color-gray-800);
-  --color-btn-hover-border: var(--color-gray-800);
-  --color-btn-focus-text: var(--color-white);
-  --color-btn-focus-icon: var(--color-white);
-  --color-btn-focus-bg: var(--color-gray-800);
-  --color-btn-focus-border: var(--color-gray-800);
-  --color-btn-active-text: var(--color-white);
-  --color-btn-active-icon: var(--color-white);
-  --color-btn-active-bg: var(--color-black);
-  --color-btn-active-border: var(--color-black);
+  --color-btn-hover-text: var(--color-black);
+  --color-btn-hover-icon: var(--color-black);
+  --color-btn-hover-bg: var(--color-gray-400);
+  --color-btn-hover-border: var(--color-gray-400);
+  --color-btn-focus-text: var(--color-black);
+  --color-btn-focus-icon: var(--color-black);
+  --color-btn-focus-bg: var(--color-gray-400);
+  --color-btn-focus-border: var(--color-gray-400);
+  --color-btn-active-text: var(--color-black);
+  --color-btn-active-icon: var(--color-black);
+  --color-btn-active-bg: var(--color-gray-600);
+  --color-btn-active-border: var(--color-gray-600);
   --color-btn-disabled-text: var(--color-gray-300);
   --color-btn-disabled-icon: var(--color-gray-300);
   --color-btn-disabled-bg: var(--color-gray-800);

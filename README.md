@@ -36,8 +36,8 @@ This is an opinionated starter template in `Next.js v10.1` which uses all best p
 - :white_check_mark: Footer
 - :x: 404 page
 - :x: Error page
-- :x: OnClickOutside
 - :x: Thank you page (forms)
+- :x: OnClickOutside
 
 ### UI-components
 
@@ -51,7 +51,7 @@ This is an opinionated starter template in `Next.js v10.1` which uses all best p
 - :x: Form
 - :x: Input fields w/ checkbox and switch
 - :x: Loading Placeholder
-- :x: Spinner
+- :white_check_mark: Spinner
 - :x: Accordion
 - :white_check_mark: Dropdown
 - :x: Language Switcher

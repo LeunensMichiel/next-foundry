@@ -15,9 +15,7 @@ const Page2 = () => (
         <Button type="button" variant="secondary">
           Secondary
         </Button>
-        <Button type="button" variant="neutral">
-          Neutral
-        </Button>
+        <Button type="button">Neutral</Button>
         <Button type="button" variant="success">
           Success
         </Button>
@@ -38,7 +36,7 @@ const Page2 = () => (
         <Button type="button" variant="secondary" outlined>
           Secondary
         </Button>
-        <Button type="button" variant="neutral" outlined>
+        <Button type="button" outlined>
           Neutral
         </Button>
         <Button type="button" variant="success" outlined>
@@ -61,7 +59,7 @@ const Page2 = () => (
         <Button type="button" variant="secondary" disabled>
           Secondary
         </Button>
-        <Button type="button" variant="neutral" disabled>
+        <Button type="button" disabled>
           Neutral
         </Button>
         <Button type="button" variant="success" disabled>
@@ -84,7 +82,7 @@ const Page2 = () => (
         <Button type="button" variant="secondary" outlined disabled>
           Secondary
         </Button>
-        <Button type="button" variant="neutral" outlined disabled>
+        <Button type="button" outlined disabled>
           Neutral
         </Button>
         <Button type="button" variant="success" outlined disabled>
