@@ -49,7 +49,16 @@
       stroke: var(--color-btn-active-icon);
     }
   }
-
+  &.loading {
+    border: 0.125rem solid var(--color-btn-active-border);
+    background-color: var(--color-btn-active-bg);
+    color: var(--color-btn-active-text);
+    pointer-events: none;
+    @include theme.drop-shadow-colored(sm, var(--color-btn-shadow));
+    svg {
+      stroke: var(--color-btn-active-icon);
+    }
+  }
   &.outlined {
     background-color: transparent;
     color: var(--color-btn-border);
@@ -97,6 +106,7 @@
     background-color: var(--color-btn-disabled-bg);
     color: var(--color-btn-disabled-text);
     filter: none;
+    cursor: no-drop;
     svg {
       stroke: var(--color-btn-disabled-icon);
     }
@@ -169,7 +179,15 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
         stroke: var(--color-btn-#{$variant}-active-icon);
       }
     }
-
+    &.loading {
+      border: 0.125rem solid var(--color-btn-#{$variant}-active-border);
+      background-color: var(--color-btn-#{$variant}-active-bg);
+      color: var(--color-btn-#{$variant}-active-text);
+      @include theme.drop-shadow-colored(sm, var(--color-btn-shadow));
+      svg {
+        stroke: var(--color-btn-#{$variant}-active-icon);
+      }
+    }
     &.outlined {
       background-color: transparent;
       @if $variant != 'transparent' {
