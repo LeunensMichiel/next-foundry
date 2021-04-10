@@ -1,6 +1,19 @@
 @use '@styles/theme';
 
 .buttonBase {
+  border: none;
+  margin: 0;
+  line-height: 1;
+  padding: 0.25rem 0.5rem;
+  font-weight: 500;
+  font-size: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  @include theme.transition(background-color, color, border-color);
+
   &.stretched {
     width: 100%;
   }
@@ -19,23 +32,17 @@
     align-items: center;
     justify-content: center;
   }
-
-  border: none;
-  margin: 0;
-  line-height: 1;
-  padding: 0.25rem 0.5rem;
-  font-weight: 500;
-  font-size: 100%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  @include theme.transition(background-color, color, border-color);
 }
 
 // Different variants
 .button-primary {
+  &:hover {
+  }
+
+  border: 0.125rem solid var(--border-primary);
+  background-color: var(--button-primary);
+  color: var(--text-white);
+
   &.disabled {
     background-color: var(--button-primary-disabled);
     border: 0.125rem solid var(--button-primary-disabled);
@@ -50,16 +57,15 @@
       stroke: var(--icon-primary);
     }
   }
-
-  border: 0.125rem solid var(--border-primary-1);
-  background-color: var(--button-primary);
-  color: var(--text-white);
-
   svg {
     stroke: var(--icon-white);
   }
 }
 .button-secondary {
+  border: 0.125rem solid var(--border-secondary);
+  background-color: var(--button-secondary);
+  color: var(--text-black);
+
   &.disabled {
     background-color: var(--button-secondary-disabled);
     border: 0.125rem solid var(--button-secondary-disabled);
@@ -74,16 +80,15 @@
       stroke: var(--icon-secondary);
     }
   }
-
-  border: 0.125rem solid var(--border-secondary-1);
-  background-color: var(--button-secondary);
-  color: var(--text-black);
-
   svg {
     stroke: var(--icon-black);
   }
 }
 .button-neutral {
+  border: 0.125rem solid var(--border-0);
+  background-color: var(--button-neutral);
+  color: var(--text-0);
+
   &.disabled {
     background-color: var(--button-neutral-disabled);
     border: 0.125rem solid var(--button-neutral-disabled);
@@ -99,16 +104,15 @@
       stroke: var(--icon-0);
     }
   }
-
-  border: 0.125rem solid var(--border-0);
-  background-color: var(--button-neutral);
-  color: var(--text-0);
-
   svg {
     stroke: var(--icon-0);
   }
 }
 .button-success {
+  border: 0.125rem solid var(--button-success);
+  background-color: var(--button-success);
+  color: var(--text-white);
+
   &.disabled {
     background-color: var(--button-success-disabled);
     border: 0.125rem solid var(--button-success-disabled);
@@ -123,16 +127,15 @@
       stroke: var(--icon-success);
     }
   }
-
-  border: 0.125rem solid var(--button-success);
-  background-color: var(--button-success);
-  color: var(--text-white);
-
   svg {
     stroke: var(--icon-white);
   }
 }
 .button-danger {
+  border: 0.125rem solid var(--button-danger);
+  background-color: var(--button-danger);
+  color: var(--text-white);
+
   &.disabled {
     background-color: var(--button-danger-disabled);
     border: 0.125rem solid var(--button-danger-disabled);
@@ -147,16 +150,15 @@
       stroke: var(--icon-danger);
     }
   }
-
-  border: 0.125rem solid var(--button-danger);
-  background-color: var(--button-danger);
-  color: var(--text-white);
-
   svg {
     stroke: var(--icon-white);
   }
 }
 .button-warning {
+  border: 0.125rem solid var(--button-warning);
+  background-color: var(--button-warning);
+  color: var(--text-white);
+
   &.disabled {
     background-color: var(--button-warning-disabled);
     border: 0.125rem solid var(--button-warning-disabled);
@@ -171,16 +173,15 @@
       stroke: var(--icon-warning);
     }
   }
-
-  border: 0.125rem solid var(--button-warning);
-  background-color: var(--button-warning);
-  color: var(--text-white);
-
   svg {
     stroke: var(--icon-white);
   }
 }
 .button-info {
+  border: 0.125rem solid var(--button-info);
+  background-color: var(--button-info);
+  color: var(--text-black);
+
   &.disabled {
     background-color: var(--button-info-disabled);
     border: 0.125rem solid var(--button-info-disabled);
@@ -195,26 +196,20 @@
       stroke: var(--icon-info);
     }
   }
-
-  border: 0.125rem solid var(--button-info);
-  background-color: var(--button-info);
-  color: var(--text-black);
-
   svg {
     stroke: var(--icon-black);
   }
 }
 .button-transparent {
+  background-color: var(--background-transparent) !important;
+  color: var(--text-white);
+
   &.disabled {
     background-color: var(--button-neutral-disabled);
     svg {
       opacity: 0.66;
     }
   }
-
-  background-color: var(--background-transparent) !important;
-  color: var(--text-white);
-
   svg {
     stroke: var(--icon-white);
   }
@@ -222,65 +217,59 @@
 
 // Different Sizes
 .button-xs {
+  padding: 0.25rem 0.75rem;
+  font-size: var(--button-xs);
   &.button-circular {
     padding: 0.5rem;
   }
-
-  padding: 0.25rem 0.75rem;
-  font-size: var(--button-xs);
-
   svg {
     height: auto;
     width: 1rem;
   }
 }
 .button-sm {
-  &.button-circular {
-    padding: 0.75rem;
-  }
-
   padding: 0.5rem 1.25rem;
   font-size: var(--button-sm);
 
+  &.button-circular {
+    padding: 0.75rem;
+  }
   svg {
     height: auto;
     width: 1.25rem;
   }
 }
 .button-md {
-  &.button-circular {
-    padding: 1rem;
-  }
-
   padding: 0.75rem 1.25rem;
   font-size: var(--button-md);
 
+  &.button-circular {
+    padding: 1rem;
+  }
   svg {
     height: auto;
     width: 1.5rem;
   }
 }
 .button-lg {
-  &.button-circular {
-    padding: 1.25rem;
-  }
-
   padding: 1rem 1.5rem;
   font-size: var(--button-lg);
 
+  &.button-circular {
+    padding: 1.25rem;
+  }
   svg {
     height: auto;
     width: 1.75rem;
   }
 }
 .button-xl {
-  &.button-circular {
-    padding: 1.5rem;
-  }
-
   padding: 1.25rem 1.75rem;
   font-size: var(--button-xl);
 
+  &.button-circular {
+    padding: 1.5rem;
+  }
   svg {
     height: auto;
     width: 2.25rem;

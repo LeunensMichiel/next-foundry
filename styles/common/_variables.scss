@@ -125,3 +125,10 @@ $transition-duration: 500ms;
 
   transition: $result;
 }
+
+// Utils
+@function safe-rgba($color, $alpha: 1) {
+  @return unquote(
+    'rgba(#{red($color)}, #{green($color)}, #{blue($color)}, #{$alpha})'
+  );
+}

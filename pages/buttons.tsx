@@ -54,6 +54,52 @@ const Page2 = () => (
           Info
         </Button>
       </div>
+      <div className={styles.buttonRow}>
+        <Button type="button" variant="primary" disabled>
+          Primary
+        </Button>
+        <Button type="button" variant="secondary" disabled>
+          Secondary
+        </Button>
+        <Button type="button" variant="neutral" disabled>
+          Neutral
+        </Button>
+        <Button type="button" variant="success" disabled>
+          Success
+        </Button>
+        <Button type="button" variant="warning" disabled>
+          Warning
+        </Button>
+        <Button type="button" variant="danger" disabled>
+          Danger
+        </Button>
+        <Button type="button" variant="info" disabled>
+          Info
+        </Button>
+      </div>
+      <div className={styles.buttonRow}>
+        <Button type="button" variant="primary" outlined disabled>
+          Primary
+        </Button>
+        <Button type="button" variant="secondary" outlined disabled>
+          Secondary
+        </Button>
+        <Button type="button" variant="neutral" outlined disabled>
+          Neutral
+        </Button>
+        <Button type="button" variant="success" outlined disabled>
+          Success
+        </Button>
+        <Button type="button" variant="warning" outlined disabled>
+          Warning
+        </Button>
+        <Button type="button" variant="danger" outlined disabled>
+          Danger
+        </Button>
+        <Button type="button" variant="info" outlined disabled>
+          Info
+        </Button>
+      </div>
       <div className={`${styles.buttonRow} ${styles.dark}`}>
         <Button type="button" variant="transparent">
           Transparent

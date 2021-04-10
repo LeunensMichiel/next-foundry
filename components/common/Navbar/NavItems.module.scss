@@ -10,7 +10,7 @@
   z-index: theme.$z-mid;
   padding-bottom: 1rem;
   overflow-y: auto;
-  background-color: var(--background-0);
+  background-color: var(--color-bg-primary);
   transform: translateX(100%);
   @include theme.transition(transform, background-color);
 

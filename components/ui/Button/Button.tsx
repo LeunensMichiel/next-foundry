@@ -52,13 +52,12 @@ const Button = <C extends React.ElementType = 'button'>({
   size = 'md',
   stretched = false,
   uppercased = false,
-  variant = 'primary',
+  variant = 'neutral',
   ...rest
 }: ButtonProps<C>) => {
   const Component = as || 'button';
   const rootClassName = cn(
     styles.buttonBase,
-    // styles['button-primary'],
     {
       [styles[`button-${variant}`]]: true,
       [styles[`button-${size}`]]: true,

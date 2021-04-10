@@ -5,7 +5,7 @@ const ChevronRight = ({ ...props }) => (
     height="24"
     viewBox="0 0 24 24"
     fill="none"
-    stroke="var(--icon-0)"
+    stroke="var(--color-icon-primary)"
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"

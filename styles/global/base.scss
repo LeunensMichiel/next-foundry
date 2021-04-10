@@ -9,8 +9,8 @@
 
 // Define your global styles here
 ::selection {
-  color: var(--text-info);
-  background-color: var(--background-info);
+  color: var(--color-text-info);
+  background-color: var(--color-bg-info);
 }
 
 html {
@@ -20,8 +20,8 @@ html {
 html,
 body {
   font-family: var(--font-family-base);
-  color: var(--text-0);
-  background-color: var(--background-0);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
   @include theme.transition(background-color, color, border-color);
 }
 
@@ -132,7 +132,7 @@ button {
   padding: 0.25rem 0.5rem;
   @include theme.transition(background);
   &:focus {
-    outline: var(--border-primary-1);
+    outline: var(--color-btn-focus-border);
   }
 
   &.buttonReset {
@@ -151,7 +151,7 @@ code {
   font-family: theme.$font-family-mono;
   white-space: pre;
   line-height: theme.$line-height-paragraphs;
-  background-color: var(--background-2);
+  background-color: var(--color-bg-tertiary);
   border-radius: theme.$border-radius;
   padding: 0.75rem;
   @include theme.transition(background-color);

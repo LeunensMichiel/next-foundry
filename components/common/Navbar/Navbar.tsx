@@ -1,4 +1,5 @@
 import { Logo, ThemeToggle } from '@components/ui';
+import { MenuToggle } from '@components/icons';
 import cx from 'classnames';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
@@ -9,7 +10,6 @@ import {
 } from 'body-scroll-lock';
 
 import { useRouter } from 'next/router';
-import MenuToggle from './MenuToggle';
 import NavItems from './NavItems';
 
 import styles from './Navbar.module.scss';

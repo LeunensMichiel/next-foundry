@@ -37,16 +37,16 @@
   flex-basis: 100%;
   text-align: left;
   color: inherit;
-  border: 2px solid var(--border-1);
+  border: 2px solid var(--color-border-secondary);
   border-radius: var(--border-radius);
-  background-color: var(--background-0);
+  background-color: var(--color-bg-primary);
   @include theme.transition(border-color, color, background-color);
 
   &:hover,
   &:focus,
   &:active {
-    color: var(--text-active);
-    border-color: var(--border-primary-1);
+    color: var(--color-text-primary);
+    border-color: var(--color-btn-primary-border);
     cursor: pointer;
   }
 
