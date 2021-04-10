@@ -1,0 +1,30 @@
+@use '@styles/theme';
+@include theme.rotate();
+
+.spinner {
+  animation: rotate 1.5s theme.$transition-duration infinite;
+
+  &.xs {
+    height: auto;
+    width: 1rem;
+  }
+  &.sm {
+    height: auto;
+    width: 1.25rem;
+  }
+
+  &.md {
+    height: auto;
+    width: 1.5rem;
+  }
+
+  &.lg {
+    height: auto;
+    width: 1.75rem;
+  }
+
+  &.xl {
+    height: auto;
+    width: 2.25rem;
+  }
+}
