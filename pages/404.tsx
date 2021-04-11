@@ -3,6 +3,8 @@ import cn from 'classnames';
 
 import styles from '@styles/pages/404.module.scss';
 import useTranslation from 'next-translate/useTranslation';
+import { Button } from '@components/ui';
+import { Chevron } from '@components/icons';
 
 const Custom404 = () => {
   const { t } = useTranslation('common');
@@ -11,6 +13,9 @@ const Custom404 = () => {
       <h4>
         <span className={cn(styles.errCode)}>404</span> | {t('notFound.title')}
       </h4>
+      <Button as="a" href="/" iconLeft="🏠" iconRight={<Chevron />}>
+        {t('notFound.description')}
+      </Button>
     </div>
   );
 };

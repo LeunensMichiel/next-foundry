@@ -7,7 +7,7 @@ const Footer = () => {
   const { t } = useTranslation();
   return (
     <footer className={styles.footer}>
-      {t('common:footer.powered')}
+      {t('common:footer.footnote')}
       <Link href="/">
         <Logo className={styles.logo} />
       </Link>

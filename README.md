@@ -34,7 +34,7 @@ This is an opinionated starter template in `Next.js v10.1` which uses all best p
 - :x: Form validation
 - :white_check_mark: Navigation
 - :white_check_mark: Footer
-- :x: 404 page
+- :white_check_mark: 404 page
 - :x: Error page
 - :x: Thank you page (forms)
 - :x: OnClickOutside

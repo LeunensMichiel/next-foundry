@@ -5,7 +5,7 @@ import {
   ComponentPropsWithRef,
   ComponentPropsWithoutRef,
 } from 'react';
-import { Spinner } from '..';
+import { Spinner } from '@components/ui';
 
 import styles from './Button.module.scss';
 
@@ -84,9 +84,9 @@ const Button = <C extends React.ElementType = 'button'>({
       tabIndex={disabled ? -1 : 0}
       {...rest}
     >
-      <span>{loading ? <Spinner /> : iconLeft}</span>
+      {(loading || iconLeft) && <span>{loading ? <Spinner /> : iconLeft}</span>}
       {children}
-      <span>{iconRight}</span>
+      {iconRight && <span>{iconRight}</span>}
     </Component>
   );
 };

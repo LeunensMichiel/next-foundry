@@ -11,9 +11,14 @@
     }
   },
   "footer": {
-    "powered": "Aangedreven door"
+    "footnote": "Aangedreven door"
   },
   "notFound": {
-    "title": "Pagina niet gevonden"
+    "title": "Pagina niet gevonden",
+    "description": "Ga naar de homepagina"
+  },
+  "errorPage": {
+    "title": "👾 Er ging iets mis langs onze kant",
+    "description": "Probeer later opnieuw."
   }
 }

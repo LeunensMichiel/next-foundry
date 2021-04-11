@@ -11,9 +11,14 @@
     }
   },
   "footer": {
-    "powered": "Actionné par"
+    "footnote": "Actionné par"
   },
   "notFound": {
-    "title": "Page non trouvée"
+    "title": "Page non trouvée",
+    "description": "Aller à la page d'accueil"
+  },
+  "errorPage": {
+    "title": "👾 Quelque chose a mal tourné de notre côté",
+    "description": "Veuillez réessayer plus tard."
   }
 }
