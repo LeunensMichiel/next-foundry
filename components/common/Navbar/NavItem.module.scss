@@ -66,3 +66,9 @@
     }
   }
 }
+
+.activeLink {
+  a {
+    color: var(--color-link-primary);
+  }
+}

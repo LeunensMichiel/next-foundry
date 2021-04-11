@@ -23,7 +23,12 @@ const NavItem = ({ children, label, link }: NavItemProps) => {
   }, [router.asPath]);
 
   return (
-    <li className={cx(styles.linkContainer, { [styles.subMenuOpen]: open })}>
+    <li
+      className={cx(styles.linkContainer, {
+        [styles.subMenuOpen]: open,
+        [styles.activeLink]: router.pathname === link?.href,
+      })}
+    >
       {!children && link ? (
         <Link {...link}>{label}</Link>
       ) : (

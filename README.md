@@ -72,7 +72,7 @@ This is an opinionated starter template in `Next.js v10.1` which uses all best p
 - :x: Caching
 - :white_check_mark: Body Scroll Lock
 - :x: Cookie management
-- :x: Active Link styling
+- :white_check_mark: Active Link styling
 
 ### Maybe
 
