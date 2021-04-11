@@ -35,6 +35,7 @@
     border: 0.125rem solid var(--color-btn-focus-border);
     background-color: var(--color-btn-focus-bg);
     color: var(--color-btn-focus-text);
+    outline: var(--color-btn-focus-border);
     @include theme.drop-shadow-colored(sm, var(--color-btn-shadow));
     svg {
       stroke: var(--color-btn-focus-icon);
@@ -54,6 +55,7 @@
     background-color: var(--color-btn-active-bg);
     color: var(--color-btn-active-text);
     pointer-events: none;
+    user-select: none;
     @include theme.drop-shadow-colored(sm, var(--color-btn-shadow));
     svg {
       stroke: var(--color-btn-active-icon);
@@ -165,6 +167,7 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
       border: 0.125rem solid var(--color-btn-#{$variant}-focus-border);
       background-color: var(--color-btn-#{$variant}-focus-bg);
       color: var(--color-btn-#{$variant}-focus-text);
+      outline: var(--color-btn-#{$variant}-focus-border);
       @include theme.drop-shadow-colored(sm, var(--color-btn-shadow));
       svg {
         stroke: var(--color-btn-#{$variant}-focus-icon);

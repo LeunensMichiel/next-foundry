@@ -5,7 +5,7 @@ import { Button } from '@components/ui';
 import styles from '@styles/pages/buttons.module.scss';
 
 const Page2 = () => (
-  <div className="container-lg mx-auto">
+  <div className="container-lg mx-auto padded">
     <h1>Buttons</h1>
     <div className={styles.buttonsContainer}>
       <div className={styles.buttonRow}>
