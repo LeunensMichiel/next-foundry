@@ -1,0 +1,16 @@
+.custom404 {
+  flex: 1 1 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+
+  h4 {
+    font-weight: 500;
+  }
+}
+
+.errCode {
+  font-weight: 700;
+}

@@ -124,7 +124,7 @@ li {
 }
 
 a {
-  color: var(--text-link);
+  color: var(--color-link-primary);
   @include theme.transition(color);
 }
 

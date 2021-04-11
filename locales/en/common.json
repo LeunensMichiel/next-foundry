@@ -12,5 +12,8 @@
   },
   "footer": {
     "powered": "Powered by "
+  },
+  "notFound": {
+    "title": "Page not found"
   }
 }

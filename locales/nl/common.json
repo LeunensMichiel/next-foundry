@@ -12,5 +12,8 @@
   },
   "footer": {
     "powered": "Aangedreven door"
+  },
+  "notFound": {
+    "title": "Pagina niet gevonden"
   }
 }

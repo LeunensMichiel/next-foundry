@@ -12,5 +12,8 @@
   },
   "footer": {
     "powered": "Actionné par"
+  },
+  "notFound": {
+    "title": "Page non trouvée"
   }
 }
