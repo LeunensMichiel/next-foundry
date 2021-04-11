@@ -35,7 +35,7 @@ This is an opinionated starter template in `Next.js v10.1` which uses all best p
 - :white_check_mark: Navigation
 - :white_check_mark: Footer
 - :white_check_mark: 404 page
-- :x: Error page
+- :white_check_mark: Error page
 - :x: Thank you page (forms)
 - :x: OnClickOutside
 
@@ -47,7 +47,6 @@ This is an opinionated starter template in `Next.js v10.1` which uses all best p
 - :white_check_mark: Logo
 - :white_check_mark: Button
 - :x: Next-Image w/ Aspect Ratio hack
-- :x: Links
 - :x: Form
 - :x: Input fields w/ checkbox and switch
 - :x: Loading Placeholder
