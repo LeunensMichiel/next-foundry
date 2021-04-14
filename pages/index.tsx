@@ -40,8 +40,9 @@ const Home = () => {
         </p>
         <ImageWithAspectRatio
           src="/assets/test.jpg"
-          aspectRatio="10/5"
+          aspectRatio="8/1"
           objectFit="cover"
+          objectPosition="50% 60%"
         />
       </div>
 
