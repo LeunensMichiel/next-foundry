@@ -46,7 +46,7 @@ This is an opinionated starter template in `Next.js v10.1` which uses all best p
 - :x: Snackbar
 - :white_check_mark: Logo
 - :white_check_mark: Button
-- :x: Next-Image w/ Aspect Ratio hack
+- :white_check_mark: Next-Image w/ Aspect Ratio hack
 - :x: Form
 - :x: Input fields w/ checkbox and switch
 - :x: Loading Placeholder
@@ -62,7 +62,6 @@ This is an opinionated starter template in `Next.js v10.1` which uses all best p
 - :white_check_mark: SEO optimizations with custom image
 - :white_check_mark: Web manifest
 - :white_check_mark: Scaled favicons
-- :x: Dynamic imports
 - :x: Smooth scrolling with polyfill
 - :x: Lighthouse optimizations
 - :white_check_mark: Chrome transitions bug fix

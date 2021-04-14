@@ -11,7 +11,7 @@ module.exports = {
     project: ['./tsconfig.json'],
   },
   plugins: ['@typescript-eslint'],
-  extends: ['airbnb-typescript', 'prettier'],
+  extends: ['airbnb-typescript', 'react-hooks', 'prettier'],
   rules: {
     // Project-specific
     'import/prefer-default-export': 0,
@@ -19,6 +19,8 @@ module.exports = {
     'react/prop-types': 0,
     'react/require-default-props': 0,
     'react/jsx-props-no-spreading': 0,
+    'react-hooks/exhaustive-deps': 1,
+    'react-hooks/rules-of-hooks': 2,
     // This disables the 'React' must be in scope when using JSX error for React 17+
     'react/jsx-uses-react': 0,
     'react/react-in-jsx-scope': 0,

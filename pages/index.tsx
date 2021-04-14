@@ -7,6 +7,7 @@ import cx from 'classnames';
 import styles from '@styles/pages/index.module.scss';
 import { Layout } from '@components/common';
 import i18nConfig from 'i18n.json';
+import { ImageWithAspectRatio } from '@components/ui';
 
 const { locales } = i18nConfig;
 
@@ -23,15 +24,6 @@ const Home = () => {
           description: t('seo.description'),
         }}
       />
-      {/* <div className={styles.hero}>
-        <Image
-          alt="Mountains"
-          src="/assets/test.jpg"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="50% 60%"
-        />
-      </div> */}
       <div className={cx(styles.intro, 'container-lg', 'mx-auto')}>
         <h1 className={styles.title}>
           {t('welcome')}{' '}
@@ -46,6 +38,11 @@ const Home = () => {
         <p className={styles.description}>
           {t('intro')} <code className={styles.code}>Michiel Leunens</code>
         </p>
+        <ImageWithAspectRatio
+          src="/assets/test.jpg"
+          aspectRatio="10/5"
+          objectFit="cover"
+        />
       </div>
 
       <div className={cx(styles.grid, 'container-lg', 'mx-auto')}>
@@ -68,7 +65,6 @@ const Home = () => {
           <h3>{t('features.next.title')}</h3>
           <p>{t('features.next.description')}</p>
         </a>
-
         <button
           className={styles.card}
           type="button"
