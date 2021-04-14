@@ -42,18 +42,18 @@ This is an opinionated starter template in `Next.js v10.1` which uses all best p
 ### UI-components
 
 - :white_check_mark: Responsive Grid-system
-- :x: Modern, accessible Modal
-- :x: Snackbar
 - :white_check_mark: Logo
 - :white_check_mark: Button
 - :white_check_mark: Next-Image w/ Aspect Ratio hack
+- :white_check_mark: Spinner
+- :white_check_mark: Dropdown
+- :x: Accordion
+- :x: Modern, accessible Modal
+- :x: Snackbar
+- :x: Language Switcher
 - :x: Form
 - :x: Input fields w/ checkbox and switch
 - :x: Loading Placeholder
-- :white_check_mark: Spinner
-- :x: Accordion
-- :white_check_mark: Dropdown
-- :x: Language Switcher
 
 ### Other
 
@@ -65,9 +65,7 @@ This is an opinionated starter template in `Next.js v10.1` which uses all best p
 - :x: Smooth scrolling with polyfill
 - :x: Lighthouse optimizations
 - :white_check_mark: Chrome transitions bug fix
-- :x: Inter-OS compatibility (no weird styling issues between MacOs & Windows)
 - :x: Inter-browser compatibility
-- :x: IE-11 no-support warning
 - :x: Caching
 - :white_check_mark: Body Scroll Lock
 - :x: Cookie management
