@@ -226,4 +226,23 @@
   --color-btn-transparent-disabled-icon: var(--color-white-fade-15);
   --color-btn-transparent-disabled-bg: transparent;
   --color-btn-transparent-disabled-border: transparent;
+
+  // Toasts
+  --color-toast-text: var(--color-white);
+  --color-toast-icon: var(--color-white);
+  --color-toast-bg: var(--color-gray-800);
+  --color-toast-border: var(--color-gray-800);
+  --color-toast-hover-text: var(--color-gray-100);
+  --color-toast-hover-icon: var(--color-gray-100);
+  --color-toast-hover-bg: var(--color-gray-700);
+  --color-toast-hover-border: var(--color-gray-700);
+
+  --color-toast-inverted-text: var(--color-black);
+  --color-toast-inverted-icon: var(--color-black);
+  --color-toast-inverted-bg: var(--color-gray-300);
+  --color-toast-inverted-border: var(--color-gray-300);
+  --color-toast-inverted-hover-text: var(--color-gray-900);
+  --color-toast-inverted-hover-icon: var(--color-gray-900);
+  --color-toast-inverted-hover-bg: var(--color-gray-100);
+  --color-toast-inverted-hover-border: var(--color-gray-100);
 }

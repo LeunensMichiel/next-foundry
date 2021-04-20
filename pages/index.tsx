@@ -8,6 +8,7 @@ import styles from '@styles/pages/index.module.scss';
 import { Layout } from '@components/common';
 import i18nConfig from 'i18n.json';
 import { ImageWithAspectRatio } from '@components/ui';
+import { toast } from 'react-toastify';
 
 const { locales } = i18nConfig;
 
@@ -78,6 +79,45 @@ const Home = () => {
           </h3>
           <p>{t('features.theme.description')} Next Themes.</p>
         </button>
+        <div className={styles.card}>
+          <h3>Toasts with react-toastify!</h3>
+          <button
+            type="button"
+            onClick={() => toast("Don't forget to ⭐ on Github!")}
+          >
+            🍞 Default
+          </button>
+          <button
+            type="button"
+            onClick={() => toast.dark("Don't forget to ⭐ on Github!")}
+          >
+            🍞 Dark
+          </button>
+          <button
+            type="button"
+            onClick={() => toast.error("Don't forget to ⭐ on Github!")}
+          >
+            🍞 Error
+          </button>
+          <button
+            type="button"
+            onClick={() => toast.warn("Don't forget to ⭐ on Github!")}
+          >
+            🍞 Warn
+          </button>
+          <button
+            type="button"
+            onClick={() => toast.success("Don't forget to ⭐ on Github!")}
+          >
+            🍞 Success
+          </button>
+          <button
+            type="button"
+            onClick={() => toast.info("Don't forget to ⭐ on Github!")}
+          >
+            🍞 Info
+          </button>
+        </div>
 
         <div className={styles.card}>
           <h3>{t('features.internationalization.title')}</h3>

@@ -30,6 +30,7 @@
     background-color: transparent;
     order: 1;
     overflow-y: visible;
+    @include theme.transition(background-color);
   }
 }
 

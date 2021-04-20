@@ -1,10 +1,11 @@
 import { AppProps } from 'next/app';
-import { ThemeProvider } from 'next-themes';
 import { ReactNode, useEffect } from 'react';
 import { Head } from '@components/common';
+import { ManagedUIProvider } from '@lib/context/UIContext';
 
 import '@styles/global/base.scss';
 import '@styles/global/chrome-bug.css';
+import '@styles/libraries/toastify.scss';
 
 type NoopProps = {
   children: ReactNode;
@@ -22,16 +23,11 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head />
-      <ThemeProvider
-        enableSystem
-        enableColorScheme
-        defaultTheme="system"
-        themes={['light', 'dark']}
-      >
+      <ManagedUIProvider>
         <Layout>
           <Component {...pageProps} />
         </Layout>
-      </ThemeProvider>
+      </ManagedUIProvider>
     </>
   );
 }

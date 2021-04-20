@@ -17,7 +17,7 @@ const NavItem = ({ children, label, link }: NavItemProps) => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    if (open) {
+    if (router.asPath) {
       setOpen(false);
     }
   }, [router.asPath]);

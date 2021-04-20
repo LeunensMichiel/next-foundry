@@ -21,7 +21,7 @@ const Navbar = ({ isTransparent = false }) => {
   const ref = useRef() as React.MutableRefObject<HTMLDivElement>;
 
   useEffect(() => {
-    if (navDrawerOpen) {
+    if (router.asPath) {
       setNavDrawerOpen(false);
     }
   }, [router.asPath]);

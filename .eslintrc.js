@@ -10,8 +10,8 @@ module.exports = {
     tsconfigRootDir: __dirname,
     project: ['./tsconfig.json'],
   },
-  plugins: ['@typescript-eslint'],
-  extends: ['airbnb-typescript', 'react-hooks', 'prettier'],
+  plugins: ['@typescript-eslint', 'react-hooks'],
+  extends: ['airbnb-typescript', 'prettier'],
   rules: {
     // Project-specific
     'import/prefer-default-export': 0,
