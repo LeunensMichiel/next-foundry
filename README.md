@@ -49,7 +49,7 @@ This is an opinionated starter template in `Next.js v10.1` which uses all best p
 - :white_check_mark: Dropdown
 - :x: Accordion
 - :x: Modern, accessible Modal
-- :x: Snackbar
+- :white_check_mark: Toasts (react-toastify)
 - :x: Language Switcher
 - :x: Form
 - :x: Input fields w/ checkbox and switch
