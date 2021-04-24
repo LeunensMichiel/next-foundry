@@ -4,7 +4,7 @@ This is an opinionated starter template in `Next.js v10.1` which uses all best p
 
 > :bulb: This project contains a lot of custom components. Everything is loosely coupled, so you can easily delete what you don't need. :warning: **IE11 is not supported**.
 
-## :fire: Current Features
+## :fire: Current Features (& TODO)
 
 ### Development
 
@@ -21,21 +21,21 @@ This is an opinionated starter template in `Next.js v10.1` which uses all best p
 - :white_check_mark: Modern `reset.scss`
 - :white_check_mark: Fully featured design-system (colors, typography,...)
 - :white_check_mark: Theming with `next-theming` (complete with dark theme)
-- :x: Animations with `Framer Motion`
 - :white_check_mark: Easy class toggling
+- :x: Animations with `Framer Motion`
 
 ### Components & Functionalities
 
 - :white_check_mark: Responsive skeleton
 - :white_check_mark: Dynamic layout
 - :white_check_mark: SEO-component with `next-seo`
-- :x: Cookie consent
 - :white_check_mark: Internationalization (i18n)
-- :x: Form validation
 - :white_check_mark: Navigation
 - :white_check_mark: Footer
 - :white_check_mark: 404 page
 - :white_check_mark: Error page
+- :x: Form validation
+- :x: Cookie consent
 - :x: Thank you page (forms)
 - :x: OnClickOutside
 
@@ -47,37 +47,49 @@ This is an opinionated starter template in `Next.js v10.1` which uses all best p
 - :white_check_mark: Next-Image w/ Aspect Ratio hack
 - :white_check_mark: Spinner
 - :white_check_mark: Dropdown
-- :x: Accordion
-- :x: Modern, accessible Modal
 - :white_check_mark: Toasts (react-toastify)
+- :x: Modern, accessible Modal
+- :x: Accordion
 - :x: Language Switcher
 - :x: Form
-- :x: Input fields w/ checkbox and switch
+- :x: TextField
+- :x: NumberField
+- :x: Checkbox
+- :x: Switch
+- :x: RadioButton
+- :x: Select Field (Single and Multi Select)
+- :x: Date picker
+- :x: Time picker
+- :x: Text Area
+- :x: Tooltip
+- :x: Tags/badges
 - :x: Loading Placeholder
 
 ### Other
 
-- :x: `sitemap.xml`
-- :x: `robots.txt`
 - :white_check_mark: SEO optimizations with custom image
 - :white_check_mark: Web manifest
 - :white_check_mark: Scaled favicons
+- :white_check_mark: Chrome transitions bug fix
+- :white_check_mark: Body Scroll Lock
+- :white_check_mark: Active Link styling
+- :x: `sitemap.xml`
+- :x: `robots.txt`
+- :x: Cookie management
+- :x: Caching
 - :x: Smooth scrolling with polyfill
 - :x: Lighthouse optimizations
-- :white_check_mark: Chrome transitions bug fix
 - :x: Inter-browser compatibility
-- :x: Caching
-- :white_check_mark: Body Scroll Lock
-- :x: Cookie management
-- :white_check_mark: Active Link styling
 
 ### Maybe
 
 - :x: Carousel
+- :x: Tabs
 - :x: Page-transitions
 - :x: Mapbox
 - :x: Client-Authentication
 - :x: Dockerize
+- :x: Page listing all the UI components
 
 ## Getting Started
 
