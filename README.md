@@ -37,7 +37,7 @@ This is an opinionated starter template in `Next.js v10.1` which uses all best p
 - :x: Form validation
 - :x: Cookie consent
 - :x: Thank you page (forms)
-- :x: OnClickOutside
+- :white_check_mark: OnClickOutside and other usefull hooks
 
 ### UI-components
 
