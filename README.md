@@ -105,7 +105,7 @@ Run the development server:
 yarn dev
 ```
 
-To run a production build, run:
+Run a production build:
 
 ```bash
 yarn build

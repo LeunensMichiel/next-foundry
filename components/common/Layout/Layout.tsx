@@ -10,22 +10,8 @@ type Props = {
   children: ReactNode;
 };
 
-const ModalTest = () => (
-  <>
-    <h2>This is a modal</h2>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime incidunt
-      aut molestiae necessitatibus perferendis officiis quis reprehenderit,
-      eius, modi harum, expedita aliquam tempore ducimus error! In facere
-      aliquam fugit illum?
-    </p>
-    <input />
-    <input />
-  </>
-);
-
 const Layout: FC<Props> = ({ children }: Props) => {
-  const { displayModal, closeModal, modalView } = useUI();
+  const { displayModal, closeModal } = useUI();
   return (
     <>
       <Navbar />
@@ -33,7 +19,7 @@ const Layout: FC<Props> = ({ children }: Props) => {
       <Footer />
 
       <Modal open={displayModal} onClose={closeModal}>
-        {modalView === 'DEFAULT_VIEW' && <ModalTest />}
+        {/* {modalView === 'DEFAULT_VIEW' && <MyModalView />} */}
       </Modal>
     </>
   );
