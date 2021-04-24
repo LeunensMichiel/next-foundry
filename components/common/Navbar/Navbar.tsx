@@ -1,6 +1,7 @@
 import { MenuToggle } from '@components/icons';
 import { Logo, ThemeToggle } from '@components/ui';
 import {
+  BodyScrollOptions,
   clearAllBodyScrollLocks,
   disableBodyScroll,
   enableBodyScroll,
@@ -12,6 +13,10 @@ import { useEffect, useRef, useState } from 'react';
 
 import styles from './Navbar.module.scss';
 import NavItems from './NavItems';
+
+const BODY_SCROLL_OPTIONS: BodyScrollOptions = {
+  reserveScrollBarGap: true,
+};
 
 const Navbar = ({ isTransparent = false }) => {
   const router = useRouter();
@@ -28,7 +33,7 @@ const Navbar = ({ isTransparent = false }) => {
   useEffect(() => {
     if (ref.current) {
       if (navDrawerOpen) {
-        disableBodyScroll(ref.current);
+        disableBodyScroll(ref.current, BODY_SCROLL_OPTIONS);
       } else {
         enableBodyScroll(ref.current);
       }

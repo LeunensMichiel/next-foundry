@@ -1,4 +1,4 @@
-import { DropdownMenu,DropdownMenuItem } from '@components/ui/Dropdown';
+import { DropdownMenu, DropdownMenuItem } from '@components/ui/Dropdown';
 import cx from 'classnames';
 
 import NavItem from './NavItem';

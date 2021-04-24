@@ -1,6 +1,6 @@
 import { Layout } from '@components/common';
 import { ImageWithAspectRatio } from '@components/ui';
-import { useUI } from '@lib/hooks/useUI';
+import { useUI } from '@lib/hooks';
 import styles from '@styles/pages/index.module.scss';
 import cx from 'classnames';
 import i18nConfig from 'i18n.json';
@@ -16,6 +16,7 @@ const Home = () => {
   const { setTheme, theme } = useTheme();
   const { t } = useTranslation('home');
   const { openModal } = useUI();
+
   return (
     <>
       <NextSeo

@@ -1,6 +1,6 @@
 import { Footer, Navbar } from '@components/common';
 import { Modal } from '@components/ui';
-import { useUI } from '@lib/hooks/useUI';
+import { useUI } from '@lib/hooks';
 import cx from 'classnames';
 import { FC, ReactNode } from 'react';
 
@@ -19,6 +19,8 @@ const ModalTest = () => (
       eius, modi harum, expedita aliquam tempore ducimus error! In facere
       aliquam fugit illum?
     </p>
+    <input />
+    <input />
   </>
 );
 

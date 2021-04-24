@@ -1,7 +1,9 @@
 import { Cross } from '@components/icons';
 import { Button } from '@components/ui';
+import { useClickOutside } from '@lib/hooks';
 import Portal from '@reach/portal';
 import {
+  BodyScrollOptions,
   clearAllBodyScrollLocks,
   disableBodyScroll,
   enableBodyScroll,
@@ -15,6 +17,7 @@ import {
   useEffect,
   useRef,
 } from 'react';
+import FocusLock from 'react-focus-lock';
 
 import styles from './Modal.module.scss';
 
@@ -36,6 +39,10 @@ type Props = {
   onClose(): void;
 };
 
+const BODY_SCROLL_OPTIONS: BodyScrollOptions = {
+  reserveScrollBarGap: true,
+};
+
 const Modal: FC<Props> = ({
   children,
   className,
@@ -45,6 +52,7 @@ const Modal: FC<Props> = ({
   title,
 }) => {
   const ref = useRef() as MutableRefObject<HTMLDivElement>;
+  useClickOutside(ref, () => onClose());
 
   const handleKey = useCallback(
     (e: KeyboardEvent) => {
@@ -58,7 +66,7 @@ const Modal: FC<Props> = ({
   useEffect(() => {
     if (ref.current) {
       if (open) {
-        disableBodyScroll(ref.current);
+        disableBodyScroll(ref.current, BODY_SCROLL_OPTIONS);
         window.addEventListener('keydown', handleKey);
       } else {
         enableBodyScroll(ref.current);
@@ -103,7 +111,7 @@ const Modal: FC<Props> = ({
                 })}
               />
             </header>
-            <div className={cn(styles.modalBody)}>{children}</div>
+            <FocusLock className={cn(styles.modalBody)}>{children}</FocusLock>
           </div>
         </div>
       )}
