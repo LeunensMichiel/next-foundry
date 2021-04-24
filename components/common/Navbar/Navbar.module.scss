@@ -16,6 +16,10 @@
   &.navContainerOpen {
     position: fixed;
   }
+
+  @include theme.breakpoint-up(lg) {
+    position: relative;
+  }
 }
 
 .headerContainer {
