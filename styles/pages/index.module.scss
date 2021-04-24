@@ -26,9 +26,8 @@
 }
 
 .grid {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
 }
 
 .card {

@@ -48,7 +48,7 @@ This is an opinionated starter template in `Next.js v10.1` which uses all best p
 - :white_check_mark: Spinner
 - :white_check_mark: Dropdown
 - :white_check_mark: Toasts (react-toastify)
-- :x: Modern, accessible Modal
+- :white_check_mark: Modern, accessible Modal
 - :x: Accordion
 - :x: Language Switcher
 - :x: Form
