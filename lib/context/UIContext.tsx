@@ -1,18 +1,24 @@
-import { createContext, FC, useMemo, useReducer } from 'react';
-import { ThemeProvider } from 'next-themes';
-import { ToastContainer } from 'react-toastify';
 import { Cross } from '@components/icons';
+import { ThemeProvider } from 'next-themes';
+import { createContext, FC, useMemo, useReducer } from 'react';
+import { ToastContainer } from 'react-toastify';
 
 type UIState = {
   displayModal: boolean;
   modalView: ModalViews;
   toastText: ToastText;
+  openModal(): void;
+  closeModal(): void;
+  setModalView(view: ModalViews): void;
 };
 
 const INITIAL_UI_STATE: UIState = {
   displayModal: false,
   modalView: 'DEFAULT_VIEW',
   toastText: '',
+  closeModal: () => {},
+  openModal: () => {},
+  setModalView: () => {},
 };
 
 type ModalViews = 'DEFAULT_VIEW' | 'OTHER_VIEW';
@@ -31,11 +37,11 @@ type Action =
       view: ModalViews;
     };
 
-export const UIContext = createContext<UIState | any>(INITIAL_UI_STATE);
+export const UIContext = createContext<UIState>(INITIAL_UI_STATE);
 
 UIContext.displayName = 'UIContext';
 
-function uiReducer(state: UIState, action: Action) {
+const uiReducer = (state: UIState, action: Action) => {
   switch (action.type) {
     case 'OPEN_MODAL': {
       return {
@@ -61,7 +67,7 @@ function uiReducer(state: UIState, action: Action) {
       };
     }
   }
-}
+};
 
 export const UIProvider = (props: any) => {
   const [state, dispatch] = useReducer(uiReducer, INITIAL_UI_STATE);

@@ -1,8 +1,7 @@
 import { Layout } from '@components/common';
-import useTranslation from 'next-translate/useTranslation';
-import cn from 'classnames';
-
 import styles from '@styles/pages/500.module.scss';
+import cn from 'classnames';
+import useTranslation from 'next-translate/useTranslation';
 
 const Custom500Page = () => {
   const { t } = useTranslation('common');

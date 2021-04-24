@@ -1,9 +1,9 @@
-import Link, { LinkProps } from 'next/link';
-import { ReactNode, useEffect, useState } from 'react';
-import cx from 'classnames';
 import { Chevron } from '@components/icons';
-
+import cx from 'classnames';
+import Link, { LinkProps } from 'next/link';
 import { useRouter } from 'next/router';
+import { ReactNode, useEffect, useState } from 'react';
+
 import styles from './NavItem.module.scss';
 
 type NavItemProps = {

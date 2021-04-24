@@ -1,4 +1,5 @@
 import cn from 'classnames';
+
 import styles from './Spinner.module.scss';
 
 type SpinnerProps = {

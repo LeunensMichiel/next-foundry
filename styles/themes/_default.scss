@@ -316,6 +316,12 @@
   --color-btn-transparent-disabled-icon: var(--color-white-fade-15);
   --color-btn-transparent-disabled-bg: transparent;
   --color-btn-transparent-disabled-border: transparent;
+
+  --color-btn-minimal-fill: var(--color-black);
+  --color-btn-minimal-hover-fill: var(--color-gray-800);
+  --color-btn-minimal-focus-fill: var(--color-gray-800);
+  --color-btn-minimal-active-fill: var(--color-gray-600);
+  --color-btn-minimal-disabled-fill: var(--color-gray-100);
   // Toasts
   --color-toast-text: var(--color-black);
   --color-toast-icon: var(--color-black);
@@ -376,8 +382,7 @@
 
   --small: calc(var(--font-size) / var(--ratio));
   --big: calc(var(--font-size) * var(--ratio));
-  --h6: calc(var(--font-size) * var(--ratio));
-  --h5: calc(var(--h6) * var(--ratio));
+  --h5: calc(var(--font-size) * var(--ratio));
   --h4: calc(var(--h5) * var(--ratio));
   --h3: calc(var(--h4) * var(--ratio));
   --h2: calc(var(--h3) * var(--ratio));
@@ -398,11 +403,10 @@
     --font-size: 112.5%;
   }
   @include theme.breakpoint-up(lg) {
-    --font-size: 100%;
-    --ratio: #{theme.type-ratio('perfectFourth')};
+    --ratio: #{theme.type-ratio('majorThird')};
   }
   @include theme.breakpoint-up(xxl) {
-    --font-size: 112.5%;
+    --font-size: 125%;
     --ratio: #{theme.type-ratio('perfectFourth')};
   }
 }

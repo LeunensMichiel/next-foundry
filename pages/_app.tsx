@@ -1,11 +1,11 @@
-import { AppProps } from 'next/app';
-import { ReactNode, useEffect } from 'react';
-import { Head } from '@components/common';
-import { ManagedUIProvider } from '@lib/context/UIContext';
-
 import '@styles/global/base.scss';
 import '@styles/global/chrome-bug.css';
 import '@styles/libraries/toastify.scss';
+
+import { Head } from '@components/common';
+import { ManagedUIProvider } from '@lib/context/UIContext';
+import { AppProps } from 'next/app';
+import { ReactNode, useEffect } from 'react';
 
 type NoopProps = {
   children: ReactNode;

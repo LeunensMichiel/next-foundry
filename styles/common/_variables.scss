@@ -18,6 +18,8 @@ $grid-breakpoints-desktop-first: (
   xl: 1535.98px,
 );
 
+$max-container-sizes: 600px, 720px, 960px, 1140px, 1320px;
+
 // Z-index
 $z-negative: -1;
 $z-low: 10;

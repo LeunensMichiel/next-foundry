@@ -1,18 +1,17 @@
-import { Logo, ThemeToggle } from '@components/ui';
 import { MenuToggle } from '@components/icons';
-import cx from 'classnames';
-import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+import { Logo, ThemeToggle } from '@components/ui';
 import {
+  clearAllBodyScrollLocks,
   disableBodyScroll,
   enableBodyScroll,
-  clearAllBodyScrollLocks,
 } from 'body-scroll-lock';
-
+import cx from 'classnames';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
-import NavItems from './NavItems';
+import { useEffect, useRef, useState } from 'react';
 
 import styles from './Navbar.module.scss';
+import NavItems from './NavItems';
 
 const Navbar = ({ isTransparent = false }) => {
   const router = useRouter();

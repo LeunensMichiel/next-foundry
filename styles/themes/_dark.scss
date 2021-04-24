@@ -227,6 +227,11 @@
   --color-btn-transparent-disabled-bg: transparent;
   --color-btn-transparent-disabled-border: transparent;
 
+  --color-btn-minimal-fill: var(--color-white);
+  --color-btn-minimal-hover-fill: var(--color-gray-100);
+  --color-btn-minimal-focus-fill: var(--color-gray-100);
+  --color-btn-minimal-active-fill: var(--color-gray-300);
+  --color-btn-minimal-disabled-fill: var(--color-gray-700);
   // Toasts
   --color-toast-text: var(--color-white);
   --color-toast-icon: var(--color-white);

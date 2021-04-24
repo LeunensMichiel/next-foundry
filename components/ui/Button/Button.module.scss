@@ -19,6 +19,7 @@
   @include theme.drop-shadow-colored(sm, var(--color-btn-shadow));
 
   svg {
+    @include theme.transition(stroke);
     stroke: var(--color-btn-icon);
   }
 
@@ -103,6 +104,32 @@
       }
     }
   }
+  &.minimal {
+    background: none;
+    border: none;
+    color: var(--color-btn-minimal-fill);
+    svg {
+      stroke: var(--color-btn-minimal-fill);
+    }
+    &:hover {
+      color: var(--color-btn-minimal-hover-fill);
+      svg {
+        stroke: var(--color-btn-minimal-hover-fill);
+      }
+    }
+    &:focus {
+      color: var(--color-btn-minimal-focus-fill);
+      svg {
+        stroke: var(--color-btn-minimal-focus-fill);
+      }
+    }
+    &:active {
+      color: var(--color-btn-minimal-active-fill);
+      svg {
+        stroke: var(--color-btn-minimal-active-fill);
+      }
+    }
+  }
   &.disabled {
     border: 0.125rem solid var(--color-btn-disabled-border);
     background-color: var(--color-btn-disabled-bg);
@@ -149,6 +176,7 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
     background-color: var(--color-btn-#{$variant}-bg);
     color: var(--color-btn-#{$variant}-text);
     @include theme.drop-shadow-colored(xs, var(--color-btn-shadow));
+    @include theme.transition(background-color, border, color, filter);
 
     svg {
       stroke: var(--color-btn-#{$variant}-icon);

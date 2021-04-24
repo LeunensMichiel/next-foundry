@@ -1,8 +1,8 @@
+import { DropdownMenu,DropdownMenuItem } from '@components/ui/Dropdown';
 import cx from 'classnames';
 
-import { DropdownMenuItem, DropdownMenu } from '@components/ui/Dropdown';
-import styles from './NavItems.module.scss';
 import NavItem from './NavItem';
+import styles from './NavItems.module.scss';
 
 const NavItems = ({ navDrawerOpen = false, isTransparent = false }) => (
   <div

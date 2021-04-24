@@ -1,13 +1,13 @@
-import { useTheme } from 'next-themes';
-import { NextSeo } from 'next-seo';
-import useTranslation from 'next-translate/useTranslation';
-import setLanguage from 'next-translate/setLanguage';
-import cx from 'classnames';
-
-import styles from '@styles/pages/index.module.scss';
 import { Layout } from '@components/common';
-import i18nConfig from 'i18n.json';
 import { ImageWithAspectRatio } from '@components/ui';
+import { useUI } from '@lib/hooks/useUI';
+import styles from '@styles/pages/index.module.scss';
+import cx from 'classnames';
+import i18nConfig from 'i18n.json';
+import { NextSeo } from 'next-seo';
+import { useTheme } from 'next-themes';
+import setLanguage from 'next-translate/setLanguage';
+import useTranslation from 'next-translate/useTranslation';
 import { toast } from 'react-toastify';
 
 const { locales } = i18nConfig;
@@ -15,6 +15,7 @@ const { locales } = i18nConfig;
 const Home = () => {
   const { setTheme, theme } = useTheme();
   const { t } = useTranslation('home');
+  const { openModal } = useUI();
   return (
     <>
       <NextSeo
@@ -118,7 +119,6 @@ const Home = () => {
             🍞 Info
           </button>
         </div>
-
         <div className={styles.card}>
           <h3>{t('features.internationalization.title')}</h3>
           <p>{t('features.internationalization.description')}</p>
@@ -131,6 +131,13 @@ const Home = () => {
               {t(`features.internationalization.${lng}`)}
             </button>
           ))}
+        </div>
+        <div className={styles.card}>
+          <h3>Modal</h3>
+          <p>Accessible and Customizable</p>
+          <button type="button" onClick={() => openModal()}>
+            Toggle Modal
+          </button>
         </div>
       </div>
     </>

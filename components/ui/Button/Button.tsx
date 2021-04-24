@@ -1,11 +1,11 @@
+import { Spinner } from '@components/ui';
 import cn from 'classnames';
 import {
-  ReactNode,
-  ElementType,
-  ComponentPropsWithRef,
   ComponentPropsWithoutRef,
+  ComponentPropsWithRef,
+  ElementType,
+  ReactNode,
 } from 'react';
-import { Spinner } from '@components/ui';
 
 import styles from './Button.module.scss';
 
@@ -31,6 +31,7 @@ interface Props<C extends React.ElementType> {
   active?: boolean;
   stretched?: boolean;
   uppercased?: boolean;
+  minimal?: boolean;
   iconLeft?: ComponentPropsWithoutRef<'svg'> | string;
   iconRight?: ComponentPropsWithoutRef<'svg'> | string;
 }
@@ -48,6 +49,7 @@ const Button = <C extends React.ElementType = 'button'>({
   iconLeft,
   iconRight,
   loading = false,
+  minimal = false,
   outlined = false,
   size = 'md',
   stretched = false,
@@ -61,6 +63,7 @@ const Button = <C extends React.ElementType = 'button'>({
     {
       [styles[`button-${variant}`]]: !!variant,
       [styles.outlined]: outlined,
+      [styles.minimal]: minimal,
       [styles.loading]: loading,
       [styles.disabled]: disabled,
       [styles[`button-${size}`]]: true,

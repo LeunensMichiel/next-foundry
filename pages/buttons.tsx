@@ -1,7 +1,6 @@
 import { Layout } from '@components/common';
 import { Chevron, Moon, Sun } from '@components/icons';
 import { Button } from '@components/ui';
-
 import styles from '@styles/pages/buttons.module.scss';
 
 const Page2 = () => (

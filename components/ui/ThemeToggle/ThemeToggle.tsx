@@ -1,5 +1,5 @@
-import { useTheme } from 'next-themes';
 import { Moon, Sun } from '@components/icons';
+import { useTheme } from 'next-themes';
 
 const ThemeToggle = ({ className = '' }) => {
   const { setTheme, theme } = useTheme();

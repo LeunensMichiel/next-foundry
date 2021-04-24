@@ -7,24 +7,73 @@
   width: 100%;
   @each $size, $bp in variables.$grid-breakpoints {
     @if $size != xs {
+      $i: index((variables.$grid-breakpoints), ($size $bp)) - 1;
       @include breakpoints.breakpoint-up($size) {
-        max-width: $bp;
+        max-width: nth(variables.$max-container-sizes, $i);
       }
     }
   }
 }
 
-@each $size, $bp in variables.$grid-breakpoints {
-  @if $size != xs {
-    .container-#{$size} {
-      width: 100%;
-      max-width: $bp;
-    }
+.container-sm {
+  width: 100%;
+  max-width: nth(variables.$max-container-sizes, 1);
+  @include breakpoints.breakpoint-up(md) {
+    max-width: nth(variables.$max-container-sizes, 2);
   }
+  @include breakpoints.breakpoint-up(lg) {
+    max-width: nth(variables.$max-container-sizes, 3);
+  }
+  @include breakpoints.breakpoint-up(xl) {
+    max-width: nth(variables.$max-container-sizes, 4);
+  }
+  @include breakpoints.breakpoint-up(xxl) {
+    max-width: nth(variables.$max-container-sizes, 5);
+  }
+}
+
+.container-md {
+  width: 100%;
+  max-width: nth(variables.$max-container-sizes, 2);
+  @include breakpoints.breakpoint-up(lg) {
+    max-width: nth(variables.$max-container-sizes, 3);
+  }
+  @include breakpoints.breakpoint-up(xl) {
+    max-width: nth(variables.$max-container-sizes, 4);
+  }
+  @include breakpoints.breakpoint-up(xxl) {
+    max-width: nth(variables.$max-container-sizes, 5);
+  }
+}
+
+.container-lg {
+  width: 100%;
+  max-width: nth(variables.$max-container-sizes, 3);
+  @include breakpoints.breakpoint-up(xl) {
+    max-width: nth(variables.$max-container-sizes, 4);
+  }
+  @include breakpoints.breakpoint-up(xxl) {
+    max-width: nth(variables.$max-container-sizes, 5);
+  }
+}
+.container-xl {
+  width: 100%;
+  max-width: nth(variables.$max-container-sizes, 4);
+  @include breakpoints.breakpoint-up(xxl) {
+    max-width: nth(variables.$max-container-sizes, 5);
+  }
+}
+.container-xxl {
+  width: 100%;
+  max-width: nth(variables.$max-container-sizes, 5);
 }
 
 .container-fluid {
   width: 100%;
+}
+
+.container-page {
+  width: clamp(45ch, 50%, 80ch);
 }
 
 .padded {

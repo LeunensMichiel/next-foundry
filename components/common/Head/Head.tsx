@@ -1,8 +1,8 @@
-import NextHead from 'next/head';
-import { DefaultSeo } from 'next-seo';
-import { useRouter } from 'next/router';
-import useTranslation from 'next-translate/useTranslation';
 import i18nConfig from 'i18n.json';
+import NextHead from 'next/head';
+import { useRouter } from 'next/router';
+import { DefaultSeo } from 'next-seo';
+import useTranslation from 'next-translate/useTranslation';
 
 const { locales, defaultLocale } = i18nConfig;
 const url = 'http://localhost:3000';

@@ -1,0 +1,60 @@
+@use '@styles/theme';
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: 0;
+  background-color: var(--color-black-fade-30);
+  z-index: theme.$z-high;
+}
+
+.modal {
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  position: relative;
+  background-color: var(--color-bg-primary);
+  filter: theme.$drop-shadow-xl;
+
+  &:focus {
+    outline: none;
+  }
+
+  @include theme.breakpoint-up(lg) {
+    padding: 1.5rem;
+  }
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h4 {
+    font-size: var(--big);
+  }
+}
+
+.modalBody {
+  @include theme.breakpoint-up(lg) {
+    padding: 1.5rem;
+  }
+  @include theme.breakpoint-up(xxl) {
+    padding: 2rem;
+  }
+}
+
+.modalCloseButton {
+  margin-left: 0.5rem;
+
+  &.noTitle {
+    margin-left: auto;
+  }
+}

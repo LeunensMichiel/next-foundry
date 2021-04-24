@@ -1,6 +1,7 @@
 import { Logo } from '@components/ui';
-import useTranslation from 'next-translate/useTranslation';
 import Link from 'next/link';
+import useTranslation from 'next-translate/useTranslation';
+
 import styles from './Footer.module.scss';
 
 const Footer = () => {
