@@ -35,7 +35,8 @@ This is an opinionated starter template in `Next.js v10.1` which uses all best p
 - :white_check_mark: 404 page
 - :white_check_mark: Error page
 - :x: Form validation
-- :x: Cookie consent
+- :white_check_mark: Cookie consent
+- :x: Privacy Policy / Terms and conditions page
 - :x: Thank you page (forms)
 - :white_check_mark: OnClickOutside and other usefull hooks
 
@@ -49,6 +50,7 @@ This is an opinionated starter template in `Next.js v10.1` which uses all best p
 - :white_check_mark: Dropdown
 - :white_check_mark: Toasts (react-toastify)
 - :white_check_mark: Modern, accessible Modal
+- :white_check_mark: Banner
 - :x: Accordion
 - :x: Language Switcher
 - :x: Form
@@ -73,9 +75,9 @@ This is an opinionated starter template in `Next.js v10.1` which uses all best p
 - :white_check_mark: Chrome transitions bug fix
 - :white_check_mark: Body Scroll Lock
 - :white_check_mark: Active Link styling
+- :white_check_mark: Cookie management
 - :x: `sitemap.xml`
 - :x: `robots.txt`
-- :x: Cookie management
 - :x: Caching
 - :x: Smooth scrolling with polyfill
 - :x: Lighthouse optimizations

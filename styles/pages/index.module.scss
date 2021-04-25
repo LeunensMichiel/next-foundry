@@ -27,13 +27,13 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
 }
 
 .card {
-  margin: 1rem;
   padding: 1.5rem;
-  flex-basis: 100%;
   text-align: left;
   color: inherit;
   border: 2px solid var(--color-border-secondary);

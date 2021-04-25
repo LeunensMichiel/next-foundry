@@ -322,6 +322,12 @@
   --color-btn-minimal-focus-fill: var(--color-gray-800);
   --color-btn-minimal-active-fill: var(--color-gray-600);
   --color-btn-minimal-disabled-fill: var(--color-gray-100);
+
+  --color-btn-minimal-contrasted-fill: var(--color-white);
+  --color-btn-minimal-contrasted-hover-fill: var(--color-gray-300);
+  --color-btn-minimal-contrasted-focus-fill: var(--color-gray-300);
+  --color-btn-minimal-contrasted-active-fill: var(--color-gray-500);
+  --color-btn-minimal-contrasted-disabled-fill: var(--color-gray-700);
   // Toasts
   --color-toast-text: var(--color-black);
   --color-toast-icon: var(--color-black);
@@ -396,8 +402,15 @@
   --font-family-base: #{theme.$font-family-base};
   --font-family-alt: #{theme.$font-family-alt};
 
+  --line-height-paragraph: #{theme.$line-height-paragraphs};
+  --line-height-header: #{theme.$line-height-headings};
+  --line-height-small: 1.4;
+
+  // Spacing and Radii
   --border-radius: #{theme.$border-radius};
   --border-radius-lg: #{theme.$border-radius-lg};
+
+  --reading-width: clamp(45ch, 50%, 80ch);
 
   @include theme.breakpoint-up(md) {
     --font-size: 112.5%;

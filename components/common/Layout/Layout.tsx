@@ -1,4 +1,4 @@
-import { Footer, Navbar } from '@components/common';
+import { CookieBanner, Footer, Navbar } from '@components/common';
 import { Modal } from '@components/ui';
 import { useUI } from '@lib/hooks';
 import cx from 'classnames';
@@ -15,12 +15,15 @@ const Layout: FC<Props> = ({ children }: Props) => {
   return (
     <>
       <Navbar />
-      <main className={cx(styles.mainContainer)}>{children}</main>
+      <main className={cx('container', 'mx-auto', styles.mainContainer)}>
+        {children}
+      </main>
       <Footer />
 
       <Modal open={displayModal} onClose={closeModal}>
         {/* {modalView === 'DEFAULT_VIEW' && <MyModalView />} */}
       </Modal>
+      <CookieBanner />
     </>
   );
 };

@@ -6,7 +6,6 @@ import { ToastContainer } from 'react-toastify';
 type UIState = {
   displayModal: boolean;
   modalView: ModalViews;
-  toastText: ToastText;
   openModal(): void;
   closeModal(): void;
   setModalView(view: ModalViews): void;
@@ -15,15 +14,12 @@ type UIState = {
 const INITIAL_UI_STATE: UIState = {
   displayModal: false,
   modalView: 'DEFAULT_VIEW',
-  toastText: '',
   closeModal: () => {},
   openModal: () => {},
   setModalView: () => {},
 };
 
 type ModalViews = 'DEFAULT_VIEW' | 'OTHER_VIEW';
-
-type ToastText = string;
 
 type Action =
   | {

@@ -129,6 +129,30 @@
         stroke: var(--color-btn-minimal-active-fill);
       }
     }
+    &.contrasted {
+      color: var(--color-btn-minimal-contrasted-fill);
+      svg {
+        stroke: var(--color-btn-minimal-contrasted-fill);
+      }
+      &:hover {
+        color: var(--color-btn-minimal-contrasted-hover-fill);
+        svg {
+          stroke: var(--color-btn-minimal-contrasted-hover-fill);
+        }
+      }
+      &:focus {
+        color: var(--color-btn-minimal-contrasted-focus-fill);
+        svg {
+          stroke: var(--color-btn-minimal-contrasted-focus-fill);
+        }
+      }
+      &:active {
+        color: var(--color-btn-minimal-contrasted-active-fill);
+        svg {
+          stroke: var(--color-btn-minimal-contrasted-active-fill);
+        }
+      }
+    }
   }
   &.disabled {
     border: 0.125rem solid var(--color-btn-disabled-border);

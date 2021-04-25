@@ -9,7 +9,7 @@ import {
 import cx from 'classnames';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useEffect, useRef, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 
 import styles from './Navbar.module.scss';
 import NavItems from './NavItems';
@@ -18,7 +18,11 @@ const BODY_SCROLL_OPTIONS: BodyScrollOptions = {
   reserveScrollBarGap: true,
 };
 
-const Navbar = ({ isTransparent = false }) => {
+type NavbarProps = {
+  isTransparent?: boolean;
+};
+
+const Navbar: FC<NavbarProps> = ({ children, isTransparent = false }) => {
   const router = useRouter();
 
   const [navDrawerOpen, setNavDrawerOpen] = useState(false);
@@ -51,6 +55,7 @@ const Navbar = ({ isTransparent = false }) => {
       })}
       ref={ref}
     >
+      {children}
       <div className={cx(styles.headerContainer, 'container-lg')}>
         <nav
           className={cx(styles.navigation, {

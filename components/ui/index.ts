@@ -1,3 +1,4 @@
+export { default as Banner } from './Banner';
 export { default as Button } from './Button';
 export { DropdownMenu } from './Dropdown';
 export { default as ImageWithAspectRatio } from './ImageWithAspectRatio';

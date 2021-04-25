@@ -6,6 +6,7 @@ import { Head } from '@components/common';
 import { ManagedUIProvider } from '@lib/context/UIContext';
 import { AppProps } from 'next/app';
 import { ReactNode, useEffect } from 'react';
+import { CookiesProvider } from 'react-cookie';
 
 type NoopProps = {
   children: ReactNode;
@@ -21,14 +22,14 @@ function App({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <>
+    <CookiesProvider>
       <Head />
       <ManagedUIProvider>
         <Layout>
           <Component {...pageProps} />
         </Layout>
       </ManagedUIProvider>
-    </>
+    </CookiesProvider>
   );
 }
 

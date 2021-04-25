@@ -32,7 +32,9 @@ body {
 }
 
 #__next {
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 }
 
 h1,
@@ -66,7 +68,7 @@ h5,
 h6 {
   font-style: normal;
   font-weight: bold;
-  line-height: theme.$line-height-headings;
+  line-height: var(--line-height-header);
 }
 
 p,
@@ -84,7 +86,7 @@ sub,
 i,
 b {
   font-family: var(--font-family-alt);
-  line-height: theme.$line-height-paragraphs;
+  line-height: var(--line-height-paragraph);
 }
 
 h1 {

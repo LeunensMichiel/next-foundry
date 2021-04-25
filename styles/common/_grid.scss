@@ -77,10 +77,7 @@
 }
 
 .padded {
-  padding: 1.5rem 2rem;
-  @include breakpoints.breakpoint-up(lg) {
-    padding: 2rem;
-  }
+  padding: 0 2rem;
 }
 
 .mx-auto {

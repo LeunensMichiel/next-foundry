@@ -29,6 +29,7 @@ interface Props<C extends React.ElementType> {
   loading?: boolean;
   disabled?: boolean;
   active?: boolean;
+  contrasted?: boolean;
   stretched?: boolean;
   uppercased?: boolean;
   minimal?: boolean;
@@ -45,6 +46,7 @@ const Button = <C extends React.ElementType = 'button'>({
   className,
   children,
   circular = false,
+  contrasted = false,
   disabled = false,
   iconLeft,
   iconRight,
@@ -64,6 +66,7 @@ const Button = <C extends React.ElementType = 'button'>({
       [styles[`button-${variant}`]]: !!variant,
       [styles.outlined]: outlined,
       [styles.minimal]: minimal,
+      [styles.contrasted]: contrasted && minimal,
       [styles.loading]: loading,
       [styles.disabled]: disabled,
       [styles[`button-${size}`]]: true,

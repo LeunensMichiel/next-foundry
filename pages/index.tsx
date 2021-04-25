@@ -27,7 +27,7 @@ const Home = () => {
           description: t('seo.description'),
         }}
       />
-      <div className={cx(styles.intro, 'container-lg', 'mx-auto')}>
+      <div className={cx(styles.intro, 'container', 'mx-auto')}>
         <h1 className={styles.title}>
           {t('welcome')}{' '}
           <a
@@ -49,7 +49,7 @@ const Home = () => {
         />
       </div>
 
-      <div className={cx(styles.grid, 'container-lg', 'mx-auto')}>
+      <div className={cx(styles.grid, 'container', 'mx-auto')}>
         <a
           href="https://github.com/LeunensMichiel/nextjs-starter-template/blob/master/README.md"
           className={styles.card}

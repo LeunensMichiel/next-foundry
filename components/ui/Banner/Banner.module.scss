@@ -1,0 +1,134 @@
+@use '@styles/theme';
+
+.banner {
+  right: 0;
+  left: 0;
+  z-index: theme.$z-high;
+  color: var(--color-text-white);
+  background-color: var(--color-bg-brand);
+  filter: theme.$drop-shadow-md;
+  @include theme.transition(background-color, color);
+
+  &.banner-bottom {
+    bottom: 0;
+    &.floating {
+      bottom: 1rem;
+    }
+  }
+  &.banner-top {
+    top: 0;
+    &.floating {
+      top: 1rem;
+    }
+  }
+
+  &.floating {
+    width: unset;
+    left: 1rem;
+    right: 1rem;
+    border-radius: var(--border-radius);
+  }
+
+  &.banner-viewport {
+    position: fixed;
+  }
+  &.banner-parent {
+    position: static;
+  }
+
+  @include theme.breakpoint-up(sm) {
+    &.floating {
+      left: 1.5rem;
+      right: 1.5rem;
+      &.banner-bottom {
+        bottom: 1.5rem;
+      }
+      &.banner-top {
+        top: 1.5rem;
+      }
+    }
+  }
+}
+
+.bannerContainer {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: minmax(auto, 3rem) 1fr auto auto;
+  gap: 0.75rem;
+  align-items: center;
+
+  @include theme.breakpoint-up(md) {
+    gap: 1rem;
+    padding: 1.5rem 0 1.5rem 1.5rem;
+  }
+}
+
+.bannerIcon {
+  grid-column: 1;
+  align-self: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  svg {
+    width: 100%;
+    height: auto;
+    stroke: var(--color-icon-white);
+    @include theme.transition(background-color);
+  }
+
+  @include theme.breakpoint-up(md) {
+    align-self: stretch;
+    font-size: 2.5rem;
+  }
+}
+
+.closeButton {
+  grid-column: 1 / -1;
+  justify-self: end;
+  height: auto;
+  margin-top: -0.5rem !important;
+  margin-right: -0.75rem !important;
+
+  @include theme.breakpoint-up(md) {
+    height: auto;
+    grid-row: 1;
+    grid-column: 4;
+    margin-top: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+.bannerBody {
+  grid-column: 2 / -1;
+  h4 {
+    font-size: var(--small);
+    font-weight: 500;
+  }
+  p {
+    margin-top: 0.5rem;
+    font-size: var(--small);
+    line-height: var(--line-height-small);
+  }
+  @include theme.breakpoint-up(md) {
+    padding-right: 1rem;
+    grid-column: 2;
+  }
+}
+
+.actionRow {
+  grid-column: 1 / -1;
+
+  & > * {
+    width: 100%;
+  }
+
+  @include theme.breakpoint-up(md) {
+    grid-row: 1;
+    grid-column: 3;
+
+    & > * {
+      width: unset;
+    }
+  }
+}
