@@ -34,11 +34,11 @@ This is an opinionated starter template in `Next.js v10.1` which uses all best p
 - :white_check_mark: Footer
 - :white_check_mark: 404 page
 - :white_check_mark: Error page
-- :x: Form validation
+- :white_check_mark: OnClickOutside and other usefull hooks
 - :white_check_mark: Cookie consent
+- :x: Form validation
 - :x: Privacy Policy / Terms and conditions page
 - :x: Thank you page (forms)
-- :white_check_mark: OnClickOutside and other usefull hooks
 
 ### UI-components
 
@@ -51,8 +51,6 @@ This is an opinionated starter template in `Next.js v10.1` which uses all best p
 - :white_check_mark: Toasts (react-toastify)
 - :white_check_mark: Modern, accessible Modal
 - :white_check_mark: Banner
-- :x: Accordion
-- :x: Language Switcher
 - :x: Form
 - :x: TextField
 - :x: NumberField
@@ -66,6 +64,8 @@ This is an opinionated starter template in `Next.js v10.1` which uses all best p
 - :x: Tooltip
 - :x: Tags/badges
 - :x: Loading Placeholder
+- :x: Accordion
+- :x: Language Switcher
 
 ### Other
 

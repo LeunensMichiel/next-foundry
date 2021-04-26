@@ -1,0 +1,40 @@
+@use 'styles/theme';
+.fieldContainer {
+}
+
+.inputField {
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--border-radius);
+  background: var(--color-input-bg);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-input-border);
+  @include theme.transition(color, background, border-color);
+
+  &::placeholder {
+    color: var(--color-text-placeholder);
+  }
+  &:hover {
+    background: var(--color-input-hover-bg);
+    border: 1px solid var(--color-input-hover-border);
+  }
+  &:focus {
+    background: var(--color-input-focus-bg);
+    border: 1px solid var(--color-input-focus-border);
+    outline: none;
+  }
+  &:disabled {
+    background: var(--color-input-disabled-bg);
+    border: 1px solid var(--color-input-disabled-border);
+    color: var(--color-text-disabled);
+  }
+}
+
+.inputLabel {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: var(--small);
+  font-weight: 500;
+  color: var(--color-label-primary-text);
+  @include theme.transition(color);
+  letter-spacing: 0.02rem;
+}

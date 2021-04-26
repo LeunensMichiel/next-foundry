@@ -5,7 +5,7 @@ type LogoProps = {
 };
 
 const Logo = forwardRef<SVGSVGElement, LogoProps>(
-  ({ className = '', ...props }: LogoProps, ref) => (
+  ({ className = '', ...props }, ref) => (
     <svg
       width="88"
       height="24"

@@ -80,8 +80,8 @@
   --color-text-primary: var(--color-black);
   --color-text-secondary: var(--color-gray-800);
   --color-text-tertiary: var(--color-gray-600);
-  --color-text-placeholder: var(--color-gray-700);
   --color-text-disabled: var(--color-gray-400);
+  --color-text-placeholder: var(--color-gray-500);
   --color-text-danger: var(--color-red-50);
   --color-text-success: var(--color-purple-50);
   --color-text-warning: var(--color-orange-50);
@@ -382,6 +382,60 @@
   --color-toast-info-hover-icon: var(--color-black);
   --color-toast-info-hover-bg: var(--color-amber-300);
   --color-toast-info-hover-border: var(--color-amber-300);
+  // Form Elements
+  --color-label-primary-text: var(--color-gray-700);
+  --color-label-primary-icon: var(--color-gray-700);
+  --color-label-secondary-text: var(--color-gray-500);
+  --color-label-secondary-icon: var(--color-gray-500);
+  --color-label-brand-text: var(--color-purple-500);
+  --color-label-brand-icon: var(--color-purple-500);
+  --color-label-info-text: var(--color-amber-500);
+  --color-label-info-icon: var(--color-amber-500);
+  --color-label-success-text: var(--color-purple-500);
+  --color-label-success-icon: var(--color-purple-500);
+  --color-label-warning-text: var(--color-orange-500);
+  --color-label-warning-icon: var(--color-orange-500);
+  --color-label-danger-text: var(--color-red-500);
+  --color-label-danger-icon: var(--color-red-500);
+
+  --color-input-shadow: var(--color-black-fade-15);
+
+  --color-input-bg: var(--color-white);
+  --color-input-border: var(--color-gray-500);
+  --color-input-hover-bg: var(--color-white);
+  --color-input-hover-border: var(--color-gray-500);
+  --color-input-focus-bg: var(--color-white);
+  --color-input-focus-border: var(--color-purple-500);
+  --color-input-disabled-bg: var(--color-gray-200);
+  --color-input-disabled-border: var(--color-gray-200);
+  --color-input-success-bg: var(--color-white);
+  --color-input-success-border: var(--color-purple-500);
+  --color-input-warning-bg: var(--color-white);
+  --color-input-warning-border: var(--color-orange-500);
+  --color-input-error-bg: var(--color-white);
+  --color-input-error-border: var(--color-red-500);
+
+  --color-input-tooltip-text: var(--color-text-inverse);
+  --color-input-tooltip-bg: var(--color-bg-inversed);
+  --color-input-tooltip-border: var(--color-border-inversed);
+  --color-input-tooltip-primary-text: var(--color-purple-50);
+  --color-input-tooltip-primary-bg: var(--color-purple-500);
+  --color-input-tooltip-primary-border: var(--color-purple-500);
+  --color-input-tooltip-secondary-text: var(--color-amber-50);
+  --color-input-tooltip-secondary-bg: var(--color-amber-700);
+  --color-input-tooltip-secondary-border: var(--color-amber-700);
+  --color-input-tooltip-success-text: var(--color-purple-50);
+  --color-input-tooltip-success-bg: var(--color-purple-500);
+  --color-input-tooltip-success-border: var(--color-purple-500);
+  --color-input-tooltip-warning-text: var(--color-orange-50);
+  --color-input-tooltip-warning-bg: var(--color-orange-700);
+  --color-input-tooltip-warning-border: var(--color-orange-700);
+  --color-input-tooltip-error-text: var(--color-red-50);
+  --color-input-tooltip-error-bg: var(--color-red-500);
+  --color-input-tooltip-error-border: var(--color-red-500);
+  --color-input-tooltip-info-text: var(--color-amber-50);
+  --color-input-tooltip-info-bg: var(--color-amber-700);
+  --color-input-tooltip-info-border: var(--color-amber-700);
   // Typography
   --font-size: 100%;
   --ratio: #{theme.type-ratio('majorSecond')};

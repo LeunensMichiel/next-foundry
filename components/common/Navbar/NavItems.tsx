@@ -27,7 +27,7 @@ const NavItems = ({ navDrawerOpen = false, isTransparent = false }) => (
         </DropdownMenu>
       </NavItem>
       <NavItem label="Buttons" link={{ href: '/buttons' }} />
-      <NavItem label="Page 3" link={{ href: '#' }} />
+      <NavItem label="Form" link={{ href: '/formpage' }} />
     </ul>
   </div>
 );

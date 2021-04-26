@@ -12,10 +12,10 @@
 
   border: 0.125rem solid var(--color-btn-border);
   border-radius: var(--border-radius);
-  background-color: var(--color-btn-bg);
+  background: var(--color-btn-bg);
   cursor: pointer;
   color: var(--color-btn-text);
-  @include theme.transition(background-color, border, color, filter);
+  @include theme.transition(background, border, color, filter);
   @include theme.drop-shadow-colored(sm, var(--color-btn-shadow));
 
   svg {
@@ -25,7 +25,7 @@
 
   &:hover {
     border: 0.125rem solid var(--color-btn-hover-border);
-    background-color: var(--color-btn-hover-bg);
+    background: var(--color-btn-hover-bg);
     color: var(--color-btn-hover-text);
     @include theme.drop-shadow-colored(md, var(--color-btn-shadow));
     svg {
@@ -34,7 +34,7 @@
   }
   &:focus {
     border: 0.125rem solid var(--color-btn-focus-border);
-    background-color: var(--color-btn-focus-bg);
+    background: var(--color-btn-focus-bg);
     color: var(--color-btn-focus-text);
     outline: var(--color-btn-focus-border);
     @include theme.drop-shadow-colored(sm, var(--color-btn-shadow));
@@ -44,7 +44,7 @@
   }
   &:active {
     border: 0.125rem solid var(--color-btn-active-border);
-    background-color: var(--color-btn-active-bg);
+    background: var(--color-btn-active-bg);
     color: var(--color-btn-active-text);
     @include theme.drop-shadow-colored(sm, var(--color-btn-shadow));
     svg {
@@ -53,7 +53,7 @@
   }
   &.loading {
     border: 0.125rem solid var(--color-btn-active-border);
-    background-color: var(--color-btn-active-bg);
+    background: var(--color-btn-active-bg);
     color: var(--color-btn-active-text);
     pointer-events: none;
     user-select: none;
@@ -63,7 +63,7 @@
     }
   }
   &.outlined {
-    background-color: transparent;
+    background: transparent;
     color: var(--color-btn-border);
     border: 0.125rem solid var(--color-btn-border);
     filter: none;
@@ -72,25 +72,25 @@
     }
     &:hover {
       border: 0.125rem solid var(--color-btn-hover-border);
-      background-color: none;
+      background: none;
       color: var(--color-btn-hover-border);
       filter: none;
     }
     &:focus {
       border: 0.125rem solid var(--color-btn-focus-border);
-      background-color: none;
+      background: none;
       color: var(--color-btn-focus-border);
       filter: none;
     }
     &:active {
       border: 0.125rem solid var(--color-btn-active-border);
-      background-color: none;
+      background: none;
       color: var(--color-btn-active-border);
       filter: none;
     }
     &.disabled {
       border: 0.125rem solid var(--color-btn-disabled-border);
-      background-color: transparent;
+      background: transparent;
       color: var(--color-btn-disabled-text);
       svg {
         stroke: var(--color-btn-disabled-icon);
@@ -99,7 +99,7 @@
       &:focus,
       &:active {
         border: 0.125rem solid var(--color-btn-disabled-border);
-        background-color: transparent;
+        background: transparent;
         color: var(--color-btn-disabled-text);
       }
     }
@@ -156,7 +156,7 @@
   }
   &.disabled {
     border: 0.125rem solid var(--color-btn-disabled-border);
-    background-color: var(--color-btn-disabled-bg);
+    background: var(--color-btn-disabled-bg);
     color: var(--color-btn-disabled-text);
     filter: none;
     cursor: no-drop;
@@ -167,7 +167,7 @@
     &:focus,
     &:active {
       border: 0.125rem solid var(--color-btn-disabled-border);
-      background-color: var(--color-btn-disabled-bg);
+      background: var(--color-btn-disabled-bg);
       color: var(--color-btn-disabled-text);
     }
   }
@@ -197,10 +197,10 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
 @each $variant in $variants {
   .button-#{$variant} {
     border: 0.125rem solid var(--color-btn-#{$variant}-border);
-    background-color: var(--color-btn-#{$variant}-bg);
+    background: var(--color-btn-#{$variant}-bg);
     color: var(--color-btn-#{$variant}-text);
     @include theme.drop-shadow-colored(xs, var(--color-btn-shadow));
-    @include theme.transition(background-color, border, color, filter);
+    @include theme.transition(background, border, color, filter);
 
     svg {
       stroke: var(--color-btn-#{$variant}-icon);
@@ -208,7 +208,7 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
 
     &:hover {
       border: 0.125rem solid var(--color-btn-#{$variant}-hover-border);
-      background-color: var(--color-btn-#{$variant}-hover-bg);
+      background: var(--color-btn-#{$variant}-hover-bg);
       color: var(--color-btn-#{$variant}-hover-text);
       @include theme.drop-shadow-colored(md, var(--color-btn-shadow));
       svg {
@@ -217,7 +217,7 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
     }
     &:focus {
       border: 0.125rem solid var(--color-btn-#{$variant}-focus-border);
-      background-color: var(--color-btn-#{$variant}-focus-bg);
+      background: var(--color-btn-#{$variant}-focus-bg);
       color: var(--color-btn-#{$variant}-focus-text);
       outline: var(--color-btn-#{$variant}-focus-border);
       @include theme.drop-shadow-colored(sm, var(--color-btn-shadow));
@@ -227,7 +227,7 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
     }
     &:active {
       border: 0.125rem solid var(--color-btn-#{$variant}-active-border);
-      background-color: var(--color-btn-#{$variant}-active-bg);
+      background: var(--color-btn-#{$variant}-active-bg);
       color: var(--color-btn-#{$variant}-active-text);
       @include theme.drop-shadow-colored(sm, var(--color-btn-shadow));
       svg {
@@ -236,7 +236,7 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
     }
     &.loading {
       border: 0.125rem solid var(--color-btn-#{$variant}-active-border);
-      background-color: var(--color-btn-#{$variant}-active-bg);
+      background: var(--color-btn-#{$variant}-active-bg);
       color: var(--color-btn-#{$variant}-active-text);
       @include theme.drop-shadow-colored(sm, var(--color-btn-shadow));
       svg {
@@ -244,7 +244,7 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
       }
     }
     &.outlined {
-      background-color: transparent;
+      background: transparent;
       @if $variant != 'transparent' {
         color: var(--color-btn-#{$variant}-border);
       } @else {
@@ -256,7 +256,7 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
       }
       &:hover {
         border: 0.125rem solid var(--color-btn-#{$variant}-hover-border);
-        background-color: none;
+        background: none;
         @if $variant != 'transparent' {
           color: var(--color-btn-#{$variant}-hover-border);
         } @else {
@@ -265,7 +265,7 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
       }
       &:focus {
         border: 0.125rem solid var(--color-btn-#{$variant}-focus-border);
-        background-color: none;
+        background: none;
         @if $variant != 'transparent' {
           color: var(--color-btn-#{$variant}-focus-border);
         } @else {
@@ -274,7 +274,7 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
       }
       &:active {
         border: 0.125rem solid var(--color-btn-#{$variant}-active-border);
-        background-color: none;
+        background: none;
         @if $variant != 'transparent' {
           color: var(--color-btn-#{$variant}-active-border);
         } @else {
@@ -283,7 +283,7 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
       }
       &.disabled {
         border: 0.125rem solid var(--color-btn-#{$variant}-disabled-border);
-        background-color: transparent;
+        background: transparent;
         color: var(--color-btn-#{$variant}-disabled-text);
         svg {
           stroke: var(--color-btn-#{$variant}-disabled-icon);
@@ -292,14 +292,14 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
         &:focus,
         &:active {
           border: 0.125rem solid var(--color-btn-#{$variant}-disabled-border);
-          background-color: transparent;
+          background: transparent;
           color: var(--color-btn-#{$variant}-disabled-text);
         }
       }
     }
     &.disabled {
       border: 0.125rem solid var(--color-btn-#{$variant}-disabled-border);
-      background-color: var(--color-btn-#{$variant}-disabled-bg);
+      background: var(--color-btn-#{$variant}-disabled-bg);
       color: var(--color-btn-#{$variant}-disabled-text);
       filter: none;
       svg {
@@ -309,7 +309,7 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
       &:focus,
       &:active {
         border: 0.125rem solid var(--color-btn-#{$variant}-disabled-border);
-        background-color: var(--color-btn-#{$variant}-disabled-bg);
+        background: var(--color-btn-#{$variant}-disabled-bg);
         color: var(--color-btn-#{$variant}-disabled-text);
       }
     }
