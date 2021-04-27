@@ -1,5 +1,10 @@
+export { default as Alert } from './Alert';
+export { default as AtSign } from './AtSign';
+export { default as Check } from './Check';
 export { default as Chevron } from './ChevronRight';
 export { default as Cross } from './Cross';
+export { default as Help } from './Help';
+export { default as Info } from './Info';
 export { default as MenuToggle } from './MenuToggle';
 export { default as Moon } from './Moon';
 export { default as Sun } from './Sun';

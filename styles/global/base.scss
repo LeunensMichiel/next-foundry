@@ -164,11 +164,7 @@ code {
 :-webkit-autofill:focus {
   border: 1px solid var(--color-input-border);
   -webkit-text-fill-color: var(--color-text-secondary);
-  -webkit-box-shadow: 0 0 0px 1000px var(--color-input-bg) inset;
+  box-shadow: 0 0 0px 1000px var(--color-input-bg) inset;
 
-  @include theme.transition(
-    border,
-    -webkit-text-fill-color,
-    -webkit-box-shadow
-  );
+  @include theme.transition(border, -webkit-text-fill-color, box-shadow);
 }

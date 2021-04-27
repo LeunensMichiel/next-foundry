@@ -1,13 +1,24 @@
 @use 'styles/theme';
 .fieldContainer {
+  grid-column: span 1;
+}
+
+.inputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .inputField {
-  padding: 0.75rem 1.25rem;
+  width: 100%;
+  min-height: 2.25rem;
+  padding: 0.5rem 0.75rem;
+  font-size: var(--small);
+  line-height: 1;
   border-radius: var(--border-radius);
   background: var(--color-input-bg);
   color: var(--color-text-secondary);
-  border: 1px solid var(--color-input-border);
+  border: 0.125rem solid var(--color-input-border);
   @include theme.transition(color, background, border-color);
 
   &::placeholder {
@@ -15,17 +26,25 @@
   }
   &:hover {
     background: var(--color-input-hover-bg);
-    border: 1px solid var(--color-input-hover-border);
+    border: 0.125rem solid var(--color-input-hover-border);
   }
   &:focus {
     background: var(--color-input-focus-bg);
-    border: 1px solid var(--color-input-focus-border);
+    border: 0.125rem solid var(--color-input-focus-border);
     outline: none;
   }
   &:disabled {
     background: var(--color-input-disabled-bg);
-    border: 1px solid var(--color-input-disabled-border);
+    border: 0.125rem solid var(--color-input-disabled-border);
     color: var(--color-text-disabled);
+  }
+
+  &.has-icon-left {
+    padding-left: 2.25rem;
+  }
+
+  &.has-icon-right {
+    padding-right: 2.25rem;
   }
 }
 
@@ -37,4 +56,48 @@
   color: var(--color-label-primary-text);
   @include theme.transition(color);
   letter-spacing: 0.02rem;
+}
+
+.inputIconContainer {
+  padding: 0.75rem;
+  display: flex;
+  position: absolute;
+  z-index: theme.$z-low;
+  svg {
+    width: 1rem;
+    height: auto;
+    stroke: var(--color-label-primary-icon);
+  }
+}
+
+.inputIconLeft {
+  left: 0;
+}
+.inputIconRight {
+  right: 0rem;
+}
+
+.fieldAlert {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  min-height: 0.75rem;
+}
+
+.fieldAlertIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.25rem;
+  svg {
+    width: 0.75rem;
+    height: auto;
+    stroke: var(--color-label-danger-text);
+  }
+}
+
+.fieldAlertText {
+  font-size: 0.75rem;
+  line-height: 1;
+  color: var(--color-label-danger-text);
 }
