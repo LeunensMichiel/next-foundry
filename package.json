@@ -14,7 +14,7 @@
     "@reach/portal": "^0.15.0",
     "body-scroll-lock": "^3.1.5",
     "classnames": "^2.3.1",
-    "next": "10.1.3",
+    "next": "10.2.0",
     "next-seo": "^4.24.0",
     "next-themes": "^0.0.14",
     "next-translate": "^1.0.6",
@@ -22,13 +22,13 @@
     "react-cookie": "^4.0.3",
     "react-dom": "17.0.2",
     "react-focus-lock": "^2.5.0",
-    "react-hook-form": "^7.3.4",
+    "react-hook-form": "^7.3.5",
     "react-toastify": "^7.0.4",
-    "sass": "^1.32.11"
+    "sass": "^1.32.12"
   },
   "devDependencies": {
     "@types/body-scroll-lock": "^2.6.1",
-    "@types/node": "^14.14.41",
+    "@types/node": "^15.0.1",
     "@types/react": "^17.0.4",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",

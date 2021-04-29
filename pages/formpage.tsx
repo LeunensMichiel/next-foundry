@@ -8,6 +8,7 @@ type FormValues = {
   text: string;
   number: number;
   password: string;
+  checkbox: boolean;
 };
 
 const FormPage = () => {
@@ -22,7 +23,7 @@ const FormPage = () => {
   return (
     <div className="container mx-auto padded">
       <h1>Form</h1>
-      <Form onSubmit={handleSubmit(onSubmit)} autoComplete="new-password">
+      <Form onSubmit={handleSubmit(onSubmit)}>
         <Input
           label="Test Text"
           {...register('text', { required: 'This is a required field' })}
@@ -30,6 +31,7 @@ const FormPage = () => {
           error={errors?.text}
           iconLeft={<AtSign />}
           iconRight={<ChevronRight />}
+          colSpan={2}
         />
         <Input
           label="Test Number"
@@ -39,6 +41,8 @@ const FormPage = () => {
           type="number"
           placeholder="Enter a number"
           error={errors?.number}
+          pattern="[0-9]+([\.,][0-9]+)?"
+          step="0.01"
           iconLeft={<AtSign />}
         />
         <Input

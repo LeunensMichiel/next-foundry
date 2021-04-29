@@ -16,8 +16,8 @@ type InputProps = {
   withFeedback?: boolean;
   label: string;
   error?: FieldError;
+  colSpan?: 1 | 2 | 3 | 4;
   type?:
-    | 'checkbox'
     | 'color'
     | 'email'
     | 'file'
@@ -45,12 +45,13 @@ const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
       type = 'text',
       iconLeft,
       iconRight,
+      colSpan = 1,
       withFeedback = true,
       ...rest
     },
     ref
   ) => (
-    <div className={cn(styles.fieldContainer)}>
+    <div className={cn({ [styles[`col-span-${colSpan}`]]: colSpan })}>
       <label htmlFor={name} className={cn(styles.inputLabel)}>
         {label}
       </label>

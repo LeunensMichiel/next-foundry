@@ -1,6 +1,6 @@
 # Michiel Leunens -- Next.js template
 
-This is an opinionated starter template in `Next.js v10.1` which uses all best practices as of 2021. This way you can churn more (static) websites with less code.
+This is an opinionated starter template in `Next.js v10.2` which uses all best practices as of 2021. This way you can churn more (static) websites with less code.
 
 > :bulb: This project contains a lot of custom components. Everything is loosely coupled, so you can easily delete what you don't need. :warning: **IE11 is not supported**.
 
@@ -51,9 +51,9 @@ This is an opinionated starter template in `Next.js v10.1` which uses all best p
 - :white_check_mark: Toasts (react-toastify)
 - :white_check_mark: Modern, accessible Modal
 - :white_check_mark: Banner
-- :warning: Form
-- :warning: TextField
-- :warning: NumberField
+- :white_check_mark: Form
+- :white_check_mark: TextField
+- :white_check_mark: NumberField
 - :x: Checkbox
 - :x: Switch
 - :x: RadioButton
