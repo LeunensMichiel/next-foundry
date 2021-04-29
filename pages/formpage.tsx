@@ -1,7 +1,7 @@
-import { Form, Layout } from '@components/common';
+import { Fieldset, Form, Layout } from '@components/common';
 import { AtSign } from '@components/icons';
 import ChevronRight from '@components/icons/ChevronRight';
-import { Button, Input } from '@components/ui';
+import { Button, Checkbox, Input } from '@components/ui';
 import { useForm } from 'react-hook-form';
 
 type FormValues = {
@@ -9,6 +9,7 @@ type FormValues = {
   number: number;
   password: string;
   checkbox: boolean;
+  checkbox2: boolean;
 };
 
 const FormPage = () => {
@@ -52,6 +53,22 @@ const FormPage = () => {
           placeholder="Enter a password"
           error={errors?.password}
         />
+        <Fieldset
+          label="Some boxes"
+          error={errors?.checkbox || errors?.checkbox2}
+        >
+          <Checkbox
+            label="This is a Checkbox with a loooooooooooooooooooot of text"
+            {...register('checkbox', { required: 'This should be checked' })}
+          />
+          <Checkbox
+            label="Second box"
+            disabled
+            {...register('checkbox2', {
+              required: 'This should also! be checked',
+            })}
+          />
+        </Fieldset>
         <Button loading={isSubmitting} variant="primary" type="submit">
           Submit
         </Button>

@@ -1,8 +1,7 @@
 .form {
   padding: 1.5rem;
   display: grid;
-  // justify-items: stretch;
-  // justify-content: start;
+  align-items: start;
   grid-gap: 1rem;
   grid-template-columns: 1fr 1fr;
 }

@@ -398,7 +398,7 @@
   --color-label-danger-text: var(--color-red-500);
   --color-label-danger-icon: var(--color-red-500);
 
-  --color-input-shadow: var(--color-black-fade-15);
+  --color-input-shadow: var(--color-purple-500-fade-15);
 
   --color-input-bg: var(--color-white);
   --color-input-border: var(--color-gray-300);
@@ -414,6 +414,10 @@
   --color-input-warning-border: var(--color-orange-500);
   --color-input-error-bg: var(--color-white);
   --color-input-error-border: var(--color-red-500);
+
+  --color-input-checkbox-bg: var(--color-purple-500);
+  --color-input-checkbox-check: var(--color-purple-50);
+  --color-input-checkbox-label: var(--color-purple-50);
 
   --color-input-tooltip-text: var(--color-text-inverse);
   --color-input-tooltip-bg: var(--color-bg-inversed);

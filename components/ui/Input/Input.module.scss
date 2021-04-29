@@ -1,18 +1,5 @@
 @use 'styles/theme';
 
-.col-span-1 {
-  grid-column: span 1;
-}
-.col-span-2 {
-  grid-column: span 2;
-}
-.col-span-3 {
-  grid-column: span 3;
-}
-.col-span-4 {
-  grid-column: span 4;
-}
-
 .inputContainer {
   position: relative;
   display: flex;
@@ -41,6 +28,7 @@
   &:focus {
     background: var(--color-input-focus-bg);
     border: 0.125rem solid var(--color-input-focus-border);
+    box-shadow: 0 0 0.1rem 0.1rem var(--color-black-fade-15) !important;
     outline: none;
   }
   &:disabled {

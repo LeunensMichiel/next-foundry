@@ -1,6 +1,7 @@
 export { default as Alert } from './Alert';
 export { default as AtSign } from './AtSign';
 export { default as Check } from './Check';
+export { default as CheckCircle } from './CheckCircle';
 export { default as Chevron } from './ChevronRight';
 export { default as Cross } from './Cross';
 export { default as Help } from './Help';

@@ -51,7 +51,7 @@ const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
     },
     ref
   ) => (
-    <div className={cn({ [styles[`col-span-${colSpan}`]]: colSpan })}>
+    <div className={cn({ [`col-span-${colSpan}`]: colSpan })}>
       <label htmlFor={name} className={cn(styles.inputLabel)}>
         {label}
       </label>
