@@ -18,17 +18,11 @@ type InputProps = {
   error?: FieldError;
   colSpan?: 1 | 2 | 3 | 4;
   type?:
-    | 'color'
     | 'email'
     | 'file'
-    | 'hidden'
     | 'number'
     | 'password'
-    | 'radio'
-    | 'range'
-    | 'reset'
     | 'search'
-    | 'submit'
     | 'tel'
     | 'text'
     | 'url';

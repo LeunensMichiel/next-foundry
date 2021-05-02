@@ -28,7 +28,7 @@
   &:focus {
     background: var(--color-input-focus-bg);
     border: 0.125rem solid var(--color-input-focus-border);
-    box-shadow: 0 0 0.1rem 0.1rem var(--color-black-fade-15) !important;
+    @include theme.drop-shadow-colored(md, var(--color-input-shadow));
     outline: none;
   }
   &:disabled {

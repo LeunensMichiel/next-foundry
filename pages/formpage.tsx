@@ -1,11 +1,11 @@
 import { Fieldset, Form, Layout } from '@components/common';
-import { AtSign } from '@components/icons';
-import ChevronRight from '@components/icons/ChevronRight';
-import { Button, Checkbox, Input } from '@components/ui';
+import { AtSign, Chevron } from '@components/icons';
+import { Button, Checkbox, Input, RadioButton } from '@components/ui';
 import { useForm } from 'react-hook-form';
 
 type FormValues = {
   text: string;
+  radioVal: string;
   number: number;
   password: string;
   checkbox: boolean;
@@ -31,7 +31,7 @@ const FormPage = () => {
           placeholder="Enter a string"
           error={errors?.text}
           iconLeft={<AtSign />}
-          iconRight={<ChevronRight />}
+          iconRight={<Chevron />}
           colSpan={2}
         />
         <Input
@@ -61,12 +61,18 @@ const FormPage = () => {
             label="This is a Checkbox with a loooooooooooooooooooot of text"
             {...register('checkbox', { required: 'This should be checked' })}
           />
-          <Checkbox
-            label="Second box"
-            disabled
-            {...register('checkbox2', {
-              required: 'This should also! be checked',
-            })}
+          <Checkbox label="Second box" disabled {...register('checkbox2')} />
+        </Fieldset>
+        <Fieldset label="Some radios" error={errors?.radioVal}>
+          <RadioButton
+            label="Value 1"
+            {...register('radioVal')}
+            value="11111"
+          />
+          <RadioButton
+            label="Value 2 adawdadawdawdadadawda adad"
+            {...register('radioVal')}
+            value="222222"
           />
         </Fieldset>
         <Button loading={isSubmitting} variant="primary" type="submit">

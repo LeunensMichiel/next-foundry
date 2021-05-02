@@ -5,7 +5,7 @@
   --color-text-secondary: var(--color-gray-100);
   --color-text-tertiary: var(--color-gray-300);
   --color-text-placeholder: var(--color-gray-400);
-  --color-text-disabled: var(--color-gray-600);
+  --color-text-disabled: var(--color-gray-500);
   --color-text-danger: var(--color-red-400);
   --color-text-success: var(--color-purple-400);
   --color-text-warning: var(--color-orange-400);
@@ -272,8 +272,8 @@
   --color-input-hover-border: var(--color-gray-800);
   --color-input-focus-bg: var(--color-gray-900);
   --color-input-focus-border: var(--color-purple-800);
-  --color-input-disabled-bg: var(--color-gray-200);
-  --color-input-disabled-border: var(--color-gray-200);
+  --color-input-disabled-bg: var(--color-gray-800);
+  --color-input-disabled-border: var(--color-gray-800);
   --color-input-success-bg: var(--color-gray-900);
   --color-input-success-border: var(--color-purple-800);
   --color-input-warning-bg: var(--color-gray-900);
