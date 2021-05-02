@@ -73,8 +73,7 @@
   svg {
     width: 100%;
     height: auto;
-    stroke: var(--color-icon-white);
-    @include theme.transition(background-color);
+    @include theme.transition(background-color, stroke);
   }
 
   @include theme.breakpoint-up(md) {

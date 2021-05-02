@@ -80,6 +80,7 @@
   display: flex;
   align-items: center;
   min-height: 0.75rem;
+  color: var(--color-label-danger-text);
 }
 
 .fieldAlertIcon {
@@ -90,12 +91,10 @@
   svg {
     width: 0.75rem;
     height: auto;
-    stroke: var(--color-label-danger-text);
   }
 }
 
 .fieldAlertText {
   font-size: 0.75rem;
   line-height: 1;
-  color: var(--color-label-danger-text);
 }
