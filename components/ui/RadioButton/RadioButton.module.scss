@@ -35,6 +35,11 @@
     &:checked + .radioButtonControl {
       border: 0.125rem solid var(--color-input-radiobutton-checked);
     }
+    &:disabled + .radioButtonControl {
+      border: 0.125rem solid var(--color-input-disabled-border);
+      color: var(--color-text-disabled);
+      cursor: not-allowed;
+    }
   }
 }
 
@@ -46,6 +51,7 @@
   border-radius: 50%;
   width: 1.5rem;
   height: 1.5rem;
+  cursor: pointer;
   @include theme.transition(border-color);
 }
 

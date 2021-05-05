@@ -37,6 +37,14 @@
     color: var(--color-text-disabled);
   }
 
+  &[type='number']::-webkit-inner-spin-button,
+  &[type='number']::-webkit-outer-spin-button {
+    appearance: none;
+  }
+  &[type='number'] {
+    -moz-appearance: textfield;
+  }
+
   &.has-icon-left {
     padding-left: 2.25rem;
   }

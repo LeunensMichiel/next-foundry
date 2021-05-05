@@ -1,6 +1,6 @@
 import { Fieldset, Form, Layout } from '@components/common';
 import { AtSign, Chevron } from '@components/icons';
-import { Button, Checkbox, Input, RadioButton } from '@components/ui';
+import { Button, Checkbox, Input, RadioButton, Switch } from '@components/ui';
 import { useForm } from 'react-hook-form';
 
 type FormValues = {
@@ -10,6 +10,8 @@ type FormValues = {
   password: string;
   checkbox: boolean;
   checkbox2: boolean;
+  switch: boolean;
+  switch2: boolean;
 };
 
 const FormPage = () => {
@@ -73,7 +75,18 @@ const FormPage = () => {
             label="Value 2 adawdadawdawdadadawda adad"
             {...register('radioVal')}
             value="222222"
+            disabled
           />
+        </Fieldset>
+        <Fieldset
+          label="Some Switches"
+          error={errors?.switch || errors?.switch2}
+        >
+          <Switch
+            label="awd"
+            {...register('switch', { required: 'This should be checked' })}
+          />
+          <Switch label="awd" disabled {...register('switch2')} />
         </Fieldset>
         <Button loading={isSubmitting} variant="primary" type="submit">
           Submit
