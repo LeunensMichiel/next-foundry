@@ -120,7 +120,7 @@
     background: var(--color-btn-disabled-bg);
     color: var(--color-btn-disabled-text);
     filter: none;
-    cursor: no-drop;
+    cursor: not-allowed;
 
     &:hover,
     &:focus,

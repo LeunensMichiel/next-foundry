@@ -63,12 +63,9 @@
       background: var(--color-btn-transparent-bg) !important;
     }
     &.toolbarGeneralIcon {
-      svg {
-        @include theme.transition(color, fill, stroke);
-        &:hover {
-          stroke: var(--color-btn-primary-border);
-          color: var(--color-btn-primary-border);
-        }
+      @include theme.transition(color);
+      &:hover {
+        color: var(--color-btn-primary-border);
       }
     }
   }
