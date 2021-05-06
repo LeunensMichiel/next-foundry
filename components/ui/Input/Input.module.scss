@@ -45,6 +45,15 @@
     -moz-appearance: textfield;
   }
 
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    border: 0.125rem solid var(--color-input-border);
+    -webkit-text-fill-color: var(--color-text-secondary);
+    box-shadow: inset 0 0 0px 100px var(--color-input-bg);
+    @include theme.transition(border, -webkit-text-fill-color, box-shadow);
+  }
+
   &.has-icon-left {
     padding-left: 2.25rem;
   }

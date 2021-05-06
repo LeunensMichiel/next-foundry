@@ -82,10 +82,7 @@ const FormPage = () => {
           label="Some Switches"
           error={errors?.switch || errors?.switch2}
         >
-          <Switch
-            label="awd"
-            {...register('switch', { required: 'This should be checked' })}
-          />
+          <Switch label="awd" labelOn="😀" {...register('switch')} />
           <Switch label="awd" disabled {...register('switch2')} />
         </Fieldset>
         <Button loading={isSubmitting} variant="primary" type="submit">
