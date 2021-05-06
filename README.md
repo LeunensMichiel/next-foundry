@@ -56,7 +56,7 @@ This is an opinionated starter template in `Next.js v10.2` which uses all best p
 - :white_check_mark: NumberField
 - :white_check_mark: Checkbox
 - :white_check_mark: RadioButton
-- :x: Switch
+- :white_check_mark: Switch
 - :x: Select Field (Single and Multi Select)
 - :x: Date picker
 - :x: Time picker
