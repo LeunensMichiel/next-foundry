@@ -1,0 +1,46 @@
+.textAreaLabel {
+  composes: inputLabel from '../../ui/Input/Input.module.scss';
+}
+
+.textAreaField {
+  composes: inputField from '../../ui/Input/Input.module.scss';
+  resize: vertical;
+  min-height: 7.5rem;
+  line-height: var(--line-height-paragraph);
+
+  &.has-icon-left {
+    padding-left: 2.25rem;
+  }
+
+  &.has-icon-right {
+    padding-right: 2.25rem;
+  }
+}
+
+.textAreaContainer {
+  composes: inputContainer from '../../ui/Input/Input.module.scss';
+}
+
+.fieldAlert {
+  composes: fieldAlert from '../../ui/Input/Input.module.scss';
+}
+
+.fieldAlertIcon {
+  composes: fieldAlertIcon from '../../ui/Input/Input.module.scss';
+}
+
+.fieldAlertText {
+  composes: fieldAlertText from '../../ui/Input/Input.module.scss';
+}
+
+.textAreaIconContainer {
+  composes: inputIconContainer from '../../ui/Input/Input.module.scss';
+  top: 0.25rem;
+}
+
+.textAreaIconLeft {
+  composes: inputIconLeft from '../../ui/Input/Input.module.scss';
+}
+.textAreaIconRight {
+  composes: inputIconRight from '../../ui/Input/Input.module.scss';
+}

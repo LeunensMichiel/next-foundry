@@ -59,7 +59,7 @@ This is an opinionated starter template in `Next.js v10.2` which uses all best p
 - :x: Select Field (Single and Multi Select)
 - :x: Date picker
 - :x: Time picker
-- :x: Text Area
+- :white_check_mark: Text Area
 - :x: Tooltip
 - :white_check_mark: Chips
 - :x: Loading Placeholder
@@ -77,6 +77,7 @@ This is an opinionated starter template in `Next.js v10.2` which uses all best p
 - :white_check_mark: Cookie management
 - :x: `sitemap.xml`
 - :x: `robots.txt`
+- :x: Scrollbar
 - :x: Caching
 - :x: Smooth scrolling with polyfill
 - :x: Lighthouse optimizations

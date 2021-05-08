@@ -1,7 +1,11 @@
+@use '@styles/theme';
+
 .form {
-  padding: 1.5rem;
   display: grid;
   align-items: start;
   grid-gap: 1rem;
-  grid-template-columns: 1fr 1fr;
+
+  @include theme.breakpoint-up(md) {
+    grid-template-columns: 1fr 1fr;
+  }
 }

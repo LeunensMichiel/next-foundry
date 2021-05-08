@@ -4,47 +4,25 @@ import {
   ComponentPropsWithoutRef,
   FC,
   forwardRef,
-  InputHTMLAttributes,
+  TextareaHTMLAttributes,
 } from 'react';
 import { FieldError } from 'react-hook-form';
 
-import styles from './Input.module.scss';
+import styles from './TextArea.module.scss';
 
-type InputTypes =
-  | 'email'
-  | 'file'
-  | 'number'
-  | 'password'
-  | 'search'
-  | 'tel'
-  | 'text'
-  | 'url';
-
-type InputProps = {
+type TextAreaProps = {
   iconLeft?: ComponentPropsWithoutRef<'svg'> | string;
   iconRight?: ComponentPropsWithoutRef<'svg'> | string;
   withFeedback?: boolean;
   label: string;
   error?: FieldError;
   colSpan?: 1 | 2 | 3 | 4;
-  type?: InputTypes;
-} & InputHTMLAttributes<HTMLInputElement>;
+} & TextareaHTMLAttributes<HTMLTextAreaElement>;
 
-const InputModes: Record<
-  InputTypes,
-  InputHTMLAttributes<HTMLInputElement>['inputMode']
-> = {
-  email: 'email',
-  number: 'decimal',
-  tel: 'tel',
-  search: 'search',
-  url: 'url',
-  file: 'none',
-  password: 'text',
-  text: 'text',
-};
-
-const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
+const TextArea: FC<TextAreaProps> = forwardRef<
+  HTMLTextAreaElement,
+  TextAreaProps
+>(
   (
     {
       name,
@@ -52,7 +30,6 @@ const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
       error,
       onChange,
       onBlur,
-      type = 'text',
       iconLeft,
       iconRight,
       colSpan = 1,
@@ -62,32 +39,38 @@ const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
     ref
   ) => (
     <div className={cn({ [`col-span-${colSpan}`]: colSpan })}>
-      <label htmlFor={name} className={cn(styles.inputLabel)}>
+      <label htmlFor={name} className={cn(styles.textAreaLabel)}>
         {label}
       </label>
-      <div className={cn(styles.inputContainer)}>
-        <input
+      <div className={cn(styles.textAreaContainer)}>
+        <textarea
           id={name}
           ref={ref}
           name={name}
-          className={cn(styles.inputField, {
+          className={cn(styles.textAreaField, {
             [styles[`has-icon-left`]]: !!iconLeft,
             [styles[`has-icon-right`]]: !!iconRight,
           })}
           onChange={onChange}
           onBlur={onBlur}
-          type={type}
-          inputMode={InputModes[type]}
           {...rest}
         />
         {iconLeft && (
-          <span className={cn(styles.inputIconContainer, styles.inputIconLeft)}>
+          <span
+            className={cn(
+              styles.textAreaIconContainer,
+              styles.textAreaIconLeft
+            )}
+          >
             {iconLeft}
           </span>
         )}
         {iconRight && (
           <span
-            className={cn(styles.inputIconContainer, styles.inputIconRight)}
+            className={cn(
+              styles.textAreaIconContainer,
+              styles.textAreaIconRight
+            )}
           >
             {iconRight}
           </span>
@@ -111,4 +94,4 @@ const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
   )
 );
 
-export default Input;
+export default TextArea;

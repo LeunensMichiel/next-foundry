@@ -1,12 +1,20 @@
 import { Fieldset, Form, Layout } from '@components/common';
 import { AtSign, Chevron } from '@components/icons';
-import { Button, Checkbox, Input, RadioButton, Switch } from '@components/ui';
+import {
+  Button,
+  Checkbox,
+  Input,
+  RadioButton,
+  Switch,
+  TextArea,
+} from '@components/ui';
 import { useForm } from 'react-hook-form';
 
 type FormValues = {
   text: string;
   radioVal: string;
   number: number;
+  message: string;
   password: string;
   checkbox: boolean;
   checkbox2: boolean;
@@ -25,7 +33,6 @@ const FormPage = () => {
   const onSubmit = (data: FormValues) => console.log(data);
   return (
     <div className="container mx-auto padded">
-      <h1>Form</h1>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Input
           label="Test Text"
@@ -34,7 +41,6 @@ const FormPage = () => {
           error={errors?.text}
           iconLeft={<AtSign />}
           iconRight={<Chevron />}
-          colSpan={2}
         />
         <Input
           label="Test Number"
@@ -65,12 +71,17 @@ const FormPage = () => {
           />
           <Checkbox label="Second box" disabled {...register('checkbox2')} />
         </Fieldset>
+        <TextArea
+          label="Message"
+          {...register('message', { required: 'This is a required field' })}
+          placeholder="Enter a message"
+          iconLeft={<AtSign />}
+        />
         <Fieldset label="Some radios" error={errors?.radioVal}>
-          <RadioButton
-            label="Value 1"
-            {...register('radioVal')}
-            value="11111"
-          />
+          <RadioButton label="Value 1" {...register('radioVal')} value="1" />
+          <RadioButton label="Value 2" {...register('radioVal')} value="2" />
+          <RadioButton label="Value 3" {...register('radioVal')} value="3" />
+          <RadioButton label="Value 4" {...register('radioVal')} value="4" />
           <RadioButton
             label="Value 2 adawdadawdawdadadawda adad"
             {...register('radioVal')}

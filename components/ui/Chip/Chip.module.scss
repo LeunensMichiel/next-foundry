@@ -4,11 +4,12 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   min-width: 5rem;
-  font-size: var(--small);
-  border-radius: var(--border-radius-lg);
   padding: 0.375em 0.625em;
+  text-align: center;
+  font-size: var(--small);
+  font-weight: 500;
+  border-radius: var(--border-radius-lg);
   border: 0.125rem solid var(--color-chip-border);
   color: var(--color-chip-text);
   background: var(--color-chip-bg);

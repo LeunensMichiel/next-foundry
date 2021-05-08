@@ -10,4 +10,5 @@ export { default as Modal } from './Modal';
 export { default as RadioButton } from './RadioButton';
 export { default as Spinner } from './Spinner';
 export { default as Switch } from './Switch';
+export { default as TextArea } from './TextArea';
 export { default as ThemeToggle } from './ThemeToggle';
