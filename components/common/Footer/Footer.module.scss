@@ -7,22 +7,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  @include theme.transition(border-color);
-
-  img {
-    margin-left: 0.5rem;
-  }
-
-  a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
-.logo {
-  height: 18px;
-  path {
-    @include theme.transition(fill);
-  }
+  text-align: center;
 }

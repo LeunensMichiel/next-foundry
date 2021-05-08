@@ -14,7 +14,8 @@ const NavItems = ({ navDrawerOpen = false, isTransparent = false }) => (
     <ul className={cx(styles.menuLevelOne)}>
       <NavItem label="Page 1">
         <DropdownMenu>
-          <DropdownMenuItem label="#test" internalLink={{ href: '/#test' }} />
+          <DropdownMenuItem label="❓ 404" internalLink={{ href: '/404' }} />
+          <DropdownMenuItem label="🛑 500" internalLink={{ href: '/500' }} />
           <DropdownMenuItem
             label="External to Next.js"
             externalLink={{
@@ -23,7 +24,6 @@ const NavItems = ({ navDrawerOpen = false, isTransparent = false }) => (
               rel: 'nofollow noopener noreferrer',
             }}
           />
-          <DropdownMenuItem label="😎 Emoji" internalLink={{ href: '#' }} />
         </DropdownMenu>
       </NavItem>
       <NavItem label="Buttons" link={{ href: '/buttons' }} />

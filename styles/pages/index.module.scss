@@ -27,9 +27,12 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   grid-gap: 1rem;
   padding: 1rem;
+
+  @include theme.breakpoint-up(md) {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
 }
 
 .card {
@@ -63,9 +66,5 @@
   button {
     margin-top: 0.25rem;
     margin-right: 0.25rem;
-  }
-
-  @include theme.breakpoint-up(md) {
-    flex-basis: 45%;
   }
 }
