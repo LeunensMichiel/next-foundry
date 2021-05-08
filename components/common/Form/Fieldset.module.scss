@@ -1,11 +1,12 @@
-.inputLabel {
+.fieldSetLabel {
   composes: inputLabel from '../../ui/Input/Input.module.scss';
 }
 
-.inputFieldContainer {
+.fieldSetContainer {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 0.5rem;
+  justify-items: start;
 }
 
 .fieldAlert {

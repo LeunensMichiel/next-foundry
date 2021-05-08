@@ -19,9 +19,9 @@ const FieldSet: FC<FieldSetProps> = ({
   children,
   error,
 }) => (
-  <fieldset className={cn({ [styles[`col-span-${colSpan}`]]: colSpan })}>
-    <legend className={cn(styles.inputLabel)}>{label}</legend>
-    <div className={cn(styles.inputFieldContainer)}>{children}</div>
+  <fieldset className={cn({ [`col-span-${colSpan}`]: colSpan })}>
+    <legend className={cn(styles.fieldSetLabel)}>{label}</legend>
+    <div className={cn(styles.fieldSetContainer)}>{children}</div>
     {withFeedback && (
       <div className={cn(styles.fieldAlert)}>
         {error && (
