@@ -38,7 +38,6 @@ This is an opinionated starter template in `Next.js v10.2` which uses all best p
 - :white_check_mark: Cookie consent
 - :white_check_mark: Form validation
 - :x: Privacy Policy / Terms and conditions page
-- :x: Thank you submission (forms)
 
 ### UI-components
 
@@ -62,7 +61,7 @@ This is an opinionated starter template in `Next.js v10.2` which uses all best p
 - :x: Time picker
 - :x: Text Area
 - :x: Tooltip
-- :x: Tags/badges
+- :white_check_mark: Chips
 - :x: Loading Placeholder
 - :x: Accordion
 - :x: Language Switcher

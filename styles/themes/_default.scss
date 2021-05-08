@@ -442,6 +442,31 @@
   --color-input-tooltip-info-text: var(--color-amber-50);
   --color-input-tooltip-info-bg: var(--color-amber-700);
   --color-input-tooltip-info-border: var(--color-amber-700);
+
+  --color-chip-bg: var(--color-gray-200);
+  --color-chip-border: var(--color-gray-200);
+  --color-chip-text: var(--color-gray-800);
+  --color-chip-contrasted-bg: var(--color-gray-800);
+  --color-chip-contrasted-border: var(--color-gray-800);
+  --color-chip-contrasted-text: var(--color-gray-50);
+  --color-chip-primary-bg: var(--color-purple-500);
+  --color-chip-primary-border: var(--color-purple-500);
+  --color-chip-primary-text: var(--color-purple-50);
+  --color-chip-secondary-bg: var(--color-amber-300);
+  --color-chip-secondary-border: var(--color-amber-300);
+  --color-chip-secondary-text: var(--color-amber-900);
+  --color-chip-success-bg: var(--color-purple-500);
+  --color-chip-success-border: var(--color-purple-500);
+  --color-chip-success-text: var(--color-purple-50);
+  --color-chip-danger-bg: var(--color-red-500);
+  --color-chip-danger-border: var(--color-red-500);
+  --color-chip-danger-text: var(--color-red-50);
+  --color-chip-warning-bg: var(--color-orange-300);
+  --color-chip-warning-border: var(--color-orange-300);
+  --color-chip-warning-text: var(--color-orange-900);
+  --color-chip-info-bg: var(--color-amber-300);
+  --color-chip-info-border: var(--color-amber-300);
+  --color-chip-info-text: var(--color-amber-900);
   // Typography
   --font-size: 100%;
   --ratio: #{theme.type-ratio('majorSecond')};

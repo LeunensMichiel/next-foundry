@@ -1,5 +1,5 @@
 import { Layout } from '@components/common';
-import { ImageWithAspectRatio } from '@components/ui';
+import { Chip, ImageWithAspectRatio } from '@components/ui';
 import { useUI } from '@lib/hooks';
 import styles from '@styles/pages/index.module.scss';
 import cx from 'classnames';
@@ -139,6 +139,22 @@ const Home = () => {
           <button type="button" onClick={() => openModal()}>
             Toggle Modal
           </button>
+        </div>
+        <div className={styles.card}>
+          <h3>Chips</h3>
+          <p>Mjum</p>
+          <Chip>Leunie</Chip>
+          <Chip variant="primary">Is</Chip>
+          <Chip variant="secondary">De</Chip>
+          <Chip variant="contrasted">Beste</Chip>
+          <Chip variant="danger" iconLeft="😂">
+            Pls
+          </Chip>
+          <Chip variant="success" iconLeft="😏" iconRight="🍕">
+            Rate
+          </Chip>
+          <Chip variant="warning">This</Chip>
+          <Chip variant="info">Thank you</Chip>
         </div>
       </div>
     </>

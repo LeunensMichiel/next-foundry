@@ -1,0 +1,41 @@
+@use 'styles/theme';
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-width: 5rem;
+  font-size: var(--small);
+  border-radius: var(--border-radius-lg);
+  padding: 0.375em 0.625em;
+  border: 0.125rem solid var(--color-chip-border);
+  color: var(--color-chip-text);
+  background: var(--color-chip-bg);
+  filter: theme.$drop-shadow-sm;
+  @include theme.transition(border-color, background, color);
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+$variants: primary, secondary, success, danger, warning, info, contrasted;
+@each $variant in $variants {
+  .chip-#{$variant} {
+    border: 0.125rem solid var(--color-chip-#{$variant}-border);
+    background: var(--color-chip-#{$variant}-bg);
+    color: var(--color-chip-#{$variant}-text);
+  }
+}
+
+.chip-icon-left {
+  margin-right: 0.625em;
+  height: 1em;
+}
+.chip-icon-right {
+  margin-left: 0.625em;
+  height: 1em;
+}
