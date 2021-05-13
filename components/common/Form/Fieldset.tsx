@@ -23,7 +23,7 @@ const FieldSet: FC<FieldSetProps> = ({
     <legend className={cn(styles.fieldSetLabel)}>{label}</legend>
     <div className={cn(styles.fieldSetContainer)}>{children}</div>
     {withFeedback && (
-      <div className={cn(styles.fieldAlert)}>
+      <div className={cn(styles.fieldAlert)} role="alert">
         {error && (
           <>
             <div className={cn(styles.fieldAlertIcon)}>

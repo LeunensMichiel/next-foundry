@@ -20,7 +20,7 @@ type InputTypes =
   | 'text'
   | 'url';
 
-type InputProps = {
+export type InputProps = {
   iconLeft?: ComponentPropsWithoutRef<'svg'> | string;
   iconRight?: ComponentPropsWithoutRef<'svg'> | string;
   withFeedback?: boolean;
@@ -50,6 +50,7 @@ const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
       name,
       label,
       error,
+      children,
       onChange,
       onBlur,
       type = 'text',
@@ -78,6 +79,7 @@ const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
           onBlur={onBlur}
           type={type}
           inputMode={InputModes[type]}
+          aria-invalid={!!error}
           {...rest}
         />
         {iconLeft && (
@@ -92,9 +94,10 @@ const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
             {iconRight}
           </span>
         )}
+        {children}
       </div>
       {withFeedback && (
-        <div className={cn(styles.fieldAlert)}>
+        <div className={cn(styles.fieldAlert)} role="alert">
           {error && (
             <>
               <div className={cn(styles.fieldAlertIcon)}>

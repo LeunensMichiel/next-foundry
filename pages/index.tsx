@@ -41,13 +41,13 @@ const Home = () => {
         <p className={styles.description}>
           {t('intro')} <code className={styles.code}>Michiel Leunens</code>
         </p>
-        <ImageWithAspectRatio
-          src="/assets/test.jpg"
-          aspectRatio="8/1"
-          objectFit="cover"
-          objectPosition="50% 60%"
-        />
       </div>
+      <ImageWithAspectRatio
+        src="/assets/test.jpg"
+        aspectRatio="8/1"
+        objectFit="cover"
+        objectPosition="50% 60%"
+      />
 
       <div className={cx(styles.grid, 'container', 'mx-auto')}>
         <a

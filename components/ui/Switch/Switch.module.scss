@@ -84,13 +84,14 @@
 .switchInnerText {
   position: absolute;
   z-index: 1;
-  font-size: 0.5em;
+  font-size: 0.75em;
+  display: inline-flex;
 }
 
 .on {
-  left: 0.5rem;
+  left: 0.375rem;
   color: var(--color-text-white);
 }
 .off {
-  right: 0.5rem;
+  right: 0.375rem;
 }

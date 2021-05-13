@@ -12,7 +12,7 @@ const Custom404 = () => {
       <h4>
         <span className={cn(styles.errCode)}>404</span> | {t('notFound.title')}
       </h4>
-      <Button as="a" href="/" iconLeft="🏠" iconRight={<Chevron />}>
+      <Button as="a" href="/" iconLeft="🏠" iconRight={<Chevron />} size="sm">
         {t('notFound.description')}
       </Button>
     </div>

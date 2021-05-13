@@ -15,9 +15,7 @@ const Layout: FC<Props> = ({ children }: Props) => {
   return (
     <>
       <Navbar />
-      <main className={cx('container', 'mx-auto', styles.mainContainer)}>
-        {children}
-      </main>
+      <main className={cx(styles.mainContainer)}>{children}</main>
       <Footer />
 
       <Modal open={displayModal} onClose={closeModal}>

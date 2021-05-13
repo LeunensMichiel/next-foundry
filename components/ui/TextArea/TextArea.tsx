@@ -53,6 +53,7 @@ const TextArea: FC<TextAreaProps> = forwardRef<
           })}
           onChange={onChange}
           onBlur={onBlur}
+          aria-invalid={!!error}
           {...rest}
         />
         {iconLeft && (
@@ -77,7 +78,7 @@ const TextArea: FC<TextAreaProps> = forwardRef<
         )}
       </div>
       {withFeedback && (
-        <div className={cn(styles.fieldAlert)}>
+        <div className={cn(styles.fieldAlert)} role="alert">
           {error && (
             <>
               <div className={cn(styles.fieldAlertIcon)}>
