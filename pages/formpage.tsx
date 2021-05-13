@@ -3,6 +3,7 @@ import { AtSign, Chevron } from '@components/icons';
 import {
   Button,
   Checkbox,
+  DatePicker,
   Input,
   RadioButton,
   Switch,
@@ -11,6 +12,7 @@ import {
 import { useForm } from 'react-hook-form';
 
 type FormValues = {
+  date: string;
   text: string;
   radioVal: string;
   number: number;
@@ -36,7 +38,7 @@ const FormPage = () => {
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Input
           label="Test Text"
-          {...register('text', { required: 'This is a required field' })}
+          {...register('text')}
           placeholder="Enter a string"
           error={errors?.text}
           iconLeft={<AtSign />}
@@ -61,19 +63,20 @@ const FormPage = () => {
           placeholder="Enter a password"
           error={errors?.password}
         />
+        <DatePicker label="Date" {...register('date')} />
         <Fieldset
           label="Some boxes"
           error={errors?.checkbox || errors?.checkbox2}
         >
           <Checkbox
             label="This is a Checkbox with a loooooooooooooooooooot of text"
-            {...register('checkbox', { required: 'This should be checked' })}
+            {...register('checkbox')}
           />
           <Checkbox label="Second box" disabled {...register('checkbox2')} />
         </Fieldset>
         <TextArea
           label="Message"
-          {...register('message', { required: 'This is a required field' })}
+          {...register('message')}
           placeholder="Enter a message"
           iconLeft={<AtSign />}
         />
@@ -93,7 +96,12 @@ const FormPage = () => {
           label="Some Switches"
           error={errors?.switch || errors?.switch2}
         >
-          <Switch label="Test" labelOn="😀" {...register('switch')} />
+          <Switch
+            label="Test"
+            labelOn="💡"
+            labelOff="🌙"
+            {...register('switch')}
+          />
           <Switch label="disabled" disabled {...register('switch2')} />
         </Fieldset>
         <Button loading={isSubmitting} variant="primary" type="submit">
