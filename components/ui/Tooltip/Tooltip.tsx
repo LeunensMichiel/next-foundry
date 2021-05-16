@@ -64,13 +64,18 @@ const Tooltip: FC<Props> = ({ text, children }) => {
         (child) =>
           isValidElement(child) &&
           cloneElement(child, {
+            onFocus: () => setIsVisible(true),
+            onBlur: () => setIsVisible(false),
             onMouseEnter: () => setIsVisible(true),
             onMouseLeave: () => setIsVisible(false),
             ref: tooltipRef,
+            tabIndex: 0,
           })
       )}
       {isVisible && (
         <div
+          tabIndex={-1}
+          aria-expanded={isVisible}
           ref={popperRef}
           style={styles.popper}
           className={cn(s.tooltip)}
