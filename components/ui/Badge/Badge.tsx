@@ -1,9 +1,9 @@
 import cn from 'classnames';
 import { ComponentPropsWithoutRef, FC, ReactNode } from 'react';
 
-import styles from './Chip.module.scss';
+import styles from './Badge.module.scss';
 
-type ChipProps = {
+type BadgeProps = {
   variant?:
     | 'primary'
     | 'secondary'
@@ -17,7 +17,7 @@ type ChipProps = {
   className?: string;
 };
 
-const Chip: FC<ChipProps> = ({
+const Badge: FC<BadgeProps> = ({
   children,
   iconLeft,
   iconRight,
@@ -26,9 +26,9 @@ const Chip: FC<ChipProps> = ({
 }) => (
   <span
     className={cn(
-      styles.chip,
+      styles.badge,
       {
-        [styles[`chip-${variant}`]]: !!variant,
+        [styles[`badge-${variant}`]]: !!variant,
       },
       className
     )}
@@ -36,7 +36,7 @@ const Chip: FC<ChipProps> = ({
     {iconLeft && (
       <span
         className={cn({
-          [styles[`chip-icon-left`]]: !!iconLeft && children,
+          [styles[`badge-icon-left`]]: !!iconLeft && children,
         })}
       >
         {iconLeft}
@@ -46,7 +46,7 @@ const Chip: FC<ChipProps> = ({
     {iconRight && (
       <span
         className={cn({
-          [styles[`chip-icon-right`]]: !!iconLeft && children,
+          [styles[`badge-icon-right`]]: !!iconLeft && children,
         })}
       >
         {iconRight}
@@ -55,4 +55,4 @@ const Chip: FC<ChipProps> = ({
   </span>
 );
 
-export default Chip;
+export default Badge;

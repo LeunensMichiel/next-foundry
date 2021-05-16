@@ -60,8 +60,8 @@ This is an opinionated starter template in `Next.js v10.2` which uses all best p
 - :x: Date picker
 - :x: Time picker
 - :white_check_mark: Text Area
-- :x: Tooltip
-- :white_check_mark: Chips
+- :white_check_mark: Tooltip
+- :white_check_mark: Badge
 - :x: Loading Placeholder
 - :x: Accordion
 - :x: Language Switcher
@@ -89,6 +89,7 @@ This is an opinionated starter template in `Next.js v10.2` which uses all best p
 - :x: Tabs
 - :x: Page-transitions
 - :x: Mapbox
+- :x: Paralax
 - :x: Client-Authentication
 - :x: Dockerize
 - :x: Page listing all the UI components

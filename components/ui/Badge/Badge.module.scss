@@ -1,6 +1,6 @@
-@use 'styles/theme';
+@use '@styles/theme';
 
-.chip {
+.badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -10,9 +10,9 @@
   font-size: var(--small);
   font-weight: 500;
   border-radius: var(--border-radius-lg);
-  border: 0.125rem solid var(--color-chip-border);
-  color: var(--color-chip-text);
-  background: var(--color-chip-bg);
+  border: 0.125rem solid var(--color-badge-border);
+  color: var(--color-badge-text);
+  background: var(--color-badge-bg);
   filter: theme.$drop-shadow-sm;
   @include theme.transition(border-color, background, color);
 
@@ -25,18 +25,18 @@
 
 $variants: primary, secondary, success, danger, warning, info, contrasted;
 @each $variant in $variants {
-  .chip-#{$variant} {
-    border: 0.125rem solid var(--color-chip-#{$variant}-border);
-    background: var(--color-chip-#{$variant}-bg);
-    color: var(--color-chip-#{$variant}-text);
+  .badge-#{$variant} {
+    border: 0.125rem solid var(--color-badge-#{$variant}-border);
+    background: var(--color-badge-#{$variant}-bg);
+    color: var(--color-badge-#{$variant}-text);
   }
 }
 
-.chip-icon-left {
+.badge-icon-left {
   margin-right: 0.625em;
   height: 1em;
 }
-.chip-icon-right {
+.badge-icon-right {
   margin-left: 0.625em;
   height: 1em;
 }

@@ -42,6 +42,7 @@
   border: 2px solid var(--color-border-secondary);
   border-radius: var(--border-radius);
   background-color: var(--color-bg-primary);
+  position: relative;
   @include theme.transition(border-color, color, background-color);
 
   &:hover,
@@ -52,18 +53,18 @@
     cursor: pointer;
   }
 
-  h3 {
+  > h3 {
     margin: 0 0 1rem 0;
     font-size: 1.25rem;
   }
 
-  p {
+  > p {
     margin: 0;
     font-size: 1.25rem;
     margin-bottom: 0.25rem;
   }
 
-  button {
+  > button {
     margin-top: 0.25rem;
     margin-right: 0.25rem;
   }

@@ -1,5 +1,5 @@
 import { Layout } from '@components/common';
-import { Chip, ImageWithAspectRatio } from '@components/ui';
+import { Badge, Button, ImageWithAspectRatio, Tooltip } from '@components/ui';
 import { useUI } from '@lib/hooks';
 import styles from '@styles/pages/index.module.scss';
 import cx from 'classnames';
@@ -60,15 +60,6 @@ const Home = () => {
           <p>{t('features.documentation.description')}</p>
         </a>
 
-        <a
-          href="https://nextjs.org/docs/getting-started"
-          className={styles.card}
-          rel="nofollow noopener noreferrer"
-          target="_blank"
-        >
-          <h3>{t('features.next.title')}</h3>
-          <p>{t('features.next.description')}</p>
-        </a>
         <button
           className={styles.card}
           type="button"
@@ -83,79 +74,98 @@ const Home = () => {
         </button>
         <div className={styles.card}>
           <h3>Toasts with react-toastify!</h3>
-          <button
+          <Button
             type="button"
             onClick={() => toast("Don't forget to ⭐ on Github!")}
+            size="xs"
+            variant="primary"
           >
             🍞 Default
-          </button>
-          <button
+          </Button>
+          <Button
             type="button"
             onClick={() => toast.dark("Don't forget to ⭐ on Github!")}
+            size="xs"
+            variant="secondary"
           >
             🍞 Dark
-          </button>
-          <button
+          </Button>
+          <Button
             type="button"
             onClick={() => toast.error("Don't forget to ⭐ on Github!")}
+            size="xs"
+            variant="danger"
           >
             🍞 Error
-          </button>
-          <button
+          </Button>
+          <Button
             type="button"
             onClick={() => toast.warn("Don't forget to ⭐ on Github!")}
+            size="xs"
+            variant="warning"
           >
             🍞 Warn
-          </button>
-          <button
+          </Button>
+          <Button
             type="button"
             onClick={() => toast.success("Don't forget to ⭐ on Github!")}
+            size="xs"
+            variant="success"
           >
             🍞 Success
-          </button>
-          <button
+          </Button>
+          <Button
             type="button"
             onClick={() => toast.info("Don't forget to ⭐ on Github!")}
+            size="xs"
+            variant="info"
           >
             🍞 Info
-          </button>
+          </Button>
         </div>
         <div className={styles.card}>
           <h3>{t('features.internationalization.title')}</h3>
           <p>{t('features.internationalization.description')}</p>
           {locales.map((lng) => (
-            <button
+            <Button
               key={lng}
               type="button"
               onClick={async () => setLanguage(lng)}
+              size="xs"
             >
               {t(`features.internationalization.${lng}`)}
-            </button>
+            </Button>
           ))}
         </div>
         <div className={styles.card}>
           <h3>Modal</h3>
           <p>Accessible and Customizable</p>
-          <button type="button" onClick={() => openModal()}>
+          <Button type="button" onClick={() => openModal()} size="sm">
             Toggle Modal
-          </button>
+          </Button>
         </div>
         <div className={styles.card}>
-          <h3>Chips</h3>
+          <h3>Badges</h3>
           <p>Mjum</p>
-          <Chip>Leunie</Chip>
-          <Chip variant="primary">Is</Chip>
-          <Chip variant="secondary">De</Chip>
-          <Chip variant="contrasted">Beste</Chip>
-          <Chip variant="danger" iconLeft="😂">
+          <Badge>Leunie</Badge>
+          <Badge variant="primary">Is</Badge>
+          <Badge variant="secondary">De</Badge>
+          <Badge variant="contrasted">Beste</Badge>
+          <Badge variant="danger" iconLeft="😂">
             Pls
-          </Chip>
-          <Chip variant="success" iconLeft="😏" iconRight="🍕">
+          </Badge>
+          <Badge variant="success" iconLeft="😏" iconRight="🍕">
             Rate
-          </Chip>
-          <Chip variant="warning">This</Chip>
-          <Chip variant="info">Thank you</Chip>
+          </Badge>
+          <Badge variant="warning">This</Badge>
+          <Badge variant="info">Thank you</Badge>
         </div>
+        <Tooltip text="Cool eh?">
+          <div className={styles.card}>
+            <h3>Tooltip</h3>
+            <p>Hover over this card!</p>
+          </div>
+        </Tooltip>
       </div>
     </>
   );
