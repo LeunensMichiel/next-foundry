@@ -1,5 +1,6 @@
 import { Layout } from '@components/common';
 import { Badge, Button, ImageWithAspectRatio, Tooltip } from '@components/ui';
+import { ArticleSkeleton } from '@components/ui/Skeleton';
 import { useUI } from '@lib/hooks';
 import styles from '@styles/pages/index.module.scss';
 import cx from 'classnames';
@@ -166,6 +167,7 @@ const Home = () => {
             <p>Hover over this card!</p>
           </div>
         </Tooltip>
+        <ArticleSkeleton />
       </div>
     </>
   );

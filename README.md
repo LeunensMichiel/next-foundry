@@ -37,6 +37,7 @@ This is an opinionated starter template in `Next.js v10.2` which uses all best p
 - :white_check_mark: OnClickOutside and other usefull hooks
 - :white_check_mark: Cookie consent
 - :white_check_mark: Form validation
+- :x: MDX / Markdown page generation
 - :x: Privacy Policy / Terms and conditions page
 
 ### UI-components
@@ -62,7 +63,7 @@ This is an opinionated starter template in `Next.js v10.2` which uses all best p
 - :white_check_mark: Text Area
 - :white_check_mark: Tooltip
 - :white_check_mark: Badge
-- :x: Loading Placeholder
+- :white_check_mark: Loading Placeholder
 - :x: Accordion
 - :x: Language Switcher
 
