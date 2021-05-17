@@ -177,7 +177,7 @@ const Home = () => {
         <ArticleSkeleton />
         <div className={styles.card}>
           <h3>Accordion</h3>
-          <Accordion>
+          <Accordion grouped>
             <AccordionItem title="Item 1" itemKey={0}>
               <h6>This is an accordion</h6>
             </AccordionItem>

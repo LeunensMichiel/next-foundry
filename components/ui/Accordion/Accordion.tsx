@@ -6,8 +6,9 @@ type AccordionProps = {
   children: NonNullable<React.ReactNode>;
   className?: string;
   disabled?: boolean;
-  defaultExpanded?: number | string;
-  onToggle?: (expandedKey: number | string | null) => void;
+  grouped?: boolean;
+  defaultExpanded?: (string | number)[];
+  onToggle?: (expandedKeys: (string | number)[]) => void;
 };
 
 const Accordion: FC<AccordionProps> = forwardRef<
@@ -17,7 +18,8 @@ const Accordion: FC<AccordionProps> = forwardRef<
   (
     {
       className,
-      defaultExpanded = null,
+      defaultExpanded = [],
+      grouped = false,
       disabled = false,
       onToggle,
       children,
@@ -25,19 +27,28 @@ const Accordion: FC<AccordionProps> = forwardRef<
     },
     ref
   ) => {
-    const [expandedKey, setExpandedKey] = useState(defaultExpanded);
+    const [expandedKeys, setExpandedKeys] = useState(defaultExpanded);
 
     const handleToggle = useCallback(
-      (eventKey: number | string | null) => {
-        onToggle?.(eventKey);
-        setExpandedKey(eventKey);
+      (itemKey: number | string) => {
+        let itemKeys: (string | number)[];
+        if (grouped) {
+          itemKeys = expandedKeys.includes(itemKey) ? [] : [itemKey];
+        } else if (expandedKeys.includes(itemKey)) {
+          itemKeys = expandedKeys.filter((key) => key !== itemKey);
+        } else {
+          itemKeys = expandedKeys;
+          itemKeys.push(itemKey);
+        }
+        onToggle?.(itemKeys);
+        setExpandedKeys([...itemKeys]);
       },
-      [onToggle]
+      [expandedKeys, grouped, onToggle]
     );
 
     const contextValue = useMemo(
-      () => ({ expandedKey, disabled, onToggle: handleToggle }),
-      [expandedKey, disabled, handleToggle]
+      () => ({ expandedKeys, disabled, onToggle: handleToggle }),
+      [expandedKeys, disabled, handleToggle]
     );
 
     return (

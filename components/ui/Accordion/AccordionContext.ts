@@ -1,8 +1,8 @@
 import { createContext } from 'react';
 
 type ContextProps = {
-  expandedKey: number | string | null;
-  onToggle: (eventKey: number | string | null) => void;
+  expandedKeys: (number | string)[];
+  onToggle: (eventKey: number | string) => void;
   disabled: boolean;
 };
 

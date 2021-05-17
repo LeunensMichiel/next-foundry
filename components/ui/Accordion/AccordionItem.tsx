@@ -16,8 +16,9 @@ const AccordionItem: FC<AccordionItemProps> = ({
   onClick,
   ...rest
 }) => {
-  const { expandedKey, disabled } = useAccordionContext();
+  const { expandedKeys, disabled } = useAccordionContext();
   const accordionClick = useAccordionClick(itemKey, onClick, disabled);
+  const expanded = expandedKeys?.includes(itemKey);
 
   return (
     <div>
@@ -26,11 +27,12 @@ const AccordionItem: FC<AccordionItemProps> = ({
         onKeyDown={accordionClick}
         role="button"
         tabIndex={0}
+        aria-expanded={expanded}
         {...rest}
       >
         <h5>{title}</h5>
       </div>
-      {itemKey === expandedKey && <div>{children}</div>}
+      {expanded && <div>{children}</div>}
     </div>
   );
 };

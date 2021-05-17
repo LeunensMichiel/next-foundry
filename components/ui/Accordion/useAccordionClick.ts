@@ -7,10 +7,10 @@ const useAccordionClick = (
   onClick?: (e: SyntheticEvent) => void,
   disabled?: boolean
 ) => {
-  const { expandedKey, onToggle } = useAccordionContext();
+  const { onToggle } = useAccordionContext();
   if (disabled) return () => {};
   return (event: SyntheticEvent) => {
-    onToggle?.(itemKey === expandedKey ? null : itemKey);
+    onToggle?.(itemKey);
     onClick?.(event);
   };
 };
