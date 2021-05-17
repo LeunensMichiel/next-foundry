@@ -84,12 +84,14 @@ This is an opinionated starter template in `Next.js v10.2` which uses all best p
 - :x: Lighthouse optimizations
 - :x: Inter-browser compatibility
 
-### Maybe
+### Future
 
 - :x: Carousel
 - :x: Tabs
 - :x: Page-transitions
 - :x: Mapbox
+- :x: Pagination Component
+- :x: Infinte Scrolling List
 - :x: Paralax
 - :x: Client-Authentication
 - :x: Dockerize

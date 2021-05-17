@@ -1,3 +1,5 @@
+export { default as Accordion } from './Accordion/Accordion';
+export { default as AccordionItem } from './Accordion/AccordionItem';
 export { default as Badge } from './Badge';
 export { default as Banner } from './Banner';
 export { default as Button } from './Button';

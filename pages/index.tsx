@@ -1,5 +1,12 @@
 import { Layout } from '@components/common';
-import { Badge, Button, ImageWithAspectRatio, Tooltip } from '@components/ui';
+import {
+  Accordion,
+  AccordionItem,
+  Badge,
+  Button,
+  ImageWithAspectRatio,
+  Tooltip,
+} from '@components/ui';
 import { ArticleSkeleton } from '@components/ui/Skeleton';
 import { useUI } from '@lib/hooks';
 import styles from '@styles/pages/index.module.scss';
@@ -168,6 +175,24 @@ const Home = () => {
           </div>
         </Tooltip>
         <ArticleSkeleton />
+        <div className={styles.card}>
+          <h3>Accordion</h3>
+          <Accordion>
+            <AccordionItem title="Item 1" itemKey={0}>
+              <h6>This is an accordion</h6>
+            </AccordionItem>
+            <AccordionItem title="Item 2" itemKey={1}>
+              <h6>This is an accordion2 </h6>
+              <ul>
+                <li>point 1</li>
+                <li>point 2</li>
+              </ul>
+              <Button type="button" size="sm">
+                Button
+              </Button>
+            </AccordionItem>
+          </Accordion>
+        </div>
       </div>
     </>
   );
