@@ -20,10 +20,7 @@
     },
     "internationalization": {
       "title": "Change language \u2192",
-      "description": "i18n support out of the box.",
-      "fr": "Français",
-      "nl": "Nederlands",
-      "en": "English"
+      "description": "i18n support out of the box."
     }
   }
 }

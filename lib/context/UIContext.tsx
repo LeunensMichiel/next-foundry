@@ -19,7 +19,7 @@ const INITIAL_UI_STATE: UIState = {
   setModalView: () => {},
 };
 
-type ModalViews = 'DEFAULT_VIEW' | 'OTHER_VIEW';
+type ModalViews = 'DEFAULT_VIEW' | 'LANGUAGE_VIEW';
 
 type Action =
   | {

@@ -65,7 +65,7 @@ This is an opinionated starter template in `Next.js v10.2` which uses all best p
 - :white_check_mark: Badge
 - :white_check_mark: Loading Placeholder
 - :white_check_mark: Accordion
-- :x: Language Switcher
+- :white_check_mark: Language Switcher
 
 ### Other
 
@@ -78,7 +78,6 @@ This is an opinionated starter template in `Next.js v10.2` which uses all best p
 - :white_check_mark: Cookie management
 - :x: `sitemap.xml`
 - :x: `robots.txt`
-- :x: Scrollbar
 - :x: Caching
 - :x: Smooth scrolling with polyfill
 - :x: Lighthouse optimizations

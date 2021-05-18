@@ -20,5 +20,8 @@
   "errorPage": {
     "title": "👾 Something went wrong on our end",
     "description": "Please try again later."
+  },
+  "i18n": {
+    "select": "Select preferred language"
   }
 }

@@ -1,4 +1,4 @@
-import { Layout } from '@components/common';
+import { LanguagePicker, Layout } from '@components/common';
 import {
   Accordion,
   AccordionItem,
@@ -11,14 +11,10 @@ import { ArticleSkeleton } from '@components/ui/Skeleton';
 import { useUI } from '@lib/hooks';
 import styles from '@styles/pages/index.module.scss';
 import cx from 'classnames';
-import i18nConfig from 'i18n.json';
 import { NextSeo } from 'next-seo';
 import { useTheme } from 'next-themes';
-import setLanguage from 'next-translate/setLanguage';
 import useTranslation from 'next-translate/useTranslation';
 import { toast } from 'react-toastify';
-
-const { locales } = i18nConfig;
 
 const Home = () => {
   const { setTheme, theme } = useTheme();
@@ -134,16 +130,7 @@ const Home = () => {
         <div className={styles.card}>
           <h3>{t('features.internationalization.title')}</h3>
           <p>{t('features.internationalization.description')}</p>
-          {locales.map((lng) => (
-            <Button
-              key={lng}
-              type="button"
-              onClick={async () => setLanguage(lng)}
-              size="xs"
-            >
-              {t(`features.internationalization.${lng}`)}
-            </Button>
-          ))}
+          <LanguagePicker />
         </div>
         <div className={styles.card}>
           <h3>Modal</h3>

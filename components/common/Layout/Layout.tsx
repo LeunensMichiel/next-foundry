@@ -1,4 +1,5 @@
 import { CookieBanner, Footer, Navbar } from '@components/common';
+import { LanguageModalView } from '@components/common/LanguagePicker';
 import { Modal } from '@components/ui';
 import { useUI } from '@lib/hooks';
 import cx from 'classnames';
@@ -11,7 +12,7 @@ type Props = {
 };
 
 const Layout: FC<Props> = ({ children }: Props) => {
-  const { displayModal, closeModal } = useUI();
+  const { displayModal, closeModal, modalView } = useUI();
   return (
     <>
       <Navbar />
@@ -19,7 +20,7 @@ const Layout: FC<Props> = ({ children }: Props) => {
       <Footer />
 
       <Modal open={displayModal} onClose={closeModal}>
-        {/* {modalView === 'DEFAULT_VIEW' && <MyModalView />} */}
+        {modalView === 'LANGUAGE_VIEW' && <LanguageModalView />}
       </Modal>
       <CookieBanner />
     </>
