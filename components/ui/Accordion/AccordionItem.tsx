@@ -25,7 +25,10 @@ const AccordionItem: FC<AccordionItemProps> = ({
 
   return (
     <div
-      className={cx(styles.root, { [styles.expanded]: expanded })}
+      className={cx(styles.root, {
+        [styles.expanded]: expanded,
+        [styles.disabled]: disabled,
+      })}
       aria-expanded={expanded}
     >
       <div
