@@ -1,5 +1,7 @@
+import cn from 'classnames';
 import { FC, forwardRef, useCallback, useMemo, useState } from 'react';
 
+import styles from './Accordion.module.scss';
 import AccordionContext from './AccordionContext';
 
 type AccordionProps = {
@@ -53,7 +55,7 @@ const Accordion: FC<AccordionProps> = forwardRef<
 
     return (
       <AccordionContext.Provider value={contextValue}>
-        <div role="region" ref={ref} {...rest}>
+        <div className={cn(styles.accordion)} role="region" ref={ref} {...rest}>
           {children}
         </div>
       </AccordionContext.Provider>

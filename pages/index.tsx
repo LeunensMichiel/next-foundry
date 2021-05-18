@@ -172,21 +172,30 @@ const Home = () => {
           <div className={styles.card}>
             <h3>Tooltip</h3>
             <p>Hover over this card!</p>
+            <p>
+              Powered by <code>react-popper</code>
+            </p>
           </div>
         </Tooltip>
-        <ArticleSkeleton />
-        <div className={styles.card}>
+        <ArticleSkeleton className={cx(styles.card)} />
+        <div className={cx(styles.card)}>
           <h3>Accordion</h3>
-          <Accordion grouped>
+          <Accordion>
             <AccordionItem title="Item 1" itemKey={0}>
               <h6>This is an accordion</h6>
             </AccordionItem>
             <AccordionItem title="Item 2" itemKey={1}>
               <h6>This is an accordion2 </h6>
-              <ul>
-                <li>point 1</li>
-                <li>point 2</li>
-              </ul>
+              <p>
+                Ad aliqua occaecat duis ut anim aute cupidatat ullamco
+                consectetur incididunt eu non id occaecat. Amet reprehenderit
+                exercitation ut nisi. Pariatur enim qui aute nostrud ullamco
+                culpa veniam sint officia tempor. Nisi anim anim commodo amet
+                sit irure consequat tempor occaecat nostrud amet veniam
+                cupidatat pariatur. Exercitation ullamco culpa voluptate duis
+                enim ex Lorem consectetur cillum nulla veniam. Lorem ad aliqua
+                irure qui ea nulla exercitation dolor nulla voluptate.
+              </p>
               <Button type="button" size="sm">
                 Button
               </Button>

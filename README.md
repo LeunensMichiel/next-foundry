@@ -64,7 +64,7 @@ This is an opinionated starter template in `Next.js v10.2` which uses all best p
 - :white_check_mark: Tooltip
 - :white_check_mark: Badge
 - :white_check_mark: Loading Placeholder
-- :x: Accordion
+- :white_check_mark: Accordion
 - :x: Language Switcher
 
 ### Other

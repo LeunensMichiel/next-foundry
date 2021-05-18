@@ -1,4 +1,9 @@
-import { createPopper, Options } from '@popperjs/core';
+import {
+  createPopper,
+  Options,
+  Placement,
+  PositioningStrategy,
+} from '@popperjs/core';
 import cn from 'classnames';
 import {
   Children,
@@ -17,9 +22,11 @@ import s from './Tooltip.module.scss';
 type Props = {
   text: string;
   children: ReactNode;
+  placement?: Placement;
+  strategy?: PositioningStrategy;
 };
 
-const Tooltip: FC<Props> = ({ text, children }) => {
+const Tooltip: FC<Props> = ({ text, placement, strategy, children }) => {
   const popperRef = useRef(null);
   const tooltipRef = useRef(null);
   const [arrowRef, setArrowRef] = useState<HTMLDivElement | null>(null);
@@ -30,8 +37,8 @@ const Tooltip: FC<Props> = ({ text, children }) => {
     modifiers?: ReadonlyArray<Modifier<any>>;
   } = useMemo(
     () => ({
-      placement: 'auto',
-      strategy: 'absolute',
+      placement: placement ?? 'auto',
+      strategy: strategy ?? 'absolute',
       modifiers: [
         {
           name: 'arrow',
@@ -48,7 +55,7 @@ const Tooltip: FC<Props> = ({ text, children }) => {
         },
       ],
     }),
-    [arrowRef]
+    [arrowRef, placement, strategy]
   );
 
   const { styles, attributes } = usePopper(

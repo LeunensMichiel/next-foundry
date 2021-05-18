@@ -29,9 +29,10 @@
   display: grid;
   grid-gap: 1rem;
   padding: 1rem;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(auto-fit, minmax(280px, auto));
 
   @include theme.breakpoint-up(md) {
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   }
 }
 
@@ -43,6 +44,7 @@
   border-radius: var(--border-radius);
   background-color: var(--color-bg-primary);
   position: relative;
+  z-index: 1;
   @include theme.transition(border-color, color, background-color);
 
   &:hover,

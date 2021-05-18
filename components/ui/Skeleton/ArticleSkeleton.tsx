@@ -3,7 +3,11 @@ import ContentLoader from 'react-content-loader';
 
 const style: CSSProperties = { width: '100%' };
 
-const ResponsiveArticle: FC = (props) => (
+type Props = {
+  className?: string;
+};
+
+const ResponsiveArticle: FC<Props> = (props) => (
   <ContentLoader
     viewBox="0 0 500 280"
     height={280}
