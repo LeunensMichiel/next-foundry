@@ -1,18 +1,14 @@
-import { CSSProperties, FC } from 'react';
+import { FC } from 'react';
 import ContentLoader from 'react-content-loader';
 
-const style: CSSProperties = { width: '100%' };
+import { CommonSkeletonInlineProps, CommonSkeletonProps } from './commonProps';
 
-type Props = {
-  className?: string;
-};
-
-const ResponsiveArticle: FC<Props> = (props) => (
+const ResponsiveArticle: FC<CommonSkeletonProps> = (props) => (
   <ContentLoader
     viewBox="0 0 500 280"
     height={280}
     width={500}
-    style={style}
+    {...CommonSkeletonInlineProps}
     {...props}
   >
     <rect x="3" y="3" rx="10" ry="10" width="100%" height="180" />
