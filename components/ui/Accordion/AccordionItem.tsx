@@ -37,6 +37,7 @@ const AccordionItem: FC<AccordionItemProps> = ({
         role="button"
         tabIndex={0}
         className={cx(styles.header)}
+        aria-pressed={expanded}
         {...rest}
       >
         <h6 className={cx(styles.title)}>{title}</h6>

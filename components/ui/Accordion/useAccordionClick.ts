@@ -9,7 +9,15 @@ const useAccordionClick = (
 ) => {
   const { onToggle } = useAccordionContext();
   if (disabled) return () => {};
-  return (event: SyntheticEvent) => {
+  return (event: any) => {
+    if (
+      event.type === 'keydown' &&
+      event.key !== 'Enter' &&
+      event.key !== 'Spacebar' &&
+      event.key !== ' '
+    ) {
+      return;
+    }
     onToggle?.(itemKey);
     onClick?.(event);
   };

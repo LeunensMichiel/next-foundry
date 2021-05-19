@@ -312,4 +312,22 @@
   --color-tooltip-bg: var(--color-gray-200);
   --color-tooltip-border: var(--color-gray-200);
   --color-tooltip-text: var(--color-gray-800);
+
+  --color-accordion-header-bg: var(--color-gray-900);
+  --color-accordion-header-text: var(--color-white);
+  --color-accordion-header-border: var(--color-gray-800);
+  --color-accordion-header-hover-bg: var(--color-gray-800);
+  --color-accordion-header-hover-text: var(--color-white);
+  --color-accordion-header-hover-border: var(--color-gray-800);
+  --color-accordion-header-focus-bg: var(--color-gray-800);
+  --color-accordion-header-focus-text: var(--color-white);
+  --color-accordion-header-focus-border: var(--color-gray-800);
+  --color-accordion-header-disabled-bg: var(--color-gray-500);
+  --color-accordion-header-disabled-text: var(--color-text-disabled);
+  --color-accordion-header-disabled-border: var(--color-gray-500);
+  --color-accordion-header-expanded-bg: var(--color-purple-900);
+  --color-accordion-header-expanded-text: var(--color-purple-50);
+  --color-accordion-header-expanded-border: var(--color-purple-900);
+  --color-accordion-body-bg: var(--color-purple-900);
+  --color-accordion-body-text: var(--color-purple-50);
 }

@@ -169,10 +169,14 @@ const Home = () => {
           <h3>Accordion</h3>
           <Accordion>
             <AccordionItem title="Item 1" itemKey={0}>
-              <h6>This is an accordion</h6>
+              <p>
+                Ad aliqua occaecat duis ut anim aute cupidatat ullamco
+                consectetur incididunt eu non id occaecat. Amet reprehenderit
+                exercitation ut nisi.
+              </p>
             </AccordionItem>
             <AccordionItem title="Item 2" itemKey={1}>
-              <h6>This is an accordion2 </h6>
+              <h6>This is an accordion2</h6>
               <p>
                 Ad aliqua occaecat duis ut anim aute cupidatat ullamco
                 consectetur incididunt eu non id occaecat. Amet reprehenderit
