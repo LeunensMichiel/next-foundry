@@ -76,8 +76,8 @@ This is an opinionated starter template in `Next.js v10.2` which uses all best p
 - :white_check_mark: Body Scroll Lock
 - :white_check_mark: Active Link styling
 - :white_check_mark: Cookie management
-- :x: `sitemap.xml`
-- :x: `robots.txt`
+- :white_check_mark: `sitemap.xml`
+- :white_check_mark: `robots.txt`
 - :x: Caching
 - :x: Smooth scrolling with polyfill
 - :x: Lighthouse optimizations
