@@ -73,7 +73,7 @@ const Banner: FC<BannerProps> = ({
           {icon && <span className={cn(styles.bannerIcon)}>{icon}</span>}
           {customBody || (
             <div className={cn(styles.bannerBody, bodyClassName)}>
-              {title && <h4>{title}</h4>}
+              {title && <span className={cn(styles.title)}>{title}</span>}
               {description && <p>{description}</p>}
             </div>
           )}

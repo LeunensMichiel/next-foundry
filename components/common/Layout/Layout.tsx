@@ -12,14 +12,14 @@ type Props = {
 };
 
 const Layout: FC<Props> = ({ children }: Props) => {
-  const { displayModal, closeModal, modalView } = useUI();
+  const { displayModal, closeModal, modalView, modalTitle } = useUI();
   return (
     <>
       <Navbar />
       <main className={cx(styles.mainContainer)}>{children}</main>
       <Footer />
 
-      <Modal open={displayModal} onClose={closeModal}>
+      <Modal open={displayModal} onClose={closeModal} title={modalTitle}>
         {modalView === 'LANGUAGE_VIEW' && <LanguageModalView />}
       </Modal>
       <CookieBanner />

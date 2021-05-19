@@ -8,6 +8,7 @@ const MenuToggle = ({ className = '', handleToggle }: MenuToggleProps) => (
     aria-haspopup="true"
     aria-expanded="false"
     type="button"
+    aria-label="Navigation menu button"
     className={className}
     onClick={handleToggle}
   >

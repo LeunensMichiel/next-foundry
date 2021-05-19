@@ -1,12 +1,9 @@
 import cx from 'classnames';
-import { ReactNode } from 'react';
+import { FC, HTMLAttributes } from 'react';
 
 import styles from './DropdownMenu.module.scss';
 
-type DropdownMenuProps = {
-  children: ReactNode;
-};
-const DropdownMenu = ({ children }: DropdownMenuProps) => (
+const DropdownMenu: FC<HTMLAttributes<HTMLUListElement>> = ({ children }) => (
   <ul className={cx(styles.menuLevelTwo)}>{children}</ul>
 );
 

@@ -21,7 +21,7 @@ const DropdownMenuItem = ({
     );
   }
   if (internalLink) {
-    return <NavItem label={label} link={internalLink} />;
+    return <NavItem label={label} link={internalLink} role="tab" />;
   }
 
   return <div>{label}</div>;

@@ -51,6 +51,8 @@ const Home = () => {
         aspectRatio="8/1"
         objectFit="cover"
         objectPosition="50% 60%"
+        alt="mountains"
+        priority
       />
 
       <div className={cx(styles.grid, 'container', 'mx-auto')}>

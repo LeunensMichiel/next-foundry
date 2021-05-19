@@ -78,9 +78,8 @@ This is an opinionated starter template in `Next.js v10.2` which uses all best p
 - :white_check_mark: Cookie management
 - :white_check_mark: `sitemap.xml`
 - :white_check_mark: `robots.txt`
-- :x: Caching
 - :x: Smooth scrolling with polyfill
-- :x: Lighthouse optimizations
+- :hammer: Lighthouse optimizations
 - :x: Inter-browser compatibility
 
 ### Future
@@ -95,6 +94,12 @@ This is an opinionated starter template in `Next.js v10.2` which uses all best p
 - :x: Client-Authentication
 - :x: Dockerize
 - :x: Page listing all the UI components
+
+Todo:
+
+- Rewrite DropdownMenu to be more agnostic
+- Navigationbar with improved UI and Accessability
+- Navigationbar use button component
 
 ## Getting Started
 

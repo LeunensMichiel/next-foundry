@@ -10,11 +10,11 @@ export const LangCode: Record<string, string> = {
 };
 
 const LanguagePicker = () => {
-  const { lang } = useTranslation();
+  const { t, lang } = useTranslation('common');
   const { openModal, setModalView } = useUI();
 
   const handleLanguageBtnClick = () => {
-    setModalView('LANGUAGE_VIEW');
+    setModalView('LANGUAGE_VIEW', t('i18n.select'));
     openModal();
   };
 

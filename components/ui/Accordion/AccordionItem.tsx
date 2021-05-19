@@ -40,7 +40,7 @@ const AccordionItem: FC<AccordionItemProps> = ({
         aria-pressed={expanded}
         {...rest}
       >
-        <h6 className={cx(styles.title)}>{title}</h6>
+        <span className={cx(styles.title)}>{title}</span>
         <Chevron />
       </div>
       {expanded && <div className={cx(styles.body)}>{children}</div>}
