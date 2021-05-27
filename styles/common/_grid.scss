@@ -73,7 +73,9 @@
 }
 
 .container-page {
-  width: clamp(45ch, 50%, 80ch);
+  @include breakpoints.breakpoint-up(md) {
+    width: clamp(45ch, 100%, 85ch);
+  }
 }
 
 .padded {

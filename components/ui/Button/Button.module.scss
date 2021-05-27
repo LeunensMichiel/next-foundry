@@ -137,12 +137,6 @@
   &.uppercased {
     text-transform: uppercase;
   }
-  &.button-icon-left span {
-    margin-right: 0.75rem;
-  }
-  &.button-icon-right span {
-    margin-left: 0.75rem;
-  }
 
   span {
     display: inline-flex;
@@ -266,7 +260,7 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
   }
 }
 .button-sm {
-  padding: 0.5rem 1.25rem;
+  padding: 0.5rem 1rem;
   font-size: var(--button-sm);
 
   &.button-circular {
@@ -320,4 +314,11 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
 
 .button-rounded {
   border-radius: var(--border-radius-lg);
+}
+
+.button-icon-left {
+  margin-right: 0.75rem;
+}
+.button-icon-right {
+  margin-left: 0.75rem;
 }

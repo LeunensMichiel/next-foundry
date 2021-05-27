@@ -1,9 +1,10 @@
 import { Layout } from '@components/common';
 import { Chevron } from '@components/icons';
 import { Button } from '@components/ui';
-import styles from '@styles/pages/404.module.scss';
 import cn from 'classnames';
 import useTranslation from 'next-translate/useTranslation';
+
+import styles from './styles/404.module.scss';
 
 const Custom404 = () => {
   const { t } = useTranslation('common');

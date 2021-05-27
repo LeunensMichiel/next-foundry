@@ -86,7 +86,7 @@
   --color-text-success: var(--color-purple-50);
   --color-text-warning: var(--color-orange-50);
   --color-text-info: var(--color-amber-50);
-  --color-text-inverse: var(--color-white);
+  --color-text-inversed: var(--color-white);
   --color-text-white: var(--color-white);
   --color-text-black: var(--color-black);
   --color-text-brand: var(--color-purple-500);
@@ -137,6 +137,7 @@
   --color-border-inversed: var(--color-gray-800);
   --color-border-bright: var(--color-gray-100);
   --color-border-dark: var(--color-gray-800);
+  --color-border-brand: var(--color-purple-500);
   // Shadows
   --color-shadow-primary: var(--color-black-fade-15);
   --color-shadow-bright: var(--color-white-fade-15);
@@ -423,7 +424,7 @@
   --color-input-checkbox-check: var(--color-purple-50);
   --color-input-checkbox-label: var(--color-purple-50);
 
-  --color-input-tooltip-text: var(--color-text-inverse);
+  --color-input-tooltip-text: var(--color-text-inversed);
   --color-input-tooltip-bg: var(--color-bg-inversed);
   --color-input-tooltip-border: var(--color-border-inversed);
   --color-input-tooltip-primary-text: var(--color-purple-50);
@@ -498,8 +499,7 @@
 
   --small: calc(var(--font-size) / var(--ratio));
   --big: calc(var(--font-size) * var(--ratio));
-  --h5: calc(var(--font-size) * var(--ratio));
-  --h4: calc(var(--h5) * var(--ratio));
+  --h4: calc(var(--font-size) * var(--ratio));
   --h3: calc(var(--h4) * var(--ratio));
   --h2: calc(var(--h3) * var(--ratio));
   --h1: calc(var(--h2) * var(--ratio));

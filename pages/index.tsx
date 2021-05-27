@@ -9,12 +9,13 @@ import {
 } from '@components/ui';
 import { ArticleSkeleton } from '@components/ui/Skeleton';
 import { useUI } from '@lib/hooks';
-import styles from '@styles/pages/index.module.scss';
 import cx from 'classnames';
 import { NextSeo } from 'next-seo';
 import { useTheme } from 'next-themes';
 import useTranslation from 'next-translate/useTranslation';
 import { toast } from 'react-toastify';
+
+import styles from './styles/index.module.scss';
 
 const Home = () => {
   const { setTheme, theme } = useTheme();
