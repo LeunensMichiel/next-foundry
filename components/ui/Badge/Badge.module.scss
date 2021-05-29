@@ -13,7 +13,7 @@
   border: 0.125rem solid var(--color-badge-border);
   color: var(--color-badge-text);
   background: var(--color-badge-bg);
-  filter: theme.$drop-shadow-sm;
+  box-shadow: theme.$box-shadow-sm;
   @include theme.transition(border-color, background, color);
 
   span {

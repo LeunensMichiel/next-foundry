@@ -10,5 +10,5 @@ export const CommonSkeletonInlineProps = {
   backgroundColor: 'var(--color-bg-secondary)',
   foregroundColor: 'var(--color-bg-tertiary)',
   style,
-  animate: false,
+  // animate: false,
 };

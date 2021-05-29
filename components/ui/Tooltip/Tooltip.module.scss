@@ -10,7 +10,7 @@
   border: 0.125rem solid var(--color-tooltip-border);
   color: var(--color-tooltip-text);
   background: var(--color-tooltip-bg);
-  filter: theme.$drop-shadow-sm;
+  box-shadow: theme.$box-shadow-sm;
   z-index: theme.$z-low;
   @include theme.transition(border-color, background, color);
 
@@ -33,7 +33,7 @@
       width: 0.75rem;
       height: 0.75rem;
       background-color: var(--color-tooltip-bg);
-      filter: theme.$drop-shadow-xs;
+      box-shadow: theme.$box-shadow-xs;
     }
   }
   &[data-popper-placement^='top'] > .arrow {

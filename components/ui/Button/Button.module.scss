@@ -9,14 +9,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
+  box-shadow: theme.$box-shadow-md;
   border: 0.125rem solid var(--color-btn-border);
   border-radius: var(--border-radius);
   background: var(--color-btn-bg);
   cursor: pointer;
   color: var(--color-btn-text);
-  @include theme.transition(background, border, color, filter);
-  @include theme.drop-shadow-colored(sm, var(--color-btn-shadow));
+  @include theme.transition(background, border, color);
 
   svg {
     @include theme.transition(stroke);
@@ -26,20 +25,17 @@
     border: 0.125rem solid var(--color-btn-hover-border);
     background: var(--color-btn-hover-bg);
     color: var(--color-btn-hover-text);
-    @include theme.drop-shadow-colored(md, var(--color-btn-shadow));
   }
   &:focus {
     border: 0.125rem solid var(--color-btn-focus-border);
     background: var(--color-btn-focus-bg);
     color: var(--color-btn-focus-text);
     outline: var(--color-btn-focus-border);
-    @include theme.drop-shadow-colored(sm, var(--color-btn-shadow));
   }
   &:active {
     border: 0.125rem solid var(--color-btn-active-border);
     background: var(--color-btn-active-bg);
     color: var(--color-btn-active-text);
-    @include theme.drop-shadow-colored(sm, var(--color-btn-shadow));
   }
   &.loading {
     border: 0.125rem solid var(--color-btn-active-border);
@@ -47,31 +43,30 @@
     color: var(--color-btn-active-text);
     pointer-events: none;
     user-select: none;
-    @include theme.drop-shadow-colored(sm, var(--color-btn-shadow));
   }
   &.outlined {
     background: transparent;
     color: var(--color-btn-border);
     border: 0.125rem solid var(--color-btn-border);
-    filter: none;
+    box-shadow: none;
 
     &:hover {
       border: 0.125rem solid var(--color-btn-hover-border);
       background: none;
       color: var(--color-btn-hover-border);
-      filter: none;
+      box-shadow: none;
     }
     &:focus {
       border: 0.125rem solid var(--color-btn-focus-border);
       background: none;
       color: var(--color-btn-focus-border);
-      filter: none;
+      box-shadow: none;
     }
     &:active {
       border: 0.125rem solid var(--color-btn-active-border);
       background: none;
       color: var(--color-btn-active-border);
-      filter: none;
+      box-shadow: none;
     }
     &.disabled {
       border: 0.125rem solid var(--color-btn-disabled-border);
@@ -119,7 +114,7 @@
     border: 0.125rem solid var(--color-btn-disabled-border);
     background: var(--color-btn-disabled-bg);
     color: var(--color-btn-disabled-text);
-    filter: none;
+    box-shadow: none;
     cursor: not-allowed;
 
     &:hover,
@@ -152,33 +147,28 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
     border: 0.125rem solid var(--color-btn-#{$variant}-border);
     background: var(--color-btn-#{$variant}-bg);
     color: var(--color-btn-#{$variant}-text);
-    @include theme.drop-shadow-colored(xs, var(--color-btn-shadow));
-    @include theme.transition(background, border, color, filter);
+    @include theme.transition(background, border, color);
 
     &:hover {
       border: 0.125rem solid var(--color-btn-#{$variant}-hover-border);
       background: var(--color-btn-#{$variant}-hover-bg);
       color: var(--color-btn-#{$variant}-hover-text);
-      @include theme.drop-shadow-colored(md, var(--color-btn-shadow));
     }
     &:focus {
       border: 0.125rem solid var(--color-btn-#{$variant}-focus-border);
       background: var(--color-btn-#{$variant}-focus-bg);
       color: var(--color-btn-#{$variant}-focus-text);
       outline: var(--color-btn-#{$variant}-focus-border);
-      @include theme.drop-shadow-colored(sm, var(--color-btn-shadow));
     }
     &:active {
       border: 0.125rem solid var(--color-btn-#{$variant}-active-border);
       background: var(--color-btn-#{$variant}-active-bg);
       color: var(--color-btn-#{$variant}-active-text);
-      @include theme.drop-shadow-colored(sm, var(--color-btn-shadow));
     }
     &.loading {
       border: 0.125rem solid var(--color-btn-#{$variant}-active-border);
       background: var(--color-btn-#{$variant}-active-bg);
       color: var(--color-btn-#{$variant}-active-text);
-      @include theme.drop-shadow-colored(sm, var(--color-btn-shadow));
     }
     &.outlined {
       background: transparent;
@@ -234,7 +224,7 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
       border: 0.125rem solid var(--color-btn-#{$variant}-disabled-border);
       background: var(--color-btn-#{$variant}-disabled-bg);
       color: var(--color-btn-#{$variant}-disabled-text);
-      filter: none;
+      box-shadow: none;
 
       &:hover,
       &:focus,

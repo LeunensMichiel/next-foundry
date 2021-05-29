@@ -22,7 +22,7 @@
   border-radius: var(--border-radius);
   position: relative;
   background-color: var(--color-bg-primary);
-  filter: theme.$drop-shadow-xl;
+  box-shadow: theme.$box-shadow-xl;
 
   &:focus {
     outline: none;
