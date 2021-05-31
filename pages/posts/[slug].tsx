@@ -1,6 +1,6 @@
 import { Layout } from '@components/common';
 import { ImageWithAspectRatio } from '@components/ui';
-import { getAllPosts, getPost } from '@lib/mdxUtils';
+import { getAllItemsByDate, getItem, ITEM_PATH_TYPE } from '@lib/mdxUtils';
 import cn from 'classnames';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
@@ -72,7 +72,10 @@ export default SingleBlog;
 SingleBlog.Layout = Layout;
 
 export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
-  const { content, data } = getPost(params?.slug as string);
+  const { content, data } = getItem(
+    ITEM_PATH_TYPE.Post,
+    params?.slug as string
+  );
 
   const mdxSource = await serialize(content, { scope: data });
 
@@ -86,7 +89,7 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-  const posts = getAllPosts(['slug']);
+  const posts = getAllItemsByDate(ITEM_PATH_TYPE.Post, ['slug']);
 
   const paths = posts.flatMap((post) =>
     locales!.map((locale) => ({

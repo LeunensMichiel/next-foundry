@@ -1,5 +1,5 @@
 import { Layout } from '@components/common';
-import { getAllPosts } from '@lib/mdxUtils';
+import { getAllItemsByDate, ITEM_PATH_TYPE } from '@lib/mdxUtils';
 import cn from 'classnames';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
@@ -32,7 +32,7 @@ export default Blog;
 Blog.Layout = Layout;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = getAllPosts([
+  const posts = getAllItemsByDate(ITEM_PATH_TYPE.Post, [
     'slug',
     'date',
     'thumbnail',

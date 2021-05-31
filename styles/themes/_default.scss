@@ -499,6 +499,7 @@
 
   --small: calc(var(--font-size) / var(--ratio));
   --big: calc(var(--font-size) * var(--ratio));
+  --h5: 105%;
   --h4: calc(var(--font-size) * var(--ratio));
   --h3: calc(var(--h4) * var(--ratio));
   --h2: calc(var(--h3) * var(--ratio));

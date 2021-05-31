@@ -6,40 +6,51 @@ type Items = {
   [key: string]: string;
 };
 
-type Post = {
+type Item = {
   data: {
     [key: string]: string;
   };
   content: string;
 };
 
-const POSTS_PATH = path.join(process.cwd(), 'markdown/posts');
+export const ITEM_PATH_TYPE = {
+  Post: path.join(process.cwd(), 'markdown/posts'),
+};
 
-function getPostFilePaths(): string[] {
+function getItemPaths(
+  type: typeof ITEM_PATH_TYPE[keyof typeof ITEM_PATH_TYPE]
+): string[] {
   return (
     fs
-      .readdirSync(POSTS_PATH)
+      .readdirSync(type)
       // Only include md(x) files
-      .filter((postPath) => /\.mdx?$/.test(postPath))
+      .filter((itemPath) => /\.mdx?$/.test(itemPath))
   );
 }
 
-export function getPost(slug: string): Post {
-  const fullPath = join(POSTS_PATH, `${slug}.mdx`);
+export function getItem(
+  type: typeof ITEM_PATH_TYPE[keyof typeof ITEM_PATH_TYPE],
+  slug: string
+): Item {
+  const fullPath = join(type, `${slug}.mdx`);
   let fileContents;
   if (fs.existsSync(fullPath)) {
     fileContents = fs.readFileSync(fullPath, 'utf8');
   } else {
-    fileContents = fs.readFileSync(join(POSTS_PATH, `${slug}.md`), 'utf8');
+    fileContents = fs.readFileSync(join(type, `${slug}.md`), 'utf8');
   }
   const { data, content } = matter(fileContents);
 
   return { data, content };
 }
 
-export function getPostItems(filePath: string, fields: string[] = []): Items {
+export function getItems(
+  type: typeof ITEM_PATH_TYPE[keyof typeof ITEM_PATH_TYPE],
+  filePath: string,
+  fields: string[] = []
+): Items {
   const slug = filePath.replace(/\.mdx?$/, '');
-  const { data, content } = getPost(slug);
+  const { data, content } = getItem(type, slug);
 
   const items: Items = {};
 
@@ -51,7 +62,6 @@ export function getPostItems(filePath: string, fields: string[] = []): Items {
     if (field === 'content') {
       items[field] = content;
     }
-
     if (data[field]) {
       items[field] = data[field];
     }
@@ -60,11 +70,13 @@ export function getPostItems(filePath: string, fields: string[] = []): Items {
   return items;
 }
 
-export function getAllPosts(fields: string[] = []): Items[] {
-  const filePaths = getPostFilePaths();
+export function getAllItemsByDate(
+  type: typeof ITEM_PATH_TYPE[keyof typeof ITEM_PATH_TYPE],
+  fields: string[] = []
+): Items[] {
+  const filePaths = getItemPaths(type);
   const posts = filePaths
-    .map((filePath) => getPostItems(filePath, fields))
-    // sort posts by date in descending order
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+    .map((filePath) => getItems(type, filePath, fields))
+    .sort((item1, item2) => (item1.date > item2.date ? -1 : 1));
   return posts;
 }

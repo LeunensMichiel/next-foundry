@@ -115,7 +115,8 @@ h6 {
 
 p {
   font-size: var(--font-size);
-  p {
+  p,
+  li {
     font-size: 100%;
   }
 }
@@ -126,7 +127,8 @@ small {
 
 li {
   font-size: var(--font-size);
-  li {
+  li,
+  p {
     font-size: 100%;
   }
 }
@@ -184,7 +186,7 @@ strong {
 
 blockquote {
   p {
-    font-size: var(--h5);
+    font-size: var(--font-size);
     font-style: italic;
     border-left: 4px solid var(--color-border-brand);
     padding: 1rem 1rem;
@@ -260,4 +262,17 @@ dl {
       margin-bottom: 0;
     }
   }
+}
+
+sup,
+sup {
+  font-size: 50%;
+}
+
+sup {
+  vertical-align: super;
+}
+
+sub {
+  vertical-align: sub;
 }
