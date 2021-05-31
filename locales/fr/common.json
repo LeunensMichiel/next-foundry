@@ -23,5 +23,8 @@
   },
   "i18n": {
     "select": "Sélectionnez langue préférée"
+  },
+  "date": {
+    "published": "Publié le"
   }
 }

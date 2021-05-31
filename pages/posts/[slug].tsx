@@ -6,6 +6,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import { NextSeo } from 'next-seo';
+import useTranslation from 'next-translate/useTranslation';
 
 import styles from '../styles/post.module.scss';
 
@@ -25,6 +26,7 @@ type PostPage = {
 
 const SingleBlog = ({ mdxSource, frontmatter, locale }: PostPage) => {
   const blogdate = new Date(frontmatter.date);
+  const { t } = useTranslation();
   return (
     <>
       <NextSeo
@@ -46,7 +48,9 @@ const SingleBlog = ({ mdxSource, frontmatter, locale }: PostPage) => {
       <article className={cn(styles.article)}>
         <header className={cn(styles.header, 'container padded')}>
           <h1>{frontmatter.title}</h1>
-          <small>{`Published at ${blogdate.toLocaleDateString(locale)}`}</small>
+          <small>{`${t('common:date.published')} ${blogdate.toLocaleDateString(
+            locale
+          )}`}</small>
         </header>
         {frontmatter.thumbnail && (
           <ImageWithAspectRatio

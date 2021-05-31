@@ -23,5 +23,8 @@
   },
   "i18n": {
     "select": "Taalvoorkeur selecteren"
+  },
+  "date": {
+    "published": "Gepupliceerd om"
   }
 }
