@@ -20,6 +20,7 @@
       "@utils/*": ["utils/*"],
       "@config/*": ["config/*"],
       "@assets/*": ["assets/*"],
+      "@public/*": ["public/*"],
       "@components/*": ["components/*"]
     }
   },

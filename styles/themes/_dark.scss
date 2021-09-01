@@ -236,23 +236,12 @@
   --color-btn-minimal-active-fill: var(--color-gray-300);
   --color-btn-minimal-disabled-fill: var(--color-gray-700);
   // Toasts
-  --color-toast-text: var(--color-white);
-  --color-toast-icon: var(--color-white);
+  --color-toast-text: var(--color-gray-50);
+  --color-toast-text-inverted: var(--color-gray-800);
   --color-toast-bg: var(--color-gray-800);
-  --color-toast-border: var(--color-gray-800);
-  --color-toast-hover-text: var(--color-gray-100);
-  --color-toast-hover-icon: var(--color-gray-100);
-  --color-toast-hover-bg: var(--color-gray-700);
-  --color-toast-hover-border: var(--color-gray-700);
-
-  --color-toast-inverted-text: var(--color-black);
-  --color-toast-inverted-icon: var(--color-black);
-  --color-toast-inverted-bg: var(--color-gray-300);
-  --color-toast-inverted-border: var(--color-gray-300);
-  --color-toast-inverted-hover-text: var(--color-gray-900);
-  --color-toast-inverted-hover-icon: var(--color-gray-900);
-  --color-toast-inverted-hover-bg: var(--color-gray-100);
-  --color-toast-inverted-hover-border: var(--color-gray-100);
+  --color-toast-bg-inverted: var(--color-gray-100);
+  --color-toast-bar: var(--color-gray-500);
+  --color-toast-bar-inverted: var(--color-gray-800);
 
   --color-label-primary-text: var(--color-gray-400);
   --color-label-primary-icon: var(--color-gray-400);

@@ -14,6 +14,7 @@ type NoopProps = {
 const Noop = ({ children }: NoopProps) => <>{children}</>;
 
 function App({ Component, pageProps }: AppProps) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const Layout = (Component as any).Layout || Noop;
 
   // Chrome-transition-bug

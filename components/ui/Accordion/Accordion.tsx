@@ -55,12 +55,19 @@ const Accordion: FC<AccordionProps> = forwardRef<
 
     return (
       <AccordionContext.Provider value={contextValue}>
-        <div className={cn(styles.accordion)} role="region" ref={ref} {...rest}>
+        <div
+          className={cn(styles.accordion, className)}
+          role="region"
+          ref={ref}
+          {...rest}
+        >
           {children}
         </div>
       </AccordionContext.Provider>
     );
   }
 );
+
+Accordion.displayName = 'Accordion';
 
 export default Accordion;

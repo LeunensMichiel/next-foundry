@@ -4,10 +4,7 @@ import { CSSProperties, FC } from 'react';
 
 import styles from './ImageWithAspectRatio.module.scss';
 
-type Props = Omit<
-  ImageProps,
-  'width' | 'height' | 'blurDataURL' | 'placeholder'
-> & {
+type Props = Omit<ImageProps, 'width' | 'height'> & {
   aspectRatio: string;
   wrapperClassName?: string;
 };

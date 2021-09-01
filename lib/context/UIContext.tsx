@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import { Cross } from '@components/icons';
 import { ThemeProvider } from 'next-themes';
 import { createContext, FC, useMemo, useReducer } from 'react';
@@ -71,7 +72,8 @@ const uiReducer = (state: UIState, action: Action): UIState => {
   }
 };
 
-export const UIProvider = (props: any) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const UIProvider: FC = (props: any) => {
   const [state, dispatch] = useReducer(uiReducer, INITIAL_UI_STATE);
 
   const openModal = () => dispatch({ type: 'OPEN_MODAL' });

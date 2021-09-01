@@ -16,4 +16,6 @@ const Form: FC<ComponentPropsWithRef<'form'> & FormProps> = forwardRef<
   </form>
 ));
 
+Form.displayName = 'Form';
+
 export default Form;

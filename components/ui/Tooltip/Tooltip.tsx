@@ -34,7 +34,7 @@ const Tooltip: FC<Props> = ({ text, placement, strategy, children }) => {
 
   const popperOptions: Omit<Partial<Options>, 'modifiers'> & {
     createPopper?: typeof createPopper;
-    modifiers?: ReadonlyArray<Modifier<any>>;
+    modifiers?: ReadonlyArray<Modifier<unknown>>;
   } = useMemo(
     () => ({
       placement: placement ?? 'auto',

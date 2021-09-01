@@ -332,59 +332,13 @@
   --color-btn-minimal-contrasted-active-fill: var(--color-gray-500);
   --color-btn-minimal-contrasted-disabled-fill: var(--color-gray-700);
   // Toasts
-  --color-toast-text: var(--color-black);
-  --color-toast-icon: var(--color-black);
-  --color-toast-bg: var(--color-gray-300);
-  --color-toast-border: var(--color-gray-300);
-  --color-toast-hover-text: var(--color-gray-900);
-  --color-toast-hover-icon: var(--color-gray-900);
-  --color-toast-hover-bg: var(--color-gray-100);
-  --color-toast-hover-border: var(--color-gray-100);
+  --color-toast-text: var(--color-gray-800);
+  --color-toast-text-inverted: var(--color-gray-50);
+  --color-toast-bg: var(--color-gray-100);
+  --color-toast-bg-inverted: var(--color-gray-800);
+  --color-toast-bar: var(--color-gray-800);
+  --color-toast-bar-inverted: var(--color-gray-500);
 
-  --color-toast-inverted-text: var(--color-white);
-  --color-toast-inverted-icon: var(--color-white);
-  --color-toast-inverted-bg: var(--color-gray-900);
-  --color-toast-inverted-border: var(--color-gray-900);
-  --color-toast-inverted-hover-text: var(--color-gray-100);
-  --color-toast-inverted-hover-icon: var(--color-gray-100);
-  --color-toast-inverted-hover-bg: var(--color-gray-800);
-  --color-toast-inverted-hover-border: var(--color-gray-800);
-
-  --color-toast-success-text: var(--color-purple-50);
-  --color-toast-success-icon: var(--color-purple-50);
-  --color-toast-success-bg: var(--color-purple-600);
-  --color-toast-success-border: var(--color-purple-600);
-  --color-toast-success-hover-text: var(--color-purple-50);
-  --color-toast-success-hover-icon: var(--color-purple-50);
-  --color-toast-success-hover-bg: var(--color-purple-400);
-  --color-toast-success-hover-border: var(--color-purple-400);
-
-  --color-toast-warning-text: var(--color-black);
-  --color-toast-warning-icon: var(--color-black);
-  --color-toast-warning-bg: var(--color-orange-500);
-  --color-toast-warning-border: var(--color-orange-500);
-  --color-toast-warning-hover-text: var(--color-black);
-  --color-toast-warning-hover-icon: var(--color-black);
-  --color-toast-warning-hover-bg: var(--color-orange-300);
-  --color-toast-warning-hover-border: var(--color-orange-300);
-
-  --color-toast-danger-text: var(--color-red-50);
-  --color-toast-danger-icon: var(--color-red-50);
-  --color-toast-danger-bg: var(--color-red-500);
-  --color-toast-danger-border: var(--color-red-500);
-  --color-toast-danger-hover-text: var(--color-white);
-  --color-toast-danger-hover-icon: var(--color-white);
-  --color-toast-danger-hover-bg: var(--color-red-400);
-  --color-toast-danger-hover-border: var(--color-red-400);
-
-  --color-toast-info-text: var(--color-black);
-  --color-toast-info-icon: var(--color-black);
-  --color-toast-info-bg: var(--color-amber-500);
-  --color-toast-info-border: var(--color-amber-500);
-  --color-toast-info-hover-text: var(--color-black);
-  --color-toast-info-hover-icon: var(--color-black);
-  --color-toast-info-hover-bg: var(--color-amber-300);
-  --color-toast-info-hover-border: var(--color-amber-300);
   // Form Elements
   --color-label-primary-text: var(--color-gray-700);
   --color-label-primary-icon: var(--color-gray-700);

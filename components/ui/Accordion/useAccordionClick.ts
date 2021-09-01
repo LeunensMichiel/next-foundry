@@ -8,7 +8,8 @@ const useAccordionClick = (
   disabled?: boolean
 ) => {
   const { onToggle } = useAccordionContext();
-  if (disabled) return () => {};
+  if (disabled) return;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return (event: any) => {
     if (
       event.type === 'keydown' &&

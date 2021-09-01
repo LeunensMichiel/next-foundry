@@ -10,7 +10,7 @@ type RadioButtonProps = {
 const RadioButton: FC<RadioButtonProps> = forwardRef<
   HTMLInputElement,
   RadioButtonProps
->(({ name, label, onChange, onBlur, disabled, ...rest }, ref) => (
+>(({ name, label, onChange, onBlur, ...rest }, ref) => (
   <label htmlFor={label} className={cn(styles.radioButton)}>
     <span className={cn(styles.radioButtonInput)}>
       <input
@@ -27,5 +27,7 @@ const RadioButton: FC<RadioButtonProps> = forwardRef<
     <span className={cn(styles.radioButtonLabel)}>{label}</span>
   </label>
 ));
+
+RadioButton.displayName = 'RadioButton';
 
 export default RadioButton;

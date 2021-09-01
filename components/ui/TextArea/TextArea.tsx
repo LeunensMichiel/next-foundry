@@ -95,4 +95,6 @@ const TextArea: FC<TextAreaProps> = forwardRef<
   )
 );
 
+TextArea.displayName = 'TextArea';
+
 export default TextArea;

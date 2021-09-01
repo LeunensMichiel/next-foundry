@@ -2,6 +2,50 @@
 // Import default base stylesheet
 @import '~react-toastify/dist/ReactToastify.min.css';
 //https://fkhadra.github.io/react-toastify/how-to-style
+:root {
+  --toastify-color-light: var(--color-toast-bg);
+  --toastify-color-dark: var(--color-toast-bg-inverted);
+  --toastify-color-info: var(--color-amber-500);
+  --toastify-color-success: var(--color-purple-600);
+  --toastify-color-warning: var(--color-orange-500);
+  --toastify-color-error: var(--color-red-500);
+  --toastify-color-transparent: rgba(255, 255, 255, 0.7);
+
+  --toastify-icon-color-info: var(--toastify-color-info);
+  --toastify-icon-color-success: var(--toastify-color-success);
+  --toastify-icon-color-warning: var(--toastify-color-warning);
+  --toastify-icon-color-error: var(--toastify-color-error);
+
+  --toastify-toast-width: 320px;
+  --toastify-toast-background: var(--color-white);
+  --toastify-toast-min-height: 64px;
+  --toastify-toast-max-height: 800px;
+  --toastify-z-index: #{theme.$z-ultra};
+
+  --toastify-text-color-light: var(--color-toast-text);
+  --toastify-text-color-dark: var(--color-toast-text-inverted);
+
+  //Used only for colored theme
+  --toastify-text-color-info: var(--color-black);
+  --toastify-text-color-success: var(--color-purple-50);
+  --toastify-text-color-error: var(--color-red-50);
+  --toastify-text-color-warning: var(--color-black);
+
+  --toastify-spinner-color: #616161;
+  --toastify-spinner-color-empty-area: #e0e0e0;
+
+  --toastify-color-progress-light: var(--color-toast-bar);
+  --toastify-color-progress-dark: var(--color-toast-bar-inverted);
+  --toastify-color-progress-info: var(--toastify-color-info);
+  --toastify-color-progress-success: var(--toastify-color-success);
+  --toastify-color-progress-warning: var(--toastify-color-warning);
+  --toastify-color-progress-error: var(--toastify-color-error);
+}
+
+.Toastify__progress-bar {
+  height: 6px;
+}
+
 .Toastify__toast-container {
   padding: 0;
 }
@@ -11,124 +55,4 @@
   > svg {
     width: 1.25rem;
   }
-}
-.Toastify__toast--dark {
-  color: var(--color-toast-inverted-text);
-  background: var(--color-toast-inverted-bg);
-  border: var(--color-toast-inverted-border);
-  @include theme.transition(color, background, border);
-  > svg {
-    stroke: var(--color-toast-inverted-icon);
-    @include theme.transition(color, stroke, fill);
-  }
-  &:hover {
-    color: var(--color-toast-inverted-hover-text);
-    background: var(--color-toast-inverted-hover-bg);
-    border: var(--color-toast-inverted-hover-border);
-    > svg {
-      stroke: var(--color-toast-inverted-hover-icon);
-    }
-  }
-}
-.Toastify__toast--default {
-  color: var(--color-toast-text);
-  background: var(--color-toast-bg);
-  border: var(--color-toast-border);
-  @include theme.transition(color, background, border);
-  > svg {
-    stroke: var(--color-toast-icon);
-    @include theme.transition(color, stroke, fill);
-  }
-  &:hover {
-    color: var(--color-toast-hover-text);
-    background: var(--color-toast-hover-bg);
-    border: var(--color-toast-hover-border);
-    > svg {
-      stroke: var(--color-toast-hover-icon);
-    }
-  }
-}
-.Toastify__toast--info {
-  color: var(--color-toast-info-text);
-  background: var(--color-toast-info-bg);
-  border: var(--color-toast-info-border);
-  @include theme.transition(color, background, border);
-  > svg {
-    stroke: var(--color-toast-info-icon);
-    @include theme.transition(color, stroke, fill);
-  }
-  &:hover {
-    color: var(--color-toast-info-hover-text);
-    background: var(--color-toast-info-hover-bg);
-    border: var(--color-toast-info-hover-border);
-    > svg {
-      stroke: var(--color-toast-info-hover-icon);
-    }
-  }
-}
-.Toastify__toast--success {
-  color: var(--color-toast-success-text);
-  background: var(--color-toast-success-bg);
-  border: var(--color-toast-success-border);
-  @include theme.transition(color, background, border);
-  > svg {
-    stroke: var(--color-toast-success-icon);
-    @include theme.transition(color, stroke, fill);
-  }
-  &:hover {
-    color: var(--color-toast-success-hover-text);
-    background: var(--color-toast-success-hover-bg);
-    border: var(--color-toast-success-hover-border);
-    > svg {
-      stroke: var(--color-toast-success-hover-icon);
-    }
-  }
-}
-.Toastify__toast--warning {
-  color: var(--color-toast-warning-text);
-  background: var(--color-toast-warning-bg);
-  border: var(--color-toast-warning-border);
-  @include theme.transition(color, background, border);
-  > svg {
-    stroke: var(--color-toast-warning-icon);
-    @include theme.transition(color, stroke, fill);
-  }
-  &:hover {
-    color: var(--color-toast-warning-hover-text);
-    background: var(--color-toast-warning-hover-bg);
-    border: var(--color-toast-warning-hover-border);
-    > svg {
-      stroke: var(--color-toast-warning-hover-icon);
-    }
-  }
-}
-.Toastify__toast--error {
-  color: var(--color-toast-danger-text);
-  background: var(--color-toast-danger-bg);
-  border: var(--color-toast-danger-border);
-  @include theme.transition(color, background, border);
-  > svg {
-    stroke: var(--color-toast-danger-icon);
-    @include theme.transition(color, stroke, fill);
-  }
-  &:hover {
-    color: var(--color-toast-danger-hover-text);
-    background: var(--color-toast-danger-hover-bg);
-    border: var(--color-toast-danger-hover-border);
-    > svg {
-      stroke: var(--color-toast-danger-hover-icon);
-    }
-  }
-}
-
-.Toastify__progress-bar {
-  height: 6px;
-}
-.Toastify__progress-bar--default {
-  background: var(--color-toast-inverted-bg);
-  opacity: 0.3 !important;
-}
-.Toastify__progress-bar--dark {
-  background: var(--color-toast-bg);
-  opacity: 0.3 !important;
 }

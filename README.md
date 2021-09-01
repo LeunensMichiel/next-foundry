@@ -14,6 +14,7 @@ This is an opinionated starter template in `Next.js v10.2` which uses all best p
 - :white_check_mark: Husky
 - :white_check_mark: Correct `*.ignore`
 - :white_check_mark: `env`-variables
+- :x: Versioning
 
 ### Theming & Styles
 

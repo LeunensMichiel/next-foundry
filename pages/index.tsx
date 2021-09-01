@@ -15,6 +15,7 @@ import { useTheme } from 'next-themes';
 import useTranslation from 'next-translate/useTranslation';
 import { toast } from 'react-toastify';
 
+import testImg from '../public/assets/test.jpg';
 import styles from './styles/index.module.scss';
 
 const Home = () => {
@@ -48,8 +49,9 @@ const Home = () => {
         </p>
       </div>
       <ImageWithAspectRatio
-        src="/assets/test.jpg"
+        src={testImg}
         aspectRatio="8/1"
+        placeholder="blur"
         objectFit="cover"
         objectPosition="50% 60%"
         alt="mountains"
