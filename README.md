@@ -1,6 +1,6 @@
-# Michiel Leunens -- Next.js template
+# Michiel Leunens -- Next Foundry, a Next.js template
 
-This is an opinionated starter template in `Next.js v10.2` which uses all best practices as of 2021. This way you can churn more (static) websites with less code.
+This is an opinionated starter template in `Next.js v11` which uses all best practices as of 2021. This way you can churn more (static) websites with less code.
 
 > :bulb: This project contains a lot of custom components. Everything is loosely coupled, so you can easily delete what you don't need. :warning: **IE11 is not supported**.
 

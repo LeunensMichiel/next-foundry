@@ -1,5 +1,5 @@
 {
-  "name": "next-kit",
+  "name": "next-foundry",
   "version": "1.0.1",
   "private": true,
   "scripts": {
@@ -15,7 +15,7 @@
     "node": ">=16.0.0"
   },
   "dependencies": {
-    "@popperjs/core": "^2.9.3",
+    "@popperjs/core": "^2.10.1",
     "@reach/portal": "^0.16.0",
     "body-scroll-lock": "^3.1.5",
     "classnames": "^2.3.1",
@@ -30,10 +30,10 @@
     "react-cookie": "^4.1.1",
     "react-dom": "17.0.2",
     "react-focus-lock": "^2.5.2",
-    "react-hook-form": "^7.14.2",
+    "react-hook-form": "^7.15.0",
     "react-popper": "^2.2.5",
     "react-toastify": "^8.0.2",
-    "sass": "^1.38.2"
+    "sass": "^1.39.0"
   },
   "devDependencies": {
     "@types/body-scroll-lock": "^3.1.0",
