@@ -6,7 +6,7 @@
   z-index: theme.$z-mid;
   color: var(--color-text-white);
   background-color: var(--color-bg-brand);
-  filter: theme.$drop-shadow-md;
+  box-shadow: theme.$box-shadow-md;
   @include theme.transition(background-color, color);
 
   &.banner-bottom {
@@ -23,9 +23,10 @@
   }
 
   &.floating {
-    width: unset;
-    left: 1rem;
-    right: 1rem;
+    width: calc(100% - 2rem);
+    max-width: nth(theme.$max-container-sizes, 3);
+    left: 50%;
+    transform: translateX(-50%);
     border-radius: var(--border-radius);
   }
 
@@ -38,8 +39,6 @@
 
   @include theme.breakpoint-up(sm) {
     &.floating {
-      left: 1.5rem;
-      right: 1.5rem;
       &.banner-bottom {
         bottom: 1.5rem;
       }
@@ -100,8 +99,9 @@
 
 .bannerBody {
   grid-column: 2 / -1;
-  h4 {
-    font-size: var(--small);
+
+  .title {
+    font-size: var(--font-size);
     font-weight: 500;
   }
   p {

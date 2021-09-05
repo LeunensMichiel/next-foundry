@@ -2,17 +2,16 @@ import { Chevron } from '@components/icons';
 import cx from 'classnames';
 import Link, { LinkProps } from 'next/link';
 import { useRouter } from 'next/router';
-import { ReactNode, useEffect, useState } from 'react';
+import { FC, LiHTMLAttributes, ReactNode, useEffect, useState } from 'react';
 
 import styles from './NavItem.module.scss';
 
 type NavItemProps = {
   label: string | ReactNode;
   link?: LinkProps;
-  children?: ReactNode;
-};
+} & LiHTMLAttributes<HTMLLIElement>;
 
-const NavItem = ({ children, label, link }: NavItemProps) => {
+const NavItem: FC<NavItemProps> = ({ children, label, link }) => {
   const router = useRouter();
   const [open, setOpen] = useState(false);
 
@@ -34,11 +33,12 @@ const NavItem = ({ children, label, link }: NavItemProps) => {
       ) : (
         <button
           className={cx('buttonReset')}
-          role="menuitem"
           type="button"
+          aria-label={`Open ${label} menu`}
           onClick={() => setOpen((prevOpen) => !prevOpen)}
         >
-          {label} <Chevron />
+          <span>{label}</span>
+          <Chevron />
         </button>
       )}
 

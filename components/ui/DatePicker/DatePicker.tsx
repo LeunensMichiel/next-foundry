@@ -35,13 +35,13 @@ const options: UseInputOptions = {
 const DatePicker: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
   (
     {
-      label,
-      colSpan,
+      // label,
+      // colSpan,
       error,
       iconLeft,
       iconRight,
-      withFeedback,
-      onChange,
+      // withFeedback,
+      // onChange,
       onBlur,
       onFocus,
       name,
@@ -65,7 +65,8 @@ const DatePicker: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
     //   onBlur?.(event);
     // };
 
-    const internalOnFocus = (event) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const internalOnFocus = (event: any) => {
       setIsOpen(true);
       // input.fieldProps.onFocus(event);
       onFocus?.(event);
@@ -119,5 +120,7 @@ const DatePicker: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
     );
   }
 );
+
+DatePicker.displayName = 'Datepicker';
 
 export default DatePicker;

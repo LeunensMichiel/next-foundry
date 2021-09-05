@@ -20,10 +20,7 @@
     },
     "internationalization": {
       "title": "Taal veranderen \u2192",
-      "description": "I18n ondersteuning",
-      "fr": "Français",
-      "nl": "Nederlands",
-      "en": "English"
+      "description": "I18n ondersteuning"
     }
   }
 }

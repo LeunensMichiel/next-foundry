@@ -1,0 +1,74 @@
+@use '@styles/theme';
+
+.root {
+  border-radius: var(--border-radius);
+}
+
+.body {
+  padding: 0 1.5rem 1.25rem 1.5rem;
+  color: var(--color-accordion-body-text);
+  background: var(--color-accordion-body-bg);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  user-select: none;
+  outline: none;
+  border-radius: var(--border-radius);
+  color: var(--color-accordion-header-text);
+  border: 0.125rem solid var(--color-accordion-header-border);
+  background: var(--color-accordion-header-bg);
+  @include theme.transition(background, color, border-color);
+
+  &:hover {
+    color: var(--color-accordion-header-hover-text);
+    border: 0.125rem solid var(--color-accordion-header-hover-border);
+    background: var(--color-accordion-header-hover-bg);
+  }
+  &:focus {
+    color: var(--color-accordion-header-focus-text);
+    border: 0.125rem solid var(--color-accordion-header-focus-border);
+    background: var(--color-accordion-header-focus-bg);
+  }
+
+  svg {
+    flex-shrink: 0;
+    @include theme.transition(transform);
+  }
+}
+
+.title {
+  padding-right: 0.25em;
+  font-weight: 500;
+  font-size: var(--font-size);
+}
+
+.expanded {
+  color: var(--color-accordion-header-expanded-text);
+  border: 0.125rem solid var(--color-accordion-header-expanded-border);
+  background: var(--color-accordion-header-expanded-bg);
+
+  .header {
+    > svg {
+      transform: rotate(90deg);
+    }
+
+    color: var(--color-accordion-header-expanded-text);
+    border: 0.125rem solid var(--color-accordion-header-expanded-border);
+    background: var(--color-accordion-header-expanded-bg);
+  }
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+
+  .header {
+    color: var(--color-accordion-header-disabled-text);
+    border: 0.125rem solid var(--color-accordion-header-disabled-border);
+    background: var(--color-accordion-header-disabled-bg);
+  }
+}

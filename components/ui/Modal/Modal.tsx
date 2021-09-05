@@ -9,21 +9,13 @@ import {
   enableBodyScroll,
 } from 'body-scroll-lock';
 import cn from 'classnames';
-import {
-  FC,
-  MutableRefObject,
-  ReactNode,
-  useCallback,
-  useEffect,
-  useRef,
-} from 'react';
+import { FC, MutableRefObject, useCallback, useEffect, useRef } from 'react';
 import FocusLock from 'react-focus-lock';
 
 import styles from './Modal.module.scss';
 
 type Props = {
   className?: string;
-  children?: ReactNode;
   open?: boolean;
   title?: string;
   maxWidth?:
@@ -98,7 +90,7 @@ const Modal: FC<Props> = ({
             )}
           >
             <header className={cn(styles.modalHeader)}>
-              {title && <h4>{title}</h4>}
+              {title && <span className={cn(styles.modalTitle)}>{title}</span>}
               <Button
                 onClick={() => onClose()}
                 iconLeft={<Cross />}

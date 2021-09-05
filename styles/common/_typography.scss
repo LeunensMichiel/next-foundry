@@ -40,7 +40,8 @@ $font-family-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
   sans-serif;
 $font-family-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $font-family-serif: Georgia, 'Times New Roman', Times, serif;
-$font-family-mono: Menlo, Monaco, 'Courier New', monospace;
+$font-family-mono: Menlo, Monaco, Cascadia Code, Segoe UI Mono, 'Courier New',
+  monospace;
 // Don't forget to add your self-hosted font
 $font-family-base: $font-family-system;
 $font-family-alt: $font-family-system;

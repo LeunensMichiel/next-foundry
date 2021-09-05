@@ -20,10 +20,7 @@
     },
     "internationalization": {
       "title": "Changer de langue \u2192",
-      "description": "Prise en charge i18n dès le départ.",
-      "fr": "Français",
-      "nl": "Nederlands",
-      "en": "English"
+      "description": "Prise en charge i18n dès le départ."
     }
   }
 }

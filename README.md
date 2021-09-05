@@ -1,6 +1,6 @@
-# Michiel Leunens -- Next.js template
+# Michiel Leunens -- Next Foundry, a Next.js template
 
-This is an opinionated starter template in `Next.js v10.2` which uses all best practices as of 2021. This way you can churn more (static) websites with less code.
+This is an opinionated starter template in `Next.js v11` which uses all best practices as of 2021. This way you can churn more (static) websites with less code.
 
 > :bulb: This project contains a lot of custom components. Everything is loosely coupled, so you can easily delete what you don't need. :warning: **IE11 is not supported**.
 
@@ -14,6 +14,7 @@ This is an opinionated starter template in `Next.js v10.2` which uses all best p
 - :white_check_mark: Husky
 - :white_check_mark: Correct `*.ignore`
 - :white_check_mark: `env`-variables
+- :x: Versioning
 
 ### Theming & Styles
 
@@ -37,6 +38,7 @@ This is an opinionated starter template in `Next.js v10.2` which uses all best p
 - :white_check_mark: OnClickOutside and other usefull hooks
 - :white_check_mark: Cookie consent
 - :white_check_mark: Form validation
+- :white_check_mark: MDX / Markdown page generation
 - :x: Privacy Policy / Terms and conditions page
 
 ### UI-components
@@ -60,11 +62,11 @@ This is an opinionated starter template in `Next.js v10.2` which uses all best p
 - :warning: Date picker
 - :warning: Time picker
 - :white_check_mark: Text Area
-- :x: Tooltip
-- :white_check_mark: Chips
-- :x: Loading Placeholder
-- :x: Accordion
-- :x: Language Switcher
+- :white_check_mark: Tooltip
+- :white_check_mark: Badge
+- :white_check_mark: Loading Placeholder
+- :white_check_mark: Accordion
+- :white_check_mark: Language Switcher
 
 ### Other
 
@@ -75,23 +77,30 @@ This is an opinionated starter template in `Next.js v10.2` which uses all best p
 - :white_check_mark: Body Scroll Lock
 - :white_check_mark: Active Link styling
 - :white_check_mark: Cookie management
-- :x: `sitemap.xml`
-- :x: `robots.txt`
-- :x: Scrollbar
-- :x: Caching
+- :white_check_mark: `sitemap.xml`
+- :white_check_mark: `robots.txt`
 - :x: Smooth scrolling with polyfill
-- :x: Lighthouse optimizations
+- :hammer: Lighthouse optimizations
 - :x: Inter-browser compatibility
 
-### Maybe
+### Future
 
 - :x: Carousel
 - :x: Tabs
 - :x: Page-transitions
 - :x: Mapbox
+- :x: Pagination Component
+- :x: Infinte Scrolling List
+- :x: Paralax
 - :x: Client-Authentication
 - :x: Dockerize
 - :x: Page listing all the UI components
+
+Todo:
+
+- Rewrite DropdownMenu to be more agnostic
+- Navigationbar with improved UI and Accessability
+- Navigationbar use button component
 
 ## Getting Started
 

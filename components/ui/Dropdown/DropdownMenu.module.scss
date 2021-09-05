@@ -10,7 +10,7 @@
     top: 100%;
     z-index: theme.$z-high;
     background-color: var(--color-bg-primary);
-    filter: theme.$drop-shadow-lg;
+    box-shadow: theme.$box-shadow-lg;
     @include theme.transition(background-color);
   }
 }

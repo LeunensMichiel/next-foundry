@@ -1,16 +1,22 @@
-import { Layout } from '@components/common';
-import { Chip, ImageWithAspectRatio } from '@components/ui';
+import { LanguagePicker, Layout } from '@components/common';
+import {
+  Accordion,
+  AccordionItem,
+  Badge,
+  Button,
+  ImageWithAspectRatio,
+  Tooltip,
+} from '@components/ui';
+import { ArticleSkeleton } from '@components/ui/Skeleton';
 import { useUI } from '@lib/hooks';
-import styles from '@styles/pages/index.module.scss';
 import cx from 'classnames';
-import i18nConfig from 'i18n.json';
 import { NextSeo } from 'next-seo';
 import { useTheme } from 'next-themes';
-import setLanguage from 'next-translate/setLanguage';
 import useTranslation from 'next-translate/useTranslation';
 import { toast } from 'react-toastify';
 
-const { locales } = i18nConfig;
+import testImg from '../public/assets/test.jpg';
+import styles from './styles/index.module.scss';
 
 const Home = () => {
   const { setTheme, theme } = useTheme();
@@ -43,10 +49,13 @@ const Home = () => {
         </p>
       </div>
       <ImageWithAspectRatio
-        src="/assets/test.jpg"
+        src={testImg}
         aspectRatio="8/1"
+        placeholder="blur"
         objectFit="cover"
         objectPosition="50% 60%"
+        alt="mountains"
+        priority
       />
 
       <div className={cx(styles.grid, 'container', 'mx-auto')}>
@@ -60,15 +69,6 @@ const Home = () => {
           <p>{t('features.documentation.description')}</p>
         </a>
 
-        <a
-          href="https://nextjs.org/docs/getting-started"
-          className={styles.card}
-          rel="nofollow noopener noreferrer"
-          target="_blank"
-        >
-          <h3>{t('features.next.title')}</h3>
-          <p>{t('features.next.description')}</p>
-        </a>
         <button
           className={styles.card}
           type="button"
@@ -83,78 +83,120 @@ const Home = () => {
         </button>
         <div className={styles.card}>
           <h3>Toasts with react-toastify!</h3>
-          <button
+          <Button
             type="button"
             onClick={() => toast("Don't forget to ⭐ on Github!")}
+            size="xs"
+            variant="primary"
           >
             🍞 Default
-          </button>
-          <button
+          </Button>
+          <Button
             type="button"
             onClick={() => toast.dark("Don't forget to ⭐ on Github!")}
+            size="xs"
+            variant="secondary"
           >
             🍞 Dark
-          </button>
-          <button
+          </Button>
+          <Button
             type="button"
             onClick={() => toast.error("Don't forget to ⭐ on Github!")}
+            size="xs"
+            variant="danger"
           >
             🍞 Error
-          </button>
-          <button
+          </Button>
+          <Button
             type="button"
             onClick={() => toast.warn("Don't forget to ⭐ on Github!")}
+            size="xs"
+            variant="warning"
           >
             🍞 Warn
-          </button>
-          <button
+          </Button>
+          <Button
             type="button"
             onClick={() => toast.success("Don't forget to ⭐ on Github!")}
+            size="xs"
+            variant="success"
           >
             🍞 Success
-          </button>
-          <button
+          </Button>
+          <Button
             type="button"
             onClick={() => toast.info("Don't forget to ⭐ on Github!")}
+            size="xs"
+            variant="info"
           >
             🍞 Info
-          </button>
+          </Button>
         </div>
         <div className={styles.card}>
           <h3>{t('features.internationalization.title')}</h3>
           <p>{t('features.internationalization.description')}</p>
-          {locales.map((lng) => (
-            <button
-              key={lng}
-              type="button"
-              onClick={async () => setLanguage(lng)}
-            >
-              {t(`features.internationalization.${lng}`)}
-            </button>
-          ))}
+          <LanguagePicker />
         </div>
         <div className={styles.card}>
           <h3>Modal</h3>
           <p>Accessible and Customizable</p>
-          <button type="button" onClick={() => openModal()}>
+          <Button type="button" onClick={() => openModal()} size="sm">
             Toggle Modal
-          </button>
+          </Button>
         </div>
         <div className={styles.card}>
-          <h3>Chips</h3>
+          <h3>Badges</h3>
           <p>Mjum</p>
-          <Chip>Leunie</Chip>
-          <Chip variant="primary">Is</Chip>
-          <Chip variant="secondary">De</Chip>
-          <Chip variant="contrasted">Beste</Chip>
-          <Chip variant="danger" iconLeft="😂">
+          <Badge>Leunie</Badge>
+          <Badge variant="primary">Is</Badge>
+          <Badge variant="secondary">De</Badge>
+          <Badge variant="contrasted">Beste</Badge>
+          <Badge variant="danger" iconLeft="😂">
             Pls
-          </Chip>
-          <Chip variant="success" iconLeft="😏" iconRight="🍕">
+          </Badge>
+          <Badge variant="success" iconLeft="😏" iconRight="🍕">
             Rate
-          </Chip>
-          <Chip variant="warning">This</Chip>
-          <Chip variant="info">Thank you</Chip>
+          </Badge>
+          <Badge variant="warning">This</Badge>
+          <Badge variant="info">Thank you</Badge>
+        </div>
+        <Tooltip text="Cool eh?">
+          <div className={styles.card}>
+            <h3>Tooltip</h3>
+            <p>Hover over this card!</p>
+            <p>
+              Powered by <code>react-popper</code>
+            </p>
+          </div>
+        </Tooltip>
+        <ArticleSkeleton className={cx(styles.card)} />
+        <div className={cx(styles.card)}>
+          <h3>Accordion</h3>
+          <Accordion>
+            <AccordionItem title="Item 1" itemKey={0}>
+              <p>
+                Ad aliqua occaecat duis ut anim aute cupidatat ullamco
+                consectetur incididunt eu non id occaecat. Amet reprehenderit
+                exercitation ut nisi.
+              </p>
+            </AccordionItem>
+            <AccordionItem title="Item 2" itemKey={1}>
+              <h6>This is an accordion2</h6>
+              <p>
+                Ad aliqua occaecat duis ut anim aute cupidatat ullamco
+                consectetur incididunt eu non id occaecat. Amet reprehenderit
+                exercitation ut nisi. Pariatur enim qui aute nostrud ullamco
+                culpa veniam sint officia tempor. Nisi anim anim commodo amet
+                sit irure consequat tempor occaecat nostrud amet veniam
+                cupidatat pariatur. Exercitation ullamco culpa voluptate duis
+                enim ex Lorem consectetur cillum nulla veniam. Lorem ad aliqua
+                irure qui ea nulla exercitation dolor nulla voluptate.
+              </p>
+              <Button type="button" size="sm">
+                Button
+              </Button>
+            </AccordionItem>
+          </Accordion>
         </div>
       </div>
     </>

@@ -1,14 +1,22 @@
 import cn from 'classnames';
 import Image, { ImageProps } from 'next/image';
-import { CSSProperties } from 'react';
+import { CSSProperties, FC } from 'react';
 
 import styles from './ImageWithAspectRatio.module.scss';
 
 type Props = Omit<ImageProps, 'width' | 'height'> & {
   aspectRatio: string;
+  wrapperClassName?: string;
 };
 
-const ImageWithAspectRatio = ({ aspectRatio, ...rest }: Props) => {
+const ImageWithAspectRatio: FC<Props> = ({
+  aspectRatio,
+  src,
+  objectFit = 'cover',
+  objectPosition = '50% 50%',
+  wrapperClassName,
+  ...rest
+}) => {
   const [width, height] = aspectRatio.split('/');
 
   const containerStyle: CSSProperties = {
@@ -16,8 +24,17 @@ const ImageWithAspectRatio = ({ aspectRatio, ...rest }: Props) => {
   };
 
   return (
-    <div className={cn(styles.imgContainer)} style={containerStyle}>
-      <Image layout="fill" {...rest} />
+    <div
+      className={cn(styles.imgContainer, wrapperClassName)}
+      style={containerStyle}
+    >
+      <Image
+        layout="fill"
+        src={src}
+        objectFit={objectFit}
+        objectPosition={objectPosition}
+        {...rest}
+      />
     </div>
   );
 };

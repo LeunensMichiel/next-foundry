@@ -20,5 +20,11 @@
   "errorPage": {
     "title": "👾 Quelque chose a mal tourné de notre côté",
     "description": "Veuillez réessayer plus tard."
+  },
+  "i18n": {
+    "select": "Sélectionnez langue préférée"
+  },
+  "date": {
+    "published": "Publié le"
   }
 }

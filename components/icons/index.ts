@@ -4,6 +4,7 @@ export { default as Check } from './Check';
 export { default as CheckCircle } from './CheckCircle';
 export { default as Chevron } from './ChevronRight';
 export { default as Cross } from './Cross';
+export { default as Globe } from './Globe';
 export { default as Help } from './Help';
 export { default as Info } from './Info';
 export { default as MenuToggle } from './MenuToggle';

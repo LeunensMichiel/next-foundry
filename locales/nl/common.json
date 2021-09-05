@@ -20,5 +20,11 @@
   "errorPage": {
     "title": "👾 Er ging iets mis langs onze kant",
     "description": "Probeer later opnieuw."
+  },
+  "i18n": {
+    "select": "Taalvoorkeur selecteren"
+  },
+  "date": {
+    "published": "Gepupliceerd om"
   }
 }

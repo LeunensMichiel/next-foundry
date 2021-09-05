@@ -41,4 +41,6 @@ const Switch: FC<SwitchProps> = forwardRef<HTMLInputElement, SwitchProps>(
   )
 );
 
+Switch.displayName = 'Switch';
+
 export default Switch;

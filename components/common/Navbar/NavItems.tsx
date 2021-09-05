@@ -28,6 +28,7 @@ const NavItems = ({ navDrawerOpen = false, isTransparent = false }) => (
       </NavItem>
       <NavItem label="Buttons" link={{ href: '/buttons' }} />
       <NavItem label="Form" link={{ href: '/formpage' }} />
+      <NavItem label="Blog" link={{ href: '/blog' }} />
     </ul>
   </div>
 );

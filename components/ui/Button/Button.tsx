@@ -74,8 +74,6 @@ const Button = <C extends React.ElementType = 'button'>({
       [styles['button-rounded']]: circular && children,
       [styles.stretched]: stretched,
       [styles.uppercased]: uppercased,
-      [styles[`button-icon-left`]]: (!!iconLeft || loading) && children,
-      [styles[`button-icon-right`]]: !!iconRight && children,
     },
     className
   );
@@ -90,9 +88,25 @@ const Button = <C extends React.ElementType = 'button'>({
       tabIndex={disabled ? -1 : 0}
       {...rest}
     >
-      {(loading || iconLeft) && <span>{loading ? <Spinner /> : iconLeft}</span>}
+      {(loading || iconLeft) && (
+        <span
+          className={cn({
+            [styles[`button-icon-left`]]: (!!iconLeft || loading) && children,
+          })}
+        >
+          {loading ? <Spinner /> : iconLeft}
+        </span>
+      )}
       {children}
-      {iconRight && <span>{iconRight}</span>}
+      {iconRight && (
+        <span
+          className={cn({
+            [styles[`button-icon-right`]]: !!iconRight && children,
+          })}
+        >
+          {iconRight}
+        </span>
+      )}
     </Component>
   );
 };

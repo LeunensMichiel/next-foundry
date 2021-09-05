@@ -28,4 +28,6 @@ const RadioButton: FC<RadioButtonProps> = forwardRef<
   </label>
 ));
 
+RadioButton.displayName = 'RadioButton';
+
 export default RadioButton;

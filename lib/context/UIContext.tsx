@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import { Cross } from '@components/icons';
 import { ThemeProvider } from 'next-themes';
 import { createContext, FC, useMemo, useReducer } from 'react';
@@ -6,20 +7,22 @@ import { ToastContainer } from 'react-toastify';
 type UIState = {
   displayModal: boolean;
   modalView: ModalViews;
+  modalTitle?: string;
   openModal(): void;
   closeModal(): void;
-  setModalView(view: ModalViews): void;
+  setModalView(view: ModalViews, title?: string): void;
 };
 
 const INITIAL_UI_STATE: UIState = {
   displayModal: false,
-  modalView: 'DEFAULT_VIEW',
+  modalView: 'NO_VIEW',
+  modalTitle: '',
   closeModal: () => {},
   openModal: () => {},
   setModalView: () => {},
 };
 
-type ModalViews = 'DEFAULT_VIEW' | 'OTHER_VIEW';
+type ModalViews = 'NO_VIEW' | 'LANGUAGE_VIEW';
 
 type Action =
   | {
@@ -31,13 +34,14 @@ type Action =
   | {
       type: 'SET_MODAL_VIEW';
       view: ModalViews;
+      title?: string;
     };
 
 export const UIContext = createContext<UIState>(INITIAL_UI_STATE);
 
 UIContext.displayName = 'UIContext';
 
-const uiReducer = (state: UIState, action: Action) => {
+const uiReducer = (state: UIState, action: Action): UIState => {
   switch (action.type) {
     case 'OPEN_MODAL': {
       return {
@@ -48,13 +52,16 @@ const uiReducer = (state: UIState, action: Action) => {
     case 'CLOSE_MODAL': {
       return {
         ...state,
+        modalView: 'NO_VIEW',
         displayModal: false,
+        modalTitle: '',
       };
     }
     case 'SET_MODAL_VIEW': {
       return {
         ...state,
         modalView: action.view,
+        modalTitle: action.title,
       };
     }
     default: {
@@ -65,14 +72,15 @@ const uiReducer = (state: UIState, action: Action) => {
   }
 };
 
-export const UIProvider = (props: any) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const UIProvider: FC = (props: any) => {
   const [state, dispatch] = useReducer(uiReducer, INITIAL_UI_STATE);
 
   const openModal = () => dispatch({ type: 'OPEN_MODAL' });
   const closeModal = () => dispatch({ type: 'CLOSE_MODAL' });
 
-  const setModalView = (view: ModalViews) =>
-    dispatch({ type: 'SET_MODAL_VIEW', view });
+  const setModalView = (view: ModalViews, title?: string) =>
+    dispatch({ type: 'SET_MODAL_VIEW', view, title });
 
   const value = useMemo(
     () => ({

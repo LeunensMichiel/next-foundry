@@ -17,18 +17,20 @@
 }
 
 .modal {
-  padding: 1.5rem;
+  margin: 0 1rem;
+  padding: 1rem 1.5rem 1.5rem;
   border-radius: var(--border-radius);
   position: relative;
   background-color: var(--color-bg-primary);
-  filter: theme.$drop-shadow-xl;
+  box-shadow: theme.$box-shadow-xl;
 
   &:focus {
     outline: none;
   }
 
   @include theme.breakpoint-up(lg) {
-    padding: 1.5rem;
+    margin: 0;
+    padding: 1.5rem 2rem 2rem;
   }
 }
 
@@ -36,23 +38,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 1.5rem;
+}
 
-  h4 {
-    font-size: var(--big);
-  }
+.modalTitle {
+  font-size: var(--big);
+  font-weight: 700;
 }
 
 .modalBody {
   @include theme.breakpoint-up(lg) {
-    padding: 1.5rem;
+    padding: 1rem;
   }
   @include theme.breakpoint-up(xxl) {
-    padding: 2rem;
+    padding: 1.5rem;
   }
 }
 
 .modalCloseButton {
   margin-left: 0.5rem;
+  margin-right: -1.5rem;
 
   &.noTitle {
     margin-left: auto;
