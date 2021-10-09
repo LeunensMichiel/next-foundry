@@ -2,21 +2,26 @@ import 'react-day-picker/style.css';
 
 import { useClickOutside } from '@lib/hooks';
 import cn from 'classnames';
-import {
+import React, {
   // ChangeEvent,
   // ChangeEventHandler,
   // ComponentPropsWithoutRef,
   FC,
-  forwardRef,
+  // forwardRef,
   MutableRefObject,
   // useCallback,
   useRef,
   useState,
 } from 'react';
-import { DayPicker, useInput, UseInputOptions } from 'react-day-picker';
+import {
+  DayClickEventHandler,
+  DayPicker,
+  // useInput,
+  // UseInputOptions,
+} from 'react-day-picker';
 
-// import { FieldError } from 'react-hook-form';
-import { InputProps } from '../Input/Input';
+import Input from '../Input';
+// import { InputProps } from '../Input/Input';
 import styles from './DatePicker.module.scss';
 
 // type DatePickerProps = {
@@ -28,98 +33,59 @@ import styles from './DatePicker.module.scss';
 //   colSpan?: 1 | 2 | 3 | 4;
 // };
 
-const options: UseInputOptions = {
-  defaultSelected: new Date(),
+// const options: UseInputOptions = {
+//   defaultSelected: new Date(),
+// };
+
+type DatePickerProps = {
+  mode?: 'single' | 'range';
 };
 
-const DatePicker: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
-  (
-    {
-      // label,
-      // colSpan,
-      error,
-      iconLeft,
-      iconRight,
-      // withFeedback,
-      // onChange,
-      onBlur,
-      onFocus,
-      name,
-      ...rest
-    },
-    ref
-  ) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const containerRef = useRef() as MutableRefObject<HTMLDivElement>;
-    const input = useInput(options);
+const DatePicker: FC<DatePickerProps> = ({ mode = 'single' }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedDays, setSelectedDays] = React.useState<Date[]>([new Date()]);
 
-    useClickOutside(containerRef, () => setIsOpen(false));
+  const containerRef = useRef() as MutableRefObject<HTMLDivElement>;
+  useClickOutside(containerRef, () => setIsOpen(false));
 
-    // const internalOnChange = (event) => {
-    //   onChange?.(event);
-    //   // input.fieldProps.onChange(event);
-    // };
+  const handleDayClick: DayClickEventHandler = (day, { selected }) => {
+    setSelectedDays((currentlySelectedDays) => {
+      if (mode === 'single') {
+        return [day];
+      } else {
+        const days = [...currentlySelectedDays];
+        if (selected) {
+          days.splice(currentlySelectedDays.indexOf(day), 1);
+        } else {
+          days.push(day);
+        }
+        return days;
+      }
+    });
+  };
 
-    // const internalOnBlur = (event) => {
-    //   // input.fieldProps.onBlur(event);
-    //   onBlur?.(event);
-    // };
-
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const internalOnFocus = (event: any) => {
-      setIsOpen(true);
-      // input.fieldProps.onFocus(event);
-      onFocus?.(event);
-    };
-
-    return (
-      <>
-        <input
-          id={name}
-          ref={ref}
-          name={name}
-          className={cn(styles.inputField, {
-            [styles[`has-icon-left`]]: !!iconLeft,
-            [styles[`has-icon-right`]]: !!iconRight,
-          })}
-          // value={input.fieldProps.value}
-          onChange={input.fieldProps.onChange}
-          onBlur={onBlur}
-          onFocus={internalOnFocus}
-          aria-invalid={!!error}
-          {...rest}
-        />
-        {/* <Input
-        label={label}
-        colSpan={colSpan}
-        error={error}
-        iconLeft={iconLeft}
-        iconRight={iconRight}
-        withFeedback={withFeedback}
-        value={input.fieldProps.value}
-        onChange={(e) => {
-          console.log(e.target.value);
-          input.fieldProps.onChange(e); // your method
-          onChange?.(e); // method from hook form register
-        }}
-        onBlur={internalOnBlur}
-        onFocus={internalOnFocus}
-        name={name}
-        // ref={(e) => {
-        //   ref(e);
-        //   // dateRef.current = e; // you can still assign to ref
-        // }}
+  return (
+    <>
+      <Input
+        label="label"
+        value={selectedDays?.[0]?.toDateString()}
+        readOnly
+        onFocus={() => setIsOpen((prev) => !prev)}
       >
-      </Input> */}
         {isOpen && (
           <div className={cn(styles.wrapper)} ref={containerRef}>
-            <DayPicker {...input.dayPickerProps} className={cn(styles.root)} />
+            <DayPicker
+              className={cn(styles.root)}
+              mode="uncontrolled"
+              onDayClick={handleDayClick}
+              selected={selectedDays}
+            />
           </div>
         )}
-      </>
-    );
-  }
-);
+      </Input>
+    </>
+  );
+};
 
 DatePicker.displayName = 'Datepicker';
 

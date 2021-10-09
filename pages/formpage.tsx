@@ -28,8 +28,12 @@ const FormPage = () => {
   const {
     register,
     handleSubmit,
+    watch,
+    // control,
     formState: { isSubmitting, errors },
   } = useForm<FormValues>();
+
+  console.log(watch('date'));
 
   // eslint-disable-next-line no-console
   const onSubmit = (data: FormValues) => console.log(data);
@@ -63,7 +67,7 @@ const FormPage = () => {
           placeholder="Enter a password"
           error={errors?.password}
         />
-        <DatePicker label="Date" {...register('date')} />
+        <DatePicker />
         <Fieldset
           label="Some boxes"
           error={errors?.checkbox || errors?.checkbox2}

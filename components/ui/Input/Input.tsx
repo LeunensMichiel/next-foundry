@@ -2,7 +2,6 @@ import { Alert } from '@components/icons';
 import cn from 'classnames';
 import {
   ComponentPropsWithoutRef,
-  FC,
   forwardRef,
   InputHTMLAttributes,
 } from 'react';
@@ -44,7 +43,7 @@ const InputModes: Record<
   text: 'text',
 };
 
-const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
+const Input = forwardRef<HTMLInputElement, InputProps>(
   (
     {
       name,
