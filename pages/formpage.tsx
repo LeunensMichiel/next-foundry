@@ -3,14 +3,17 @@ import { AtSign, Chevron } from '@components/icons';
 import {
   Button,
   Checkbox,
+  DatePicker,
   Input,
   RadioButton,
   Switch,
   TextArea,
 } from '@components/ui';
-import { useForm } from 'react-hook-form';
+import { useCallback } from 'react';
+import { Controller, useForm } from 'react-hook-form';
 
 type FormValues = {
+  date: string;
   text: string;
   radioVal: string;
   number: number;
@@ -25,18 +28,25 @@ type FormValues = {
 const FormPage = () => {
   const {
     register,
+    control,
     handleSubmit,
     formState: { isSubmitting, errors },
-  } = useForm<FormValues>();
+  } = useForm<FormValues>({
+    defaultValues: {
+      date: '',
+    },
+  });
 
-  // eslint-disable-next-line no-console
-  const onSubmit = (data: FormValues) => console.log(data);
+  const submit = useCallback((vals: FormValues) => {
+    console.log(vals);
+  }, []);
+
   return (
     <div className="container mx-auto padded">
-      <Form onSubmit={handleSubmit(onSubmit)}>
+      <Form onSubmit={handleSubmit(submit)}>
         <Input
           label="Test Text"
-          {...register('text', { required: 'This is a required field' })}
+          {...register('text')}
           placeholder="Enter a string"
           error={errors?.text}
           iconLeft={<AtSign />}
@@ -61,19 +71,31 @@ const FormPage = () => {
           placeholder="Enter a password"
           error={errors?.password}
         />
+        <Controller
+          name="date"
+          control={control}
+          render={({ field: { onChange, value } }) => (
+            <DatePicker
+              label="Date"
+              onChange={onChange}
+              value={value}
+              mode="range"
+            />
+          )}
+        />
         <Fieldset
           label="Some boxes"
           error={errors?.checkbox || errors?.checkbox2}
         >
           <Checkbox
             label="This is a Checkbox with a loooooooooooooooooooot of text"
-            {...register('checkbox', { required: 'This should be checked' })}
+            {...register('checkbox')}
           />
           <Checkbox label="Second box" disabled {...register('checkbox2')} />
         </Fieldset>
         <TextArea
           label="Message"
-          {...register('message', { required: 'This is a required field' })}
+          {...register('message')}
           placeholder="Enter a message"
           iconLeft={<AtSign />}
         />
@@ -93,7 +115,12 @@ const FormPage = () => {
           label="Some Switches"
           error={errors?.switch || errors?.switch2}
         >
-          <Switch label="Test" labelOn="😀" {...register('switch')} />
+          <Switch
+            label="Test"
+            labelOn="💡"
+            labelOff="🌙"
+            {...register('switch')}
+          />
           <Switch label="disabled" disabled {...register('switch2')} />
         </Fieldset>
         <Button loading={isSubmitting} variant="primary" type="submit">
