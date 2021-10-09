@@ -1,8 +1,15 @@
 import { Moon, Sun } from '@components/icons';
+import { useIsClient } from '@lib/hooks';
 import { useTheme } from 'next-themes';
 
-const ThemeToggle = ({ className = '' }) => {
+type Props = {
+  className?: string;
+};
+
+const ThemeToggle: React.FC<Props> = ({ className = '' }) => {
   const { setTheme, theme } = useTheme();
+  const isClient = useIsClient();
+
   return (
     <button
       className={className}
@@ -10,7 +17,7 @@ const ThemeToggle = ({ className = '' }) => {
       aria-label="Toggle between themes"
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
     >
-      {theme === 'light' ? <Moon /> : <Sun />}
+      {isClient && (theme === 'light' ? <Moon /> : <Sun />)}
     </button>
   );
 };
