@@ -2,6 +2,7 @@ import 'react-day-picker/style.css';
 
 import { useClickOutside } from '@lib/hooks';
 import cn from 'classnames';
+import useTranslation from 'next-translate/useTranslation';
 import React, {
   FC,
   // forwardRef,
@@ -12,10 +13,10 @@ import React, {
 import { DayClickEventHandler, DayPicker } from 'react-day-picker';
 
 import Input from '../Input';
-// import { InputProps } from '../Input/Input';
+import { InputProps } from '../Input/Input';
 import styles from './DatePicker.module.scss';
 
-type DatePickerProps = {
+type DatePickerProps = InputProps & {
   mode?: 'single' | 'range';
   value: string;
   onChange: (value: string) => void;
@@ -25,7 +26,9 @@ const DatePicker: FC<DatePickerProps> = ({
   mode = 'single',
   onChange,
   value,
+  ...rest
 }) => {
+  const { lang } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [selectedDays, setSelectedDays] = React.useState<Date[]>([]);
 
@@ -46,13 +49,13 @@ const DatePicker: FC<DatePickerProps> = ({
         return days;
       }
     });
-    onChange(day?.toDateString());
+    onChange(day.toLocaleDateString(lang));
   };
 
   return (
     <>
       <Input
-        label="label"
+        {...rest}
         value={value}
         readOnly
         onFocus={() => setIsOpen((prev) => !prev)}

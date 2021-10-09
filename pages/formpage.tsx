@@ -9,6 +9,7 @@ import {
   Switch,
   TextArea,
 } from '@components/ui';
+import useTranslation from 'next-translate/useTranslation';
 import { Controller, useForm } from 'react-hook-form';
 
 type FormValues = {
@@ -25,6 +26,7 @@ type FormValues = {
 };
 
 const FormPage = () => {
+  const { lang } = useTranslation();
   const {
     register,
     handleSubmit,
@@ -70,9 +72,9 @@ const FormPage = () => {
         <Controller
           name="date"
           control={control}
-          defaultValue={new Date().toDateString()}
+          defaultValue={new Date().toLocaleDateString(lang)}
           render={({ field: { onChange, value } }) => (
-            <DatePicker onChange={onChange} value={value} />
+            <DatePicker label="Date test" onChange={onChange} value={value} />
           )}
         />
         <Fieldset
