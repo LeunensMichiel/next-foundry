@@ -9,6 +9,7 @@ import {
   Switch,
   TextArea,
 } from '@components/ui';
+import { useCallback } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
 type FormValues = {
@@ -28,6 +29,7 @@ const FormPage = () => {
   const {
     register,
     control,
+    handleSubmit,
     formState: { isSubmitting, errors },
   } = useForm<FormValues>({
     defaultValues: {
@@ -35,9 +37,13 @@ const FormPage = () => {
     },
   });
 
+  const submit = useCallback((vals: FormValues) => {
+    console.log(vals);
+  }, []);
+
   return (
     <div className="container mx-auto padded">
-      <Form>
+      <Form onSubmit={handleSubmit(submit)}>
         <Input
           label="Test Text"
           {...register('text')}
@@ -69,7 +75,12 @@ const FormPage = () => {
           name="date"
           control={control}
           render={({ field: { onChange, value } }) => (
-            <DatePicker label="Date test" onChange={onChange} value={value} />
+            <DatePicker
+              label="Date"
+              onChange={onChange}
+              value={value}
+              mode="range"
+            />
           )}
         />
         <Fieldset
