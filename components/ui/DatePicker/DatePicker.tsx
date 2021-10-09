@@ -3,47 +3,31 @@ import 'react-day-picker/style.css';
 import { useClickOutside } from '@lib/hooks';
 import cn from 'classnames';
 import React, {
-  // ChangeEvent,
-  // ChangeEventHandler,
-  // ComponentPropsWithoutRef,
   FC,
   // forwardRef,
   MutableRefObject,
-  // useCallback,
   useRef,
   useState,
 } from 'react';
-import {
-  DayClickEventHandler,
-  DayPicker,
-  // useInput,
-  // UseInputOptions,
-} from 'react-day-picker';
+import { DayClickEventHandler, DayPicker } from 'react-day-picker';
 
 import Input from '../Input';
 // import { InputProps } from '../Input/Input';
 import styles from './DatePicker.module.scss';
 
-// type DatePickerProps = {
-//   iconLeft?: ComponentPropsWithoutRef<'svg'> | string;
-//   iconRight?: ComponentPropsWithoutRef<'svg'> | string;
-//   withFeedback?: boolean;
-//   label: string;
-//   error?: FieldError;
-//   colSpan?: 1 | 2 | 3 | 4;
-// };
-
-// const options: UseInputOptions = {
-//   defaultSelected: new Date(),
-// };
-
 type DatePickerProps = {
   mode?: 'single' | 'range';
+  value: string;
+  onChange: (value: string) => void;
 };
 
-const DatePicker: FC<DatePickerProps> = ({ mode = 'single' }) => {
+const DatePicker: FC<DatePickerProps> = ({
+  mode = 'single',
+  onChange,
+  value,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedDays, setSelectedDays] = React.useState<Date[]>([new Date()]);
+  const [selectedDays, setSelectedDays] = React.useState<Date[]>([]);
 
   const containerRef = useRef() as MutableRefObject<HTMLDivElement>;
   useClickOutside(containerRef, () => setIsOpen(false));
@@ -62,13 +46,14 @@ const DatePicker: FC<DatePickerProps> = ({ mode = 'single' }) => {
         return days;
       }
     });
+    onChange(day?.toDateString());
   };
 
   return (
     <>
       <Input
         label="label"
-        value={selectedDays?.[0]?.toDateString()}
+        value={value}
         readOnly
         onFocus={() => setIsOpen((prev) => !prev)}
       >

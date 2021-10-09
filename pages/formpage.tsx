@@ -9,7 +9,7 @@ import {
   Switch,
   TextArea,
 } from '@components/ui';
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 
 type FormValues = {
   date: string;
@@ -29,14 +29,14 @@ const FormPage = () => {
     register,
     handleSubmit,
     watch,
-    // control,
+    control,
     formState: { isSubmitting, errors },
   } = useForm<FormValues>();
 
   console.log(watch('date'));
-
   // eslint-disable-next-line no-console
   const onSubmit = (data: FormValues) => console.log(data);
+
   return (
     <div className="container mx-auto padded">
       <Form onSubmit={handleSubmit(onSubmit)}>
@@ -67,7 +67,14 @@ const FormPage = () => {
           placeholder="Enter a password"
           error={errors?.password}
         />
-        <DatePicker />
+        <Controller
+          name="date"
+          control={control}
+          defaultValue={new Date().toDateString()}
+          render={({ field: { onChange, value } }) => (
+            <DatePicker onChange={onChange} value={value} />
+          )}
+        />
         <Fieldset
           label="Some boxes"
           error={errors?.checkbox || errors?.checkbox2}
