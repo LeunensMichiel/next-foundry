@@ -9,7 +9,6 @@ import {
   Switch,
   TextArea,
 } from '@components/ui';
-import useTranslation from 'next-translate/useTranslation';
 import { Controller, useForm } from 'react-hook-form';
 
 type FormValues = {
@@ -26,22 +25,19 @@ type FormValues = {
 };
 
 const FormPage = () => {
-  const { lang } = useTranslation();
   const {
     register,
-    handleSubmit,
-    watch,
     control,
     formState: { isSubmitting, errors },
-  } = useForm<FormValues>();
-
-  console.log(watch('date'));
-  // eslint-disable-next-line no-console
-  const onSubmit = (data: FormValues) => console.log(data);
+  } = useForm<FormValues>({
+    defaultValues: {
+      date: '',
+    },
+  });
 
   return (
     <div className="container mx-auto padded">
-      <Form onSubmit={handleSubmit(onSubmit)}>
+      <Form>
         <Input
           label="Test Text"
           {...register('text')}
@@ -72,7 +68,6 @@ const FormPage = () => {
         <Controller
           name="date"
           control={control}
-          defaultValue={new Date().toLocaleDateString(lang)}
           render={({ field: { onChange, value } }) => (
             <DatePicker label="Date test" onChange={onChange} value={value} />
           )}

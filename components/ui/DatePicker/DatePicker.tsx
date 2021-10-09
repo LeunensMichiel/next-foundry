@@ -1,28 +1,20 @@
-import 'react-day-picker/style.css';
-
 import { useClickOutside } from '@lib/hooks';
 import cn from 'classnames';
 import useTranslation from 'next-translate/useTranslation';
-import React, {
-  FC,
-  // forwardRef,
-  MutableRefObject,
-  useRef,
-  useState,
-} from 'react';
+import React, { FC, MutableRefObject, useRef, useState } from 'react';
 import { DayClickEventHandler, DayPicker } from 'react-day-picker';
 
 import Input from '../Input';
 import { InputProps } from '../Input/Input';
 import styles from './DatePicker.module.scss';
 
-type DatePickerProps = InputProps & {
+type CustomDatePickerProps = InputProps & {
   mode?: 'single' | 'range';
   value: string;
   onChange: (value: string) => void;
 };
 
-const DatePicker: FC<DatePickerProps> = ({
+const DatePicker: FC<CustomDatePickerProps> = ({
   mode = 'single',
   onChange,
   value,
@@ -58,6 +50,7 @@ const DatePicker: FC<DatePickerProps> = ({
         {...rest}
         value={value}
         readOnly
+        autoComplete="off"
         onFocus={() => setIsOpen((prev) => !prev)}
       >
         {isOpen && (
