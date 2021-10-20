@@ -9,16 +9,6 @@ import { FieldError } from 'react-hook-form';
 
 import styles from './Input.module.scss';
 
-type InputTypes =
-  | 'email'
-  | 'file'
-  | 'number'
-  | 'password'
-  | 'search'
-  | 'tel'
-  | 'text'
-  | 'url';
-
 export type InputProps = {
   iconLeft?: ComponentPropsWithoutRef<'svg'> | string;
   iconRight?: ComponentPropsWithoutRef<'svg'> | string;
@@ -26,21 +16,27 @@ export type InputProps = {
   label: string;
   error?: FieldError;
   colSpan?: 1 | 2 | 3 | 4;
-  type?: InputTypes;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-const InputModes: Record<
-  InputTypes,
-  InputHTMLAttributes<HTMLInputElement>['inputMode']
-> = {
-  email: 'email',
-  number: 'decimal',
-  tel: 'tel',
-  search: 'search',
-  url: 'url',
-  file: 'none',
-  password: 'text',
-  text: 'text',
+const getInputMode = (
+  type?: InputHTMLAttributes<HTMLInputElement>['type']
+): InputHTMLAttributes<HTMLInputElement>['inputMode'] => {
+  switch (type) {
+    case 'email':
+      return 'email';
+    case 'number':
+      return 'tel';
+    case 'password':
+      return 'text';
+    case 'search':
+      return 'search';
+    case 'url':
+      return 'url';
+    case 'file':
+      return 'none';
+    default:
+      return 'text';
+  }
 };
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
@@ -77,7 +73,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           onChange={onChange}
           onBlur={onBlur}
           type={type}
-          inputMode={InputModes[type]}
+          inputMode={getInputMode(type)}
           aria-invalid={!!error}
           {...rest}
         />

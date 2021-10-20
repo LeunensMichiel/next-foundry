@@ -6,12 +6,14 @@ import {
   DatePicker,
   Input,
   RadioButton,
+  Select,
   Switch,
   TextArea,
 } from '@components/ui';
 import { useCallback } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
+type OptionType = { text: string; key: string };
 type FormValues = {
   date: string;
   text: string;
@@ -23,6 +25,7 @@ type FormValues = {
   checkbox2: boolean;
   switch: boolean;
   switch2: boolean;
+  select: OptionType;
 };
 
 const FormPage = () => {
@@ -123,6 +126,31 @@ const FormPage = () => {
           />
           <Switch label="disabled" disabled {...register('switch2')} />
         </Fieldset>
+        <Controller
+          name="select"
+          control={control}
+          render={({ field: { onChange, name, value } }) => (
+            <Select
+              instanceId="select"
+              // isMulti
+              // Defaults to value and label
+              getOptionValue={(option) => option.key}
+              getOptionLabel={(option) => option.text}
+              options={[
+                {
+                  label: 'test2',
+                  options: [
+                    { key: 'lolz', text: 'T#EST' },
+                    { key: 'lolz222', text: 'T#AEFSAWFAFW' },
+                  ],
+                },
+              ]}
+              onChange={onChange}
+              name={name}
+              value={value}
+            />
+          )}
+        />
         <Button loading={isSubmitting} variant="primary" type="submit">
           Submit
         </Button>
