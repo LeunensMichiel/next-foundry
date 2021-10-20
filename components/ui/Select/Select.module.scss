@@ -1,0 +1,35 @@
+@use '@styles/theme';
+
+.inputLabel {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: var(--small);
+  font-weight: 500;
+  color: var(--color-label-primary-text);
+  @include theme.transition(color);
+  letter-spacing: 0.02rem;
+}
+
+.fieldAlert {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  min-height: 0.75rem;
+  color: var(--color-label-danger-text);
+}
+
+.fieldAlertIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.25rem;
+  svg {
+    width: 0.75rem;
+    height: auto;
+  }
+}
+
+.fieldAlertText {
+  font-size: 0.75rem;
+  line-height: 1;
+}
