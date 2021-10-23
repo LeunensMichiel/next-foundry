@@ -7,20 +7,130 @@ import Select, { GroupBase, Props, StylesConfig } from 'react-select';
 import styles from './Select.module.scss';
 
 const customStyles: StylesConfig = {
-  control: (base) => ({
+  control: (base, { isDisabled, isFocused }) => ({
     ...base,
     background: 'var(--color-input-bg)',
     color: 'var(--color-text-secondary)',
-    border: '0.125rem solid var(--color-input-border)',
+    borderWidth: '0.125rem',
     borderRadius: 'var(--border-radius)',
+    boxShadow: isFocused ? `0 0 0 1px var(--color-input-shadow)` : undefined,
+    borderColor: isDisabled
+      ? 'var(--color-input-disabled-border)'
+      : isFocused
+      ? 'var(--color-input-focus-border)'
+      : 'var(--color-input-border)',
+    '&:hover': {
+      borderColor: isFocused
+        ? 'var(--color-input-focus-border)'
+        : 'var(--color-input-hover-border)',
+    },
   }),
   valueContainer: (base) => ({
     ...base,
     padding: '0.25rem 0.75rem',
   }),
-  singleValue: (base) => ({
+  singleValue: (base, { isDisabled }) => ({
     ...base,
     overflow: 'initial',
+    color: isDisabled
+      ? 'var(--color-text-disabled)'
+      : 'var(--color-text-secondary)',
+  }),
+  placeholder: (base) => ({
+    ...base,
+    color: 'var(--color-text-placeholder)',
+  }),
+  clearIndicator: (base, { isFocused }) => ({
+    ...base,
+    color: isFocused
+      ? 'var(--color-label-primary-icon)'
+      : 'var(--color-label-primary-icon)',
+    ':hover': {
+      color: 'var(--color-input-hover-border)',
+    },
+  }),
+  dropdownIndicator: (base, { isFocused, isDisabled }) => ({
+    ...base,
+    color: isDisabled
+      ? 'var(--color-icon-disabled)'
+      : isFocused
+      ? 'var(--color-label-primary-icon)'
+      : 'var(--color-label-primary-icon)',
+    ':hover': {
+      color: 'var(--color-label-primary-icon)',
+    },
+  }),
+  menu: (base) => ({
+    ...base,
+    background: 'var(--color-input-select-menu-bg)',
+    overflow: 'hidden',
+    zIndex: 3,
+  }),
+  menuList: (base) => ({
+    ...base,
+    padding: 0,
+  }),
+  group: (base) => ({
+    ...base,
+    padding: 0,
+  }),
+  groupHeading: (base) => ({
+    ...base,
+    paddingTop: '.75rem',
+    color: 'var(--color-text-placeholder)',
+  }),
+  indicatorSeparator: (base, { isDisabled }) => ({
+    ...base,
+    backgroundColor: isDisabled
+      ? 'var(--color-input-disabled-border)'
+      : 'var(--color-label-primary-icon)',
+  }),
+  option: (base, { isSelected, isFocused, isDisabled }) => ({
+    ...base,
+    transition:
+      'background .5s cubic-bezier(0.16, 1, 0.3, 1), color .5s cubic-bezier(0.16, 1, 0.3, 1)',
+    backgroundColor: isSelected
+      ? 'var(--color-input-select-item-selected-bg)'
+      : isFocused
+      ? 'var(--color-input-select-item-hover-bg)'
+      : 'transparent',
+    color: isDisabled
+      ? 'var(--color-text-disabled);'
+      : isSelected
+      ? 'var(--color-input-select-item-selected-text)'
+      : 'inherit',
+    // provide some affordance on touch devices
+    ':active': {
+      backgroundColor: !isDisabled
+        ? isSelected
+          ? 'var(--color-input-select-item-selected-bg)'
+          : 'var(--color-input-select-item-focus-bg)'
+        : undefined,
+      color: !isDisabled
+        ? isSelected
+          ? 'var(--color-input-select-item-selected-text)'
+          : 'var(--color-input-select-item-focus-text)'
+        : undefined,
+    },
+  }),
+  multiValue: (base) => ({
+    ...base,
+    backgroundColor: 'var(--color-badge-bg)',
+    transition: 'background .5s cubic-bezier(0.16, 1, 0.3, 1)',
+  }),
+  multiValueLabel: (base) => ({
+    ...base,
+    color: 'var(--color-badge-text)',
+    transition: 'color .5s cubic-bezier(0.16, 1, 0.3, 1)',
+  }),
+  multiValueRemove: (base, { isFocused }) => ({
+    ...base,
+    backgroundColor: isFocused ? 'var(--color-badge-bg)' : undefined,
+
+    ':hover': {
+      backgroundColor: 'var(--color-badge-danger-bg)',
+      color: 'var(--color-badge-danger-text)',
+    },
   }),
 };
 

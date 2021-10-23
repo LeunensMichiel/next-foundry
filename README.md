@@ -58,7 +58,7 @@ This is an opinionated starter template in `Next.js v11` which uses all best pra
 - :white_check_mark: Checkbox
 - :white_check_mark: RadioButton
 - :white_check_mark: Switch
-- :hammer: Select Field (Single and Multi Select)
+- :white_check_mark: Select Field (Single and Multi Select)
 - :white_check_mark: Date picker
 - :x: Time picker
 - :white_check_mark: Text Area

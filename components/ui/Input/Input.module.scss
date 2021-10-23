@@ -70,6 +70,10 @@
   &.has-icon-right {
     padding-right: 2.25rem;
   }
+
+  &.has-error {
+    border: 0.125rem solid var(--color-input-error-border);
+  }
 }
 
 .inputLabel {
@@ -86,11 +90,11 @@
   padding: 0.75rem;
   display: flex;
   position: absolute;
-  z-index: theme.$z-low;
+  z-index: 1;
+  color: var(--color-label-primary-icon);
   svg {
     width: 1rem;
     height: auto;
-    stroke: var(--color-label-primary-icon);
   }
 }
 

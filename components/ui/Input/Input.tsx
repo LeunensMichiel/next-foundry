@@ -69,6 +69,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           className={cn(styles.inputField, {
             [styles[`has-icon-left`]]: !!iconLeft,
             [styles[`has-icon-right`]]: !!iconRight,
+            [styles[`has-error`]]: !!error?.message,
           })}
           onChange={onChange}
           onBlur={onBlur}

@@ -43,19 +43,28 @@ const DatePicker: FC<CustomDatePickerProps> = ({
     switch (mode) {
       case 'single':
         value = e as Date;
-        return onChange(value.toLocaleDateString(lang));
+        if (!value) {
+          return onChange('');
+        }
+        return onChange(value?.toLocaleDateString(lang));
       case 'range':
         value = e as DateRange;
+        if (!value) {
+          return onChange('');
+        }
         return onChange(
-          value.to
-            ? `${value.from?.toLocaleDateString(
+          value?.to
+            ? `${value?.from?.toLocaleDateString(
                 lang
               )} - ${value?.to?.toLocaleDateString(lang)}`
-            : `${value.from?.toLocaleDateString(lang)}`
+            : `${value?.from?.toLocaleDateString(lang)}`
         );
       case 'multiple':
         value = e as Date[];
-        const dates = value.map((date) => date?.toLocaleDateString(lang));
+        if (!value) {
+          return onChange('');
+        }
+        const dates = value?.map((date) => date?.toLocaleDateString(lang));
         return onChange(dates?.join(', '));
     }
   };
