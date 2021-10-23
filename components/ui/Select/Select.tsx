@@ -83,7 +83,7 @@ const customStyles: StylesConfig = {
     ...base,
     backgroundColor: isDisabled
       ? 'var(--color-input-disabled-border)'
-      : 'var(--color-label-primary-icon)',
+      : 'var(--color-text-placeholder)',
   }),
   option: (base, { isSelected, isFocused, isDisabled }) => ({
     ...base,
