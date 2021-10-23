@@ -8,4 +8,5 @@ export { default as useScreen } from './useScreen';
 export { default as useScript } from './useScript';
 export { default as useUI } from './useUI';
 // eslint-disable-next-line import/no-cycle
+export { default as useCopyToClipboard } from './useCopyToClipboard';
 export { default as useWindowSize } from './useWindowSize';
