@@ -79,7 +79,7 @@ This is an opinionated starter template in `Next.js v11` which uses all best pra
 - :white_check_mark: Cookie management
 - :white_check_mark: `sitemap.xml`
 - :white_check_mark: `robots.txt`
-- :x: Smooth scrolling with polyfill
+- :white_check_mark: Smooth scrolling with polyfill
 - :hammer: Lighthouse optimizations
 - :x: Inter-browser compatibility
 

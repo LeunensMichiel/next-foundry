@@ -8,8 +8,9 @@ import {
   Tooltip,
 } from '@components/ui';
 import { ArticleSkeleton } from '@components/ui/Skeleton';
-import { useUI } from '@lib/hooks';
+import { useIsClient, useUI } from '@lib/hooks';
 import cx from 'classnames';
+import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 import { useTheme } from 'next-themes';
 import useTranslation from 'next-translate/useTranslation';
@@ -22,6 +23,7 @@ const Home = () => {
   const { setTheme, theme } = useTheme();
   const { t } = useTranslation('home');
   const { openModal } = useUI();
+  const isClient = useIsClient();
 
   return (
     <>
@@ -68,16 +70,17 @@ const Home = () => {
           <h3>{t('features.documentation.title')}</h3>
           <p>{t('features.documentation.description')}</p>
         </a>
-
+        <Link href="#smooth-section">Smooth scroll to section</Link>
         <button
           className={styles.card}
           type="button"
           onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
         >
           <h3>
-            {t('features.theme.title', {
-              theme: theme === 'light' ? 'dark' : 'light',
-            })}
+            {isClient &&
+              t('features.theme.title', {
+                theme: theme === 'light' ? 'dark' : 'light',
+              })}
           </h3>
           <p>{t('features.theme.description')} Next Themes.</p>
         </button>
@@ -198,6 +201,13 @@ const Home = () => {
             </AccordionItem>
           </Accordion>
         </div>
+      </div>
+      <div
+        id="smooth-section"
+        className={cx(styles.smoothScroll, 'container', 'mx-auto')}
+      >
+        <h3>Smooth scrolling</h3>
+        <p>This is some other content</p>
       </div>
     </>
   );
