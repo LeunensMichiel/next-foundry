@@ -1,15 +1,15 @@
 import { Layout } from '@components/common';
-import { getAllItemsByDate, ITEM_PATH_TYPE } from '@lib/mdxUtils';
+import { IFrontmatter } from '@components/common/Page/MarkdownPage';
+import { getAllMarkdownByDate } from '@lib/mdxUtils';
 import cn from 'classnames';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 
-import { Post } from './posts/[slug]';
 import styles from './styles/blog.module.scss';
 
 type BlogProps = {
-  posts: Post[];
+  posts: IFrontmatter[];
 };
 
 const Blog = ({ posts }: BlogProps) => (
@@ -31,14 +31,18 @@ export default Blog;
 
 Blog.Layout = Layout;
 
-export const getStaticProps: GetStaticProps = async () => {
-  const posts = getAllItemsByDate(ITEM_PATH_TYPE.Post, [
-    'slug',
-    'date',
-    'thumbnail',
-    'title',
-    'description',
-  ]);
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const posts = getAllMarkdownByDate(
+    ['slug', 'date', 'thumbnail', 'title', 'description'],
+    locale!,
+    'posts'
+  );
+
+  if (posts.length === 0) {
+    return {
+      notFound: true,
+    };
+  }
 
   return { props: { posts } };
 };

@@ -1,69 +1,23 @@
-import { Layout } from '@components/common';
-import { ImageWithAspectRatio } from '@components/ui';
-import { getAllItemsByDate, getItem, ITEM_PATH_TYPE } from '@lib/mdxUtils';
-import cn from 'classnames';
+import { Layout, MarkdownPage } from '@components/common';
+import { IFrontmatter } from '@components/common/Page/MarkdownPage';
+import { getAllMarkdownSlugsForType, readMarkdownFile } from '@lib/mdxUtils';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
-import { NextSeo } from 'next-seo';
-import useTranslation from 'next-translate/useTranslation';
-
-import styles from '../styles/post.module.scss';
-
-export type Post = {
-  slug: string;
-  date: string;
-  title: string;
-  description: string;
-  thumbnail: string;
-};
 
 type PostPage = {
   mdxSource: MDXRemoteSerializeResult;
-  frontmatter: Post;
+  frontmatter: IFrontmatter;
   locale?: string;
 };
 
 const SingleBlog = ({ mdxSource, frontmatter, locale }: PostPage) => {
-  const blogdate = new Date(frontmatter.date);
-  const { t } = useTranslation();
   return (
-    <>
-      <NextSeo
-        title={frontmatter.title}
-        description={frontmatter.description}
-        openGraph={{
-          title: frontmatter.title,
-          description: frontmatter.description,
-          images: [
-            {
-              url: frontmatter.thumbnail,
-              width: 800,
-              height: 600,
-              alt: frontmatter.title,
-            },
-          ],
-        }}
-      />
-      <article className={cn(styles.article)}>
-        <header className={cn(styles.header, 'container padded')}>
-          <h1>{frontmatter.title}</h1>
-          <small>{`${t('common:date.published')} ${blogdate.toLocaleDateString(
-            locale
-          )}`}</small>
-        </header>
-        {frontmatter.thumbnail && (
-          <ImageWithAspectRatio
-            wrapperClassName={cn(styles.thumbnail)}
-            src={frontmatter.thumbnail}
-            aspectRatio="4/1"
-          />
-        )}
-        <div className={cn(styles.content, 'container-page mx-auto padded')}>
-          <MDXRemote {...mdxSource} />
-        </div>
-      </article>
-    </>
+    <MarkdownPage
+      locale={locale}
+      mdxSource={mdxSource}
+      frontmatter={frontmatter}
+    />
   );
 };
 
@@ -72,12 +26,13 @@ export default SingleBlog;
 SingleBlog.Layout = Layout;
 
 export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
-  const { content, data } = getItem(
-    ITEM_PATH_TYPE.Post,
-    params?.slug as string
+  const { content, data } = readMarkdownFile(
+    params?.slug as string,
+    locale!,
+    'posts'
   );
 
-  const mdxSource = await serialize(content, { scope: data });
+  const mdxSource = content ? await serialize(content, { scope: data }) : null;
 
   return {
     props: {
@@ -89,12 +44,12 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-  const posts = getAllItemsByDate(ITEM_PATH_TYPE.Post, ['slug']);
+  const slugs = getAllMarkdownSlugsForType(locales!, 'posts');
 
-  const paths = posts.flatMap((post) =>
+  const paths = slugs.flatMap((slug) =>
     locales!.map((locale) => ({
       params: {
-        slug: post.slug,
+        slug,
       },
       locale,
     }))

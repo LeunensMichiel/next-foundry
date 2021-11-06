@@ -38,8 +38,8 @@ This is an opinionated starter template in `Next.js v11` which uses all best pra
 - :white_check_mark: OnClickOutside and other usefull hooks
 - :white_check_mark: Cookie consent
 - :white_check_mark: Form validation
-- :white_check_mark: MDX / Markdown page generation
-- :x: Privacy Policy / Terms and conditions page
+- :white_check_mark: MDX & MD page generation with i18n
+- :white_check_mark: Privacy & Terms and conditions page
 
 ### UI-components
 
@@ -81,7 +81,7 @@ This is an opinionated starter template in `Next.js v11` which uses all best pra
 - :white_check_mark: `robots.txt`
 - :white_check_mark: Smooth scrolling with polyfill
 - :hammer: Lighthouse optimizations
-- :x: Inter-browser compatibility
+- :hammer: Inter-browser compatibility
 
 ### Future
 

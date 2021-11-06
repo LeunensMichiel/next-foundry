@@ -1,82 +1,125 @@
 import fs from 'fs';
 import matter from 'gray-matter';
-import path, { join } from 'path';
+import path from 'path';
 
-type Items = {
+type MarkdownData = {
   [key: string]: string;
 };
 
-type Item = {
-  data: {
+type MarkdownFile = {
+  data?: {
     [key: string]: string;
   };
-  content: string;
+  content?: string;
 };
 
-export const ITEM_PATH_TYPE = {
-  Post: path.join(process.cwd(), 'markdown/posts'),
-};
+type MARKDOWN_SUBFOLDER_TYPE = 'posts' | 'test';
 
-function getItemPaths(
-  type: typeof ITEM_PATH_TYPE[keyof typeof ITEM_PATH_TYPE]
+function getMarkdownFolderPathByTypeAndLocale(
+  locale: string,
+  type?: MARKDOWN_SUBFOLDER_TYPE
+): string {
+  return type
+    ? path.join(process.cwd(), `markdown/${locale}/${type}`)
+    : path.join(process.cwd(), `markdown/${locale}`);
+}
+
+function getMarkdownPathsByTypeAndLocale(
+  locale: string,
+  type?: MARKDOWN_SUBFOLDER_TYPE
 ): string[] {
+  const markdownFolderPath = getMarkdownFolderPathByTypeAndLocale(locale, type);
   return (
     fs
-      .readdirSync(type)
+      .readdirSync(markdownFolderPath)
       // Only include md(x) files
-      .filter((itemPath) => /\.mdx?$/.test(itemPath))
+      .filter((markdownFolderPath) => /\.mdx?$/.test(markdownFolderPath))
   );
 }
 
-export function getItem(
-  type: typeof ITEM_PATH_TYPE[keyof typeof ITEM_PATH_TYPE],
-  slug: string
-): Item {
-  const fullPath = join(type, `${slug}.mdx`);
-  let fileContents;
-  if (fs.existsSync(fullPath)) {
-    fileContents = fs.readFileSync(fullPath, 'utf8');
-  } else {
-    fileContents = fs.readFileSync(join(type, `${slug}.md`), 'utf8');
+export function readMarkdownFile(
+  slug: string,
+  locale: string,
+  type?: MARKDOWN_SUBFOLDER_TYPE
+): MarkdownFile {
+  const markdownFolderPath = getMarkdownFolderPathByTypeAndLocale(locale, type);
+  const markdownFilePathForSlug = fs
+    .readdirSync(markdownFolderPath)
+    .filter((file) => file.endsWith('.mdx') || file.endsWith('.md'))
+    .find((file) => file.startsWith(slug));
+
+  if (!markdownFilePathForSlug)
+    throw new Error(`No markdown files found for given slug ${slug}`);
+
+  const fullPath = path.join(markdownFolderPath, markdownFilePathForSlug);
+
+  if (!fs.existsSync(fullPath)) {
+    throw new Error(`Markdown file not found for path ${path}`);
   }
+
+  const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
 
   return { data, content };
 }
 
-export function getItems(
-  type: typeof ITEM_PATH_TYPE[keyof typeof ITEM_PATH_TYPE],
+export function getMarkdownFrontmatterAndContent(
   filePath: string,
-  fields: string[] = []
-): Items {
+  fields: string[] = [],
+  locale: string,
+  type?: MARKDOWN_SUBFOLDER_TYPE
+): MarkdownData {
   const slug = filePath.replace(/\.mdx?$/, '');
-  const { data, content } = getItem(type, slug);
+  const { data, content } = readMarkdownFile(slug, locale, type);
 
-  const items: Items = {};
-
+  const markdownData: MarkdownData = {};
   // Ensure only the minimal needed data is exposed
-  fields.forEach((field) => {
+  for (const field of fields) {
     if (field === 'slug') {
-      items[field] = slug;
+      markdownData[field] = slug;
     }
-    if (field === 'content') {
-      items[field] = content;
+    if (field === 'content' && content) {
+      markdownData[field] = content;
     }
-    if (data[field]) {
-      items[field] = data[field];
+    if (data && data[field]) {
+      markdownData[field] = data[field];
     }
-  });
+  }
 
-  return items;
+  return markdownData;
 }
 
-export function getAllItemsByDate(
-  type: typeof ITEM_PATH_TYPE[keyof typeof ITEM_PATH_TYPE],
-  fields: string[] = []
-): Items[] {
-  const filePaths = getItemPaths(type);
-  const posts = filePaths
-    .map((filePath) => getItems(type, filePath, fields))
+export function getAllMarkdownByDate(
+  fields: string[] = [],
+  locale: string,
+  type?: MARKDOWN_SUBFOLDER_TYPE
+): MarkdownData[] {
+  const markdownPaths = getMarkdownPathsByTypeAndLocale(locale, type);
+  const data = markdownPaths
+    .map((filePath) =>
+      getMarkdownFrontmatterAndContent(filePath, fields, locale, type)
+    )
     .sort((item1, item2) => (item1.date > item2.date ? -1 : 1));
-  return posts;
+  return data;
+}
+
+export function getAllMarkdownSlugsForType(
+  locales: string[],
+  type: MARKDOWN_SUBFOLDER_TYPE
+): string[] {
+  const markDownFolderPaths = locales?.map((locale) => {
+    return path.join(process.cwd(), `markdown/${locale}/${type}`);
+  });
+
+  const slugs = markDownFolderPaths
+    ?.flatMap((path) =>
+      fs
+        .readdirSync(path)
+        // Only include md(x) files
+        .filter((path) => /\.mdx?$/.test(path))
+    )
+    ?.map((slug) => slug.replace(/\.mdx?$/, ''));
+  const uniqueSlugs = [...new Set(slugs)];
+
+  return uniqueSlugs;
 }
