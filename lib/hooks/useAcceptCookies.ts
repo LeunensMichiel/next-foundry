@@ -3,7 +3,12 @@ import { useCookies } from 'react-cookie';
 
 const COOKIE_NAME = 'accept_cookies';
 
-const useAcceptCookies = () => {
+function useAcceptCookies(): {
+  acceptedCookies: boolean;
+  deniedCookies: boolean;
+  onAcceptCookies: (isAccepted: boolean) => void;
+  shouldAskForCookies: boolean;
+} {
   const [cookies, setCookie] = useCookies([COOKIE_NAME]);
   const [acceptedCookies, setAcceptedCookies] = useState<boolean>(false);
   const [deniedCookies, setDeniedCookies] = useState<boolean>(false);
@@ -32,6 +37,6 @@ const useAcceptCookies = () => {
     onAcceptCookies: handleAcceptCookies,
     shouldAskForCookies: !acceptedCookies && !deniedCookies,
   };
-};
+}
 
 export default useAcceptCookies;

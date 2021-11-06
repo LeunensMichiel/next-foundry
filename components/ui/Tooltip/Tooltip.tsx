@@ -17,7 +17,7 @@ import {
 } from 'react';
 import { Modifier, usePopper } from 'react-popper';
 
-import s from './Tooltip.module.scss';
+import styles from './Tooltip.module.scss';
 
 type Props = {
   text: string;
@@ -58,7 +58,7 @@ const Tooltip: FC<Props> = ({ text, placement, strategy, children }) => {
     [arrowRef, placement, strategy]
   );
 
-  const { styles, attributes } = usePopper(
+  const { styles: popperStyles, attributes } = usePopper(
     tooltipRef.current,
     popperRef.current,
     popperOptions
@@ -84,11 +84,15 @@ const Tooltip: FC<Props> = ({ text, placement, strategy, children }) => {
           tabIndex={-1}
           aria-expanded={isVisible}
           ref={popperRef}
-          style={styles.popper}
-          className={cn(s.tooltip)}
+          style={popperStyles.popper}
+          className={cn(styles.tooltip)}
           {...attributes.popper}
         >
-          <div ref={setArrowRef} style={styles.arrow} className={cn(s.arrow)} />
+          <div
+            ref={setArrowRef}
+            style={popperStyles.arrow}
+            className={cn(styles.arrow)}
+          />
           <p>{text}</p>
         </div>
       )}

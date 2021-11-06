@@ -1,4 +1,5 @@
 import cn from 'classnames';
+import { VFC } from 'react';
 
 import styles from './Spinner.module.scss';
 
@@ -6,7 +7,7 @@ type SpinnerProps = {
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 };
 
-const Spinner = ({ size }: SpinnerProps) => (
+const Spinner: VFC<SpinnerProps> = ({ size }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"

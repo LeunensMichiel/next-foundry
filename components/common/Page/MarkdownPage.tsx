@@ -3,7 +3,7 @@ import cn from 'classnames';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { NextSeo } from 'next-seo';
 import useTranslation from 'next-translate/useTranslation';
-import { FC } from 'react';
+import { VFC } from 'react';
 
 import styles from './MarkdownPage.module.scss';
 
@@ -21,7 +21,7 @@ type MarkdownPageProps = {
   locale?: string;
 };
 
-const MarkdownPage: FC<MarkdownPageProps> = ({
+const MarkdownPage: VFC<MarkdownPageProps> = ({
   mdxSource,
   frontmatter,
   locale,
@@ -62,6 +62,7 @@ const MarkdownPage: FC<MarkdownPageProps> = ({
               wrapperClassName={cn(styles.thumbnail)}
               src={frontmatter.thumbnail}
               aspectRatio="4/1"
+              alt={frontmatter.title}
             />
           )}
           <div className={cn(styles.content, 'container-page mx-auto padded')}>

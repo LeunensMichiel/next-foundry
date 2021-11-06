@@ -13,7 +13,6 @@ import styles from './Button.module.scss';
 // https://www.benmvp.com/blog/polymorphic-react-components-typescript/
 interface Props<C extends React.ElementType> {
   as?: C;
-
   children?: ReactNode;
   variant?:
     | 'primary'

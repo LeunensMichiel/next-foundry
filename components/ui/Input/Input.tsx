@@ -2,6 +2,7 @@ import { Alert } from '@components/icons';
 import cn from 'classnames';
 import {
   ComponentPropsWithoutRef,
+  FC,
   forwardRef,
   InputHTMLAttributes,
 } from 'react';
@@ -39,13 +40,12 @@ const getInputMode = (
   }
 };
 
-const Input = forwardRef<HTMLInputElement, InputProps>(
+const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
   (
     {
       name,
       label,
       error,
-      children,
       onChange,
       onBlur,
       type = 'text',
@@ -53,6 +53,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       iconRight,
       colSpan = 1,
       withFeedback = true,
+      children,
       ...rest
     },
     ref

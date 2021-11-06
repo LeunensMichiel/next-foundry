@@ -1,7 +1,8 @@
 import { Globe } from '@components/icons';
 import { Button } from '@components/ui';
-import { useUI } from '@lib/hooks';
+import { useUI } from '@lib/context/ui';
 import useTranslation from 'next-translate/useTranslation';
+import { FC } from 'react';
 
 export const LangCode: Record<string, string> = {
   nl: 'Nederlands',
@@ -9,7 +10,7 @@ export const LangCode: Record<string, string> = {
   en: 'English',
 };
 
-const LanguagePicker = () => {
+const LanguagePicker: FC = () => {
   const { t, lang } = useTranslation('common');
   const { openModal, setModalView } = useUI();
 

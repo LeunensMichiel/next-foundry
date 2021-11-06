@@ -4,7 +4,7 @@ import '@styles/libraries/toastify.scss';
 import '@styles/libraries/daypicker.scss';
 
 import { Head } from '@components/common';
-import { ManagedUIProvider } from '@lib/context/UIContext';
+import { ManagedUIProvider } from '@lib/context/ui';
 import { AppProps } from 'next/app';
 import { ReactNode, useEffect } from 'react';
 import { CookiesProvider } from 'react-cookie';

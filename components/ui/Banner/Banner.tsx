@@ -78,20 +78,17 @@ const Banner: FC<BannerProps> = ({
             </div>
           )}
           <div className={cn(styles.actionRow, actionRowClassName)}>
-            {customAction || (
-              <>
-                {onClickConfirmingAction && (
-                  <Button
-                    type="button"
-                    size="sm"
-                    variant="primary"
-                    onClick={onClickConfirmingAction}
-                  >
-                    {confirmTitle}
-                  </Button>
-                )}
-              </>
-            )}
+            {customAction ||
+              (onClickConfirmingAction && (
+                <Button
+                  type="button"
+                  size="sm"
+                  variant="primary"
+                  onClick={onClickConfirmingAction}
+                >
+                  {confirmTitle}
+                </Button>
+              ))}
           </div>
         </div>
       </div>

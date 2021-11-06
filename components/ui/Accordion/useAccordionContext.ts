@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 
-import AccordionContext from './AccordionContext';
+import AccordionContext, { AccordionContextProps } from './AccordionContext';
 
-const useAccordionContext = () => {
+const useAccordionContext = (): Partial<AccordionContextProps> => {
   const context = useContext(AccordionContext);
   if (!context) {
     throw new Error(

@@ -6,7 +6,7 @@ const useAccordionClick = (
   itemKey: number | string,
   onClick?: (e: SyntheticEvent) => void,
   disabled?: boolean
-) => {
+): ((event: unknown) => void) | undefined => {
   const { onToggle } = useAccordionContext();
   if (disabled) return;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

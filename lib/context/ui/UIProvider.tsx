@@ -1,28 +1,9 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
 import { Cross } from '@components/icons';
 import { ThemeProvider } from 'next-themes';
-import { createContext, FC, useMemo, useReducer } from 'react';
+import { FC, useMemo, useReducer } from 'react';
 import { ToastContainer } from 'react-toastify';
 
-type UIState = {
-  displayModal: boolean;
-  modalView: ModalViews;
-  modalTitle?: string;
-  openModal(): void;
-  closeModal(): void;
-  setModalView(view: ModalViews, title?: string): void;
-};
-
-const INITIAL_UI_STATE: UIState = {
-  displayModal: false,
-  modalView: 'NO_VIEW',
-  modalTitle: '',
-  closeModal: () => {},
-  openModal: () => {},
-  setModalView: () => {},
-};
-
-type ModalViews = 'NO_VIEW' | 'LANGUAGE_VIEW';
+import { INITIAL_UI_STATE, ModalViews, UIContext, UIState } from './UIContext';
 
 type Action =
   | {
@@ -36,10 +17,6 @@ type Action =
       view: ModalViews;
       title?: string;
     };
-
-export const UIContext = createContext<UIState>(INITIAL_UI_STATE);
-
-UIContext.displayName = 'UIContext';
 
 const uiReducer = (state: UIState, action: Action): UIState => {
   switch (action.type) {
@@ -72,8 +49,7 @@ const uiReducer = (state: UIState, action: Action): UIState => {
   }
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const UIProvider: FC = (props: any) => {
+const UIProvider: FC = (props) => {
   const [state, dispatch] = useReducer(uiReducer, INITIAL_UI_STATE);
 
   const openModal = () => dispatch({ type: 'OPEN_MODAL' });

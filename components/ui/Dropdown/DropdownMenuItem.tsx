@@ -1,6 +1,6 @@
 import NavItem from '@components/common/Navbar/NavItem';
 import { LinkProps } from 'next/link';
-import { AnchorHTMLAttributes, ReactNode } from 'react';
+import { AnchorHTMLAttributes, ReactNode, VFC } from 'react';
 
 type DropdownMenuItemProps = {
   label: string | ReactNode;
@@ -8,11 +8,11 @@ type DropdownMenuItemProps = {
   externalLink?: AnchorHTMLAttributes<HTMLAnchorElement>;
 };
 
-const DropdownMenuItem = ({
+const DropdownMenuItem: VFC<DropdownMenuItemProps> = ({
   label,
   internalLink,
   externalLink,
-}: DropdownMenuItemProps) => {
+}) => {
   if (externalLink) {
     return (
       <li>

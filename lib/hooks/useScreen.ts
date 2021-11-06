@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 // https://usehooks-typescript.com/react-hook/use-screen
-function useScreen() {
+function useScreen(): Screen | undefined {
   const getScreen = () => {
     if (typeof window !== 'undefined') {
       return window.screen;

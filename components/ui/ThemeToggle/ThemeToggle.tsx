@@ -1,12 +1,13 @@
 import { Moon, Sun } from '@components/icons';
 import { useIsClient } from '@lib/hooks';
 import { useTheme } from 'next-themes';
+import { VFC } from 'react';
 
 type Props = {
   className?: string;
 };
 
-const ThemeToggle: React.FC<Props> = ({ className = '' }) => {
+const ThemeToggle: VFC<Props> = ({ className }) => {
   const { setTheme, theme } = useTheme();
   const isClient = useIsClient();
 

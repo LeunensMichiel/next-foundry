@@ -14,7 +14,7 @@ import FocusLock from 'react-focus-lock';
 
 import styles from './Modal.module.scss';
 
-type Props = {
+type ModalProps = {
   className?: string;
   open?: boolean;
   title?: string;
@@ -35,7 +35,7 @@ const BODY_SCROLL_OPTIONS: BodyScrollOptions = {
   reserveScrollBarGap: true,
 };
 
-const Modal: FC<Props> = ({
+const Modal: FC<ModalProps> = ({
   children,
   className,
   maxWidth = 'page',

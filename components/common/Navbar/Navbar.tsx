@@ -63,7 +63,7 @@ const Navbar: FC<NavbarProps> = ({ children, isTransparent = false }) => {
           })}
         >
           <div className={cx(styles.toolbar)}>
-            <Link href="/">
+            <Link href="/" passHref>
               <Logo className={styles.logo} />
             </Link>
             <div className={cx(styles.toolbarIcons)}>

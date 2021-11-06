@@ -1,10 +1,19 @@
 import { DropdownMenu, DropdownMenuItem } from '@components/ui/Dropdown';
 import cx from 'classnames';
+import { VFC } from 'react';
 
 import NavItem from './NavItem';
 import styles from './NavItems.module.scss';
 
-const NavItems = ({ navDrawerOpen = false, isTransparent = false }) => (
+type NavItemsProps = {
+  navDrawerOpen?: boolean;
+  isTransparent?: boolean;
+};
+
+const NavItems: VFC<NavItemsProps> = ({
+  navDrawerOpen = false,
+  isTransparent = false,
+}) => (
   <div
     className={cx(styles.navMenuContainer, {
       [styles.navContainerOpen]: navDrawerOpen,

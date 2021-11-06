@@ -3,11 +3,12 @@ import NextHead from 'next/head';
 import { useRouter } from 'next/router';
 import { DefaultSeo } from 'next-seo';
 import useTranslation from 'next-translate/useTranslation';
+import { VFC } from 'react';
 
 const { locales, defaultLocale } = i18nConfig;
-const url = 'http://localhost:3000';
+const url = process.env.SITE_URL;
 
-const Head = () => {
+const Head: VFC = () => {
   const { t, lang } = useTranslation('common');
   const router = useRouter();
 
@@ -89,11 +90,6 @@ const Head = () => {
         as="font"
         type="font/woff2"
         crossOrigin="anonymous"
-      /> */}
-        {/* Add your google-site-verification id here
-      <meta
-        content="..."
-        name="google-site-verification"
       /> */}
       </NextHead>
     </>

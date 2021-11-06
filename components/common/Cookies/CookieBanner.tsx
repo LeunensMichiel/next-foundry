@@ -1,7 +1,8 @@
 import { Banner } from '@components/ui';
 import { useAcceptCookies } from '@lib/hooks';
+import { VFC } from 'react';
 
-const CookieBanner = () => {
+const CookieBanner: VFC = () => {
   const { shouldAskForCookies, onAcceptCookies } = useAcceptCookies();
 
   return (
