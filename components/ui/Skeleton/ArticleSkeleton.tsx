@@ -1,9 +1,9 @@
-import { FC } from 'react';
+import { VFC } from 'react';
 import ContentLoader from 'react-content-loader';
 
 import { CommonSkeletonInlineProps, CommonSkeletonProps } from './commonProps';
 
-const ResponsiveArticle: FC<CommonSkeletonProps> = (props) => (
+const ResponsiveArticle: VFC<CommonSkeletonProps> = (props) => (
   <ContentLoader
     viewBox="0 0 500 280"
     height={280}

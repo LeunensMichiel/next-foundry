@@ -4,6 +4,7 @@ const style: CSSProperties = { width: '100%' };
 
 export type CommonSkeletonProps = {
   className?: string;
+  uniqueKey: string;
 };
 
 export const CommonSkeletonInlineProps = {

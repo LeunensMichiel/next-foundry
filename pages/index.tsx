@@ -8,7 +8,8 @@ import {
   Tooltip,
 } from '@components/ui';
 import { ArticleSkeleton } from '@components/ui/Skeleton';
-import { useIsClient, useUI } from '@lib/hooks';
+import { useUI } from '@lib/context/ui';
+import { useIsClient } from '@lib/hooks';
 import cx from 'classnames';
 import { NextSeo } from 'next-seo';
 import { useTheme } from 'next-themes';
@@ -58,7 +59,6 @@ const Home = () => {
         alt="mountains"
         priority
       />
-
       <div className={cx(styles.grid, 'container', 'mx-auto')}>
         <a
           href="https://github.com/LeunensMichiel/nextjs-starter-template/blob/master/README.md"
@@ -170,7 +170,7 @@ const Home = () => {
             </p>
           </div>
         </Tooltip>
-        <ArticleSkeleton className={cx(styles.card)} />
+        <ArticleSkeleton className={cx(styles.card)} uniqueKey="test-loader" />
         <div className={cx(styles.card)}>
           <h3>Accordion</h3>
           <Accordion>
