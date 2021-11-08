@@ -1,5 +1,5 @@
 import { Chevron } from '@components/icons';
-import cx from 'classnames';
+import cn from 'classnames';
 import Link, { LinkProps } from 'next/link';
 import { useRouter } from 'next/router';
 import { FC, LiHTMLAttributes, ReactNode, useEffect, useState } from 'react';
@@ -23,7 +23,7 @@ const NavItem: FC<NavItemProps> = ({ children, label, link }) => {
 
   return (
     <li
-      className={cx(styles.linkContainer, {
+      className={cn(styles.linkContainer, {
         [styles.subMenuOpen]: open,
         [styles.activeLink]: router.pathname === link?.href,
       })}
@@ -32,7 +32,7 @@ const NavItem: FC<NavItemProps> = ({ children, label, link }) => {
         <Link {...link}>{label}</Link>
       ) : (
         <button
-          className={cx('buttonReset')}
+          className={cn('buttonReset')}
           type="button"
           aria-label={`Open ${label} menu`}
           onClick={() => setOpen((prevOpen) => !prevOpen)}

@@ -6,7 +6,7 @@ import {
   disableBodyScroll,
   enableBodyScroll,
 } from 'body-scroll-lock';
-import cx from 'classnames';
+import cn from 'classnames';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FC, useEffect, useRef, useState } from 'react';
@@ -49,31 +49,31 @@ const Navbar: FC<NavbarProps> = ({ children, isTransparent = false }) => {
 
   return (
     <header
-      className={cx(styles.header, {
+      className={cn(styles.header, {
         [styles.headerTransparent]: isTransparent,
         [styles.navContainerOpen]: navDrawerOpen,
       })}
       ref={ref}
     >
       {children}
-      <div className={cx(styles.headerContainer, 'container-lg')}>
+      <div className={cn(styles.headerContainer, 'container-lg')}>
         <nav
-          className={cx(styles.navigation, {
+          className={cn(styles.navigation, {
             [styles.navigationTransparent]: isTransparent,
           })}
         >
-          <div className={cx(styles.toolbar)}>
+          <div className={cn(styles.toolbar)}>
             <Link href="/" passHref>
               <Logo className={styles.logo} />
             </Link>
-            <div className={cx(styles.toolbarIcons)}>
+            <div className={cn(styles.toolbarIcons)}>
               <ThemeToggle
-                className={cx('buttonReset', styles.toolbarGeneralIcon, {
+                className={cn('buttonReset', styles.toolbarGeneralIcon, {
                   [styles.menuButtonTransparent]: isTransparent,
                 })}
               />
               <MenuToggle
-                className={cx('buttonReset', styles.hamburger, {
+                className={cn('buttonReset', styles.hamburger, {
                   [styles.menuButtonTransparent]: isTransparent,
                 })}
                 handleToggle={() =>

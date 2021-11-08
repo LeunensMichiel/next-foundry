@@ -1,5 +1,5 @@
 import { DropdownMenu, DropdownMenuItem } from '@components/ui/Dropdown';
-import cx from 'classnames';
+import cn from 'classnames';
 import { VFC } from 'react';
 
 import NavItem from './NavItem';
@@ -15,12 +15,12 @@ const NavItems: VFC<NavItemsProps> = ({
   isTransparent = false,
 }) => (
   <div
-    className={cx(styles.navMenuContainer, {
+    className={cn(styles.navMenuContainer, {
       [styles.navContainerOpen]: navDrawerOpen,
       [styles.navigationTransparent]: isTransparent,
     })}
   >
-    <ul className={cx(styles.menuLevelOne)}>
+    <ul className={cn(styles.menuLevelOne)}>
       <NavItem label="Page 1">
         <DropdownMenu>
           <DropdownMenuItem label="❓ 404" internalLink={{ href: '/404' }} />
