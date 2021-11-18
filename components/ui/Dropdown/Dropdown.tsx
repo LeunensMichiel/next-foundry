@@ -10,15 +10,20 @@ type DropdownProps = {
   label: string;
   willFloat?: boolean;
   willOpenOnHover?: boolean;
-} & Omit<ButtonProps<'button'>, 'onClick'>;
+  buttonClassName?: string;
+  containerClassName?: string;
+  listClassName?: string;
+} & Omit<ButtonProps<'button'>, 'onClick | className'>;
 
 const Dropdown: React.FC<DropdownProps> = ({
   children,
   label,
-  className,
   variant,
   willFloat = true,
   willOpenOnHover = true,
+  buttonClassName,
+  containerClassName,
+  listClassName,
   ...btnProps
 }) => {
   const [open, setOpen] = useState(false);
@@ -33,14 +38,18 @@ const Dropdown: React.FC<DropdownProps> = ({
 
   return (
     <div
-      className={cn(styles.dropdown, {
-        [styles.dropdownMenuOpen]: open,
-      })}
+      className={cn(
+        styles.dropdown,
+        {
+          [styles.dropdownMenuOpen]: open,
+        },
+        containerClassName
+      )}
       onMouseEnter={() => willOpenOnHover && setOpen(!touched || true)}
       onMouseLeave={() => willOpenOnHover && setOpen(touched || false)}
     >
       <Button
-        className={cn(styles.dropdownButton, className)}
+        className={cn(styles.dropdownButton, buttonClassName)}
         size="sm"
         variant={variant}
         iconRight={<Chevron />}
@@ -52,10 +61,14 @@ const Dropdown: React.FC<DropdownProps> = ({
       </Button>
       {open && (
         <div
-          className={cn(styles.dropdownListContainer, {
-            [styles[`dropdown-${variant}`]]: !!variant,
-            [styles.dropdownFloating]: willFloat,
-          })}
+          className={cn(
+            styles.dropdownListContainer,
+            {
+              [styles[`dropdown-${variant}`]]: !!variant,
+              [styles.dropdownFloating]: willFloat,
+            },
+            listClassName
+          )}
         >
           {children}
         </div>
