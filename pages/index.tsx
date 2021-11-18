@@ -4,6 +4,7 @@ import {
   AccordionItem,
   Badge,
   Button,
+  Dropdown2,
   ImageWithAspectRatio,
   Tooltip,
 } from '@components/ui';
@@ -144,6 +145,23 @@ const Home = () => {
           <Button type="button" onClick={() => openModal()} size="sm">
             Toggle Modal
           </Button>
+        </div>
+        <div className={styles.card}>
+          <h3>Dropdown</h3>
+          <p>Drop it</p>
+          <Dropdown2 label="Dropdown">
+            <p>Lorem</p>
+            <Badge>A banana 🍌</Badge>
+            <p>Ipsum</p>
+            <Dropdown2 label="Nested dropdown">
+              <p>Lorem</p>
+              <Dropdown2 label="Deeply dropdown">
+                <p>Lorem</p>
+                <p>Ipsum</p>
+              </Dropdown2>
+            </Dropdown2>
+            <p>Doloret</p>
+          </Dropdown2>
         </div>
         <div className={styles.card}>
           <h3>Badges</h3>

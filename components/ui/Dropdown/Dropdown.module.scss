@@ -1,0 +1,80 @@
+@use '@styles/theme';
+// Different variants
+$variants: primary, secondary, success, danger, warning, info, 'transparent';
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  min-width: 5rem;
+  position: relative;
+
+  &.dropdownMenuOpen {
+    > .dropdownListContainer {
+      display: block;
+      border-radius: 0 0 var(--border-radius) var(--border-radius);
+    }
+
+    > .dropdownButton {
+      border-radius: var(--border-radius) var(--border-radius) 0 0;
+      svg {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+
+.dropdownButton {
+  justify-content: space-between;
+  box-shadow: none;
+
+  svg {
+    flex-shrink: 0;
+    @include theme.transition(transform);
+  }
+}
+
+.dropdownListContainer {
+  width: 100%;
+  display: none;
+  background: var(--color-btn-focus-bg);
+  color: var(--color-btn-focus-text);
+  outline: var(--color-btn-focus-border);
+  padding: 0 1rem;
+
+  & > * {
+    min-height: 2rem;
+    line-height: 1;
+    font-size: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .dropdown {
+    .dropdownButton {
+      border: none;
+      background: inherit;
+      color: inherit;
+      outline: inherit;
+      font-weight: 400;
+      padding: 0;
+      min-height: inherit;
+    }
+  }
+
+  &.dropdownFloating {
+    position: absolute;
+    top: 100%;
+    z-index: theme.$z-mid;
+    box-shadow: theme.$box-shadow-xs;
+  }
+}
+
+@each $variant in $variants {
+  .dropdown-#{$variant} {
+    border: 0.125rem solid var(--color-btn-#{$variant}-focus-border);
+    background: var(--color-btn-#{$variant}-focus-bg);
+    color: var(--color-btn-#{$variant}-focus-text);
+    outline: var(--color-btn-#{$variant}-focus-border);
+    @include theme.transition(background, border, color);
+  }
+}

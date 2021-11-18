@@ -1,4 +1,4 @@
-import { DropdownMenu, DropdownMenuItem } from '@components/ui/Dropdown';
+import { DropdownMenu, DropdownMenuItem } from '@components/ui/DropdownOld';
 import cn from 'classnames';
 import { VFC } from 'react';
 
