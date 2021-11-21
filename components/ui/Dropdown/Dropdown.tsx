@@ -1,13 +1,13 @@
 import { Chevron } from '@components/icons';
 import cn from 'classnames';
-import { useCallback, useState } from 'react';
+import { ReactNode, useCallback, useState } from 'react';
 
 import { Button } from '..';
 import { ButtonProps } from '../Button/Button';
 import styles from './Dropdown.module.scss';
 
 type DropdownProps = {
-  label: string;
+  label: string | ReactNode;
   willFloat?: boolean;
   willOpenOnHover?: boolean;
   buttonClassName?: string;
@@ -19,8 +19,8 @@ const Dropdown: React.FC<DropdownProps> = ({
   children,
   label,
   variant,
-  willFloat = true,
-  willOpenOnHover = true,
+  willFloat = false,
+  willOpenOnHover = false,
   buttonClassName,
   containerClassName,
   listClassName,

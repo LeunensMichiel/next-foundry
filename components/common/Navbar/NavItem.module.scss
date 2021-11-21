@@ -3,10 +3,12 @@
 .linkContainer {
   border-radius: var(--border-radius);
   outline: none;
+  font-size: inherit;
   @include theme.transition(background-color);
 
   a,
-  button {
+  button,
+  p {
     padding: 1rem !important;
     display: block;
     width: 100%;
@@ -41,28 +43,6 @@
     svg {
       padding-left: 0.25rem;
       transform: rotate(90deg);
-    }
-  }
-}
-
-.subMenuOpen {
-  background-color: var(--color-bg-secondary);
-
-  button {
-    color: var(--color-link-primary);
-  }
-
-  svg {
-    transform: rotate(90deg);
-  }
-
-  ul {
-    display: block;
-  }
-
-  @include theme.breakpoint-up(lg) {
-    svg {
-      transform: rotate(-90deg);
     }
   }
 }

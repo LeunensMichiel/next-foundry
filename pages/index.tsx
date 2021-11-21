@@ -4,7 +4,7 @@ import {
   AccordionItem,
   Badge,
   Button,
-  Dropdown2,
+  Dropdown,
   ImageWithAspectRatio,
   Tooltip,
 } from '@components/ui';
@@ -149,19 +149,19 @@ const Home = () => {
         <div className={styles.card}>
           <h3>Dropdown</h3>
           <p>Drop it</p>
-          <Dropdown2 label="Dropdown">
+          <Dropdown label="Dropdown">
             <p>Lorem</p>
             <Badge>A banana 🍌</Badge>
             <p>Ipsum</p>
-            <Dropdown2 label="Nested dropdown">
+            <Dropdown label="Nested dropdown">
               <p>Lorem</p>
-              <Dropdown2 label="Deeply dropdown">
+              <Dropdown label="Deeply dropdown">
                 <p>Lorem</p>
                 <p>Ipsum</p>
-              </Dropdown2>
-            </Dropdown2>
+              </Dropdown>
+            </Dropdown>
             <p>Doloret</p>
-          </Dropdown2>
+          </Dropdown>
         </div>
         <div className={styles.card}>
           <h3>Badges</h3>

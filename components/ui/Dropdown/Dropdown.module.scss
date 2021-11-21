@@ -55,17 +55,18 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
       background: inherit;
       color: inherit;
       outline: inherit;
-      font-weight: 400;
       padding: 0;
       min-height: inherit;
     }
   }
 
   &.dropdownFloating {
-    position: absolute;
-    top: 100%;
-    z-index: theme.$z-mid;
-    box-shadow: theme.$box-shadow-xs;
+    @include theme.breakpoint-up(md) {
+      position: absolute;
+      top: 100%;
+      z-index: theme.$z-mid;
+      box-shadow: theme.$box-shadow-xs;
+    }
   }
 }
 

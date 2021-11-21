@@ -1,4 +1,4 @@
-import { DropdownMenu, DropdownMenuItem } from '@components/ui/DropdownOld';
+import { Dropdown } from '@components/ui';
 import cn from 'classnames';
 import { VFC } from 'react';
 
@@ -21,7 +21,7 @@ const NavItems: VFC<NavItemsProps> = ({
     })}
   >
     <ul className={cn(styles.menuLevelOne)}>
-      <NavItem label="Page 1">
+      {/* <NavItem label="Page 1">
         <DropdownMenu>
           <DropdownMenuItem label="❓ 404" internalLink={{ href: '/404' }} />
           <DropdownMenuItem label="🛑 500" internalLink={{ href: '/500' }} />
@@ -34,6 +34,18 @@ const NavItems: VFC<NavItemsProps> = ({
             }}
           />
         </DropdownMenu>
+      </NavItem> */}
+      <NavItem label="Links">
+        <p>Lorem</p>
+        <p>Ipsum</p>
+        <Dropdown label="Nested dropdown">
+          <p>Lorem</p>
+          <Dropdown label="Deeply dropdown">
+            <p>Lorem</p>
+            <p>Ipsum</p>
+          </Dropdown>
+        </Dropdown>
+        <p>Doloret</p>
       </NavItem>
       <NavItem label="Buttons" link={{ href: '/buttons' }} />
       <NavItem label="Form" link={{ href: '/formpage' }} />
