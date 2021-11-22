@@ -20,7 +20,7 @@ const NavItems: VFC<NavItemsProps> = ({
       [styles.navigationTransparent]: isTransparent,
     })}
   >
-    <ul className={cn(styles.menuLevelOne)}>
+    <ul className={cn(styles.navMenuList)}>
       {/* <NavItem label="Page 1">
         <DropdownMenu>
           <DropdownMenuItem label="❓ 404" internalLink={{ href: '/404' }} />

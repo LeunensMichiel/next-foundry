@@ -9,6 +9,7 @@ import styles from './Dropdown.module.scss';
 type DropdownProps = {
   label: string | ReactNode;
   willFloat?: boolean;
+  startOpen?: boolean;
   willOpenOnHover?: boolean;
   buttonClassName?: string;
   containerClassName?: string;
@@ -19,15 +20,16 @@ const Dropdown: React.FC<DropdownProps> = ({
   children,
   label,
   variant,
-  willFloat = false,
+  startOpen = false,
+  willFloat = true,
   willOpenOnHover = false,
   buttonClassName,
   containerClassName,
   listClassName,
   ...btnProps
 }) => {
-  const [open, setOpen] = useState(false);
-  const [touched, setTouched] = useState(false);
+  const [open, setOpen] = useState(startOpen);
+  const [touched, setTouched] = useState(startOpen);
 
   const handleClick = useCallback(() => {
     setTouched((prevTouched) => !prevTouched);

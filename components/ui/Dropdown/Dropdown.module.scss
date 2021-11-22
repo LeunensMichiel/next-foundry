@@ -4,13 +4,21 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
 .dropdown {
   display: flex;
   flex-direction: column;
-  min-width: 5rem;
   position: relative;
 
   &.dropdownMenuOpen {
     > .dropdownListContainer {
       display: block;
-      border-radius: 0 0 var(--border-radius) var(--border-radius);
+      &.dropdownFloating {
+        @include theme.breakpoint-up(md) {
+          position: absolute;
+          top: 100%;
+          min-width: 15rem;
+          z-index: theme.$z-mid;
+          box-shadow: theme.$box-shadow-xs;
+          padding: 0.25rem 1rem;
+        }
+      }
     }
 
     > .dropdownButton {
@@ -49,24 +57,13 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
     justify-content: center;
   }
 
-  .dropdown {
-    .dropdownButton {
-      border: none;
-      background: inherit;
-      color: inherit;
-      outline: inherit;
-      padding: 0;
-      min-height: inherit;
-    }
-  }
-
-  &.dropdownFloating {
-    @include theme.breakpoint-up(md) {
-      position: absolute;
-      top: 100%;
-      z-index: theme.$z-mid;
-      box-shadow: theme.$box-shadow-xs;
-    }
+  .dropdownButton {
+    border: none;
+    background: inherit;
+    color: inherit;
+    outline: inherit;
+    padding: 0;
+    min-height: inherit;
   }
 }
 

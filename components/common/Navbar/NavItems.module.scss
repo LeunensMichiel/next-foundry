@@ -34,7 +34,7 @@
   }
 }
 
-.menuLevelOne {
+.navMenuList {
   padding: 0 1rem;
   width: 100%;
   max-width: 1024px;
@@ -43,7 +43,8 @@
   position: relative;
 
   @include theme.breakpoint-up(lg) {
-    padding: 0;
     display: flex;
+    padding: 0;
+    align-items: center;
   }
 }

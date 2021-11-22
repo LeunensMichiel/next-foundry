@@ -4,47 +4,55 @@
   border-radius: var(--border-radius);
   outline: none;
   font-size: inherit;
-  @include theme.transition(background-color);
+  padding: 1rem !important;
+  @include theme.transition(background, color);
 
   a,
-  button,
-  p {
-    padding: 1rem !important;
-    display: block;
+  button {
     width: 100%;
     font-weight: 700;
     font-size: 1.125rem;
     color: var(--color-text-primary);
+    border: none;
+    background: var(--color-bg-primary);
     @include theme.transition(color);
-  }
-  button {
-    display: flex !important;
-    align-items: center;
-    justify-content: space-between !important;
-  }
-  svg {
-    @include theme.transition(transform, color, fill, stroke);
   }
 
   @include theme.breakpoint-up(lg) {
-    &:hover {
-      ul {
-        display: block;
-      }
-    }
+    padding: 0.5rem 1rem !important;
     a,
     button {
       &:hover {
         color: var(--color-link-primary);
       }
-      padding: 0.5rem 1rem !important;
       font-size: 1rem !important;
     }
-    svg {
-      padding-left: 0.25rem;
-      transform: rotate(90deg);
-    }
   }
+
+  &:hover,
+  &:focus {
+    background: var(--color-bg-secondary);
+  }
+}
+
+.subMenuButton {
+  padding: 0;
+  border: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: none;
+    color: inherit;
+    border: inherit;
+  }
+}
+
+.subMenuList {
+  background: none;
+  color: inherit;
+  font-weight: 700;
+  font-size: 1.125rem;
 }
 
 .activeLink {
