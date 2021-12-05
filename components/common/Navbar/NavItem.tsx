@@ -22,13 +22,17 @@ const NavItem: FC<NavItemProps> = ({ children, label, link }) => {
   }, [router.asPath]);
 
   return (
-    <li
-      className={cn(styles.linkContainer, {
-        [styles.activeLink]: router.pathname === link?.href,
-      })}
-    >
+    <>
       {!children && link ? (
-        <Link {...link}>{label}</Link>
+        <Link {...link}>
+          <a
+            className={cn(styles.navItemContainer, styles.linkContainer, {
+              [styles.activeLink]: router.pathname === link?.href,
+            })}
+          >
+            {label}
+          </a>
+        </Link>
       ) : (
         <Dropdown
           label={label}
@@ -37,11 +41,16 @@ const NavItem: FC<NavItemProps> = ({ children, label, link }) => {
           startOpen={open}
           buttonClassName={styles.subMenuButton}
           listClassName={styles.subMenuList}
+          containerOpenClassName={styles.subMenuOpen}
+          containerClassName={cn(
+            styles.navItemContainer,
+            styles.subMenuContainer
+          )}
         >
           {children}
         </Dropdown>
       )}
-    </li>
+    </>
   );
 };
 

@@ -13,6 +13,7 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
         @include theme.breakpoint-up(md) {
           position: absolute;
           top: 100%;
+          left: 0;
           min-width: 15rem;
           z-index: theme.$z-mid;
           box-shadow: theme.$box-shadow-xs;
@@ -33,6 +34,8 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
 .dropdownButton {
   justify-content: space-between;
   box-shadow: none;
+  font-size: inherit;
+  @include theme.transition(background, border, color);
 
   svg {
     flex-shrink: 0;
@@ -47,14 +50,16 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
   color: var(--color-btn-focus-text);
   outline: var(--color-btn-focus-border);
   padding: 0 1rem;
+  @include theme.transition(background, border, color);
 
   & > * {
-    min-height: 2rem;
+    min-height: 2.25rem;
     line-height: 1;
     font-size: inherit;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @include theme.transition(background, border, color);
   }
 
   .dropdownButton {
@@ -64,6 +69,17 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
     outline: inherit;
     padding: 0;
     min-height: inherit;
+    font-weight: inherit;
+    @include theme.transition(background, border, color);
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: inherit;
+      color: inherit;
+      border: inherit;
+      @include theme.transition(background, border, color);
+    }
   }
 }
 

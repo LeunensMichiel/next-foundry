@@ -100,6 +100,7 @@ Todo:
 
 - Navigationbar with improved UI and Accessability
 - Navigationbar use button component
+- Remove global theme transition
 
 ## Getting Started
 

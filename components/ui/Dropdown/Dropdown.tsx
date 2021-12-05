@@ -13,6 +13,7 @@ type DropdownProps = {
   willOpenOnHover?: boolean;
   buttonClassName?: string;
   containerClassName?: string;
+  containerOpenClassName?: string;
   listClassName?: string;
 } & Omit<ButtonProps<'button'>, 'onClick | className'>;
 
@@ -25,6 +26,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   willOpenOnHover = false,
   buttonClassName,
   containerClassName,
+  containerOpenClassName,
   listClassName,
   ...btnProps
 }) => {
@@ -43,6 +45,7 @@ const Dropdown: React.FC<DropdownProps> = ({
       className={cn(
         styles.dropdown,
         {
+          [`${containerOpenClassName}`]: open && !!containerOpenClassName,
           [styles.dropdownMenuOpen]: open,
         },
         containerClassName

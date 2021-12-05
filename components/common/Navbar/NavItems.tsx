@@ -20,7 +20,7 @@ const NavItems: VFC<NavItemsProps> = ({
       [styles.navigationTransparent]: isTransparent,
     })}
   >
-    <ul className={cn(styles.navMenuList)}>
+    <div className={cn(styles.navMenuList)}>
       {/* <NavItem label="Page 1">
         <DropdownMenu>
           <DropdownMenuItem label="❓ 404" internalLink={{ href: '/404' }} />
@@ -36,8 +36,8 @@ const NavItems: VFC<NavItemsProps> = ({
         </DropdownMenu>
       </NavItem> */}
       <NavItem label="Links">
-        <p>Lorem</p>
-        <p>Ipsum</p>
+        <NavItem label="❓ 404" link={{ href: '/404' }} />
+        <NavItem label="🛑 500" link={{ href: '/500' }} />
         <Dropdown label="Nested dropdown">
           <p>Lorem</p>
           <Dropdown label="Deeply dropdown">
@@ -50,7 +50,7 @@ const NavItems: VFC<NavItemsProps> = ({
       <NavItem label="Buttons" link={{ href: '/buttons' }} />
       <NavItem label="Form" link={{ href: '/formpage' }} />
       <NavItem label="Blog" link={{ href: '/blog' }} />
-    </ul>
+    </div>
   </div>
 );
 

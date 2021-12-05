@@ -1,62 +1,75 @@
 @use '@styles/theme';
 
-.linkContainer {
+.navItemContainer {
   border-radius: var(--border-radius);
+  border: none;
+  color: var(--color-text-primary);
+  display: flex;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1;
   outline: none;
-  font-size: inherit;
-  padding: 1rem !important;
   @include theme.transition(background, color);
 
-  a,
-  button {
-    width: 100%;
-    font-weight: 700;
-    font-size: 1.125rem;
-    color: var(--color-text-primary);
-    border: none;
-    background: var(--color-bg-primary);
-    @include theme.transition(color);
-  }
-
   @include theme.breakpoint-up(lg) {
-    padding: 0.5rem 1rem !important;
-    a,
-    button {
-      &:hover {
-        color: var(--color-link-primary);
-      }
-      font-size: 1rem !important;
-    }
+    font-size: 1rem;
   }
+}
 
+.linkContainer {
   &:hover,
   &:focus {
+    color: var(--color-link-primary);
     background: var(--color-bg-secondary);
+  }
+}
+
+.subMenuContainer {
+}
+
+.subMenuOpen {
+  background: var(--color-bg-secondary);
+  * {
+    background: var(--color-bg-secondary);
+    color: inherit;
+  }
+  &::after {
+    content: ' ';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 100%;
+    height: 0.5rem;
+    background: transparent;
   }
 }
 
 .subMenuButton {
   padding: 0;
   border: none;
+  color: inherit;
+  font-weight: inherit;
+  background: inherit;
+  min-height: unset;
+  line-height: inherit;
 
   &:hover,
   &:focus,
   &:active {
-    background: none;
-    color: inherit;
-    border: inherit;
+    border: none;
+    background: inherit;
+    color: var(--color-link-primary);
   }
 }
 
 .subMenuList {
-  background: none;
   color: inherit;
-  font-weight: 700;
-  font-size: 1.125rem;
+  border-radius: var(--border-radius);
+  top: calc(100% + 0.5rem) !important;
+  padding: 1rem 1rem 0 1rem;
 }
 
 .activeLink {
-  a {
-    color: var(--color-link-primary);
-  }
+  color: var(--color-link-primary);
+  background: var(--color-bg-secondary);
 }
