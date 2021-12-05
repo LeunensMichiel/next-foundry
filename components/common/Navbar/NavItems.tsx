@@ -21,20 +21,6 @@ const NavItems: VFC<NavItemsProps> = ({
     })}
   >
     <div className={cn(styles.navMenuList)}>
-      {/* <NavItem label="Page 1">
-        <DropdownMenu>
-          <DropdownMenuItem label="❓ 404" internalLink={{ href: '/404' }} />
-          <DropdownMenuItem label="🛑 500" internalLink={{ href: '/500' }} />
-          <DropdownMenuItem
-            label="External to Next.js"
-            externalLink={{
-              href: 'https://nextjs.org',
-              target: '_blank',
-              rel: 'nofollow noopener noreferrer',
-            }}
-          />
-        </DropdownMenu>
-      </NavItem> */}
       <NavItem label="Links">
         <NavItem label="❓ 404" link={{ href: '/404' }} />
         <NavItem label="🛑 500" link={{ href: '/500' }} />
