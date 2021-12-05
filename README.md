@@ -98,9 +98,9 @@ This is an opinionated starter template in `Next.js v11` which uses all best pra
 
 Todo:
 
-- Rewrite DropdownMenu to be more agnostic
 - Navigationbar with improved UI and Accessability
 - Navigationbar use button component
+- Remove global theme transition
 
 ## Getting Started
 

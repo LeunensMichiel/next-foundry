@@ -44,7 +44,6 @@
   border-radius: var(--border-radius);
   background-color: var(--color-bg-primary);
   position: relative;
-  z-index: 1;
   @include theme.transition(border-color, color, background-color);
 
   &:hover,
@@ -53,6 +52,7 @@
     color: var(--color-text-primary);
     border-color: var(--color-btn-primary-border);
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
   }
 
   > h3 {

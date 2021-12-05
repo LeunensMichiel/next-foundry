@@ -5,7 +5,6 @@
   line-height: 1;
   padding: 0.25rem 0.5rem;
   font-weight: 500;
-  font-size: 100%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -240,6 +239,7 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
 // Different Sizes
 .button-xs {
   padding: 0.25rem 0.75rem;
+  min-height: 1.5rem;
   font-size: var(--button-xs);
   &.button-circular {
     padding: 0.5rem;
@@ -251,6 +251,7 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
 }
 .button-sm {
   padding: 0.5rem 1rem;
+  min-height: 2.5rem;
   font-size: var(--button-sm);
 
   &.button-circular {
@@ -263,6 +264,7 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
 }
 .button-md {
   padding: 0.75rem 1.25rem;
+  min-height: 3rem;
   font-size: var(--button-md);
 
   &.button-circular {
@@ -275,6 +277,7 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
 }
 .button-lg {
   padding: 1rem 1.5rem;
+  min-height: 3.5rem;
   font-size: var(--button-lg);
 
   &.button-circular {
@@ -287,6 +290,7 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
 }
 .button-xl {
   padding: 1.25rem 1.75rem;
+  min-height: 4rem;
   font-size: var(--button-xl);
 
   &.button-circular {

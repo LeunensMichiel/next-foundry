@@ -1,74 +1,70 @@
 @use '@styles/theme';
 
-.linkContainer {
+.navItemContainer {
   border-radius: var(--border-radius);
+  border: none;
+  color: var(--color-text-primary);
+  display: flex;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1;
   outline: none;
-  @include theme.transition(background-color);
-
-  a,
-  button {
-    padding: 1rem !important;
-    display: block;
-    width: 100%;
-    font-weight: 700;
-    font-size: 1.125rem;
-    color: var(--color-text-primary);
-    @include theme.transition(color);
-  }
-  button {
-    display: flex !important;
-    align-items: center;
-    justify-content: space-between !important;
-  }
-  svg {
-    @include theme.transition(transform, color, fill, stroke);
-  }
+  @include theme.transition(background, color);
 
   @include theme.breakpoint-up(lg) {
-    &:hover {
-      ul {
-        display: block;
-      }
-    }
-    a,
-    button {
-      &:hover {
-        color: var(--color-link-primary);
-      }
-      padding: 0.5rem 1rem !important;
-      font-size: 1rem !important;
-    }
-    svg {
-      padding-left: 0.25rem;
-      transform: rotate(90deg);
-    }
+    font-size: 1rem;
   }
 }
 
-.subMenuOpen {
-  background-color: var(--color-bg-secondary);
+.linkContainer {
+  &:hover,
+  &:focus {
+    color: var(--color-link-primary);
+    background: var(--color-bg-secondary);
+  }
+}
 
-  button {
+.subMenuContainer {
+}
+
+.subMenuOpen {
+  background: var(--color-bg-secondary);
+  * {
+    background: var(--color-bg-secondary);
+    color: inherit;
+  }
+}
+
+.subMenuButton {
+  border: none;
+  color: inherit;
+  font-weight: inherit;
+  background: inherit;
+  min-height: unset;
+  line-height: inherit;
+  border-radius: var(--border-radius) !important;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border: none;
+    background: inherit;
     color: var(--color-link-primary);
   }
+}
 
-  svg {
-    transform: rotate(90deg);
-  }
-
-  ul {
-    display: block;
-  }
+.subMenuList {
+  color: inherit;
+  border-radius: var(--border-radius);
+  top: calc(100% + 0.5rem) !important;
+  padding: 1rem;
 
   @include theme.breakpoint-up(lg) {
-    svg {
-      transform: rotate(-90deg);
-    }
+    padding: 1rem 1rem 0rem 1rem;
   }
 }
 
 .activeLink {
-  a {
-    color: var(--color-link-primary);
-  }
+  color: var(--color-link-primary);
+  background: var(--color-bg-secondary);
 }

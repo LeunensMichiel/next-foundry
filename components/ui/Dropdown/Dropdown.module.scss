@@ -1,0 +1,104 @@
+@use '@styles/theme';
+// Different variants
+$variants: primary, secondary, success, danger, warning, info, 'transparent';
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &.dropdownMenuOpen {
+    > .dropdownListContainer {
+      display: block;
+      &.dropdownFloating {
+        @include theme.breakpoint-up(lg) {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          min-width: 15rem;
+          z-index: theme.$z-mid;
+          box-shadow: theme.$box-shadow-xs;
+          padding: 0.25rem 1rem;
+        }
+      }
+    }
+
+    > .dropdownButton {
+      border-radius: var(--border-radius) var(--border-radius) 0 0;
+      svg {
+        transform: rotate(90deg);
+      }
+    }
+
+    &::after {
+      content: ' ';
+      position: absolute;
+      bottom: -0.5rem;
+      left: 0;
+      width: 100%;
+      height: 0.5rem;
+      background: transparent;
+    }
+  }
+}
+
+.dropdownButton {
+  justify-content: space-between;
+  box-shadow: none;
+  font-size: inherit;
+  @include theme.transition(background, border, color);
+
+  svg {
+    flex-shrink: 0;
+    @include theme.transition(transform);
+  }
+}
+
+.dropdownListContainer {
+  width: 100%;
+  display: none;
+  background: var(--color-btn-focus-bg);
+  color: var(--color-btn-focus-text);
+  outline: var(--color-btn-focus-border);
+  padding: 0 1rem;
+  @include theme.transition(background, border, color);
+
+  & > * {
+    min-height: 2.25rem;
+    line-height: 1;
+    font-size: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include theme.transition(background, border, color);
+  }
+
+  .dropdownButton {
+    border: none;
+    background: inherit;
+    color: inherit;
+    outline: inherit;
+    padding: 0;
+    min-height: inherit;
+    font-weight: inherit;
+    @include theme.transition(background, border, color);
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: inherit;
+      color: inherit;
+      border: inherit;
+      @include theme.transition(background, border, color);
+    }
+  }
+}
+
+@each $variant in $variants {
+  .dropdown-#{$variant} {
+    border: 0.125rem solid var(--color-btn-#{$variant}-focus-border);
+    background: var(--color-btn-#{$variant}-focus-bg);
+    color: var(--color-btn-#{$variant}-focus-text);
+    outline: var(--color-btn-#{$variant}-focus-border);
+    @include theme.transition(background, border, color);
+  }
+}

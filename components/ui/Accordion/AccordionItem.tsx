@@ -1,5 +1,5 @@
 import { Chevron } from '@components/icons';
-import cx from 'classnames';
+import cn from 'classnames';
 import { FC, SyntheticEvent } from 'react';
 
 import styles from './AccordionItem.module.scss';
@@ -25,7 +25,7 @@ const AccordionItem: FC<AccordionItemProps> = ({
 
   return (
     <div
-      className={cx(styles.root, {
+      className={cn(styles.root, {
         [styles.expanded]: expanded,
         [styles.disabled]: disabled,
       })}
@@ -36,14 +36,14 @@ const AccordionItem: FC<AccordionItemProps> = ({
         onKeyDown={accordionClick}
         role="button"
         tabIndex={0}
-        className={cx(styles.header)}
+        className={cn(styles.header)}
         aria-pressed={expanded}
         {...rest}
       >
-        <span className={cx(styles.title)}>{title}</span>
+        <span className={cn(styles.title)}>{title}</span>
         <Chevron />
       </div>
-      {expanded && <div className={cx(styles.body)}>{children}</div>}
+      {expanded && <div className={cn(styles.body)}>{children}</div>}
     </div>
   );
 };

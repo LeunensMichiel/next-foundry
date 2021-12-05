@@ -1,5 +1,5 @@
-import { DropdownMenu, DropdownMenuItem } from '@components/ui/Dropdown';
-import cx from 'classnames';
+import { Dropdown } from '@components/ui';
+import cn from 'classnames';
 import { VFC } from 'react';
 
 import NavItem from './NavItem';
@@ -15,13 +15,13 @@ const NavItems: VFC<NavItemsProps> = ({
   isTransparent = false,
 }) => (
   <div
-    className={cx(styles.navMenuContainer, {
+    className={cn(styles.navMenuContainer, {
       [styles.navContainerOpen]: navDrawerOpen,
       [styles.navigationTransparent]: isTransparent,
     })}
   >
-    <ul className={cx(styles.menuLevelOne)}>
-      <NavItem label="Page 1">
+    <div className={cn(styles.navMenuList)}>
+      {/* <NavItem label="Page 1">
         <DropdownMenu>
           <DropdownMenuItem label="❓ 404" internalLink={{ href: '/404' }} />
           <DropdownMenuItem label="🛑 500" internalLink={{ href: '/500' }} />
@@ -34,11 +34,23 @@ const NavItems: VFC<NavItemsProps> = ({
             }}
           />
         </DropdownMenu>
+      </NavItem> */}
+      <NavItem label="Links">
+        <NavItem label="❓ 404" link={{ href: '/404' }} />
+        <NavItem label="🛑 500" link={{ href: '/500' }} />
+        <Dropdown label="Nested dropdown">
+          <p>Lorem</p>
+          <Dropdown label="Deeply dropdown">
+            <p>Lorem</p>
+            <p>Ipsum</p>
+          </Dropdown>
+        </Dropdown>
+        <p>Doloret</p>
       </NavItem>
       <NavItem label="Buttons" link={{ href: '/buttons' }} />
       <NavItem label="Form" link={{ href: '/formpage' }} />
       <NavItem label="Blog" link={{ href: '/blog' }} />
-    </ul>
+    </div>
   </div>
 );
 

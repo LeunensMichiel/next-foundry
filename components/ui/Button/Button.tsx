@@ -36,7 +36,7 @@ interface Props<C extends React.ElementType> {
   iconRight?: ComponentPropsWithoutRef<'svg'> | string;
 }
 
-type ButtonProps<C extends ElementType> = Props<C> &
+export type ButtonProps<C extends ElementType> = Props<C> &
   Omit<ComponentPropsWithRef<C>, keyof Props<C>>;
 
 const Button = <C extends React.ElementType = 'button'>({

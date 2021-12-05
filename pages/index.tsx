@@ -4,13 +4,14 @@ import {
   AccordionItem,
   Badge,
   Button,
+  Dropdown,
   ImageWithAspectRatio,
   Tooltip,
 } from '@components/ui';
 import { ArticleSkeleton } from '@components/ui/Skeleton';
 import { useUI } from '@lib/context/ui';
 import { useIsClient } from '@lib/hooks';
-import cx from 'classnames';
+import cn from 'classnames';
 import { NextSeo } from 'next-seo';
 import { useTheme } from 'next-themes';
 import useTranslation from 'next-translate/useTranslation';
@@ -35,7 +36,7 @@ const Home = () => {
           description: t('seo.description'),
         }}
       />
-      <div className={cx(styles.intro, 'container', 'mx-auto')}>
+      <div className={cn(styles.intro, 'container', 'mx-auto')}>
         <h1 className={styles.title}>
           {t('welcome')}{' '}
           <a
@@ -59,7 +60,7 @@ const Home = () => {
         alt="mountains"
         priority
       />
-      <div className={cx(styles.grid, 'container', 'mx-auto')}>
+      <div className={cn(styles.grid, 'container', 'mx-auto')}>
         <a
           href="https://github.com/LeunensMichiel/nextjs-starter-template/blob/master/README.md"
           className={styles.card}
@@ -146,6 +147,23 @@ const Home = () => {
           </Button>
         </div>
         <div className={styles.card}>
+          <h3>Dropdown</h3>
+          <p>Drop it</p>
+          <Dropdown label="Dropdown">
+            <p>Lorem</p>
+            <Badge>A banana 🍌</Badge>
+            <p>Ipsum</p>
+            <Dropdown label="Nested dropdown">
+              <p>Lorem</p>
+              <Dropdown label="Deeply dropdown">
+                <p>Lorem</p>
+                <p>Ipsum</p>
+              </Dropdown>
+            </Dropdown>
+            <p>Doloret</p>
+          </Dropdown>
+        </div>
+        <div className={styles.card}>
           <h3>Badges</h3>
           <p>Mjum</p>
           <Badge>Leunie</Badge>
@@ -170,8 +188,8 @@ const Home = () => {
             </p>
           </div>
         </Tooltip>
-        <ArticleSkeleton className={cx(styles.card)} uniqueKey="test-loader" />
-        <div className={cx(styles.card)}>
+        <ArticleSkeleton className={cn(styles.card)} uniqueKey="test-loader" />
+        <div className={cn(styles.card)}>
           <h3>Accordion</h3>
           <Accordion>
             <AccordionItem title="Item 1" itemKey={0}>

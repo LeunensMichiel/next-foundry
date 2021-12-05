@@ -1,5 +1,5 @@
-import { Chevron } from '@components/icons';
-import cx from 'classnames';
+import { Dropdown } from '@components/ui';
+import cn from 'classnames';
 import Link, { LinkProps } from 'next/link';
 import { useRouter } from 'next/router';
 import { FC, LiHTMLAttributes, ReactNode, useEffect, useState } from 'react';
@@ -22,28 +22,35 @@ const NavItem: FC<NavItemProps> = ({ children, label, link }) => {
   }, [router.asPath]);
 
   return (
-    <li
-      className={cx(styles.linkContainer, {
-        [styles.subMenuOpen]: open,
-        [styles.activeLink]: router.pathname === link?.href,
-      })}
-    >
+    <>
       {!children && link ? (
-        <Link {...link}>{label}</Link>
+        <Link {...link}>
+          <a
+            className={cn(styles.navItemContainer, styles.linkContainer, {
+              [styles.activeLink]: router.pathname === link?.href,
+            })}
+          >
+            {label}
+          </a>
+        </Link>
       ) : (
-        <button
-          className={cx('buttonReset')}
-          type="button"
-          aria-label={`Open ${label} menu`}
-          onClick={() => setOpen((prevOpen) => !prevOpen)}
+        <Dropdown
+          label={label}
+          willFloat
+          willOpenOnHover
+          startOpen={open}
+          buttonClassName={cn(styles.subMenuButton, 'parentSubMenuButton')}
+          listClassName={styles.subMenuList}
+          containerOpenClassName={styles.subMenuOpen}
+          containerClassName={cn(
+            styles.navItemContainer,
+            styles.subMenuContainer
+          )}
         >
-          <span>{label}</span>
-          <Chevron />
-        </button>
+          {children}
+        </Dropdown>
       )}
-
-      {children}
-    </li>
+    </>
   );
 };
 
