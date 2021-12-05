@@ -10,5 +10,4 @@
   background: var(--color-bg-secondary);
   border-radius: var(--border-radius);
   padding: 1rem;
-  @include theme.transition(background, border-color, color);
 }

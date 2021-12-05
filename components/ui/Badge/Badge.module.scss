@@ -14,7 +14,6 @@
   color: var(--color-badge-text);
   background: var(--color-badge-bg);
   box-shadow: theme.$box-shadow-sm;
-  @include theme.transition(border-color, background, color);
 
   span {
     display: inline-flex;

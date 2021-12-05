@@ -100,7 +100,6 @@ This is an opinionated starter template in `Next.js v11` which uses all best pra
 Todo:
 
 - Navigationbar use button component
-- Remove global theme transition
 - Update datepicker to latest beta
 
 ## Getting Started

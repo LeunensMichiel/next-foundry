@@ -16,10 +16,6 @@
   color: var(--color-btn-text);
   @include theme.transition(background, border, color);
 
-  svg {
-    @include theme.transition(stroke);
-  }
-
   &:hover {
     border: 0.125rem solid var(--color-btn-hover-border);
     background: var(--color-btn-hover-bg);

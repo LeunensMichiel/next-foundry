@@ -12,7 +12,6 @@
   background-color: var(--color-bg-primary);
   border-radius: var(--border-radius);
   padding: 1.5rem;
-  @include theme.transition(background-color);
 
   &.dark {
     background: linear-gradient(to right, #7f00ff, #e100ff);

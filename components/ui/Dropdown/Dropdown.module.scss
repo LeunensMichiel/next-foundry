@@ -45,8 +45,6 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
   justify-content: space-between;
   box-shadow: none;
   font-size: inherit;
-  @include theme.transition(background, border, color);
-
   svg {
     flex-shrink: 0;
     @include theme.transition(transform);
@@ -60,7 +58,6 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
   color: var(--color-btn-focus-text);
   outline: var(--color-btn-focus-border);
   padding: 0 1rem;
-  @include theme.transition(background, border, color);
 
   & > * {
     min-height: 2.25rem;
@@ -69,7 +66,6 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
     display: flex;
     flex-direction: column;
     justify-content: center;
-    @include theme.transition(background, border, color);
   }
 
   .dropdownButton {
@@ -80,15 +76,13 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
     padding: 0;
     min-height: inherit;
     font-weight: inherit;
-    @include theme.transition(background, border, color);
-
+    transition: none;
     &:hover,
     &:focus,
     &:active {
       background: inherit;
       color: inherit;
       border: inherit;
-      @include theme.transition(background, border, color);
     }
   }
 }
@@ -99,6 +93,5 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
     background: var(--color-btn-#{$variant}-focus-bg);
     color: var(--color-btn-#{$variant}-focus-text);
     outline: var(--color-btn-#{$variant}-focus-border);
-    @include theme.transition(background, border, color);
   }
 }

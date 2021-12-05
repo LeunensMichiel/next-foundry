@@ -22,7 +22,6 @@ body {
   font-family: var(--font-family-base);
   color: var(--color-text-primary);
   background-color: var(--color-bg-primary);
-  @include theme.transition(background-color, color, border-color);
 }
 
 body {
@@ -135,12 +134,10 @@ li {
 
 a {
   color: var(--color-link-primary);
-  @include theme.transition(color);
 }
 
 button {
   padding: 0.25rem 0.5rem;
-  @include theme.transition(background);
   &:focus {
     outline: var(--color-btn-focus-border);
   }
@@ -168,7 +165,6 @@ code {
   font-size: var(--small);
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  @include theme.transition(background);
 }
 
 pre code {

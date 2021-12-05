@@ -58,7 +58,7 @@
   border: 0.125rem solid var(--color-input-border);
   background: var(--color-input-bg);
   cursor: pointer;
-  @include theme.transition(box-shadow, border-color, background);
+  @include theme.transition(border-color, background);
 
   svg {
     opacity: 0;

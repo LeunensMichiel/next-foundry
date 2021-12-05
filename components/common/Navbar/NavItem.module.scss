@@ -9,7 +9,6 @@
   font-weight: 700;
   line-height: 1;
   outline: none;
-  @include theme.transition(background, color);
 
   @include theme.breakpoint-up(lg) {
     font-size: 1rem;
@@ -43,6 +42,7 @@
   min-height: unset;
   line-height: inherit;
   border-radius: var(--border-radius) !important;
+  transition: none;
 
   &:hover,
   &:focus,

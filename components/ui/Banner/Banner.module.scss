@@ -7,7 +7,6 @@
   color: var(--color-text-white);
   background-color: var(--color-bg-brand);
   box-shadow: theme.$box-shadow-md;
-  @include theme.transition(background-color, color);
 
   &.banner-bottom {
     bottom: 0;
@@ -72,7 +71,6 @@
   svg {
     width: 100%;
     height: auto;
-    @include theme.transition(background-color, stroke);
   }
 
   @include theme.breakpoint-up(md) {

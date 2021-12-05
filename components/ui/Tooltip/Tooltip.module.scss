@@ -12,7 +12,6 @@
   background: var(--color-tooltip-bg);
   box-shadow: theme.$box-shadow-sm;
   z-index: theme.$z-low;
-  @include theme.transition(border-color, background, color);
 
   p {
     font-size: var(--small);

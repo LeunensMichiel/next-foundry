@@ -7,7 +7,6 @@
   z-index: theme.$z-high;
   width: 100%;
   background-color: var(--color-bg-primary);
-  @include theme.transition(background-color);
 
   &.headerTransparent {
     background-color: transparent;
@@ -64,7 +63,6 @@
       background: var(--color-btn-transparent-bg) !important;
     }
     &.toolbarGeneralIcon {
-      @include theme.transition(color);
       &:hover {
         color: var(--color-btn-primary-border);
       }
@@ -81,9 +79,6 @@
 
 .logo {
   cursor: pointer;
-  path {
-    @include theme.transition(fill);
-  }
   @include theme.breakpoint-up(lg) {
     width: 8rem;
     height: auto;

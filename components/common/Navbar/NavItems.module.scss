@@ -12,7 +12,7 @@
   overflow-y: auto;
   background-color: var(--color-bg-primary);
   transform: translateX(100%);
-  @include theme.transition(transform, background-color);
+  @include theme.transition(transform);
 
   &.navContainerOpen {
     transform: translateX(0);
@@ -30,7 +30,6 @@
     background-color: transparent;
     order: 1;
     overflow-y: visible;
-    @include theme.transition(background-color);
   }
 }
 
