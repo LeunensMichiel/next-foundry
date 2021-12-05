@@ -2,12 +2,12 @@ import { Dropdown } from '@components/ui';
 import cn from 'classnames';
 import Link, { LinkProps } from 'next/link';
 import { useRouter } from 'next/router';
-import { FC, LiHTMLAttributes, ReactNode, useEffect, useState } from 'react';
+import { FC, LiHTMLAttributes, useEffect, useState } from 'react';
 
 import styles from './NavItem.module.scss';
 
 type NavItemProps = {
-  label: string | ReactNode;
+  label: string;
   link?: LinkProps;
 } & LiHTMLAttributes<HTMLLIElement>;
 
@@ -26,6 +26,7 @@ const NavItem: FC<NavItemProps> = ({ children, label, link }) => {
       {!children && link ? (
         <Link {...link}>
           <a
+            role="menuitem"
             className={cn(styles.navItemContainer, styles.linkContainer, {
               [styles.activeLink]: router.pathname === link?.href,
             })}
@@ -36,6 +37,7 @@ const NavItem: FC<NavItemProps> = ({ children, label, link }) => {
       ) : (
         <Dropdown
           label={label}
+          role="menu"
           willFloat
           willOpenOnHover
           startOpen={open}

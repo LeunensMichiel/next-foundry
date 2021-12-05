@@ -1,13 +1,13 @@
 import { Chevron } from '@components/icons';
 import cn from 'classnames';
-import { ReactNode, useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 
 import { Button } from '..';
 import { ButtonProps } from '../Button/Button';
 import styles from './Dropdown.module.scss';
 
 type DropdownProps = {
-  label: string | ReactNode;
+  label: string;
   willFloat?: boolean;
   startOpen?: boolean;
   willOpenOnHover?: boolean;
@@ -52,6 +52,7 @@ const Dropdown: React.FC<DropdownProps> = ({
       )}
       onMouseEnter={() => willOpenOnHover && setOpen(!touched || true)}
       onMouseLeave={() => willOpenOnHover && setOpen(touched || false)}
+      aria-expanded={open}
     >
       <Button
         {...btnProps}
@@ -59,8 +60,9 @@ const Dropdown: React.FC<DropdownProps> = ({
         size="sm"
         variant={variant}
         iconRight={<Chevron />}
-        aria-label={`Open ${label} menu`}
+        aria-label={label}
         onClick={handleClick}
+        onKeyDown={handleClick}
       >
         {label}
       </Button>
