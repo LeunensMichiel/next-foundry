@@ -20,6 +20,7 @@ type CustomDatePickerProps = Pick<
   };
 
 // USING https://react-day-picker-next.netlify.app/ (v8 beta)
+// TODO: Fix Datepixker new beta
 const DatePicker: FC<CustomDatePickerProps> = ({
   onChange,
   value,
@@ -87,7 +88,7 @@ const DatePicker: FC<CustomDatePickerProps> = ({
           <div className={cn(styles.wrapper)} ref={containerRef}>
             <DayPicker
               {...rest}
-              mode={mode}
+              mode={'custom'}
               className={cn(styles.root)}
               onSelect={handleDayClick}
             />
