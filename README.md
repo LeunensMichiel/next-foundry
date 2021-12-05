@@ -81,6 +81,7 @@ This is an opinionated starter template in `Next.js v11` which uses all best pra
 - :white_check_mark: `robots.txt`
 - :white_check_mark: Smooth scrolling with polyfill
 - :hammer: Lighthouse optimizations
+- :hammer: A11y compliant
 - :hammer: Inter-browser compatibility
 
 ### Future
@@ -98,9 +99,9 @@ This is an opinionated starter template in `Next.js v11` which uses all best pra
 
 Todo:
 
-- Navigationbar with improved UI and Accessability
 - Navigationbar use button component
 - Remove global theme transition
+- Update datepicker to latest beta
 
 ## Getting Started
 
