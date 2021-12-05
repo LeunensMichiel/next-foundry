@@ -39,7 +39,7 @@ const NavItem: FC<NavItemProps> = ({ children, label, link }) => {
           willFloat
           willOpenOnHover
           startOpen={open}
-          buttonClassName={styles.subMenuButton}
+          buttonClassName={cn(styles.subMenuButton, 'parentSubMenuButton')}
           listClassName={styles.subMenuList}
           containerOpenClassName={styles.subMenuOpen}
           containerClassName={cn(

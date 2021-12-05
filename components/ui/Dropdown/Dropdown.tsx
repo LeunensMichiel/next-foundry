@@ -54,11 +54,11 @@ const Dropdown: React.FC<DropdownProps> = ({
       onMouseLeave={() => willOpenOnHover && setOpen(touched || false)}
     >
       <Button
+        {...btnProps}
         className={cn(styles.dropdownButton, buttonClassName)}
         size="sm"
         variant={variant}
         iconRight={<Chevron />}
-        {...btnProps}
         aria-label={`Open ${label} menu`}
         onClick={handleClick}
       >
