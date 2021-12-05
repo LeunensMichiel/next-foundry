@@ -10,7 +10,7 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
     > .dropdownListContainer {
       display: block;
       &.dropdownFloating {
-        @include theme.breakpoint-up(md) {
+        @include theme.breakpoint-up(lg) {
           position: absolute;
           top: 100%;
           left: 0;
