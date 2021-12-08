@@ -1,5 +1,4 @@
-import { Cross } from '@components/icons';
-import { Button } from '@components/ui';
+import { CloseButton } from '@components/common';
 import { useClickOutside } from '@lib/hooks';
 import Portal from '@reach/portal';
 import {
@@ -91,16 +90,11 @@ const Modal: FC<ModalProps> = ({
           >
             <header className={cn(styles.modalHeader)}>
               {title && <span className={cn(styles.modalTitle)}>{title}</span>}
-              <Button
-                onClick={() => onClose()}
-                iconLeft={<Cross />}
-                minimal
-                type="button"
-                data-dismiss="modal"
-                aria-label="Close"
+              <CloseButton
                 className={cn(styles.modalCloseButton, {
                   [styles.noTitle]: !title,
                 })}
+                onClick={() => onClose()}
               />
             </header>
             <FocusLock className={cn(styles.modalBody)}>{children}</FocusLock>

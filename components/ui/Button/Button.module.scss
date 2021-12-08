@@ -77,34 +77,6 @@
       }
     }
   }
-  &.minimal {
-    background: none;
-    border: none;
-    color: var(--color-btn-minimal-fill);
-
-    &:hover {
-      color: var(--color-btn-minimal-hover-fill);
-    }
-    &:focus {
-      color: var(--color-btn-minimal-focus-fill);
-    }
-    &:active {
-      color: var(--color-btn-minimal-active-fill);
-    }
-    &.contrasted {
-      color: var(--color-btn-minimal-contrasted-fill);
-
-      &:hover {
-        color: var(--color-btn-minimal-contrasted-hover-fill);
-      }
-      &:focus {
-        color: var(--color-btn-minimal-contrasted-focus-fill);
-      }
-      &:active {
-        color: var(--color-btn-minimal-contrasted-active-fill);
-      }
-    }
-  }
   &.disabled {
     border: 0.125rem solid var(--color-btn-disabled-border);
     background: var(--color-btn-disabled-bg);
@@ -136,7 +108,8 @@
 }
 
 // Different variants
-$variants: primary, secondary, success, danger, warning, info, 'transparent';
+$variants: primary, secondary, success, danger, warning, info, 'transparent',
+  minimal;
 @each $variant in $variants {
   .button-#{$variant} {
     border: 0.125rem solid var(--color-btn-#{$variant}-border);
@@ -237,7 +210,8 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
   padding: 0.25rem 0.75rem;
   min-height: 1.5rem;
   font-size: var(--button-xs);
-  &.button-circular {
+  &.button-circular,
+  &.button-squared {
     padding: 0.5rem;
   }
   svg {
@@ -250,7 +224,8 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
   min-height: 2.5rem;
   font-size: var(--button-sm);
 
-  &.button-circular {
+  &.button-circular,
+  &.button-squared {
     padding: 0.75rem;
   }
   svg {
@@ -263,7 +238,8 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
   min-height: 3rem;
   font-size: var(--button-md);
 
-  &.button-circular {
+  &.button-circular,
+  &.button-squared {
     padding: 1rem;
   }
   svg {
@@ -276,7 +252,8 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
   min-height: 3.5rem;
   font-size: var(--button-lg);
 
-  &.button-circular {
+  &.button-circular,
+  &.button-squared {
     padding: 1.25rem;
   }
   svg {
@@ -289,7 +266,8 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
   min-height: 4rem;
   font-size: var(--button-xl);
 
-  &.button-circular {
+  &.button-circular,
+  &.button-squared {
     padding: 1.5rem;
   }
   svg {

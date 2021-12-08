@@ -15,5 +15,4 @@ export { default as Select } from './Select';
 export { default as Spinner } from './Spinner';
 export { default as Switch } from './Switch';
 export { default as TextArea } from './TextArea';
-export { default as ThemeToggle } from './ThemeToggle';
 export { default as Tooltip } from './Tooltip';

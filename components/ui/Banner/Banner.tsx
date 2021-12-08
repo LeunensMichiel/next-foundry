@@ -1,4 +1,4 @@
-import { Cross } from '@components/icons';
+import { CloseButton } from '@components/common';
 import { Button } from '@components/ui';
 import cn from 'classnames';
 import { ComponentPropsWithoutRef, FC, ReactNode } from 'react';
@@ -58,15 +58,8 @@ const Banner: FC<BannerProps> = ({
       >
         <div className={cn(styles.bannerContainer, 'container', 'mx-auto')}>
           {onClickDismissiveAction && (
-            <Button
+            <CloseButton
               onClick={onClickDismissiveAction}
-              iconLeft={<Cross />}
-              minimal
-              contrasted
-              size="sm"
-              type="button"
-              data-dismiss="modal"
-              aria-label="Close"
               className={cn(styles.closeButton)}
             />
           )}

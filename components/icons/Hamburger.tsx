@@ -1,17 +1,5 @@
-type MenuToggleProps = {
-  className?: string;
-  handleToggle(): void;
-};
-
-const MenuToggle = ({ className = '', handleToggle }: MenuToggleProps) => (
-  <button
-    aria-haspopup="true"
-    aria-expanded="false"
-    type="button"
-    aria-label="Navigation menu button"
-    className={className}
-    onClick={handleToggle}
-  >
+const Hamburger = ({ ...props }) => {
+  return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -22,12 +10,13 @@ const MenuToggle = ({ className = '', handleToggle }: MenuToggleProps) => (
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
+      {...props}
     >
       <line x1="3" y1="12" x2="21" y2="12" />
       <line x1="3" y1="6" x2="21" y2="6" />
       <line x1="3" y1="18" x2="21" y2="18" />
     </svg>
-  </button>
-);
+  );
+};
 
-export default MenuToggle;
+export default Hamburger;

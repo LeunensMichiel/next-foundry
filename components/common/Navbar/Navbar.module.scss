@@ -55,18 +55,7 @@
   align-items: center;
 
   button {
-    padding: 0.25rem 0.5rem !important;
     margin-left: 0.5rem !important;
-    border-radius: var--(border-radius);
-    color: var(--color-btn-minimal-fill);
-    &.menuButtonTransparent {
-      background: var(--color-btn-transparent-bg) !important;
-    }
-    &.toolbarGeneralIcon {
-      &:hover {
-        color: var(--color-btn-primary-border);
-      }
-    }
   }
 
   @include theme.breakpoint-up(lg) {

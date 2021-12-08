@@ -11,7 +11,7 @@ import styles from './Button.module.scss';
 
 // Inspired by
 // https://www.benmvp.com/blog/polymorphic-react-components-typescript/
-interface Props<C extends React.ElementType> {
+interface ButtonCustomProps<C extends React.ElementType> {
   as?: C;
   children?: ReactNode;
   variant?:
@@ -21,23 +21,23 @@ interface Props<C extends React.ElementType> {
     | 'danger'
     | 'warning'
     | 'info'
+    | 'minimal'
     | 'transparent';
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   outlined?: boolean;
   circular?: boolean;
+  squared?: boolean;
   loading?: boolean;
   disabled?: boolean;
   active?: boolean;
-  contrasted?: boolean;
   stretched?: boolean;
   uppercased?: boolean;
-  minimal?: boolean;
   iconLeft?: ComponentPropsWithoutRef<'svg'> | string;
   iconRight?: ComponentPropsWithoutRef<'svg'> | string;
 }
 
-export type ButtonProps<C extends ElementType> = Props<C> &
-  Omit<ComponentPropsWithRef<C>, keyof Props<C>>;
+export type ButtonProps<C extends ElementType> = ButtonCustomProps<C> &
+  Omit<ComponentPropsWithRef<C>, keyof ButtonCustomProps<C>>;
 
 const Button = <C extends React.ElementType = 'button'>({
   active,
@@ -45,12 +45,11 @@ const Button = <C extends React.ElementType = 'button'>({
   className,
   children,
   circular = false,
-  contrasted = false,
+  squared = false,
   disabled = false,
   iconLeft,
   iconRight,
   loading = false,
-  minimal = false,
   outlined = false,
   size = 'md',
   stretched = false,
@@ -59,23 +58,19 @@ const Button = <C extends React.ElementType = 'button'>({
   ...rest
 }: ButtonProps<C>) => {
   const Component = as || 'button';
-  const rootClassName = cn(
-    styles.buttonBase,
-    {
-      [styles[`button-${variant}`]]: !!variant,
-      [styles.outlined]: outlined,
-      [styles.minimal]: minimal,
-      [styles.contrasted]: contrasted && minimal,
-      [styles.loading]: loading,
-      [styles.disabled]: disabled,
-      [styles[`button-${size}`]]: true,
-      [styles['button-circular']]: circular && !children,
-      [styles['button-rounded']]: circular && children,
-      [styles.stretched]: stretched,
-      [styles.uppercased]: uppercased,
-    },
-    className
-  );
+  const rootClassName = cn(styles.buttonBase, {
+    [styles[`button-${variant}`]]: !!variant,
+    [styles.outlined]: outlined,
+    [styles.loading]: loading,
+    [styles.disabled]: disabled,
+    [styles[`button-${size}`]]: true,
+    [styles['button-circular']]: circular && !children,
+    [styles['button-squared']]: squared && !children,
+    [styles['button-rounded']]: circular && children,
+    [styles.stretched]: stretched,
+    [styles.uppercased]: uppercased,
+    [`${className}`]: className,
+  });
 
   return (
     <Component

@@ -1,5 +1,4 @@
-import { MenuToggle } from '@components/icons';
-import { Logo, ThemeToggle } from '@components/ui';
+import { Logo } from '@components/ui';
 import {
   BodyScrollOptions,
   clearAllBodyScrollLocks,
@@ -11,6 +10,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FC, useEffect, useRef, useState } from 'react';
 
+import { MenuButton, ThemeButton } from '../IconButtons';
 import styles from './Navbar.module.scss';
 import NavItems from './NavItems';
 
@@ -67,16 +67,10 @@ const Navbar: FC<NavbarProps> = ({ children, isTransparent = false }) => {
               <Logo className={styles.logo} />
             </Link>
             <div className={cn(styles.toolbarIcons)}>
-              <ThemeToggle
-                className={cn('buttonReset', styles.toolbarGeneralIcon, {
-                  [styles.menuButtonTransparent]: isTransparent,
-                })}
-              />
-              <MenuToggle
-                className={cn('buttonReset', styles.hamburger, {
-                  [styles.menuButtonTransparent]: isTransparent,
-                })}
-                handleToggle={() =>
+              <ThemeButton />
+              <MenuButton
+                className={cn(styles.hamburger)}
+                onClick={() =>
                   setNavDrawerOpen((prevNavDrawerOpen) => !prevNavDrawerOpen)
                 }
               />
