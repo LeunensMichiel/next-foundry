@@ -8,7 +8,9 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
 
   &.dropdownMenuOpen {
     > .dropdownListContainer {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       &.dropdownFloating {
         @include theme.breakpoint-up(lg) {
           position: absolute;
@@ -45,6 +47,7 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
   justify-content: space-between;
   box-shadow: none;
   font-size: inherit;
+  width: 100%;
   svg {
     flex-shrink: 0;
     @include theme.transition(transform);
@@ -63,9 +66,9 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
     min-height: 2.25rem;
     line-height: 1;
     font-size: inherit;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
   }
 
   .dropdownButton {
