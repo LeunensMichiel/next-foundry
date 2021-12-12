@@ -1,19 +1,19 @@
 # dependencies
-/node_modules
+node_modules
 /.pnp
 .pnp.js
 yarn.lock
 /.husky/
 
 # testing
-/coverage
+coverage
 
 # next.js
 /.next/
-/out/
+out
 
 # production
-/build
+build
 
 # misc
 .DS_Store
