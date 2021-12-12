@@ -34,6 +34,8 @@
 }
 
 .navMenuList {
+  display: flex;
+  flex-direction: column;
   padding: 0 1rem;
   width: 100%;
   max-width: 1024px;
@@ -50,7 +52,7 @@
   }
 
   @include theme.breakpoint-up(lg) {
-    display: flex;
+    flex-direction: row;
     padding: 0;
     align-items: stretch;
     justify-content: flex-start;
