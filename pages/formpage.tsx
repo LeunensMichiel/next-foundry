@@ -82,7 +82,7 @@ const FormPage = () => {
               label="Date"
               onChange={onChange}
               value={value}
-              mode="range"
+              mode="multiple"
             />
           )}
         />
@@ -94,40 +94,6 @@ const FormPage = () => {
               instanceId="select"
               label="Select"
               placeholder="Set to multi for multiselect"
-              // Defaults to value and label
-              getOptionValue={(option) => option.key}
-              getOptionLabel={(option) => option.text}
-              options={[
-                {
-                  label: 'Group label',
-                  options: [
-                    { key: 'id2', text: 'This is a banana: \u{1F34C}' },
-                    { key: 'id3', text: 'Hold up \u{1F171}' },
-                  ],
-                },
-                {
-                  label: 'Group 2',
-                  options: [
-                    { key: 'id4', text: 'LOL: \u{1F34C}' },
-                    { key: 'id5', text: 'Lolol \u{1F171}' },
-                  ],
-                },
-              ]}
-              onChange={onChange}
-              name={name}
-              value={value}
-            />
-          )}
-        />
-        <Controller
-          name="select"
-          control={control}
-          render={({ field: { onChange, name, value } }) => (
-            <Select
-              instanceId="select"
-              label="Select"
-              placeholder="Set to multi for multiselect"
-              isMulti
               // Defaults to value and label
               getOptionValue={(option) => option.key}
               getOptionLabel={(option) => option.text}

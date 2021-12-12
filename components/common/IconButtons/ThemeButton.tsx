@@ -1,6 +1,7 @@
 import { Moon, Sun } from '@components/icons';
 import { Button } from '@components/ui';
 import { ButtonProps } from '@components/ui/Button/Button';
+import { useIsClient } from '@lib/hooks';
 import { useTheme } from 'next-themes';
 import { MouseEventHandler, VFC } from 'react';
 
@@ -26,11 +27,12 @@ const ThemeButton: VFC<ThemeButtonProps> = ({
   ...props
 }) => {
   const { setTheme, theme } = useTheme();
+  const isClient = useIsClient();
 
   return (
     <Button
       aria-label="Toggle between themes"
-      iconLeft={theme === 'light' ? <Moon /> : <Sun />}
+      iconLeft={isClient ? theme === 'light' ? <Moon /> : <Sun /> : undefined}
       onClick={
         onClick ? onClick : () => setTheme(theme === 'light' ? 'dark' : 'light')
       }
