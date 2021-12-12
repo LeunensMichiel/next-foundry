@@ -57,7 +57,8 @@
 
   @include theme.breakpoint-up(md) {
     grid-gap: 1rem;
-    padding: 1.5rem 0 1.5rem 1.5rem;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    grid-template-columns: minmax(auto, 3rem) 1fr auto;
   }
 }
 
@@ -87,11 +88,8 @@
   margin-right: -0.75rem !important;
 
   @include theme.breakpoint-up(md) {
-    height: auto;
-    grid-row: 1;
-    grid-column: 4;
-    margin-top: 0 !important;
-    margin-right: 0 !important;
+    margin-top: 0rem !important;
+    margin-bottom: -1rem !important;
   }
 }
 
@@ -121,7 +119,7 @@
   }
 
   @include theme.breakpoint-up(md) {
-    grid-row: 1;
+    // grid-row: 1;
     grid-column: 3;
 
     & > * {
