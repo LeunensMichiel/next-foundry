@@ -39,7 +39,8 @@
     "react-select": "^5.2.1",
     "react-toastify": "^8.1.0",
     "sass": "^1.44.0",
-    "scroll-into-view-if-needed": "^2.2.28"
+    "scroll-into-view-if-needed": "^2.2.28",
+    "sharp": "^0.29.3"
   },
   "devDependencies": {
     "@types/body-scroll-lock": "^3.1.0",
