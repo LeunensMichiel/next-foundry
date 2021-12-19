@@ -41,20 +41,21 @@ export function readMarkdownFile(
   slug: string,
   locale: string,
   type?: MARKDOWN_SUBFOLDER_TYPE
-): MarkdownFile {
+): MarkdownFile | undefined {
   const markdownFolderPath = getMarkdownFolderPathByTypeAndLocale(locale, type);
   const markdownFilePathForSlug = fs
     .readdirSync(markdownFolderPath)
-    .filter((file) => file.endsWith('.mdx') || file.endsWith('.md'))
+    .filter((path) => /\.mdx?$/.test(path))
     .find((file) => file.startsWith(slug));
 
-  if (!markdownFilePathForSlug)
-    throw new Error(`No markdown files found for given slug ${slug}`);
+  if (!markdownFilePathForSlug) {
+    return;
+  }
 
   const fullPath = path.join(markdownFolderPath, markdownFilePathForSlug);
 
   if (!fs.existsSync(fullPath)) {
-    throw new Error(`Markdown file not found for path ${path}`);
+    return;
   }
 
   const fileContents = fs.readFileSync(fullPath, 'utf8');
@@ -68,10 +69,15 @@ export function getMarkdownFrontmatterAndContent(
   fields: string[] = [],
   locale: string,
   type?: MARKDOWN_SUBFOLDER_TYPE
-): MarkdownData {
+): MarkdownData | undefined {
   const slug = filePath.replace(/\.mdx?$/, '');
-  const { data, content } = readMarkdownFile(slug, locale, type);
+  const file = readMarkdownFile(slug, locale, type);
 
+  if (!file) {
+    return;
+  }
+
+  const { content, data } = file;
   const markdownData: MarkdownData = {};
   // Ensure only the minimal needed data is exposed
   for (const field of fields) {
@@ -96,8 +102,9 @@ export function getAllMarkdownByDate(
 ): MarkdownData[] {
   const markdownPaths = getMarkdownPathsByTypeAndLocale(locale, type);
   const data = markdownPaths
-    .map((filePath) =>
-      getMarkdownFrontmatterAndContent(filePath, fields, locale, type)
+    .map(
+      (filePath) =>
+        getMarkdownFrontmatterAndContent(filePath, fields, locale, type)!
     )
     .sort((item1, item2) => (item1.date > item2.date ? -1 : 1));
   return data;
@@ -120,6 +127,8 @@ export function getAllMarkdownSlugsForType(
     )
     ?.map((slug) => slug.replace(/\.mdx?$/, ''));
   const uniqueSlugs = [...new Set(slugs)];
+
+  console.log('LOLOL', uniqueSlugs);
 
   return uniqueSlugs;
 }

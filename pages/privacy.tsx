@@ -27,8 +27,15 @@ export default PrivacyPage;
 PrivacyPage.Layout = Layout;
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  const { content, data } = readMarkdownFile('privacybeleid', locale!);
+  const file = readMarkdownFile('privacybeleid', locale!);
 
+  if (!file) {
+    return {
+      notFound: true,
+    };
+  }
+
+  const { content, data } = file;
   const mdxSource = content ? await serialize(content, { scope: data }) : null;
 
   return {

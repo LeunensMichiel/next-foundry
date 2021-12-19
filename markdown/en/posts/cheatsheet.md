@@ -1,7 +1,7 @@
 ---
 date: '2021-03-24'
 thumbnail: /assets/test.jpg
-title: Cheatcheat
+title: Cheatsheet
 description: The soup stock from sea kelp and dried bonito flakes can be used in many Japanese food such as miso soup, soba, udon, and stew.
 ---
 

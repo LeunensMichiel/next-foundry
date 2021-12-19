@@ -26,12 +26,15 @@ export default SingleBlog;
 SingleBlog.Layout = Layout;
 
 export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
-  const { content, data } = readMarkdownFile(
-    params?.slug as string,
-    locale!,
-    'posts'
-  );
+  const file = readMarkdownFile(params?.slug as string, locale!, 'posts');
 
+  if (!file) {
+    return {
+      notFound: true,
+    };
+  }
+
+  const { content, data } = file;
   const mdxSource = content ? await serialize(content, { scope: data }) : null;
 
   return {
@@ -45,7 +48,6 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
 
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   const slugs = getAllMarkdownSlugsForType(locales!, 'posts');
-
   const paths = slugs.flatMap((slug) =>
     locales!.map((locale) => ({
       params: {
