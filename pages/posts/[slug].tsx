@@ -47,15 +47,15 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-  const slugs = getAllMarkdownSlugsForType(locales!, 'posts');
-  const paths = slugs.flatMap((slug) =>
-    locales!.map((locale) => ({
+  const slugsByLocale = getAllMarkdownSlugsForType(locales!, 'posts');
+  const paths = slugsByLocale.flatMap((slugByLocale) => {
+    return slugByLocale.uniqueSlugs.map((slug) => ({
       params: {
         slug,
       },
-      locale,
-    }))
-  );
+      locale: slugByLocale.locale,
+    }));
+  });
 
   return {
     paths,

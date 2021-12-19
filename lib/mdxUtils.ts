@@ -113,22 +113,24 @@ export function getAllMarkdownByDate(
 export function getAllMarkdownSlugsForType(
   locales: string[],
   type: MARKDOWN_SUBFOLDER_TYPE
-): string[] {
-  const markDownFolderPaths = locales?.map((locale) => {
-    return path.join(process.cwd(), `markdown/${locale}/${type}`);
-  });
+): {
+  locale: string;
+  uniqueSlugs: string[];
+}[] {
+  const slugsByLocale = [];
+  for (const locale of locales) {
+    const markdownFolderPath = path.join(
+      process.cwd(),
+      `markdown/${locale}/${type}`
+    );
+    const markdownFiles = fs
+      .readdirSync(markdownFolderPath)
+      // Only include md(x) files
+      ?.filter((path) => /\.mdx?$/.test(path))
+      ?.map((slug) => slug.replace(/\.mdx?$/, ''));
+    const uniqueSlugs = [...new Set(markdownFiles)];
+    slugsByLocale.push({ locale, uniqueSlugs });
+  }
 
-  const slugs = markDownFolderPaths
-    ?.flatMap((path) =>
-      fs
-        .readdirSync(path)
-        // Only include md(x) files
-        .filter((path) => /\.mdx?$/.test(path))
-    )
-    ?.map((slug) => slug.replace(/\.mdx?$/, ''));
-  const uniqueSlugs = [...new Set(slugs)];
-
-  console.log('LOLOL', uniqueSlugs);
-
-  return uniqueSlugs;
+  return slugsByLocale;
 }
