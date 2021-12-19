@@ -41,21 +41,20 @@ export function readMarkdownFile(
   slug: string,
   locale: string,
   type?: MARKDOWN_SUBFOLDER_TYPE
-): MarkdownFile | undefined {
+): MarkdownFile {
   const markdownFolderPath = getMarkdownFolderPathByTypeAndLocale(locale, type);
   const markdownFilePathForSlug = fs
     .readdirSync(markdownFolderPath)
     .filter((path) => /\.mdx?$/.test(path))
     .find((file) => file.startsWith(slug));
 
-  if (!markdownFilePathForSlug) {
-    return;
-  }
+  if (!markdownFilePathForSlug)
+    throw new Error(`No markdown files found for given slug ${slug}`);
 
   const fullPath = path.join(markdownFolderPath, markdownFilePathForSlug);
 
   if (!fs.existsSync(fullPath)) {
-    return;
+    throw new Error(`Markdown file not found for path ${path}`);
   }
 
   const fileContents = fs.readFileSync(fullPath, 'utf8');
@@ -69,15 +68,10 @@ export function getMarkdownFrontmatterAndContent(
   fields: string[] = [],
   locale: string,
   type?: MARKDOWN_SUBFOLDER_TYPE
-): MarkdownData | undefined {
+): MarkdownData {
   const slug = filePath.replace(/\.mdx?$/, '');
-  const file = readMarkdownFile(slug, locale, type);
+  const { data, content } = readMarkdownFile(slug, locale, type);
 
-  if (!file) {
-    return;
-  }
-
-  const { content, data } = file;
   const markdownData: MarkdownData = {};
   // Ensure only the minimal needed data is exposed
   for (const field of fields) {
@@ -102,9 +96,8 @@ export function getAllMarkdownByDate(
 ): MarkdownData[] {
   const markdownPaths = getMarkdownPathsByTypeAndLocale(locale, type);
   const data = markdownPaths
-    .map(
-      (filePath) =>
-        getMarkdownFrontmatterAndContent(filePath, fields, locale, type)!
+    .map((filePath) =>
+      getMarkdownFrontmatterAndContent(filePath, fields, locale, type)
     )
     .sort((item1, item2) => (item1.date > item2.date ? -1 : 1));
   return data;
