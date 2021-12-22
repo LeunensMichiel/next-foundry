@@ -8,7 +8,7 @@ import {
   enableBodyScroll,
 } from 'body-scroll-lock';
 import cn from 'classnames';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { FC, MutableRefObject, useCallback, useEffect, useRef } from 'react';
 import FocusLock from 'react-focus-lock';
 
@@ -44,6 +44,8 @@ const Modal: FC<ModalProps> = ({
   title,
 }) => {
   const ref = useRef() as MutableRefObject<HTMLDivElement>;
+  const shouldReduceMotion = useReducedMotion();
+  const closedY = shouldReduceMotion ? 0 : 200;
   const duration = 0.3;
   useClickOutside(ref, () => onClose());
 
@@ -90,9 +92,12 @@ const Modal: FC<ModalProps> = ({
               exit="closed"
               variants={{
                 open: { opacity: 1, y: 0 },
-                closed: { opacity: 0, y: 200 },
+                closed: { opacity: 0, y: closedY },
               }}
-              transition={{ duration }}
+              transition={{
+                duration,
+                type: 'spring',
+              }}
               aria-modal
               aria-labelledby={title}
               tabIndex={-1}
