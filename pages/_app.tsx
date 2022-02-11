@@ -1,7 +1,6 @@
 import '@styles/global/base.scss';
 import '@styles/global/chrome-bug.css';
 import '@styles/libraries/toastify.scss';
-import '@styles/libraries/daypicker.scss';
 
 import { Head } from '@components/common';
 import { ManagedUIProvider } from '@lib/context/ui';

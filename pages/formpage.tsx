@@ -1,9 +1,8 @@
 import { Fieldset, Form, Layout } from '@components/common';
-import { AtSign, Chevron } from '@components/icons';
+import { AtSign, Calendar, Chevron } from '@components/icons';
 import {
   Button,
   Checkbox,
-  DatePicker,
   Input,
   RadioButton,
   Select,
@@ -34,11 +33,7 @@ const FormPage = () => {
     control,
     handleSubmit,
     formState: { isSubmitting, errors },
-  } = useForm<FormValues>({
-    defaultValues: {
-      date: '',
-    },
-  });
+  } = useForm<FormValues>();
 
   const submit = useCallback((vals: FormValues) => {
     console.log(vals);
@@ -56,6 +51,15 @@ const FormPage = () => {
           iconRight={<Chevron />}
         />
         <Input
+          label="Test date"
+          {...register('date')}
+          placeholder="Select a date"
+          error={errors?.date}
+          iconLeft={<Calendar />}
+          type="date"
+          iconRight={<Chevron />}
+        />
+        <Input
           label="Test Number"
           {...register('number', {
             max: { value: 20, message: 'Should be smaller than 20' },
@@ -65,7 +69,6 @@ const FormPage = () => {
           error={errors?.number}
           pattern="[0-9]+([\.,][0-9]+)?"
           step="0.01"
-          iconLeft={<AtSign />}
         />
         <Input
           label="Test Password"
@@ -73,18 +76,6 @@ const FormPage = () => {
           type="password"
           placeholder="Enter a password"
           error={errors?.password}
-        />
-        <Controller
-          name="date"
-          control={control}
-          render={({ field: { onChange, value } }) => (
-            <DatePicker
-              label="Date"
-              onChange={onChange}
-              value={value}
-              mode="multiple"
-            />
-          )}
         />
         <Controller
           name="select"

@@ -1,5 +1,6 @@
 import { Dropdown } from '@components/ui';
 import cn from 'classnames';
+import { motion } from 'framer-motion';
 import { VFC } from 'react';
 
 import NavItem from './NavItem';
@@ -14,7 +15,8 @@ const NavItems: VFC<NavItemsProps> = ({
   navDrawerOpen = false,
   isTransparent = false,
 }) => (
-  <div
+  <motion.div
+    layout
     className={cn(styles.navMenuContainer, {
       [styles.navContainerOpen]: navDrawerOpen,
       [styles.navigationTransparent]: isTransparent,
@@ -37,7 +39,7 @@ const NavItems: VFC<NavItemsProps> = ({
       <NavItem label="Form" link={{ href: '/formpage' }} />
       <NavItem label="Blog" link={{ href: '/blog' }} />
     </div>
-  </div>
+  </motion.div>
 );
 
 export default NavItems;

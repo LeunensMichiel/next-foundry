@@ -38,14 +38,6 @@
     color: var(--color-text-disabled);
   }
 
-  &[type='number']::-webkit-inner-spin-button,
-  &[type='number']::-webkit-outer-spin-button {
-    appearance: none;
-  }
-  &[type='number'] {
-    -moz-appearance: textfield;
-  }
-
   &:-webkit-autofill {
     border: 0.125rem solid var(--color-input-border);
     -webkit-text-fill-color: var(--color-text-secondary);

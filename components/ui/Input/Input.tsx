@@ -26,15 +26,18 @@ const getInputMode = (
     case 'email':
       return 'email';
     case 'number':
+      return 'decimal';
+    case 'tel':
       return 'tel';
+    case 'date':
+    case 'datetime-local':
+      return 'numeric';
     case 'password':
       return 'text';
     case 'search':
       return 'search';
     case 'url':
       return 'url';
-    case 'file':
-      return 'none';
     default:
       return 'text';
   }

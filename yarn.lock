@@ -589,14 +589,6 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.2.tgz#830beaec4b4091a9e9398ac50f865ddea52186b9"
   integrity sha512-92FRmppjjqz29VMJ2dn+xdyXZBrMlE42AV6Kq6BwjWV7CNUW1hs2FtxSNLQE+gJhaZ6AAmYuO9y8dshhcBl7vA==
 
-"@reach/auto-id@^0.16.0":
-  version "0.16.0"
-  resolved "https://registry.yarnpkg.com/@reach/auto-id/-/auto-id-0.16.0.tgz#dfabc3227844e8c04f8e6e45203a8e14a8edbaed"
-  integrity sha512-5ssbeP5bCkM39uVsfQCwBBL+KT8YColdnMN5/Eto6Rj7929ql95R3HZUOkKIvj7mgPtEb60BLQxd1P3o6cjbmg==
-  dependencies:
-    "@reach/utils" "0.16.0"
-    tslib "^2.3.0"
-
 "@reach/portal@^0.16.2":
   version "0.16.2"
   resolved "https://registry.yarnpkg.com/@reach/portal/-/portal-0.16.2.tgz#ca83696215ee03acc2bb25a5ae5d8793eaaf2f64"
@@ -3965,13 +3957,6 @@ react-cookie@^4.1.1:
     "@types/hoist-non-react-statics" "^3.0.1"
     hoist-non-react-statics "^3.0.0"
     universal-cookie "^4.0.0"
-
-react-day-picker@^8.0.0-beta.38:
-  version "8.0.0-beta.38"
-  resolved "https://registry.yarnpkg.com/react-day-picker/-/react-day-picker-8.0.0-beta.38.tgz#c8c8139ea4c1e70513d17f1e803a5708f10264e1"
-  integrity sha512-Uf4Yi2dyQG/Vud8oUnH6iDFcgz3Q2hHUwDNNa7Tu52rGq1UCwK1RkrkI1UqIaLowfe8w/Y9c1ZOMWp3cm14KVQ==
-  dependencies:
-    "@reach/auto-id" "^0.16.0"
 
 react-dom@17.0.2:
   version "17.0.2"
