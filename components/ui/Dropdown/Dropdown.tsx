@@ -1,5 +1,6 @@
 import { Chevron } from '@components/icons';
 import cn from 'classnames';
+import { motion } from 'framer-motion';
 import { useCallback, useState } from 'react';
 
 import { Button } from '..';
@@ -67,7 +68,11 @@ const Dropdown: React.FC<DropdownProps> = ({
         {label}
       </Button>
       {open && (
-        <div
+        <motion.div
+          key="content"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ type: 'tween', duration: 0.3, ease: 'easeOut' }}
           className={cn(
             styles.dropdownListContainer,
             {
@@ -78,7 +83,7 @@ const Dropdown: React.FC<DropdownProps> = ({
           )}
         >
           {children}
-        </div>
+        </motion.div>
       )}
     </div>
   );

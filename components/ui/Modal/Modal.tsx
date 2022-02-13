@@ -8,6 +8,7 @@ import {
   enableBodyScroll,
 } from 'body-scroll-lock';
 import cn from 'classnames';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { FC, MutableRefObject, useCallback, useEffect, useRef } from 'react';
 import FocusLock from 'react-focus-lock';
 
@@ -43,6 +44,9 @@ const Modal: FC<ModalProps> = ({
   title,
 }) => {
   const ref = useRef() as MutableRefObject<HTMLDivElement>;
+  const shouldReduceMotion = useReducedMotion();
+  const closedY = shouldReduceMotion ? 0 : 200;
+  const duration = 0.3;
   useClickOutside(ref, () => onClose());
 
   const handleKey = useCallback(
@@ -54,53 +58,76 @@ const Modal: FC<ModalProps> = ({
     [onClose]
   );
 
+  const clearBodyScroll = useCallback(() => {
+    enableBodyScroll(ref.current);
+    clearAllBodyScrollLocks();
+  }, []);
+
   useEffect(() => {
     if (ref.current) {
       if (open) {
         disableBodyScroll(ref.current, BODY_SCROLL_OPTIONS);
         window.addEventListener('keydown', handleKey);
-      } else {
-        enableBodyScroll(ref.current);
       }
     }
     return () => {
       window.removeEventListener('keydown', handleKey);
-      clearAllBodyScrollLocks();
     };
   }, [open, handleKey]);
 
   return (
     <Portal>
-      {open && (
-        <div className={cn(styles.overlay)}>
-          <div
-            aria-modal
-            aria-labelledby={title}
-            tabIndex={-1}
-            ref={ref}
-            role="dialog"
-            className={cn(
-              styles.modal,
-              {
-                container: maxWidth === 'container',
-                [`container-${maxWidth}`]: maxWidth !== 'container',
-              },
-              className
-            )}
+      <AnimatePresence onExitComplete={clearBodyScroll}>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration }}
+            className={cn(styles.overlay)}
           >
-            <header className={cn(styles.modalHeader)}>
-              {title && <span className={cn(styles.modalTitle)}>{title}</span>}
-              <CloseButton
-                className={cn(styles.modalCloseButton, {
-                  [styles.noTitle]: !title,
-                })}
-                onClick={() => onClose()}
-              />
-            </header>
-            <FocusLock className={cn(styles.modalBody)}>{children}</FocusLock>
-          </div>
-        </div>
-      )}
+            <motion.div
+              initial="closed"
+              animate="open"
+              exit="closed"
+              variants={{
+                open: { opacity: 1, y: 0 },
+                closed: { opacity: 0, y: closedY },
+              }}
+              transition={{
+                duration,
+                type: 'spring',
+              }}
+              aria-modal
+              aria-labelledby={title}
+              tabIndex={-1}
+              ref={ref}
+              role="dialog"
+              className={cn(
+                styles.modal,
+                {
+                  container: maxWidth === 'container',
+                  [`container-${maxWidth}`]: maxWidth !== 'container',
+                },
+                className
+              )}
+            >
+              <header className={cn(styles.modalHeader)}>
+                {title && (
+                  <span className={cn(styles.modalTitle)}>{title}</span>
+                )}
+                <CloseButton
+                  className={cn(styles.modalCloseButton, {
+                    [styles.noTitle]: !title,
+                  })}
+                  onClick={() => onClose()}
+                />
+              </header>
+              <FocusLock className={cn(styles.modalBody)}>{children}</FocusLock>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </Portal>
   );
 };

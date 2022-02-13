@@ -1,5 +1,6 @@
 import { Chevron } from '@components/icons';
 import cn from 'classnames';
+import { motion } from 'framer-motion';
 import { FC, SyntheticEvent } from 'react';
 
 import styles from './AccordionItem.module.scss';
@@ -43,7 +44,17 @@ const AccordionItem: FC<AccordionItemProps> = ({
         <span className={cn(styles.title)}>{title}</span>
         <Chevron />
       </div>
-      {expanded && <div className={cn(styles.body)}>{children}</div>}
+      {expanded && (
+        <motion.div
+          key="content"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ type: 'tween', duration: 0.2, ease: 'easeOut' }}
+          className={cn(styles.body)}
+        >
+          {children}
+        </motion.div>
+      )}
     </div>
   );
 };

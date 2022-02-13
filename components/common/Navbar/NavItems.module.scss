@@ -3,19 +3,16 @@
 .navMenuContainer {
   position: fixed;
   top: 5.5rem;
-  right: 0;
-  left: 0;
+  left: -100%;
   bottom: 0;
   width: 100%;
   z-index: theme.$z-ultra;
   padding-bottom: 1rem;
   overflow-y: auto;
   background-color: var(--color-bg-primary);
-  transform: translateX(100%);
-  @include theme.transition(transform);
 
   &.navContainerOpen {
-    transform: translateX(0);
+    left: 0;
   }
 
   &.navigationTransparent {

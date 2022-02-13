@@ -59,8 +59,6 @@ This is an opinionated starter template in `Next.js v11` which uses all best pra
 - :white_check_mark: RadioButton
 - :white_check_mark: Switch
 - :white_check_mark: Select Field (Single and Multi Select)
-- :white_check_mark: Date picker
-- :x: Time picker
 - :white_check_mark: Text Area
 - :white_check_mark: Tooltip
 - :white_check_mark: Badge
@@ -96,10 +94,6 @@ This is an opinionated starter template in `Next.js v11` which uses all best pra
 - :x: Client-Authentication
 - :x: Dockerize
 - :x: Page listing all the UI components
-
-Todo:
-
-- Update datepicker to latest beta
 
 ## Getting Started
 
