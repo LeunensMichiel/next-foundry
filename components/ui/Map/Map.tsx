@@ -1,7 +1,11 @@
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 import { FC } from 'react';
-import Map, { Marker } from 'react-map-gl';
+import Map, {
+  FullscreenControl,
+  Marker,
+  NavigationControl,
+} from 'react-map-gl';
 
 type CustomMapProps = {
   latitude?: number;
@@ -30,6 +34,9 @@ const CustomMap: FC<CustomMapProps> = ({
       // Disable this if maps aren't reloading
       reuseMaps
     >
+      <NavigationControl />
+      <FullscreenControl />
+
       <Marker latitude={latitude} longitude={longitude} color="#2b2b2b" />
       {children}
     </Map>
