@@ -16,6 +16,7 @@ const NavItems: VFC<NavItemsProps> = ({
   isTransparent = false,
 }) => (
   <motion.div
+    initial={false}
     layout
     className={cn(styles.navMenuContainer, {
       [styles.navContainerOpen]: navDrawerOpen,
@@ -35,6 +36,7 @@ const NavItems: VFC<NavItemsProps> = ({
         </Dropdown>
         <p>Doloret</p>
       </NavItem>
+      <NavItem label="Components" link={{ href: '/components' }} />
       <NavItem label="Buttons" link={{ href: '/buttons' }} />
       <NavItem label="Form" link={{ href: '/formpage' }} />
       <NavItem label="Blog" link={{ href: '/blog' }} />

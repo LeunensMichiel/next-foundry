@@ -5,6 +5,7 @@ import {
   PositioningStrategy,
 } from '@popperjs/core';
 import cn from 'classnames';
+import { AnimatePresence, motion } from 'framer-motion';
 import {
   Children,
   cloneElement,
@@ -79,23 +80,29 @@ const Tooltip: FC<Props> = ({ text, placement, strategy, children }) => {
             tabIndex: 0,
           })
       )}
-      {isVisible && (
-        <div
-          tabIndex={-1}
-          aria-expanded={isVisible}
-          ref={popperRef}
-          style={popperStyles.popper}
-          className={cn(styles.tooltip)}
-          {...attributes.popper}
-        >
-          <div
-            ref={setArrowRef}
-            style={popperStyles.arrow}
-            className={cn(styles.arrow)}
-          />
-          <p>{text}</p>
-        </div>
-      )}
+      <AnimatePresence>
+        {isVisible && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            tabIndex={-1}
+            aria-expanded={isVisible}
+            ref={popperRef}
+            style={popperStyles.popper}
+            className={cn(styles.tooltip)}
+            {...attributes.popper}
+          >
+            <div
+              ref={setArrowRef}
+              style={popperStyles.arrow}
+              className={cn(styles.arrow)}
+            />
+            <p>{text}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
