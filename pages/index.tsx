@@ -1,7 +1,5 @@
 import { LanguagePicker, Layout } from '@components/common';
 import {
-  Accordion,
-  AccordionItem,
   Badge,
   Button,
   Dropdown,
@@ -163,22 +161,6 @@ const Home = () => {
             <p>Doloret</p>
           </Dropdown>
         </div>
-        <div className={styles.card}>
-          <h3>Badges</h3>
-          <p>Mjum</p>
-          <Badge>Leunie</Badge>
-          <Badge variant="primary">Is</Badge>
-          <Badge variant="secondary">De</Badge>
-          <Badge variant="contrasted">Beste</Badge>
-          <Badge variant="danger" iconLeft="😂">
-            Pls
-          </Badge>
-          <Badge variant="success" iconLeft="😏" iconRight="🍕">
-            Rate
-          </Badge>
-          <Badge variant="warning">This</Badge>
-          <Badge variant="info">Thank you</Badge>
-        </div>
         <Tooltip text="Cool eh?">
           <div className={styles.card}>
             <h3>Tooltip</h3>
@@ -189,34 +171,6 @@ const Home = () => {
           </div>
         </Tooltip>
         <ArticleSkeleton className={cn(styles.card)} uniqueKey="test-loader" />
-        <div className={cn(styles.card)}>
-          <h3>Accordion</h3>
-          <Accordion>
-            <AccordionItem title="Item 1" itemKey={0}>
-              <p>
-                Ad aliqua occaecat duis ut anim aute cupidatat ullamco
-                consectetur incididunt eu non id occaecat. Amet reprehenderit
-                exercitation ut nisi.
-              </p>
-            </AccordionItem>
-            <AccordionItem title="Item 2" itemKey={1}>
-              <h6>This is an accordion2</h6>
-              <p>
-                Ad aliqua occaecat duis ut anim aute cupidatat ullamco
-                consectetur incididunt eu non id occaecat. Amet reprehenderit
-                exercitation ut nisi. Pariatur enim qui aute nostrud ullamco
-                culpa veniam sint officia tempor. Nisi anim anim commodo amet
-                sit irure consequat tempor occaecat nostrud amet veniam
-                cupidatat pariatur. Exercitation ullamco culpa voluptate duis
-                enim ex Lorem consectetur cillum nulla veniam. Lorem ad aliqua
-                irure qui ea nulla exercitation dolor nulla voluptate.
-              </p>
-              <Button type="button" size="sm">
-                Button
-              </Button>
-            </AccordionItem>
-          </Accordion>
-        </div>
       </div>
     </>
   );

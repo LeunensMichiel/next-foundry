@@ -57,12 +57,10 @@ const Banner: FC<BannerProps> = ({
         role="alert"
       >
         <div className={cn(styles.bannerContainer, 'container', 'mx-auto')}>
-          {onClickDismissiveAction && (
-            <CloseButton
-              onClick={onClickDismissiveAction}
-              className={cn(styles.closeButton)}
-            />
-          )}
+          <CloseButton
+            onClick={onClickDismissiveAction}
+            className={cn(styles.closeButton)}
+          />
           {icon && <span className={cn(styles.bannerIcon)}>{icon}</span>}
           {customBody || (
             <div className={cn(styles.bannerBody, bodyClassName)}>

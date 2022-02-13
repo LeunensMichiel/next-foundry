@@ -458,6 +458,7 @@
   --font-size: 100%;
   --ratio: #{theme.type-ratio('majorSecond')};
 
+  --x-small: 0.75rem;
   --small: calc(var(--font-size) / var(--ratio));
   --big: calc(var(--font-size) * var(--ratio));
   --h5: 105%;
