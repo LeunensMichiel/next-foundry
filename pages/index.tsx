@@ -137,7 +137,7 @@ const Home = () => {
         <div className={styles.card}>
           <h3>{t('features.internationalization.title')}</h3>
           <p>{t('features.internationalization.description')}</p>
-          <LanguagePicker />
+          <LanguagePicker outlined={false} />
         </div>
         <div className={styles.card}>
           <h3>Modal</h3>

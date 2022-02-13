@@ -3,7 +3,7 @@
 .navMenuContainer {
   position: fixed;
   top: 5.5rem;
-  right: 0;
+  left: -100%;
   bottom: 0;
   width: 100%;
   z-index: theme.$z-ultra;
@@ -12,7 +12,7 @@
   background-color: var(--color-bg-primary);
 
   &.navContainerOpen {
-    right: 100%;
+    left: 0;
   }
 
   &.navigationTransparent {
