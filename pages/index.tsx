@@ -1,11 +1,5 @@
 import { LanguagePicker, Layout } from '@components/common';
-import {
-  Badge,
-  Button,
-  Dropdown,
-  ImageWithAspectRatio,
-  Tooltip,
-} from '@components/ui';
+import { Button, Tooltip } from '@components/ui';
 import { ArticleSkeleton } from '@components/ui/Skeleton';
 import { useUI } from '@lib/context/ui';
 import { useIsClient } from '@lib/hooks';
@@ -15,7 +9,6 @@ import { useTheme } from 'next-themes';
 import useTranslation from 'next-translate/useTranslation';
 import { toast } from 'react-toastify';
 
-import testImg from '../public/assets/test.jpg';
 import styles from './styles/index.module.scss';
 
 const Home = () => {
@@ -49,15 +42,7 @@ const Home = () => {
           {t('intro')} <code className={styles.code}>Michiel Leunens</code>
         </p>
       </div>
-      <ImageWithAspectRatio
-        src={testImg}
-        aspectRatio="8/1"
-        placeholder="blur"
-        objectFit="cover"
-        objectPosition="50% 60%"
-        alt="mountains"
-        priority
-      />
+
       <div className={cn(styles.grid, 'container', 'mx-auto')}>
         <a
           href="https://github.com/LeunensMichiel/nextjs-starter-template/blob/master/README.md"
@@ -143,23 +128,6 @@ const Home = () => {
           <Button type="button" onClick={() => openModal()} size="sm">
             Toggle Modal
           </Button>
-        </div>
-        <div className={styles.card}>
-          <h3>Dropdown</h3>
-          <p>Drop it</p>
-          <Dropdown label="Dropdown">
-            <p>Lorem</p>
-            <Badge>A banana 🍌</Badge>
-            <p>Ipsum</p>
-            <Dropdown label="Nested dropdown">
-              <p>Lorem</p>
-              <Dropdown label="Deeply dropdown">
-                <p>Lorem</p>
-                <p>Ipsum</p>
-              </Dropdown>
-            </Dropdown>
-            <p>Doloret</p>
-          </Dropdown>
         </div>
         <Tooltip text="Cool eh?">
           <div className={styles.card}>

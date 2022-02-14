@@ -17,6 +17,7 @@ export type InputProps = {
   label: string;
   error?: FieldError;
   colSpan?: 1 | 2 | 3 | 4;
+  useRestrictedNumberPattern?: boolean;
 } & InputHTMLAttributes<HTMLInputElement>;
 
 const getInputMode = (
@@ -56,6 +57,7 @@ const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
       iconRight,
       colSpan = 1,
       withFeedback = true,
+      useRestrictedNumberPattern = false,
       children,
       ...rest
     },
@@ -80,6 +82,8 @@ const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
           type={type}
           inputMode={getInputMode(type)}
           aria-invalid={!!error}
+          {...(useRestrictedNumberPattern &&
+            type === 'number' && { pattern: '[0-9]+([.,][0-9]+)?' })}
           {...rest}
         />
         {iconLeft && (

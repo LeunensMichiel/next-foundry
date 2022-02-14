@@ -1,5 +1,5 @@
 import { Layout } from '@components/common';
-import { Chevron } from '@components/icons';
+import { AtSign, Calendar, Chevron } from '@components/icons';
 import {
   Accordion,
   AccordionItem,
@@ -7,9 +7,13 @@ import {
   Banner,
   Button,
   Checkbox,
+  Dropdown,
+  ImageWithAspectRatio,
+  Input,
 } from '@components/ui';
 import cn from 'classnames';
 
+import testImg from '../public/assets/test.jpg';
 import styles from './styles/components.module.scss';
 
 const ComponentsPage = () => {
@@ -34,6 +38,15 @@ const ComponentsPage = () => {
               <a href="#checkbox">Checkbox</a>
             </li>
             <li>
+              <a href="#dropdown">Dropdown</a>
+            </li>
+            <li>
+              <a href="#imageWithAspectRatio">Image (aspect ratio)</a>
+            </li>
+            <li>
+              <a href="#inputs">Input fields</a>
+            </li>
+            <li>
               <a href="#map">Map</a>
             </li>
           </ul>
@@ -43,7 +56,7 @@ const ComponentsPage = () => {
             <h4>
               <a href="#accordion">Accordion</a>
             </h4>
-            <Accordion>
+            <Accordion grouped>
               <AccordionItem title="Item 1" itemKey={0}>
                 <p>
                   Ad aliqua occaecat duis ut anim aute cupidatat ullamco
@@ -282,8 +295,73 @@ const ComponentsPage = () => {
               <a href="#checkbox">Checkbox</a>
             </h4>
             <Checkbox label="This is a checkbox with a lot of text" />
-            <Checkbox checked label="Checked" />
-            <Checkbox disabled checked label="Disabled and checked" />
+            <Checkbox checked label="Checked" readOnly />
+            <Checkbox disabled checked label="Disabled and checked" readOnly />
+          </section>
+          <section id="dropdown">
+            <h4>
+              <a href="#dropdown">Dropdown</a>
+            </h4>
+            <Dropdown label="Dropdown">
+              <p>Lorem</p>
+              <Badge>A banana 🍌</Badge>
+              <p>Ipsum</p>
+              <Dropdown label="Nested dropdown">
+                <p>Lorem</p>
+                <Dropdown label="Deeply dropdown">
+                  <p>Lorem</p>
+                  <p>Ipsum</p>
+                </Dropdown>
+              </Dropdown>
+              <p>Doloret</p>
+            </Dropdown>
+          </section>
+          <section id="imageWithAspectRatio">
+            <h4>
+              <a href="#imageWithAspectRatio">Image (with aspect ratio)</a>
+            </h4>
+            <ImageWithAspectRatio
+              src={testImg}
+              aspectRatio="3/1"
+              placeholder="blur"
+              objectFit="cover"
+              objectPosition="50% 60%"
+              alt="mountains"
+              priority
+            />
+          </section>
+          <section id="inputs">
+            <h4>
+              <a href="#inputs">Input fields</a>
+            </h4>
+            <Input
+              label="Email field"
+              placeholder="john@foo.com"
+              iconLeft={<AtSign />}
+              type="email"
+            />
+            <Input
+              label="Date selector"
+              iconLeft={<Calendar />}
+              type="date"
+              iconRight={<Chevron />}
+            />
+            <Input
+              label="Number field"
+              type="number"
+              iconLeft={'#️⃣'}
+              placeholder="Step by .01"
+              useRestrictedNumberPattern
+              step="0.01"
+            />
+            <Input
+              label="Test Password"
+              type="password"
+              iconRight={<Chevron />}
+              iconLeft={'🔑'}
+              placeholder="Enter a password"
+              error={{ message: 'This is a fixed error', type: 'required' }}
+            />
           </section>
           <section id="map">
             <h4>

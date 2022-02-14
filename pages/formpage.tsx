@@ -1,9 +1,8 @@
 import { Fieldset, Form, Layout } from '@components/common';
-import { AtSign, Calendar, Chevron } from '@components/icons';
+import { AtSign } from '@components/icons';
 import {
   Button,
   Checkbox,
-  Input,
   RadioButton,
   Select,
   Switch,
@@ -42,41 +41,6 @@ const FormPage = () => {
   return (
     <div className="container mx-auto padded">
       <Form onSubmit={handleSubmit(submit)}>
-        <Input
-          label="Test Text"
-          {...register('text')}
-          placeholder="Enter a string"
-          error={errors?.text}
-          iconLeft={<AtSign />}
-          iconRight={<Chevron />}
-        />
-        <Input
-          label="Test date"
-          {...register('date')}
-          placeholder="Select a date"
-          error={errors?.date}
-          iconLeft={<Calendar />}
-          type="date"
-          iconRight={<Chevron />}
-        />
-        <Input
-          label="Test Number"
-          {...register('number', {
-            max: { value: 20, message: 'Should be smaller than 20' },
-          })}
-          type="number"
-          placeholder="Enter a number"
-          error={errors?.number}
-          pattern="[0-9]+([\.,][0-9]+)?"
-          step="0.01"
-        />
-        <Input
-          label="Test Password"
-          {...register('password')}
-          type="password"
-          placeholder="Enter a password"
-          error={errors?.password}
-        />
         <Controller
           name="select"
           control={control}
