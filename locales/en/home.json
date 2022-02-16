@@ -4,23 +4,5 @@
     "description": "This is an opinionated starter template in Next.js 10.1 which uses all best practices as of 2021. This way you can churn more (static) websites with less code."
   },
   "welcome": "Welcome to",
-  "intro": "Opinionated starter template by",
-  "features": {
-    "documentation": {
-      "title": "Documentation \u2192",
-      "description": "Find in-depth information about this project."
-    },
-    "next": {
-      "title": "Learn Next.js \u2192",
-      "description": "Learn about Next.js by getting started in the docs."
-    },
-    "theme": {
-      "title": "Toggle {{theme}} mode \u2192",
-      "description": "Themes out of the box with"
-    },
-    "internationalization": {
-      "title": "Change language \u2192",
-      "description": "i18n support out of the box."
-    }
-  }
+  "intro": "Opinionated starter template by"
 }

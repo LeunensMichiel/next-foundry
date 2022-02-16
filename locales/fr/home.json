@@ -4,23 +4,5 @@
     "description": "Il s'agit d'un modèle de base en Next.js 10 qui utilise toutes les meilleures pratiques à partir de 2021. De cette façon, vous pouvez créer plus de sites web (statiques) avec moins de code."
   },
   "welcome": "Bienvenue à",
-  "intro": "Modèle d'entrée en matière opinionnée par",
-  "features": {
-    "documentation": {
-      "title": "Documentation \u2192",
-      "description": "Trouvez des informations détaillées sur ce projet."
-    },
-    "next": {
-      "title": "Apprendre Next.js \u2192",
-      "description": "Découvrez Next.js en commençant par la documentation."
-    },
-    "theme": {
-      "title": "Basculer le mode {{theme}} \u2192",
-      "description": "Des thèmes prêts à l'emploi avec"
-    },
-    "internationalization": {
-      "title": "Changer de langue \u2192",
-      "description": "Prise en charge i18n dès le départ."
-    }
-  }
+  "intro": "Modèle d'entrée en matière opinionnée par"
 }
