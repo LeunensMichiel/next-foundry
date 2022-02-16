@@ -50,6 +50,7 @@ const TextArea: FC<TextAreaProps> = forwardRef<
           className={cn(styles.textAreaField, {
             [styles[`has-icon-left`]]: !!iconLeft,
             [styles[`has-icon-right`]]: !!iconRight,
+            [styles[`has-error`]]: !!error?.message,
           })}
           onChange={onChange}
           onBlur={onBlur}

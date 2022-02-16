@@ -29,7 +29,6 @@ const NavItems: VFC<NavItemsProps> = ({
         <NavItem label="🛑 500" link={{ href: '/500' }} />
         <NavItem label="💬 Blog" link={{ href: '/blog' }} />
       </NavItem>
-      <NavItem label="Form" link={{ href: '/formpage' }} />
     </div>
   </motion.div>
 );

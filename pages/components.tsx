@@ -1,4 +1,4 @@
-import { Layout } from '@components/common';
+import { Fieldset, LanguagePicker, Layout } from '@components/common';
 import { AtSign, Calendar, Chevron } from '@components/icons';
 import {
   Accordion,
@@ -10,18 +10,32 @@ import {
   Dropdown,
   ImageWithAspectRatio,
   Input,
+  RadioButton,
+  Select,
+  Spinner,
+  Switch,
+  TextArea,
+  Tooltip,
 } from '@components/ui';
+import { useUI } from '@lib/context/ui';
 import cn from 'classnames';
+import { toast } from 'react-toastify';
 
+import { ArticleSkeleton } from '../components/ui/Skeleton';
 import testImg from '../public/assets/test.jpg';
 import styles from './styles/components.module.scss';
 
 const ComponentsPage = () => {
+  const { openModal } = useUI();
+
   return (
     <div className="container mx-auto padded">
       <div className={cn(styles.root)}>
         <nav className={cn(styles.sidenav)}>
           <ul>
+            <li>
+              <a href="#languagepicker">Language picker</a>
+            </li>
             <li>
               <a href="#accordion">Accordion</a>
             </li>
@@ -49,9 +63,42 @@ const ComponentsPage = () => {
             <li>
               <a href="#map">Map</a>
             </li>
+            <li>
+              <a href="#modal">Modal</a>
+            </li>
+            <li>
+              <a href="#radiobutton">Radiobutton</a>
+            </li>
+            <li>
+              <a href="#select">Select</a>
+            </li>
+            <li>
+              <a href="#skeleton">Skeleton</a>
+            </li>
+            <li>
+              <a href="#spinner">Spinner</a>
+            </li>
+            <li>
+              <a href="#switch">Switch</a>
+            </li>
+            <li>
+              <a href="#textarea">Textarea</a>
+            </li>
+            <li>
+              <a href="#tooltip">Tooltip</a>
+            </li>
+            <li>
+              <a href="#toast">Toast</a>
+            </li>
           </ul>
         </nav>
         <article className={cn(styles.components)}>
+          <section id="languagepicker">
+            <h4>
+              <a href="#languagepicker">Language picker</a>
+            </h4>
+            <LanguagePicker outlined={false} />
+          </section>
           <section id="accordion">
             <h4>
               <a href="#accordion">Accordion</a>
@@ -368,6 +415,155 @@ const ComponentsPage = () => {
               <a href="#map">Map (powered by MapBox)</a>
             </h4>
             {/* <Map /> */}
+          </section>
+          <section id="modal">
+            <h4>
+              <a href="#modal">Modal</a>
+            </h4>
+            <Button type="button" onClick={() => openModal()} size="sm">
+              Toggle Modal
+            </Button>
+          </section>
+          <section id="radiobutton">
+            <h4>
+              <a href="#radiobutton">Radiobutton</a>
+            </h4>
+            <Fieldset label="Some radios in a fieldset">
+              <RadioButton label="Value 1" value="1" name="radio" />
+              <RadioButton label="Value 2" value="2" name="radio" />
+              <RadioButton label="Value 3" value="3" name="radio" />
+              <RadioButton label="Value 4" value="4" name="radio" />
+            </Fieldset>
+          </section>
+          <section id="select">
+            <h4>
+              <a href="#select">Select</a>
+            </h4>
+            <Select
+              instanceId="select"
+              label="Select"
+              placeholder="Set to multi for multiselect"
+              options={[
+                {
+                  label: 'Group 1',
+                  options: [
+                    { value: 'id2', label: 'This is a banana: \u{1F34C}' },
+                    { value: 'id3', label: 'Hold up \u{1F171}' },
+                  ],
+                },
+                {
+                  label: 'Group 2',
+                  options: [
+                    { value: 'id4', label: 'This is a banana: \u{1F34C}' },
+                    { value: 'id5', label: 'Hold up \u{1F171}' },
+                  ],
+                },
+              ]}
+            />
+          </section>
+          <section id="skeleton">
+            <h4>
+              <a href="#skeleton">Skeleton</a>
+            </h4>
+            <ArticleSkeleton uniqueKey="test-loader" />
+          </section>
+          <section id="spinner">
+            <h4>
+              <a href="#spinner">Spinner</a>
+            </h4>
+            <Spinner size="xl" />
+            <Spinner size="lg" />
+            <Spinner size="md" />
+            <Spinner size="sm" />
+            <Spinner size="xs" />
+          </section>
+          <section id="switch">
+            <h4>
+              <a href="#switch">Switch</a>
+            </h4>
+            <Fieldset label="Some switches in a fieldset">
+              <Switch label="Test" labelOn="💡" labelOff="🌙" />
+              <Switch label="disabled" disabled />
+            </Fieldset>
+            <Fieldset
+              label="Fieldset with error"
+              error={{ type: 'required', message: 'This is an error' }}
+            >
+              <Switch label="Default checked" checked />
+            </Fieldset>
+          </section>
+          <section id="textarea">
+            <h4>
+              <a href="#textarea">Textarea</a>
+            </h4>
+            <TextArea
+              label="Message"
+              placeholder="Enter a message"
+              error={{ type: 'required', message: 'This is an error' }}
+            />
+          </section>
+          <section id="tooltip">
+            <h4>
+              <a href="#tooltip">Tooltip</a>
+            </h4>
+            <Tooltip text="Cool eh?">
+              <p>Hover over this text!</p>
+            </Tooltip>
+          </section>
+          <section id="toast">
+            <h4>
+              <a href="#toast">Toast</a>
+            </h4>
+            <div className={cn(styles.wrappedItems)}>
+              <Button
+                type="button"
+                onClick={() => toast("Don't forget to ⭐ on Github!")}
+                size="xs"
+                variant="primary"
+              >
+                🍞 Default
+              </Button>
+              <Button
+                type="button"
+                onClick={() => toast.dark("Don't forget to ⭐ on Github!")}
+                size="xs"
+                variant="secondary"
+              >
+                🍞 Dark
+              </Button>
+              <Button
+                type="button"
+                onClick={() => toast.error("Don't forget to ⭐ on Github!")}
+                size="xs"
+                variant="danger"
+              >
+                🍞 Error
+              </Button>
+              <Button
+                type="button"
+                onClick={() => toast.warn("Don't forget to ⭐ on Github!")}
+                size="xs"
+                variant="warning"
+              >
+                🍞 Warn
+              </Button>
+              <Button
+                type="button"
+                onClick={() => toast.success("Don't forget to ⭐ on Github!")}
+                size="xs"
+                variant="success"
+              >
+                🍞 Success
+              </Button>
+              <Button
+                type="button"
+                onClick={() => toast.info("Don't forget to ⭐ on Github!")}
+                size="xs"
+                variant="info"
+              >
+                🍞 Info
+              </Button>
+            </div>
           </section>
         </article>
       </div>
