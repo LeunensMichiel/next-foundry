@@ -6,8 +6,6 @@ import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 
-import styles from './styles/blog.module.scss';
-
 type BlogProps = {
   posts: IFrontmatter[];
 };
@@ -15,7 +13,7 @@ type BlogProps = {
 const Blog = ({ posts }: BlogProps) => (
   <>
     <NextSeo title="Blog" />
-    <div className={cn(styles.article, 'container mx-auto padded')}>
+    <div className={cn('container mx-auto padded')}>
       <ul>
         {posts.map((post) => (
           <li key={post.slug}>

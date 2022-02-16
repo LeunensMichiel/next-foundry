@@ -10,6 +10,7 @@ import {
   Dropdown,
   ImageWithAspectRatio,
   Input,
+  MapboxMap,
   RadioButton,
   Select,
   Spinner,
@@ -414,7 +415,7 @@ const ComponentsPage = () => {
             <h4>
               <a href="#map">Map (powered by MapBox)</a>
             </h4>
-            {/* <Map /> */}
+            <MapboxMap />
           </section>
           <section id="modal">
             <h4>
