@@ -8,6 +8,7 @@ export { default as Dropdown } from './Dropdown';
 export { default as ImageWithAspectRatio } from './ImageWithAspectRatio';
 export { default as Input } from './Input';
 export { default as Logo } from './Logo';
+export { default as MapboxMap } from './Map';
 export { default as Modal } from './Modal';
 export { default as RadioButton } from './RadioButton';
 export { default as Select } from './Select';

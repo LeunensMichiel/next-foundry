@@ -21,6 +21,7 @@
   color: var(--color-accordion-header-text);
   border: 0.125rem solid var(--color-accordion-header-border);
   background: var(--color-accordion-header-bg);
+  cursor: pointer;
   @include theme.transition(background, color, border-color);
 
   &:hover {

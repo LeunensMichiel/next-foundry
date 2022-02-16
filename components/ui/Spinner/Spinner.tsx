@@ -18,7 +18,7 @@ const Spinner: VFC<SpinnerProps> = ({ size }) => (
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
-    className={cn(styles.spinner, { [styles[`spinner-${size}`]]: !!size })}
+    className={cn(styles.spinner, { [styles[`spinner--${size}`]]: !!size })}
   >
     <line x1="12" y1="2" x2="12" y2="6" />
     <line x1="12" y1="18" x2="12" y2="22" />

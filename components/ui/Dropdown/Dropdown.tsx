@@ -29,6 +29,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   containerClassName,
   containerOpenClassName,
   listClassName,
+  stretched = false,
   ...btnProps
 }) => {
   const [open, setOpen] = useState(startOpen);
@@ -48,6 +49,7 @@ const Dropdown: React.FC<DropdownProps> = ({
         {
           [`${containerOpenClassName}`]: open && !!containerOpenClassName,
           [styles.dropdownMenuOpen]: open,
+          [styles.stretched]: stretched,
         },
         containerClassName
       )}
@@ -62,6 +64,7 @@ const Dropdown: React.FC<DropdownProps> = ({
         variant={variant}
         iconRight={<Chevron />}
         aria-label={label}
+        stretched={stretched}
         onClick={handleClick}
         onKeyDown={handleClick}
       >

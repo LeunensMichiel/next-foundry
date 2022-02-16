@@ -4,26 +4,26 @@
 .spinner {
   animation: rotate 1.5s theme.$transition-duration infinite;
 
-  &.xs {
+  &--xs {
     height: auto;
     width: 1rem;
   }
-  &.sm {
+  &--sm {
     height: auto;
     width: 1.25rem;
   }
 
-  &.md {
+  &--md {
     height: auto;
     width: 1.5rem;
   }
 
-  &.lg {
+  &--lg {
     height: auto;
     width: 1.75rem;
   }
 
-  &.xl {
+  &--xl {
     height: auto;
     width: 2.25rem;
   }

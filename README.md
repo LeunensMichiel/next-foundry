@@ -1,6 +1,8 @@
 # Michiel Leunens -- Next Foundry, a Next.js template
 
-This is an opinionated starter template in `Next.js v11` which uses all best practices as of 2021. This way you can churn more (static) websites with less code.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d6d4a2c2-9abe-4c33-9117-b08c0b87d5ce/deploy-status)](https://app.netlify.com/sites/nextfoundry/deploys)
+
+This is an opinionated starter template in `Next.js v12`. This way you can churn more (static) websites with less code.
 
 > :bulb: This project contains a lot of custom components. Everything is loosely coupled, so you can easily delete what you don't need. :warning: **IE11 is not supported**.
 
@@ -23,7 +25,7 @@ This is an opinionated starter template in `Next.js v11` which uses all best pra
 - :white_check_mark: Fully featured design-system (colors, typography,...)
 - :white_check_mark: Theming with `next-theming` (complete with dark theme)
 - :white_check_mark: Easy class toggling
-- :x: Animations with `Framer Motion`
+- :white_check_mark: Animations with `Framer Motion`
 
 ### Components & Functionalities
 
@@ -65,6 +67,7 @@ This is an opinionated starter template in `Next.js v11` which uses all best pra
 - :white_check_mark: Loading Placeholder
 - :white_check_mark: Accordion
 - :white_check_mark: Language Switcher
+- :white_check_mark: Map powered by mapbox
 
 ### Other
 
@@ -78,22 +81,16 @@ This is an opinionated starter template in `Next.js v11` which uses all best pra
 - :white_check_mark: `sitemap.xml`
 - :white_check_mark: `robots.txt`
 - :white_check_mark: Smooth scrolling with polyfill
-- :hammer: Lighthouse optimizations
-- :hammer: A11y compliant
-- :hammer: Inter-browser compatibility
 
 ### Future
 
 - :x: Carousel
 - :x: Tabs
 - :x: Page-transitions
-- :x: Mapbox
 - :x: Pagination Component
 - :x: Infinte Scrolling List
 - :x: Paralax
 - :x: Client-Authentication
-- :x: Dockerize
-- :x: Page listing all the UI components
 
 ## Getting Started
 

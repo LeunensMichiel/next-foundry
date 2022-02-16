@@ -6,6 +6,10 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
   flex-direction: column;
   position: relative;
 
+  &.stretched {
+    width: 100%;
+  }
+
   &.dropdownMenuOpen {
     > .dropdownListContainer {
       display: flex;

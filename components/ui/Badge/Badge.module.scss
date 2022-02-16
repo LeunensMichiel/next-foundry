@@ -4,10 +4,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 5rem;
-  padding: 0.375em 0.625em;
+  min-width: 4rem;
+  padding: 0.125em 0.25em;
   text-align: center;
-  font-size: var(--small);
+  font-size: var(--x-small);
   font-weight: 500;
   border-radius: var(--border-radius-lg);
   border: 0.125rem solid var(--color-badge-border);
@@ -32,10 +32,10 @@ $variants: primary, secondary, success, danger, warning, info, contrasted;
 }
 
 .badge-icon-left {
-  margin-right: 0.625em;
+  margin-right: 0.5em;
   height: 1em;
 }
 .badge-icon-right {
-  margin-left: 0.625em;
+  margin-left: 0.5em;
   height: 1em;
 }
