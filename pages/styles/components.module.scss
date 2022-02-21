@@ -1,8 +1,13 @@
+@use '@styles/theme';
+
 .root {
   display: grid;
   align-items: start;
-  grid-template-columns: minmax(15rem, auto) 1fr;
   gap: 2.5rem;
+  width: 100%;
+  @include theme.breakpoint-up(lg) {
+    grid-template-columns: minmax(15rem, auto) 1fr;
+  }
 }
 
 .sidenav {
