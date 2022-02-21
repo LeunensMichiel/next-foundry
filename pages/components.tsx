@@ -18,7 +18,7 @@ import {
   TextArea,
   Tooltip,
 } from '@components/ui';
-import { useUI } from '@lib/context/ui';
+import { useUI } from '@lib/hooks';
 import cn from 'classnames';
 import { toast } from 'react-toastify';
 

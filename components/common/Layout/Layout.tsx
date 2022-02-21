@@ -1,7 +1,7 @@
 import { CookieBanner, Footer, Navbar } from '@components/common';
 import { LanguageModalView } from '@components/common/LanguagePicker';
 import { Modal } from '@components/ui';
-import { useUI } from '@lib/context/ui';
+import { useUI } from '@lib/hooks';
 import cn from 'classnames';
 import { FC, ReactNode } from 'react';
 
