@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d6d4a2c2-9abe-4c33-9117-b08c0b87d5ce/deploy-status)](https://app.netlify.com/sites/nextfoundry/deploys)
 
-This is an opinionated starter template in `Next.js v12`. This way you can churn more (static) websites with less code.
+This is an opinionated starter template in `Next.js v12.1`. This way you can churn more (static) websites with less code.
 
 > :bulb: This project contains a lot of custom components. Everything is loosely coupled, so you can easily delete what you don't need. :warning: **IE11 is not supported**.
 
