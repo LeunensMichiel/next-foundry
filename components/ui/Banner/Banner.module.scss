@@ -4,7 +4,7 @@
   right: 0;
   left: 0;
   z-index: theme.$z-mid;
-  color: var(--color-text-white);
+  color: var(--color-icon-bright);
   background-color: var(--color-bg-brand);
   box-shadow: theme.$box-shadow-md;
 
@@ -34,6 +34,7 @@
   }
   &.banner-parent {
     position: static;
+    border-radius: var(--border-radius);
   }
 
   @include theme.breakpoint-up(sm) {

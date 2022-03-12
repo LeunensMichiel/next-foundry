@@ -1,5 +1,3 @@
-@use '@styles/theme';
-
 [data-theme='dark'] {
   --color-text-primary: var(--color-white);
   --color-text-secondary: var(--color-gray-100);
@@ -27,7 +25,7 @@
   --color-icon-success: var(--color-purple-400);
   --color-icon-warning: var(--color-orange-400);
   --color-icon-info: var(--color-amber-400);
-  --color-icon-inverse: var(--color-black);
+  --color-icon-inversed: var(--color-black);
   // Backgrounds
   --color-bg-primary: var(--color-gray-900);
   --color-bg-secondary: var(--color-gray-800);

@@ -1,106 +1,23 @@
 @use '@styles/theme';
 
 .buttonBase {
-  margin: 0;
-  line-height: 1;
-  padding: 0.25rem 0.5rem;
-  font-weight: 500;
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  box-shadow: theme.$box-shadow-md;
-  border: 0.125rem solid var(--color-btn-border);
-  border-radius: var(--border-radius);
   background: var(--color-btn-bg);
-  cursor: pointer;
+  border-radius: var(--border-radius);
+  border: 0.125rem solid var(--color-btn-border);
   color: var(--color-btn-text);
+  cursor: pointer;
+  display: inline-flex;
+  font-weight: 500;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  padding: 0.75em 1.25em;
   @include theme.transition(background, border, color);
 
-  &:hover {
-    border: 0.125rem solid var(--color-btn-hover-border);
-    background: var(--color-btn-hover-bg);
-    color: var(--color-btn-hover-text);
-  }
-  &:focus {
-    border: 0.125rem solid var(--color-btn-focus-border);
-    background: var(--color-btn-focus-bg);
-    color: var(--color-btn-focus-text);
-    outline: var(--color-btn-focus-border);
-  }
-  &:active {
-    border: 0.125rem solid var(--color-btn-active-border);
-    background: var(--color-btn-active-bg);
-    color: var(--color-btn-active-text);
-  }
-  &.loading {
-    border: 0.125rem solid var(--color-btn-active-border);
-    background: var(--color-btn-active-bg);
-    color: var(--color-btn-active-text);
-    pointer-events: none;
-    user-select: none;
-  }
-  &.outlined {
-    background: transparent;
-    color: var(--color-btn-border);
-    border: 0.125rem solid var(--color-btn-border);
-    box-shadow: none;
-
-    &:hover {
-      border: 0.125rem solid var(--color-btn-hover-border);
-      background: none;
-      color: var(--color-btn-hover-border);
-      box-shadow: none;
-    }
-    &:focus {
-      border: 0.125rem solid var(--color-btn-focus-border);
-      background: none;
-      color: var(--color-btn-focus-border);
-      box-shadow: none;
-    }
-    &:active {
-      border: 0.125rem solid var(--color-btn-active-border);
-      background: none;
-      color: var(--color-btn-active-border);
-      box-shadow: none;
-    }
-    &.disabled {
-      border: 0.125rem solid var(--color-btn-disabled-border);
-      background: transparent;
-      color: var(--color-btn-disabled-text);
-
-      &:hover,
-      &:focus,
-      &:active {
-        border: 0.125rem solid var(--color-btn-disabled-border);
-        background: transparent;
-        color: var(--color-btn-disabled-text);
-      }
-    }
-  }
-  &.button-minimal {
-    box-shadow: none;
-  }
-  &.disabled {
-    border: 0.125rem solid var(--color-btn-disabled-border);
-    background: var(--color-btn-disabled-bg);
-    color: var(--color-btn-disabled-text);
-    box-shadow: none;
-    cursor: not-allowed;
-
-    &:hover,
-    &:focus,
-    &:active {
-      border: 0.125rem solid var(--color-btn-disabled-border);
-      background: var(--color-btn-disabled-bg);
-      color: var(--color-btn-disabled-text);
-    }
-  }
-
-  &.stretched {
-    width: 100%;
-  }
-  &.uppercased {
-    text-transform: uppercase;
+  svg {
+    height: auto;
+    width: 1.0875em;
   }
 
   span {
@@ -111,8 +28,8 @@
 }
 
 // Different variants
-$variants: primary, secondary, success, danger, warning, info, 'transparent',
-  minimal;
+$variants: default, primary, secondary, success, danger, warning, info,
+  'transparent', minimal;
 @each $variant in $variants {
   .button-#{$variant} {
     border: 0.125rem solid var(--color-btn-#{$variant}-border);
@@ -120,89 +37,53 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent',
     color: var(--color-btn-#{$variant}-text);
     @include theme.transition(background, border, color);
 
-    &:hover {
+    &:hover,
+    &.outlined:hover {
       border: 0.125rem solid var(--color-btn-#{$variant}-hover-border);
       background: var(--color-btn-#{$variant}-hover-bg);
       color: var(--color-btn-#{$variant}-hover-text);
     }
-    &:focus {
+    &:focus,
+    &.outlined:focus {
       border: 0.125rem solid var(--color-btn-#{$variant}-focus-border);
       background: var(--color-btn-#{$variant}-focus-bg);
       color: var(--color-btn-#{$variant}-focus-text);
       outline: var(--color-btn-#{$variant}-focus-border);
     }
-    &:active {
+    &:active,
+    &.outlined:active {
       border: 0.125rem solid var(--color-btn-#{$variant}-active-border);
       background: var(--color-btn-#{$variant}-active-bg);
       color: var(--color-btn-#{$variant}-active-text);
     }
+
     &.loading {
       border: 0.125rem solid var(--color-btn-#{$variant}-active-border);
       background: var(--color-btn-#{$variant}-active-bg);
       color: var(--color-btn-#{$variant}-active-text);
+      pointer-events: none;
+      user-select: none;
     }
+
     &.outlined {
+      border: 0.125rem solid var(--color-btn-#{$variant}-outlined-border);
       background: transparent;
-      @if $variant != 'transparent' {
-        color: var(--color-btn-#{$variant}-border);
-      } @else {
-        color: var(--color-btn-transparent-text);
-      }
-      border: 0.125rem solid var(--color-btn-#{$variant}-border);
-
-      &:hover {
-        border: 0.125rem solid var(--color-btn-#{$variant}-hover-border);
-        background: none;
-        @if $variant != 'transparent' {
-          color: var(--color-btn-#{$variant}-hover-border);
-        } @else {
-          color: var(--color-btn-transparent-text);
-        }
-      }
-      &:focus {
-        border: 0.125rem solid var(--color-btn-#{$variant}-focus-border);
-        background: none;
-        @if $variant != 'transparent' {
-          color: var(--color-btn-#{$variant}-focus-border);
-        } @else {
-          color: var(--color-btn-transparent-text);
-        }
-      }
-      &:active {
-        border: 0.125rem solid var(--color-btn-#{$variant}-active-border);
-        background: none;
-        @if $variant != 'transparent' {
-          color: var(--color-btn-#{$variant}-active-border);
-        } @else {
-          color: var(--color-btn-transparent-text);
-        }
-      }
-      &.disabled {
-        border: 0.125rem solid var(--color-btn-#{$variant}-disabled-border);
-        background: transparent;
-        color: var(--color-btn-#{$variant}-disabled-text);
-
-        &:hover,
-        &:focus,
-        &:active {
-          border: 0.125rem solid var(--color-btn-#{$variant}-disabled-border);
-          background: transparent;
-          color: var(--color-btn-#{$variant}-disabled-text);
-        }
-      }
+      color: var(--color-btn-#{$variant}-outlined-text);
+      @include theme.transition(background, border, color);
     }
+
     &.disabled {
+      cursor: default;
       border: 0.125rem solid var(--color-btn-#{$variant}-disabled-border);
       background: var(--color-btn-#{$variant}-disabled-bg);
       color: var(--color-btn-#{$variant}-disabled-text);
-      box-shadow: none;
 
-      &:hover,
-      &:focus,
-      &:active {
-        border: 0.125rem solid var(--color-btn-#{$variant}-disabled-border);
-        background: var(--color-btn-#{$variant}-disabled-bg);
-        color: var(--color-btn-#{$variant}-disabled-text);
+      &.outlined {
+        border: 0.125rem
+          solid
+          var(--color-btn-#{$variant}-outlined-disabled-border);
+        background: transparent;
+        color: var(--color-btn-#{$variant}-outlined-disabled-text);
       }
     }
   }
@@ -210,86 +91,39 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent',
 
 // Different Sizes
 .button-xs {
-  padding: 0.25rem 0.75rem;
-  min-height: 1.5rem;
-  font-size: var(--button-xs);
-  &.button-circular,
-  &.button-squared {
-    padding: 0.5rem;
-  }
-  svg {
-    height: auto;
-    width: 1rem;
-  }
+  font-size: 0.75rem;
 }
 .button-sm {
-  padding: 0.5rem 1rem;
-  min-height: 2.5rem;
-  font-size: var(--button-sm);
-
-  &.button-circular,
-  &.button-squared {
-    padding: 0.75rem;
-  }
-  svg {
-    height: auto;
-    width: 1.25rem;
-  }
+  font-size: 0.875rem;
 }
 .button-md {
-  padding: 0.75rem 1.25rem;
-  min-height: 3rem;
-  font-size: var(--button-md);
-
-  &.button-circular,
-  &.button-squared {
-    padding: 1rem;
-  }
-  svg {
-    height: auto;
-    width: 1.5rem;
-  }
+  font-size: 1rem;
 }
 .button-lg {
-  padding: 1rem 1.5rem;
-  min-height: 3.5rem;
-  font-size: var(--button-lg);
-
-  &.button-circular,
-  &.button-squared {
-    padding: 1.25rem;
-  }
-  svg {
-    height: auto;
-    width: 1.75rem;
-  }
+  font-size: 1.125rem;
 }
 .button-xl {
-  padding: 1.25rem 1.75rem;
-  min-height: 4rem;
-  font-size: var(--button-xl);
-
-  &.button-circular,
-  &.button-squared {
-    padding: 1.5rem;
-  }
-  svg {
-    height: auto;
-    width: 2.25rem;
-  }
+  font-size: 1.25rem;
 }
-
 .button-circular {
   border-radius: 50%;
 }
-
+.button-circular,
+.button-squared {
+  padding: 1em;
+}
 .button-rounded {
   border-radius: var(--border-radius-lg);
 }
-
 .button-icon-left {
-  margin-right: 0.75rem;
+  margin-right: 1.25em;
 }
 .button-icon-right {
-  margin-left: 0.75rem;
+  margin-left: 1.25em;
+}
+.stretched {
+  width: 100%;
+}
+.uppercased {
+  text-transform: uppercase;
 }

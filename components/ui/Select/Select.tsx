@@ -64,7 +64,7 @@ const customStyles: StylesConfig = {
     ...base,
     background: 'var(--color-input-select-menu-bg)',
     overflow: 'hidden',
-    zIndex: 3,
+    zIndex: 10,
   }),
   menuList: (base) => ({
     ...base,

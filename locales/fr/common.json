@@ -10,6 +10,9 @@
       "imgAlt": "Mon site web"
     }
   },
+  "links": {
+    "privacy": "Confidentialité"
+  },
   "footer": {
     "footnote": "Construit avec ☕ par Michiel Leunens"
   },

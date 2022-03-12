@@ -94,7 +94,7 @@ const ComponentsPage = () => {
           </ul>
         </nav>
         <article className={cn(styles.components)}>
-          <section id="languagepicker">
+          <section id="languagepicker" className={styles['mw-capped']}>
             <h4>
               <a href="#languagepicker">Language picker</a>
             </h4>
@@ -169,13 +169,13 @@ const ComponentsPage = () => {
               <a href="#button">Button</a>
             </h4>
             <div className={styles.wrappedItems}>
+              <Button type="button">Neutral</Button>
               <Button type="button" variant="primary">
                 Primary
               </Button>
               <Button type="button" variant="secondary">
                 Secondary
               </Button>
-              <Button type="button">Neutral</Button>
               <Button type="button" variant="success">
                 Success
               </Button>
@@ -190,14 +190,14 @@ const ComponentsPage = () => {
               </Button>
             </div>
             <div className={styles.wrappedItems}>
+              <Button type="button" outlined>
+                Neutral
+              </Button>
               <Button type="button" variant="primary" outlined>
                 Primary
               </Button>
               <Button type="button" variant="secondary" outlined>
                 Secondary
-              </Button>
-              <Button type="button" outlined>
-                Neutral
               </Button>
               <Button type="button" variant="success" outlined>
                 Success
@@ -213,14 +213,14 @@ const ComponentsPage = () => {
               </Button>
             </div>
             <div className={styles.wrappedItems}>
+              <Button type="button" disabled>
+                Neutral
+              </Button>
               <Button type="button" variant="primary" disabled>
                 Primary
               </Button>
               <Button type="button" variant="secondary" disabled>
                 Secondary
-              </Button>
-              <Button type="button" disabled>
-                Neutral
               </Button>
               <Button type="button" variant="success" disabled>
                 Success
@@ -236,14 +236,14 @@ const ComponentsPage = () => {
               </Button>
             </div>
             <div className={styles.wrappedItems}>
+              <Button type="button" outlined disabled>
+                Neutral
+              </Button>
               <Button type="button" variant="primary" outlined disabled>
                 Primary
               </Button>
               <Button type="button" variant="secondary" outlined disabled>
                 Secondary
-              </Button>
-              <Button type="button" outlined disabled>
-                Neutral
               </Button>
               <Button type="button" variant="success" outlined disabled>
                 Success
@@ -264,6 +264,9 @@ const ComponentsPage = () => {
               </Button>
               <Button type="button" variant="transparent" outlined>
                 Transparent
+              </Button>
+              <Button type="button" variant="minimal">
+                Minimal
               </Button>
             </div>
             <div className={styles.wrappedItems}>
@@ -329,6 +332,11 @@ const ComponentsPage = () => {
               <Button type="button" iconLeft="🔥" circular size="md" />
               <Button type="button" iconLeft="🔥" circular size="lg" />
               <Button type="button" iconLeft="🔥" circular size="xl" />
+              <Button type="button" iconLeft="🔥" squared size="xs" />
+              <Button type="button" iconLeft="🔥" squared size="sm" />
+              <Button type="button" iconLeft="🔥" squared size="md" />
+              <Button type="button" iconLeft="🔥" squared size="lg" />
+              <Button type="button" iconLeft="🔥" squared size="xl" />
             </div>
             <div className={styles.wrappedItems}>
               <Button type="button" iconLeft={<Chevron />} circular size="xs" />
@@ -336,6 +344,11 @@ const ComponentsPage = () => {
               <Button type="button" iconLeft={<Chevron />} circular size="md" />
               <Button type="button" iconLeft={<Chevron />} circular size="lg" />
               <Button type="button" iconLeft={<Chevron />} circular size="xl" />
+              <Button type="button" iconLeft={<Chevron />} squared size="xs" />
+              <Button type="button" iconLeft={<Chevron />} squared size="sm" />
+              <Button type="button" iconLeft={<Chevron />} squared size="md" />
+              <Button type="button" iconLeft={<Chevron />} squared size="lg" />
+              <Button type="button" iconLeft={<Chevron />} squared size="xl" />
             </div>
           </section>
           <section id="checkbox">
@@ -346,7 +359,7 @@ const ComponentsPage = () => {
             <Checkbox checked label="Checked" readOnly />
             <Checkbox disabled checked label="Disabled and checked" readOnly />
           </section>
-          <section id="dropdown">
+          <section id="dropdown" className={styles['mw-capped']}>
             <h4>
               <a href="#dropdown">Dropdown</a>
             </h4>
@@ -378,7 +391,7 @@ const ComponentsPage = () => {
               priority
             />
           </section>
-          <section id="inputs">
+          <section id="inputs" className={styles['mw-capped']}>
             <h4>
               <a href="#inputs">Input fields</a>
             </h4>
@@ -425,7 +438,7 @@ const ComponentsPage = () => {
               Toggle Modal
             </Button>
           </section>
-          <section id="radiobutton">
+          <section id="radiobutton" className={styles['mw-capped']}>
             <h4>
               <a href="#radiobutton">Radiobutton</a>
             </h4>
@@ -436,7 +449,7 @@ const ComponentsPage = () => {
               <RadioButton label="Value 4" value="4" name="radio" />
             </Fieldset>
           </section>
-          <section id="select">
+          <section id="select" className={styles['mw-capped']}>
             <h4>
               <a href="#select">Select</a>
             </h4>
@@ -478,7 +491,7 @@ const ComponentsPage = () => {
             <Spinner size="sm" />
             <Spinner size="xs" />
           </section>
-          <section id="switch">
+          <section id="switch" className={styles['mw-capped']}>
             <h4>
               <a href="#switch">Switch</a>
             </h4>
@@ -490,10 +503,10 @@ const ComponentsPage = () => {
               label="Fieldset with error"
               error={{ type: 'required', message: 'This is an error' }}
             >
-              <Switch label="Default checked" checked />
+              <Switch label="Default checked" checked readOnly />
             </Fieldset>
           </section>
-          <section id="textarea">
+          <section id="textarea" className={styles['mw-capped']}>
             <h4>
               <a href="#textarea">Textarea</a>
             </h4>
@@ -503,7 +516,7 @@ const ComponentsPage = () => {
               error={{ type: 'required', message: 'This is an error' }}
             />
           </section>
-          <section id="tooltip">
+          <section id="tooltip" className={styles['mw-capped']}>
             <h4>
               <a href="#tooltip">Tooltip</a>
             </h4>

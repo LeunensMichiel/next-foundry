@@ -15,6 +15,7 @@ interface ButtonCustomProps<C extends React.ElementType> {
   as?: C;
   children?: ReactNode;
   variant?:
+    | 'default'
     | 'primary'
     | 'secondary'
     | 'success'
@@ -54,12 +55,11 @@ const Button = <C extends React.ElementType = 'button'>({
   size = 'md',
   stretched = false,
   uppercased = false,
-  variant,
+  variant = 'default',
   ...rest
 }: ButtonProps<C>) => {
   const Component = as || 'button';
-  const rootClassName = cn(styles.buttonBase, {
-    [styles[`button-${variant}`]]: !!variant,
+  const rootClassName = cn(styles.buttonBase, styles[`button-${variant}`], {
     [styles.outlined]: outlined,
     [styles.loading]: loading,
     [styles.disabled]: disabled,

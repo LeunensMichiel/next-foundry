@@ -8,8 +8,8 @@ const Footer: VFC = () => {
   const { t } = useTranslation();
   return (
     <footer className={styles.footer}>
-      <span>{t('common:footer.footnote')}</span>
-      <Link href="/privacy">Privacy</Link>
+      <span>{t('common:footer.footnote')} -</span>
+      <Link href="/privacy">{t('common:links.privacy')}</Link>
     </footer>
   );
 };
