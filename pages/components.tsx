@@ -433,9 +433,11 @@ const ComponentsPage = () => {
             <h4>
               <a href="#modal">Modal</a>
             </h4>
-            <Button type="button" onClick={() => openModal()} size="sm">
-              Toggle Modal
-            </Button>
+            <div className={styles.wrappedItems}>
+              <Button type="button" onClick={() => openModal()} size="sm">
+                Toggle Modal
+              </Button>
+            </div>
           </section>
           <section id="radiobutton" className={styles['mw-capped']}>
             <h4>

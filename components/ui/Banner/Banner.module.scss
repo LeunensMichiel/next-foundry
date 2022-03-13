@@ -86,7 +86,23 @@
   justify-self: end;
   height: auto;
   margin-top: -0.5rem !important;
-  margin-right: -0.75rem !important;
+  margin-right: -1.5rem !important;
+  border: 0.125rem solid transparent !important;
+  color: var(--color-icon-bright) !important;
+  @include theme.transition(border);
+
+  &:hover {
+    color: var(--color-white-fade-85) !important;
+    border: 0.125rem solid var(--color-white-fade-15) !important;
+  }
+  &:focus {
+    color: var(--color-white-fade-85) !important;
+    border: 0.125rem solid var(--color-white-fade-15) !important;
+  }
+  &:active {
+    color: var(--color-white-fade-50) !important;
+    border: 0.125rem solid var(--color-white-fade-15) !important;
+  }
 
   @include theme.breakpoint-up(md) {
     margin-top: 0rem !important;
@@ -120,7 +136,6 @@
   }
 
   @include theme.breakpoint-up(md) {
-    // grid-row: 1;
     grid-column: 3;
 
     & > * {

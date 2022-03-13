@@ -225,10 +225,15 @@
   --color-btn-transparent-outlined-disabled-border: transparent;
 
   --color-btn-minimal-text: var(--color-black);
-  --color-btn-minimal-hover-text: var(--color-gray-600);
-  --color-btn-minimal-focus-text: var(--color-gray-500);
-  --color-btn-minimal-active-text: var(--color-gray-600);
+  --color-btn-minimal-border: transparent;
+  --color-btn-minimal-hover-text: var(--color-gray-700);
+  --color-btn-minimal-hover-border: var(--color-gray-200);
+  --color-btn-minimal-focus-text: var(--color-gray-600);
+  --color-btn-minimal-focus-border: var(--color-gray-200);
+  --color-btn-minimal-active-text: var(--color-gray-700);
+  --color-btn-minimal-active-border: var(--color-gray-500);
   --color-btn-minimal-disabled-text: var(--color-gray-100);
+  --color-btn-minimal-disabled-border: transparent;
 
   // Form Elements
   --color-label-primary-text: var(--color-gray-700);
