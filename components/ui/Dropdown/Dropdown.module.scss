@@ -1,6 +1,5 @@
 @use '@styles/theme';
-// Different variants
-$variants: primary, secondary, success, danger, warning, info, 'transparent';
+
 .dropdown {
   display: flex;
   flex-direction: column;
@@ -61,9 +60,6 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
 .dropdownListContainer {
   width: 100%;
   display: none;
-  background: var(--color-btn-focus-bg);
-  color: var(--color-btn-focus-text);
-  outline: var(--color-btn-focus-border);
   padding: 0 1rem;
 
   & > * {
@@ -94,6 +90,9 @@ $variants: primary, secondary, success, danger, warning, info, 'transparent';
   }
 }
 
+// Different variants
+$variants: default, primary, secondary, success, danger, warning, info,
+  'transparent', minimal;
 @each $variant in $variants {
   .dropdown-#{$variant} {
     border: 0.125rem solid var(--color-btn-#{$variant}-focus-border);
