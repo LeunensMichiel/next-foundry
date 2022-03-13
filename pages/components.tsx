@@ -98,7 +98,9 @@ const ComponentsPage = () => {
             <h4>
               <a href="#languagepicker">Language picker</a>
             </h4>
-            <LanguagePicker outlined={false} />
+            <div className={styles.wrappedItems}>
+              <LanguagePicker />
+            </div>
           </section>
           <section id="accordion">
             <h4>
