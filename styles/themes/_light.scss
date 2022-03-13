@@ -6,8 +6,8 @@
   --color-text-disabled: var(--color-gray-400);
   --color-text-placeholder: var(--color-gray-500);
   --color-text-inversed: var(--color-white);
-  --color-icon-bright: var(--color-white);
-  --color-icon-dark: var(--color-black);
+  --color-text-bright: var(--color-white);
+  --color-text-dark: var(--color-black);
   --color-text-brand: var(--color-purple-500);
   // Links
   --color-link-primary: var(--color-purple-500);
@@ -232,14 +232,6 @@
   --color-btn-minimal-focus-text: var(--color-gray-500);
   --color-btn-minimal-active-text: var(--color-gray-600);
   --color-btn-minimal-disabled-text: var(--color-gray-100);
-
-  // Toasts
-  --color-toast-text: var(--color-gray-800);
-  --color-toast-text-inverted: var(--color-gray-50);
-  --color-toast-bg: var(--color-gray-100);
-  --color-toast-bg-inverted: var(--color-gray-800);
-  --color-toast-bar: var(--color-gray-800);
-  --color-toast-bar-inverted: var(--color-gray-500);
 
   // Form Elements
   --color-label-primary-text: var(--color-gray-700);

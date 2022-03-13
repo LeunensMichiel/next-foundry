@@ -3,12 +3,12 @@
 @import '~react-toastify/dist/ReactToastify.min.css';
 //https://fkhadra.github.io/react-toastify/how-to-style
 :root {
-  --toastify-color-light: var(--color-toast-bg);
-  --toastify-color-dark: var(--color-toast-bg-inverted);
-  --toastify-color-info: var(--color-amber-500);
-  --toastify-color-success: var(--color-purple-600);
-  --toastify-color-warning: var(--color-orange-500);
-  --toastify-color-error: var(--color-red-500);
+  --toastify-color-light: var(--color-bg-primary);
+  --toastify-color-dark: var(--color-bg-inversed);
+  --toastify-color-info: var(--color-icon-info);
+  --toastify-color-success: var(--color-icon-success);
+  --toastify-color-warning: var(--color-icon-warning);
+  --toastify-color-error: var(--color-icon-danger);
   --toastify-color-transparent: rgba(255, 255, 255, 0.7);
 
   --toastify-icon-color-info: var(--toastify-color-info);
@@ -17,25 +17,25 @@
   --toastify-icon-color-error: var(--toastify-color-error);
 
   --toastify-toast-width: 320px;
-  --toastify-toast-background: var(--color-white);
+  --toastify-toast-background: var(--color-bg-primary);
   --toastify-toast-min-height: 64px;
   --toastify-toast-max-height: 800px;
   --toastify-z-index: #{theme.$z-ultra};
 
-  --toastify-text-color-light: var(--color-toast-text);
-  --toastify-text-color-dark: var(--color-toast-text-inverted);
+  --toastify-text-color-light: var(--color-text-primary);
+  --toastify-text-color-dark: var(--color-text-primary);
 
   //Used only for colored theme
-  --toastify-text-color-info: var(--color-black);
-  --toastify-text-color-success: var(--color-purple-50);
-  --toastify-text-color-error: var(--color-red-50);
-  --toastify-text-color-warning: var(--color-black);
+  --toastify-text-color-info: var(--color-text-bright);
+  --toastify-text-color-success: var(--color-text-bright);
+  --toastify-text-color-error: var(--color-text-bright);
+  --toastify-text-color-warning: var(--color-text-dark);
 
-  --toastify-spinner-color: #616161;
-  --toastify-spinner-color-empty-area: #e0e0e0;
+  --toastify-spinner-color: var(--color-gray-500);
+  --toastify-spinner-color-empty-area: var(--color-gray-300);
 
-  --toastify-color-progress-light: var(--color-toast-bar);
-  --toastify-color-progress-dark: var(--color-toast-bar-inverted);
+  --toastify-color-progress-light: var(--color-bg-brand);
+  --toastify-color-progress-dark: var(--color-bg-brand);
   --toastify-color-progress-info: var(--toastify-color-info);
   --toastify-color-progress-success: var(--toastify-color-success);
   --toastify-color-progress-warning: var(--toastify-color-warning);
@@ -51,8 +51,9 @@
 }
 
 .Toastify__toast {
+  font-size: var(--small);
   box-shadow: theme.$box-shadow-lg;
   > svg {
-    width: 1.25rem;
+    width: 1.125rem;
   }
 }

@@ -530,7 +530,6 @@ const ComponentsPage = () => {
                 type="button"
                 onClick={() => toast("Don't forget to ⭐ on Github!")}
                 size="xs"
-                variant="primary"
               >
                 🍞 Default
               </Button>
@@ -540,7 +539,7 @@ const ComponentsPage = () => {
                 size="xs"
                 variant="secondary"
               >
-                🍞 Dark
+                🍞 Inverted
               </Button>
               <Button
                 type="button"
