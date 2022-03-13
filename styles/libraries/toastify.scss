@@ -26,10 +26,10 @@
   --toastify-text-color-dark: var(--color-text-primary);
 
   //Used only for colored theme
-  --toastify-text-color-info: var(--color-text-bright);
-  --toastify-text-color-success: var(--color-text-bright);
-  --toastify-text-color-error: var(--color-text-bright);
-  --toastify-text-color-warning: var(--color-text-dark);
+  --toastify-text-color-info: var(--color-white);
+  --toastify-text-color-success: var(--color-white);
+  --toastify-text-color-error: var(--color-white);
+  --toastify-text-color-warning: var(--color-black);
 
   --toastify-spinner-color: var(--color-gray-500);
   --toastify-spinner-color-empty-area: var(--color-gray-300);

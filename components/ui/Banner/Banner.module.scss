@@ -4,7 +4,7 @@
   right: 0;
   left: 0;
   z-index: theme.$z-mid;
-  color: var(--color-icon-bright);
+  color: var(--color-white);
   background-color: var(--color-bg-brand);
   box-shadow: theme.$box-shadow-md;
 
@@ -88,7 +88,7 @@
   margin-top: -0.5rem !important;
   margin-right: -1.5rem !important;
   border: 0.125rem solid transparent !important;
-  color: var(--color-icon-bright) !important;
+  color: var(--color-white) !important;
   @include theme.transition(border);
 
   &:hover {

@@ -5,8 +5,12 @@
   justify-content: center;
   text-align: center;
 
-  h1 {
+  > h1 {
     margin-bottom: 1rem;
+  }
+
+  > small {
+    color: var(--color-text-tertiary);
   }
 }
 

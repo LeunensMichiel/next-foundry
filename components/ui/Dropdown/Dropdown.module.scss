@@ -19,10 +19,10 @@
           position: absolute;
           top: 100%;
           left: 0;
-          min-width: 15rem;
           z-index: theme.$z-mid;
-          box-shadow: theme.$box-shadow-xs;
+          min-width: 15rem;
           padding: 0.25rem 1rem;
+          box-shadow: theme.$box-shadow-xs;
         }
       }
     }
@@ -48,7 +48,6 @@
 
 .dropdownButton {
   justify-content: space-between;
-  box-shadow: none;
   font-size: inherit;
   width: 100%;
   svg {
@@ -95,9 +94,9 @@ $variants: default, primary, secondary, success, danger, warning, info,
   'transparent', minimal;
 @each $variant in $variants {
   .dropdown-#{$variant} {
-    border: 0.125rem solid var(--color-btn-#{$variant}-focus-border);
-    background: var(--color-btn-#{$variant}-focus-bg);
-    color: var(--color-btn-#{$variant}-focus-text);
-    outline: var(--color-btn-#{$variant}-focus-border);
+    border: 0.125rem solid var(--color-btn-#{$variant}-border);
+    background: var(--color-btn-#{$variant}-bg);
+    color: var(--color-btn-#{$variant}-text);
+    outline: var(--color-btn-#{$variant}-border);
   }
 }

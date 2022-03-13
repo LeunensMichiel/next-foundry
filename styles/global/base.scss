@@ -51,7 +51,7 @@
 
 // Define your global styles here
 ::selection {
-  color: var(--color-icon-bright);
+  color: var(--color-white);
   background-color: var(--color-bg-brand);
 }
 
@@ -180,7 +180,7 @@ button {
 
 code {
   max-width: 100%;
-  background: var(--color-bg-secondary);
+  background: var(--color-bg-tertiary);
   border-radius: theme.$border-radius;
   padding: 0.125em 0.25em;
   white-space: pre-wrap;
