@@ -21,7 +21,7 @@ type ThemeButtonProps = {
 
 const ThemeButton: VFC<ThemeButtonProps> = ({
   onClick,
-  size = 'sm',
+  size = 'md',
   variant = 'minimal',
   squared = true,
   ...props

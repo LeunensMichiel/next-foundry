@@ -227,13 +227,12 @@
   --color-btn-transparent-outlined-disabled-text: var(--color-white-fade-15);
   --color-btn-transparent-outlined-disabled-border: transparent;
 
-  //TODO: where i left of: Btn-minimal klopt niet => redesingnen en hover state etc
   // TODO: Button on active moet weg als ik na klikken (state blijven staan is lelijk
-  --color-btn-minimal-fill: var(--color-black);
-  --color-btn-minimal-hover-fill: var(--color-gray-800);
-  --color-btn-minimal-focus-fill: var(--color-gray-800);
-  --color-btn-minimal-active-fill: var(--color-gray-600);
-  --color-btn-minimal-disabled-fill: var(--color-gray-100);
+  --color-btn-minimal-text: var(--color-black);
+  --color-btn-minimal-hover-text: var(--color-gray-600);
+  --color-btn-minimal-focus-text: var(--color-gray-600);
+  --color-btn-minimal-active-text: var(--color-gray-600);
+  --color-btn-minimal-disabled-text: var(--color-gray-100);
 
   // Toasts
   --color-toast-text: var(--color-gray-800);

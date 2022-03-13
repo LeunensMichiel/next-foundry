@@ -286,9 +286,6 @@ const ComponentsPage = () => {
               <Button type="button" circular>
                 Rounded
               </Button>
-              <Button type="button" uppercased>
-                uppercased
-              </Button>
               <Button
                 as="a"
                 href="https://leunesmedia.com"

@@ -32,7 +32,6 @@ interface ButtonCustomProps<C extends React.ElementType> {
   disabled?: boolean;
   active?: boolean;
   stretched?: boolean;
-  uppercased?: boolean;
   iconLeft?: ComponentPropsWithoutRef<'svg'> | string;
   iconRight?: ComponentPropsWithoutRef<'svg'> | string;
 }
@@ -54,7 +53,6 @@ const Button = <C extends React.ElementType = 'button'>({
   outlined = false,
   size = 'md',
   stretched = false,
-  uppercased = false,
   variant = 'default',
   ...rest
 }: ButtonProps<C>) => {
@@ -68,7 +66,6 @@ const Button = <C extends React.ElementType = 'button'>({
     [styles['button-squared']]: squared && !children,
     [styles['button-rounded']]: circular && children,
     [styles.stretched]: stretched,
-    [styles.uppercased]: uppercased,
     [`${className}`]: className,
   });
 

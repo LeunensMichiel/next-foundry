@@ -17,7 +17,7 @@
 
   svg {
     height: auto;
-    width: 1.0875em;
+    width: 1.1em;
   }
 
   span {
@@ -93,37 +93,44 @@ $variants: default, primary, secondary, success, danger, warning, info,
 .button-xs {
   font-size: 0.75rem;
 }
+
 .button-sm {
   font-size: 0.875rem;
 }
+
 .button-md {
   font-size: 1rem;
 }
+
 .button-lg {
   font-size: 1.125rem;
 }
+
 .button-xl {
   font-size: 1.25rem;
 }
+
 .button-circular {
   border-radius: 50%;
 }
+
+.button-rounded {
+  border-radius: var(--border-radius-lg);
+}
+
 .button-circular,
 .button-squared {
   padding: 1em;
 }
-.button-rounded {
-  border-radius: var(--border-radius-lg);
-}
+
 .button-icon-left {
   margin-right: 1.25em;
 }
+
 .button-icon-right {
   margin-left: 1.25em;
 }
+
 .stretched {
   width: 100%;
-}
-.uppercased {
-  text-transform: uppercase;
 }
