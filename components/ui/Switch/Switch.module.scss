@@ -68,7 +68,6 @@
     left: 0.125rem;
     z-index: theme.$z-low;
     background: var(--color-input-bg);
-    @include theme.drop-shadow-colored(sm, var(--color-shadow-dark));
     @include theme.transition(left, background);
   }
 }
@@ -90,7 +89,7 @@
 
 .on {
   left: 0.375rem;
-  color: var(--color-text-white);
+  color: var(--color-white);
 }
 .off {
   right: 0.375rem;

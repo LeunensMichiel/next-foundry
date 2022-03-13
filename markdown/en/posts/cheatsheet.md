@@ -7,8 +7,6 @@ description: The soup stock from sea kelp and dried bonito flakes can be used in
 
 This is intended as a quick reference and showcase. For more complete info, see [John Gruber's original spec](http://daringfireball.net/projects/markdown/) and the [Github-flavored Markdown info page](http://github.github.com/github-flavored-markdown/).
 
-Note that there is also a [Cheatsheet specific to Markdown Here](./Markdown-Here-Cheatsheet) if that's what you're looking for. You can also check out [more Markdown tools](./Other-Markdown-Tools).
-
 ##### Table of Contents
 
 [Headers](#headers)
@@ -181,15 +179,9 @@ Some text to show that the reference links can follow later.
 
 [I'm a reference-style link][arbitrary case-insensitive reference text]
 
-[I'm a relative reference to a repository file](../blob/master/LICENSE)
-
 [You can use numbers for reference-style link definitions][1]
 
 Or leave it empty and use the [link text itself].
-
-URLs and URLs in angle brackets will automatically get turned into links.
-http://www.example.com or <http://www.example.com> and sometimes
-example.com (but not on Github, for example).
 
 Some text to show that the reference links can follow later.
 
@@ -237,21 +229,20 @@ Inline `code` has `back-ticks around` it.
 
 Blocks of code are either fenced by lines with three back-ticks <code>```</code>, or are indented with four spaces. I recommend only using the fenced code blocks -- they're easier and only they support syntax highlighting.
 
-<pre lang="no-highlight"><code>```javascript
+<pre>
+```javascript
 var s = "JavaScript syntax highlighting";
 alert(s);
 ```
- 
 ```python
 s = "Python syntax highlighting"
 print s
 ```
- 
 ```
 No language indicated, so no syntax highlighting. 
 But let's throw in a &lt;b&gt;tag&lt;/b&gt;.
 ```
-</code></pre>
+</pre>
 
 ```javascript
 var s = 'JavaScript syntax highlighting';

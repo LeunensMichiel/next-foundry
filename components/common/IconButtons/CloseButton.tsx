@@ -19,7 +19,7 @@ type CloseButtonProps = {
 
 const CloseButton: VFC<CloseButtonProps> = ({
   onClick,
-  size = 'sm',
+  size = 'md',
   variant = 'minimal',
   squared = true,
   ...props

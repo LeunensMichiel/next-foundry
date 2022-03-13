@@ -64,7 +64,7 @@ const customStyles: StylesConfig = {
     ...base,
     background: 'var(--color-input-select-menu-bg)',
     overflow: 'hidden',
-    zIndex: 3,
+    zIndex: 10,
   }),
   menuList: (base) => ({
     ...base,
@@ -83,7 +83,7 @@ const customStyles: StylesConfig = {
     ...base,
     backgroundColor: isDisabled
       ? 'var(--color-input-disabled-border)'
-      : 'var(--color-text-placeholder)',
+      : 'var(--color-input-border)',
   }),
   option: (base, { isSelected, isFocused, isDisabled }) => ({
     ...base,

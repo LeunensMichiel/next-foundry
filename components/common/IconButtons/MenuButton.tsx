@@ -19,7 +19,7 @@ type MenuButtonProps = {
 
 const MenuButton: VFC<MenuButtonProps> = ({
   onClick,
-  size = 'sm',
+  size = 'md',
   variant = 'minimal',
   squared = true,
   ...props

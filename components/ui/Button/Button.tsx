@@ -15,6 +15,7 @@ interface ButtonCustomProps<C extends React.ElementType> {
   as?: C;
   children?: ReactNode;
   variant?:
+    | 'default'
     | 'primary'
     | 'secondary'
     | 'success'
@@ -29,9 +30,7 @@ interface ButtonCustomProps<C extends React.ElementType> {
   squared?: boolean;
   loading?: boolean;
   disabled?: boolean;
-  active?: boolean;
   stretched?: boolean;
-  uppercased?: boolean;
   iconLeft?: ComponentPropsWithoutRef<'svg'> | string;
   iconRight?: ComponentPropsWithoutRef<'svg'> | string;
 }
@@ -40,7 +39,6 @@ export type ButtonProps<C extends ElementType> = ButtonCustomProps<C> &
   Omit<ComponentPropsWithRef<C>, keyof ButtonCustomProps<C>>;
 
 const Button = <C extends React.ElementType = 'button'>({
-  active,
   as,
   className,
   children,
@@ -53,13 +51,12 @@ const Button = <C extends React.ElementType = 'button'>({
   outlined = false,
   size = 'md',
   stretched = false,
-  uppercased = false,
-  variant,
-  ...rest
+  variant = 'default',
+  onClick,
+  ...props
 }: ButtonProps<C>) => {
   const Component = as || 'button';
-  const rootClassName = cn(styles.buttonBase, {
-    [styles[`button-${variant}`]]: !!variant,
+  const rootClassName = cn(styles.buttonBase, styles[`button-${variant}`], {
     [styles.outlined]: outlined,
     [styles.loading]: loading,
     [styles.disabled]: disabled,
@@ -68,19 +65,21 @@ const Button = <C extends React.ElementType = 'button'>({
     [styles['button-squared']]: squared && !children,
     [styles['button-rounded']]: circular && children,
     [styles.stretched]: stretched,
-    [styles.uppercased]: uppercased,
     [`${className}`]: className,
   });
 
   return (
     <Component
-      aria-pressed={active}
       className={rootClassName}
       data-variant={variant}
       aria-disabled={disabled}
       disabled={disabled}
       tabIndex={disabled ? -1 : 0}
-      {...rest}
+      onClick={(e) => {
+        e.currentTarget.blur();
+        onClick?.(e);
+      }}
+      {...props}
     >
       {(loading || iconLeft) && (
         <span

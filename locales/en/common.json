@@ -10,6 +10,9 @@
       "imgAlt": "My Website"
     }
   },
+  "links": {
+    "privacy": "Privacy"
+  },
   "footer": {
     "footnote": "Made with ☕ by Michiel Leunens."
   },

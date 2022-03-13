@@ -21,7 +21,7 @@ type DropdownProps = {
 const Dropdown: React.FC<DropdownProps> = ({
   children,
   label,
-  variant,
+  variant = 'default',
   startOpen = false,
   willFloat = true,
   willOpenOnHover = false,

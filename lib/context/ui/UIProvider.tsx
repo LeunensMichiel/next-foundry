@@ -76,6 +76,7 @@ export const ManagedUIProvider: FC = ({ children }) => (
     <ThemeProvider
       enableSystem
       enableColorScheme
+      disableTransitionOnChange={true}
       defaultTheme="system"
       themes={['light', 'dark']}
     >

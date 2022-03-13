@@ -10,6 +10,9 @@
       "imgAlt": "Mijn Website"
     }
   },
+  "links": {
+    "privacy": "Privacy"
+  },
   "footer": {
     "footnote": "Gemaakt met een jat ☕ door Michiel Leunens"
   },
