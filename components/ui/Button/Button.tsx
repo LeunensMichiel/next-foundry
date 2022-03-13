@@ -30,7 +30,6 @@ interface ButtonCustomProps<C extends React.ElementType> {
   squared?: boolean;
   loading?: boolean;
   disabled?: boolean;
-  active?: boolean;
   stretched?: boolean;
   iconLeft?: ComponentPropsWithoutRef<'svg'> | string;
   iconRight?: ComponentPropsWithoutRef<'svg'> | string;
@@ -40,7 +39,6 @@ export type ButtonProps<C extends ElementType> = ButtonCustomProps<C> &
   Omit<ComponentPropsWithRef<C>, keyof ButtonCustomProps<C>>;
 
 const Button = <C extends React.ElementType = 'button'>({
-  active,
   as,
   className,
   children,
@@ -54,7 +52,8 @@ const Button = <C extends React.ElementType = 'button'>({
   size = 'md',
   stretched = false,
   variant = 'default',
-  ...rest
+  onClick,
+  ...props
 }: ButtonProps<C>) => {
   const Component = as || 'button';
   const rootClassName = cn(styles.buttonBase, styles[`button-${variant}`], {
@@ -71,13 +70,16 @@ const Button = <C extends React.ElementType = 'button'>({
 
   return (
     <Component
-      aria-pressed={active}
       className={rootClassName}
       data-variant={variant}
       aria-disabled={disabled}
       disabled={disabled}
       tabIndex={disabled ? -1 : 0}
-      {...rest}
+      onClick={(e) => {
+        e.currentTarget.blur();
+        onClick?.(e);
+      }}
+      {...props}
     >
       {(loading || iconLeft) && (
         <span

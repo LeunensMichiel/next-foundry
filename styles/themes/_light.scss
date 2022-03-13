@@ -66,8 +66,8 @@
   --color-btn-default-hover-bg: var(--color-gray-400);
   --color-btn-default-hover-border: var(--color-gray-400);
   --color-btn-default-focus-text: var(--color-black);
-  --color-btn-default-focus-bg: var(--color-gray-400);
-  --color-btn-default-focus-border: var(--color-gray-400);
+  --color-btn-default-focus-bg: var(--color-gray-200);
+  --color-btn-default-focus-border: var(--color-gray-200);
   --color-btn-default-active-text: var(--color-black);
   --color-btn-default-active-bg: var(--color-gray-500);
   --color-btn-default-active-border: var(--color-gray-500);
@@ -87,8 +87,8 @@
   --color-btn-primary-hover-bg: var(--color-purple-400);
   --color-btn-primary-hover-border: var(--color-purple-400);
   --color-btn-primary-focus-text: var(--color-white);
-  --color-btn-primary-focus-bg: var(--color-purple-400);
-  --color-btn-primary-focus-border: var(--color-purple-400);
+  --color-btn-primary-focus-bg: var(--color-purple-300);
+  --color-btn-primary-focus-border: var(--color-purple-300);
   --color-btn-primary-active-text: var(--color-white);
   --color-btn-primary-active-bg: var(--color-purple-600);
   --color-btn-primary-active-border: var(--color-purple-600);
@@ -108,8 +108,8 @@
   --color-btn-secondary-hover-bg: var(--color-gray-800);
   --color-btn-secondary-hover-border: var(--color-gray-800);
   --color-btn-secondary-focus-text: var(--color-white);
-  --color-btn-secondary-focus-bg: var(--color-gray-800);
-  --color-btn-secondary-focus-border: var(--color-gray-800);
+  --color-btn-secondary-focus-bg: var(--color-gray-700);
+  --color-btn-secondary-focus-border: var(--color-gray-700);
   --color-btn-secondary-active-text: var(--color-white);
   --color-btn-secondary-active-bg: var(--color-black);
   --color-btn-secondary-active-border: var(--color-black);
@@ -129,8 +129,8 @@
   --color-btn-success-hover-bg: var(--color-green-400);
   --color-btn-success-hover-border: var(--color-green-400);
   --color-btn-success-focus-text: var(--color-white);
-  --color-btn-success-focus-bg: var(--color-green-400);
-  --color-btn-success-focus-border: var(--color-green-400);
+  --color-btn-success-focus-bg: var(--color-green-300);
+  --color-btn-success-focus-border: var(--color-green-300);
   --color-btn-success-active-text: var(--color-white);
   --color-btn-success-active-bg: var(--color-green-600);
   --color-btn-success-active-border: var(--color-green-600);
@@ -150,8 +150,8 @@
   --color-btn-danger-hover-bg: var(--color-red-400);
   --color-btn-danger-hover-border: var(--color-red-400);
   --color-btn-danger-focus-text: var(--color-white);
-  --color-btn-danger-focus-bg: var(--color-red-400);
-  --color-btn-danger-focus-border: var(--color-red-400);
+  --color-btn-danger-focus-bg: var(--color-red-300);
+  --color-btn-danger-focus-border: var(--color-red-300);
   --color-btn-danger-active-text: var(--color-white);
   --color-btn-danger-active-bg: var(--color-red-600);
   --color-btn-danger-active-border: var(--color-red-600);
@@ -171,8 +171,8 @@
   --color-btn-warning-hover-bg: var(--color-yellow-400);
   --color-btn-warning-hover-border: var(--color-yellow-400);
   --color-btn-warning-focus-text: var(--color-black);
-  --color-btn-warning-focus-bg: var(--color-yellow-400);
-  --color-btn-warning-focus-border: var(--color-yellow-400);
+  --color-btn-warning-focus-bg: var(--color-yellow-300);
+  --color-btn-warning-focus-border: var(--color-yellow-300);
   --color-btn-warning-active-text: var(--color-black);
   --color-btn-warning-active-bg: var(--color-yellow-600);
   --color-btn-warning-active-border: var(--color-yellow-600);
@@ -192,8 +192,8 @@
   --color-btn-info-hover-bg: var(--color-blue-400);
   --color-btn-info-hover-border: var(--color-blue-400);
   --color-btn-info-focus-text: var(--color-white);
-  --color-btn-info-focus-bg: var(--color-blue-400);
-  --color-btn-info-focus-border: var(--color-blue-400);
+  --color-btn-info-focus-bg: var(--color-blue-300);
+  --color-btn-info-focus-border: var(--color-blue-300);
   --color-btn-info-active-text: var(--color-white);
   --color-btn-info-active-bg: var(--color-blue-500);
   --color-btn-info-active-border: var(--color-blue-500);
@@ -227,10 +227,9 @@
   --color-btn-transparent-outlined-disabled-text: var(--color-white-fade-15);
   --color-btn-transparent-outlined-disabled-border: transparent;
 
-  // TODO: Button on active moet weg als ik na klikken (state blijven staan is lelijk
   --color-btn-minimal-text: var(--color-black);
   --color-btn-minimal-hover-text: var(--color-gray-600);
-  --color-btn-minimal-focus-text: var(--color-gray-600);
+  --color-btn-minimal-focus-text: var(--color-gray-500);
   --color-btn-minimal-active-text: var(--color-gray-600);
   --color-btn-minimal-disabled-text: var(--color-gray-100);
 

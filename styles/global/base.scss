@@ -176,18 +176,6 @@ a {
 
 button {
   padding: 0.25rem 0.5rem;
-  &:focus {
-    outline: var(--color-btn-focus-border);
-  }
-  &.buttonReset {
-    border: none;
-    margin: 0;
-    padding: 0;
-    background: transparent;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
 }
 
 code {

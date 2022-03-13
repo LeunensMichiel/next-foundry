@@ -1,0 +1,6 @@
+.root {
+  padding: 0.25rem;
+  &:focus {
+    outline: 2px solid var(--color-border-tertiary);
+  }
+}

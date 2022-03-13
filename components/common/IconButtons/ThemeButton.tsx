@@ -38,6 +38,7 @@ const ThemeButton: VFC<ThemeButtonProps> = ({
       }
       type="button"
       variant={variant}
+      tabIndex={0}
       size={size}
       squared={squared}
       {...props}

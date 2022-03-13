@@ -6,7 +6,6 @@ import {
   enableBodyScroll,
 } from 'body-scroll-lock';
 import cn from 'classnames';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FC, useEffect, useRef, useState } from 'react';
 
@@ -63,9 +62,11 @@ const Navbar: FC<NavbarProps> = ({ children, isTransparent = false }) => {
           })}
         >
           <div className={cn(styles.toolbar)}>
-            <Link href="/" passHref>
-              <Logo className={styles.logo} />
-            </Link>
+            <Logo className={styles.logo} />
+            <NavItems
+              isTransparent={isTransparent}
+              navDrawerOpen={navDrawerOpen}
+            />
             <div className={cn(styles.toolbarIcons)}>
               <ThemeButton />
               <MenuButton
@@ -75,10 +76,6 @@ const Navbar: FC<NavbarProps> = ({ children, isTransparent = false }) => {
                 }
               />
             </div>
-            <NavItems
-              isTransparent={isTransparent}
-              navDrawerOpen={navDrawerOpen}
-            />
           </div>
         </nav>
       </div>
