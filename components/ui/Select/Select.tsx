@@ -60,6 +60,10 @@ const customStyles: StylesConfig = {
       color: 'var(--color-label-primary-icon)',
     },
   }),
+  input: (base) => ({
+    ...base,
+    color: 'var(--color-text-primary)',
+  }),
   menu: (base) => ({
     ...base,
     background: 'var(--color-input-select-menu-bg)',
@@ -131,6 +135,14 @@ const customStyles: StylesConfig = {
       backgroundColor: 'var(--color-badge-danger-bg)',
       color: 'var(--color-badge-danger-text)',
     },
+  }),
+  noOptionsMessage: (base) => ({
+    ...base,
+    color: 'var(--color-text-placeholder)',
+  }),
+  loadingMessage: (base) => ({
+    ...base,
+    color: 'var(--color-text-placeholder)',
   }),
 };
 

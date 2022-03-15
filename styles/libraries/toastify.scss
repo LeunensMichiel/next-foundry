@@ -23,7 +23,7 @@
   --toastify-z-index: #{theme.$z-ultra};
 
   --toastify-text-color-light: var(--color-text-primary);
-  --toastify-text-color-dark: var(--color-text-primary);
+  --toastify-text-color-dark: var(--color-text-inversed);
 
   //Used only for colored theme
   --toastify-text-color-info: var(--color-white);
