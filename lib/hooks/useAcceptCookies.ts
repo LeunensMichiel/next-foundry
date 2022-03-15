@@ -14,10 +14,10 @@ function useAcceptCookies(): {
   const [deniedCookies, setDeniedCookies] = useState<boolean>(false);
 
   useEffect(() => {
-    const cookieName = cookies[COOKIE_NAME];
-    if (cookieName === 'accepted') {
+    const cookie = cookies[COOKIE_NAME];
+    if (cookie === 'accepted') {
       setAcceptedCookies(true);
-    } else if (cookieName === 'denied') {
+    } else if (cookie === 'denied') {
       setDeniedCookies(true);
     }
   }, [cookies]);
