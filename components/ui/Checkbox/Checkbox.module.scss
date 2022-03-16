@@ -1,4 +1,4 @@
-@use '@styles/theme';
+@use '@styles/mixins';
 
 .checkbox {
   display: grid;
@@ -58,7 +58,7 @@
   border: 0.125rem solid var(--color-input-border);
   background: var(--color-input-bg);
   cursor: pointer;
-  @include theme.transition(border-color, background);
+  @include mixins.transition(border-color, background);
 
   svg {
     opacity: 0;

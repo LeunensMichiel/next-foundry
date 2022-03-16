@@ -140,10 +140,10 @@ The `styles/theme.scss` file forwards all scss mixins and variables from `styles
 
 ```scss
 // In _components/button.module.scss
-@use '@styles/theme';
+@use '@styles/mixins';
 
 .warning {
-  @include theme.breakpoint-up(md) {
+  @include mixins.breakpoint-up(md) {
     color: purple;
   }
 }
@@ -156,10 +156,10 @@ Define your variables like this:
 
 ```scss
 // in _myTheme.scss
-@use '@styles/theme';
+@use '@styles/mixins';
 
 [data-theme='myTheme'] {
-  --yourVariable: #{theme.$myVariable};
+  --yourVariable: #{mixins.$myVariable};
   ...
 }
 ```
@@ -175,10 +175,10 @@ To include functions, constants and mixins in your globally scoped scss files:
 ```scss
 // In _components/button.module.scss
 // Import the theme file
-@use '@styles/theme';
+@use '@styles/mixins';
 
 .warning {
-  @include theme.breakpoint-up(md) {
+  @include mixins.breakpoint-up(md) {
     color: purple;
   }
 }
@@ -219,7 +219,7 @@ In `styles/common/_typography.scss` you'll find some global variables about typo
 --ratio: #{theme.type-ratio('majorSecond')};
 
 // Will scale the base font-size a bit more for large-screens. A different ratio is also used.
-@include theme.breakpoint-up(xxl) {
+@include mixins.breakpoint-up(xxl) {
   --font-size: 112.5%;
   --ratio: #{theme.type-ratio('perfectFourth')};
 }
@@ -270,10 +270,10 @@ It takes a `$size` and a custom `$color` param.
 ```scss
 // In _components/button.module.scss
 // Import the theme file
-@use '@styles/theme';
+@use '@styles/mixins';
 
 .warning {
-  @include theme.drop-shadow-colored($size, $color);
+  @include mixins.drop-shadow-colored($size, $color);
 }
 ```
 
@@ -298,7 +298,7 @@ A transition-mixin is provided, to easily apply a transition with abovementioned
 ```scss
 // in styles/global/base.scss
 .body {
-  @include theme.transition(background-color, color, border-color);
+  @include mixins.transition(background-color, color, border-color);
 }
 ```
 

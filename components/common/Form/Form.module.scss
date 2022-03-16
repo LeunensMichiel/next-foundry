@@ -1,11 +1,11 @@
-@use '@styles/theme';
+@use '@styles/mixins';
 
 .form {
   display: grid;
   align-items: start;
   grid-gap: 1rem;
 
-  @include theme.breakpoint-up(md) {
+  @include mixins.breakpoint-up(md) {
     grid-template-columns: 1fr 1fr;
   }
 }

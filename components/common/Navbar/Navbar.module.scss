@@ -1,4 +1,4 @@
-@use '@styles/theme';
+@use '@styles/mixins';
 
 .header {
   position: absolute;
@@ -16,7 +16,7 @@
     position: fixed;
   }
 
-  @include theme.breakpoint-up(lg) {
+  @include mixins.breakpoint-up(lg) {
     position: relative;
   }
 }
@@ -34,7 +34,7 @@
     padding: 2.5rem 1rem 1rem;
   }
 
-  @include theme.breakpoint-up(lg) {
+  @include mixins.breakpoint-up(lg) {
     display: flex;
     align-items: center;
   }
@@ -58,7 +58,7 @@
     margin-left: 0.5rem !important;
   }
 
-  @include theme.breakpoint-up(lg) {
+  @include mixins.breakpoint-up(lg) {
     order: 2;
     .hamburger {
       display: none;
@@ -68,7 +68,7 @@
 
 .logo {
   cursor: pointer;
-  @include theme.breakpoint-up(lg) {
+  @include mixins.breakpoint-up(lg) {
     width: 8rem;
     height: auto;
   }

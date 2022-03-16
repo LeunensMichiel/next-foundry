@@ -1,5 +1,5 @@
-@use '@styles/theme';
-@include theme.rotate();
+@use '@styles/mixins';
+@include mixins.rotate();
 
 .spinner {
   animation: rotate 1.5s var(--transition-duration);

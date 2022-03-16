@@ -1,4 +1,4 @@
-@use '@styles/theme';
+@use '@styles/mixins';
 
 .navItemContainer {
   border-radius: var(--border-radius);
@@ -11,7 +11,7 @@
   line-height: 1;
   outline: none;
 
-  @include theme.breakpoint-up(lg) {
+  @include mixins.breakpoint-up(lg) {
     font-size: 1rem;
   }
 }
@@ -61,7 +61,7 @@
   top: calc(100% + 0.5rem) !important;
   padding: 1rem;
 
-  @include theme.breakpoint-up(lg) {
+  @include mixins.breakpoint-up(lg) {
     padding: 1rem 1rem 0rem 1rem;
   }
 }

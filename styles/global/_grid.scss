@@ -1,0 +1,100 @@
+@use 'sass:map';
+@use '@styles/mixins';
+
+// Containers
+.container {
+  width: 100%;
+  @each $size, $bp in mixins.$grid-breakpoints {
+    @if $size != xs {
+      $i: index((mixins.$grid-breakpoints), ($size $bp)) - 1;
+      @include mixins.breakpoint-up($size) {
+        max-width: nth(mixins.$max-container-sizes, $i);
+      }
+    }
+  }
+}
+
+.container-sm {
+  width: 100%;
+  max-width: nth(mixins.$max-container-sizes, 1);
+  @include mixins.breakpoint-up(md) {
+    max-width: nth(mixins.$max-container-sizes, 2);
+  }
+  @include mixins.breakpoint-up(lg) {
+    max-width: nth(mixins.$max-container-sizes, 3);
+  }
+  @include mixins.breakpoint-up(xl) {
+    max-width: nth(mixins.$max-container-sizes, 4);
+  }
+  @include mixins.breakpoint-up(xxl) {
+    max-width: nth(mixins.$max-container-sizes, 5);
+  }
+}
+
+.container-md {
+  width: 100%;
+  max-width: nth(mixins.$max-container-sizes, 2);
+  @include mixins.breakpoint-up(lg) {
+    max-width: nth(mixins.$max-container-sizes, 3);
+  }
+  @include mixins.breakpoint-up(xl) {
+    max-width: nth(mixins.$max-container-sizes, 4);
+  }
+  @include mixins.breakpoint-up(xxl) {
+    max-width: nth(mixins.$max-container-sizes, 5);
+  }
+}
+
+.container-lg {
+  width: 100%;
+  max-width: nth(mixins.$max-container-sizes, 3);
+  @include mixins.breakpoint-up(xl) {
+    max-width: nth(mixins.$max-container-sizes, 4);
+  }
+  @include mixins.breakpoint-up(xxl) {
+    max-width: nth(mixins.$max-container-sizes, 5);
+  }
+}
+.container-xl {
+  width: 100%;
+  max-width: nth(mixins.$max-container-sizes, 4);
+  @include mixins.breakpoint-up(xxl) {
+    max-width: nth(mixins.$max-container-sizes, 5);
+  }
+}
+.container-xxl {
+  width: 100%;
+  max-width: nth(mixins.$max-container-sizes, 5);
+}
+
+.container-fluid {
+  width: 100%;
+}
+
+.container-page {
+  @include mixins.breakpoint-up(md) {
+    width: clamp(45ch, 100%, 85ch);
+  }
+}
+
+.padded {
+  padding: 0 2rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.col-span-1 {
+  grid-column: span 1;
+}
+.col-span-2 {
+  grid-column: span 2;
+}
+.col-span-3 {
+  grid-column: span 3;
+}
+.col-span-4 {
+  grid-column: span 4;
+}

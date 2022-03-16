@@ -1,10 +1,10 @@
-@use '@styles/theme';
+@use '@styles/mixins';
 
 .mainContainer {
   min-height: 75%;
   padding-top: 5.5rem;
 
-  @include theme.breakpoint-up(lg) {
+  @include mixins.breakpoint-up(lg) {
     padding-top: 0rem;
   }
 }

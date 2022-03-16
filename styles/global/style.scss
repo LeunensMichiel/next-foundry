@@ -1,10 +1,12 @@
 // Cross-browser reset
 @use 'reset';
 @use 'chrome-bug';
-// Themes
+// Common
 @use 'colors';
 @use 'typography';
-@use '@styles/theme';
+@use 'grid';
+@use '@styles/mixins';
+// Themes
 @use '@styles/themes';
 // libraries
 @use '@styles/libraries/toastify';
@@ -72,14 +74,14 @@
   --transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
   --transition-duration: 500ms;
 
-  @include theme.breakpoint-up(md) {
+  @include mixins.breakpoint-up(md) {
     --font-size: 105%;
   }
-  @include theme.breakpoint-up(lg) {
+  @include mixins.breakpoint-up(lg) {
     --font-size: 110%;
     --type-scale-ratio: 1.25;
   }
-  @include theme.breakpoint-up(xxl) {
+  @include mixins.breakpoint-up(xxl) {
     --font-size: 115%;
     --type-scale-ratio: 1.333;
   }
@@ -198,7 +200,7 @@ small {
 a {
   color: var(--color-link-primary);
   font-weight: 500;
-  @include theme.transition(color);
+  @include mixins.transition(color);
   &:hover {
     color: var(--color-link-hover);
   }

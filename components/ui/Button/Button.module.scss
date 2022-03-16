@@ -1,4 +1,4 @@
-@use '@styles/theme';
+@use '@styles/mixins';
 
 .buttonBase {
   align-items: center;
@@ -13,7 +13,7 @@
   line-height: 1;
   margin: 0;
   padding: 0.75em 1.25em;
-  @include theme.transition(background, border, color);
+  @include mixins.transition(background, border, color);
 
   svg {
     height: auto;
@@ -35,7 +35,7 @@ $variants: default, primary, secondary, success, danger, warning, info,
     border: 0.125rem solid var(--color-btn-#{$variant}-border);
     background: var(--color-btn-#{$variant}-bg);
     color: var(--color-btn-#{$variant}-text);
-    @include theme.transition(background, border, color);
+    @include mixins.transition(background, border, color);
 
     &:hover,
     &.outlined:hover {
@@ -69,7 +69,7 @@ $variants: default, primary, secondary, success, danger, warning, info,
       border: 0.125rem solid var(--color-btn-#{$variant}-outlined-border);
       background: transparent;
       color: var(--color-btn-#{$variant}-outlined-text);
-      @include theme.transition(background, border, color);
+      @include mixins.transition(background, border, color);
     }
 
     &.disabled {

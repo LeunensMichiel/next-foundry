@@ -1,4 +1,4 @@
-@use '@styles/theme';
+@use '@styles/mixins';
 
 .radioButton {
   display: grid;
@@ -29,7 +29,7 @@
       box-shadow: inset 1rem 1rem currentColor;
       border-radius: 50%;
       transform: scale(0);
-      @include theme.transition(box-shadow, transform);
+      @include mixins.transition(box-shadow, transform);
     }
 
     &:checked + .radioButtonControl:before {
@@ -60,7 +60,7 @@
   width: 1.5rem;
   height: 1.5rem;
   cursor: pointer;
-  @include theme.transition(border-color);
+  @include mixins.transition(border-color);
 }
 
 .radioButtonLabel {

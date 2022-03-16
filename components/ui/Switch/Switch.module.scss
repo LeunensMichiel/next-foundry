@@ -1,4 +1,4 @@
-@use '@styles/theme';
+@use '@styles/mixins';
 
 .switch {
   display: grid;
@@ -57,7 +57,7 @@
   border-radius: 4rem;
   background: var(--color-input-border);
   cursor: pointer;
-  @include theme.transition(background);
+  @include mixins.transition(background);
 
   &:after {
     content: '';
@@ -68,7 +68,7 @@
     left: 0.125rem;
     z-index: var(--z-low);
     background: var(--color-input-bg);
-    @include theme.transition(left, background);
+    @include mixins.transition(left, background);
   }
 }
 

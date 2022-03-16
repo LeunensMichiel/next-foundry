@@ -1,4 +1,4 @@
-@use '@styles/theme';
+@use '@styles/mixins';
 
 .overlay {
   position: fixed;
@@ -28,7 +28,7 @@
     outline: none;
   }
 
-  @include theme.breakpoint-up(lg) {
+  @include mixins.breakpoint-up(lg) {
     margin: 0;
     padding: 1.5rem 2rem 2rem;
   }
@@ -47,10 +47,10 @@
 }
 
 .modalBody {
-  @include theme.breakpoint-up(lg) {
+  @include mixins.breakpoint-up(lg) {
     padding: 1rem;
   }
-  @include theme.breakpoint-up(xxl) {
+  @include mixins.breakpoint-up(xxl) {
     padding: 1.5rem;
   }
 }

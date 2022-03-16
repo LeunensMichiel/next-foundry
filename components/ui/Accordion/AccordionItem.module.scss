@@ -1,4 +1,4 @@
-@use '@styles/theme';
+@use '@styles/mixins';
 
 .root {
   border-radius: var(--border-radius);
@@ -22,7 +22,7 @@
   border: 0.125rem solid var(--color-accordion-header-border);
   background: var(--color-accordion-header-bg);
   cursor: pointer;
-  @include theme.transition(background, color, border-color);
+  @include mixins.transition(background, color, border-color);
 
   &:hover {
     color: var(--color-accordion-header-hover-text);
@@ -37,7 +37,7 @@
 
   svg {
     flex-shrink: 0;
-    @include theme.transition(transform);
+    @include mixins.transition(transform);
   }
 }
 

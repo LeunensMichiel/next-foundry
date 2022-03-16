@@ -1,11 +1,11 @@
-@use '@styles/theme';
+@use '@styles/mixins';
 
 .root {
   display: grid;
   align-items: start;
   gap: 2.5rem;
   width: 100%;
-  @include theme.breakpoint-up(lg) {
+  @include mixins.breakpoint-up(lg) {
     grid-template-columns: minmax(15rem, auto) 1fr;
   }
 }

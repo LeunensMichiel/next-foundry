@@ -1,4 +1,4 @@
-@use '@styles/theme';
+@use '@styles/mixins';
 
 .inputContainer {
   position: relative;
@@ -17,7 +17,7 @@
   background: var(--color-input-bg);
   color: var(--color-text-secondary);
   border: 0.125rem solid var(--color-input-border);
-  @include theme.transition(border-color);
+  @include mixins.transition(border-color);
 
   &::placeholder {
     color: var(--color-text-placeholder);
@@ -42,7 +42,7 @@
     border: 0.125rem solid var(--color-input-border);
     -webkit-text-fill-color: var(--color-text-secondary);
     -webkit-box-shadow: inset 0 0 0px 100px var(--color-input-bg);
-    @include theme.transition(border);
+    @include mixins.transition(border);
 
     &:hover {
       background: var(--color-input-hover-bg);
