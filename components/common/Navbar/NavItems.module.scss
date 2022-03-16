@@ -6,7 +6,7 @@
   left: -100%;
   bottom: 0;
   width: 100%;
-  z-index: theme.$z-ultra;
+  z-index: var(--z-ultra);
   padding-bottom: 1rem;
   overflow-y: auto;
   background-color: var(--color-bg-primary);

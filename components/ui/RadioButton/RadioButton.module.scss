@@ -20,7 +20,7 @@
     margin: 0;
     cursor: pointer;
     &:focus + .radioButtonControl {
-      box-shadow: 0 0 0.1rem 0.1rem var(--color-input-shadow);
+      box-shadow: var(--box-shadow-sm);
     }
     & + .radioButtonControl:before {
       content: '';
@@ -64,7 +64,7 @@
 }
 
 .radioButtonLabel {
-  font-size: var(--small);
+  font-size: var(--font-size-small);
   user-select: none;
   word-wrap: break-word;
   word-break: break-all;

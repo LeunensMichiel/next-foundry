@@ -1,0 +1,19 @@
+// Media-query breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  xxl: 1536px,
+);
+
+$grid-breakpoints-desktop-first: (
+  xs: 639.98px,
+  sm: 767.98px,
+  md: 1023.98px,
+  lg: 1279.98px,
+  xl: 1535.98px,
+);
+
+$max-container-sizes: 600px, 720px, 960px, 1140px, 1320px;

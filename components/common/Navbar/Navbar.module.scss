@@ -4,7 +4,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: theme.$z-high;
+  z-index: var(--z-high);
   width: 100%;
   background-color: var(--color-bg-primary);
 
@@ -42,7 +42,7 @@
 
 .toolbar {
   position: relative;
-  z-index: theme.$z-ultra;
+  z-index: var(--z-ultra);
   display: flex;
   justify-content: space-between;
   align-items: center;

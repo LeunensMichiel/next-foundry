@@ -251,11 +251,11 @@ $border-radius: 0.25rem;
 The theme provides both a drop-and-box shadow variant of each shadow.
 
 ```scss
-$box-shadow-xs
-$box-shadow-sm
-$box-shadow-md
-$box-shadow-lg
-$box-shadow-xl
+var(--box-shadow-xs)
+var(--box-shadow-sm)
+var(--box-shadow-md)
+var(--box-shadow-lg)
+var(--box-shadow-xl)
 
 $drop-shadow-xs
 $drop-shadow-sm

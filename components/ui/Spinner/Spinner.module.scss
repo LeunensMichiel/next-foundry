@@ -2,7 +2,7 @@
 @include theme.rotate();
 
 .spinner {
-  animation: rotate 1.5s theme.$transition-duration infinite;
+  animation: rotate 1.5s var(--transition-duration);
 
   &--xs {
     height: auto;

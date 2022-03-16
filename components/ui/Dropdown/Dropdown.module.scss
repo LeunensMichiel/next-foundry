@@ -19,10 +19,10 @@
           position: absolute;
           top: 100%;
           left: 0;
-          z-index: theme.$z-mid;
+          z-index: var(--z-mid);
           min-width: 15rem;
           padding: 0.25rem 1rem;
-          box-shadow: theme.$box-shadow-xs;
+          box-shadow: var(--box-shadow-sm);
         }
       }
     }

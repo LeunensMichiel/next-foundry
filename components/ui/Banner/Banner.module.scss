@@ -3,10 +3,10 @@
 .banner {
   right: 0;
   left: 0;
-  z-index: theme.$z-mid;
+  z-index: var(--z-mid);
   color: var(--color-white);
   background-color: var(--color-bg-brand);
-  box-shadow: theme.$box-shadow-md;
+  box-shadow: var(--box-shadow-md);
 
   &.banner-bottom {
     bottom: 0;
@@ -119,7 +119,7 @@
   }
   p {
     margin-top: 0.5rem;
-    font-size: var(--small);
+    font-size: var(--font-size-small);
     line-height: var(--line-height-small);
   }
   @include theme.breakpoint-up(md) {

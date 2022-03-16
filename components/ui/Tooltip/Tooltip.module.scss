@@ -1,5 +1,3 @@
-@use '@styles/theme';
-
 .tooltip {
   display: flex;
   align-items: center;
@@ -10,11 +8,11 @@
   border: 0.125rem solid var(--color-tooltip-border);
   color: var(--color-tooltip-text);
   background: var(--color-tooltip-bg);
-  box-shadow: theme.$box-shadow-sm;
-  z-index: theme.$z-low;
+  box-shadow: var(--box-shadow-sm);
+  z-index: var(--z-low);
 
   p {
-    font-size: var(--small);
+    font-size: var(--font-size-small);
   }
 
   .arrow {
@@ -23,7 +21,7 @@
     align-items: center;
     width: 0.75rem;
     height: 0.75rem;
-    z-index: theme.$z-negative;
+    z-index: var(--z-negative);
 
     &:after {
       content: '';
@@ -32,7 +30,7 @@
       width: 0.75rem;
       height: 0.75rem;
       background-color: var(--color-tooltip-bg);
-      box-shadow: theme.$box-shadow-xs;
+      box-shadow: var(--box-shadow-sm);
     }
   }
   &[data-popper-placement^='top'] > .arrow {

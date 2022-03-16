@@ -1,51 +1,87 @@
 // Cross-browser reset
 @use 'reset';
+@use 'chrome-bug';
 // Themes
-// Always import default first, as it holds the base :root{}
-@use '@styles/common/colors';
-@use '@styles/themes/light';
-@use '@styles/themes/dark';
-// Global theme constants
-@use '@styles/theme.scss';
+@use 'colors';
+@use 'typography';
+@use '@styles/theme';
+@use '@styles/themes';
+// libraries
+@use '@styles/libraries/toastify';
 
 // default theme values
 :root {
   // Typography
+  --type-scale-ratio: 1.125;
+
   --font-size: 100%;
-  --ratio: #{theme.type-ratio('majorSecond')};
+  --font-size-x-small: 0.75rem;
+  --font-size-small: calc(var(--font-size) / var(--type-scale-ratio));
+  --font-size-title: calc(var(--font-size) * var(--type-scale-ratio));
+  --font-size-h5: 105%;
+  --font-size-h4: calc(var(--font-size) * var(--type-scale-ratio));
+  --font-size-h3: calc(var(--font-size-h4) * var(--type-scale-ratio));
+  --font-size-h2: calc(var(--font-size-h3) * var(--type-scale-ratio));
+  --font-size-h1: calc(var(--font-size-h2) * var(--type-scale-ratio));
 
-  --x-small: 0.75rem;
-  --small: calc(var(--font-size) / var(--ratio));
-  --big: calc(var(--font-size) * var(--ratio));
-  --h5: 105%;
-  --h4: calc(var(--font-size) * var(--ratio));
-  --h3: calc(var(--h4) * var(--ratio));
-  --h2: calc(var(--h3) * var(--ratio));
-  --h1: calc(var(--h2) * var(--ratio));
+  // Don't forget to add your self-hosted font
+  --font-family-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  --font-family-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-family-serif: Georgia, 'Times New Roman', Times, serif;
+  --font-family-mono: Menlo, Monaco, Cascadia Code, Segoe UI Mono, 'Courier New',
+    monospace;
 
-  --font-family-base: #{theme.$font-family-base};
-  --font-family-alt: #{theme.$font-family-alt};
+  --font-family-base: var(--font-family-system);
+  --font-family-alt: var(--font-family-system);
 
-  --line-height-paragraph: #{theme.$line-height-paragraphs};
-  --line-height-header: #{theme.$line-height-headings};
+  --line-height-header: 1.1;
+  --line-height-paragraph: 1.75;
   --line-height-small: 1.4;
 
   // Spacing and Radii
-  --border-radius: #{theme.$border-radius};
-  --border-radius-lg: #{theme.$border-radius-lg};
+  --border-radius: 0.25rem;
+  --border-radius-lg: 4rem;
 
+  // Widths
   --reading-width: clamp(45ch, 50%, 80ch);
+
+  // Shadows
+  --box-shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  --box-shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --box-shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --box-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --box-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --box-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --box-shadow-xxl: 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+    100px 100px 80px rgba(0, 0, 0, 0.07);
+
+  //Z-indexes
+  --z-negative: -1;
+  --z-low: 10;
+  --z-mid: 100;
+  --z-high: 1000;
+  --z-ultra: 10000;
+  --z-extreme: 9999999999;
+
+  --transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-duration: 500ms;
 
   @include theme.breakpoint-up(md) {
     --font-size: 105%;
   }
   @include theme.breakpoint-up(lg) {
     --font-size: 110%;
-    --ratio: #{theme.type-ratio('majorThird')};
+    --type-scale-ratio: 1.25;
   }
   @include theme.breakpoint-up(xxl) {
     --font-size: 115%;
-    --ratio: #{theme.type-ratio('perfectFourth')};
+    --type-scale-ratio: 1.333;
   }
 }
 
@@ -132,19 +168,19 @@ b {
 }
 
 h1 {
-  font-size: var(--h1);
+  font-size: var(--font-size-h1);
 }
 
 h2 {
-  font-size: var(--h2);
+  font-size: var(--font-size-h2);
 }
 
 h3 {
-  font-size: var(--h3);
+  font-size: var(--font-size-h3);
 }
 
 h4 {
-  font-size: var(--big);
+  font-size: var(--font-size-title);
 }
 
 h5 {
@@ -156,7 +192,7 @@ h6 {
 }
 
 small {
-  font-size: var(--small);
+  font-size: var(--font-size-small);
 }
 
 a {
@@ -181,12 +217,12 @@ button {
 code {
   max-width: 100%;
   background: var(--color-bg-tertiary);
-  border-radius: theme.$border-radius;
+  border-radius: var(--border-radius);
   padding: 0.125em 0.25em;
   white-space: pre-wrap;
-  font-family: theme.$font-family-mono;
-  line-height: theme.$line-height-paragraphs;
-  font-size: var(--small);
+  font-family: var(--font-family-mono);
+  line-height: var(--line-height-paragraph);
+  font-size: var(--font-size-small);
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }

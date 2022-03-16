@@ -1,5 +1,3 @@
-@use '@styles/theme';
-
 .badge {
   display: inline-flex;
   align-items: center;
@@ -7,13 +5,12 @@
   min-width: 4rem;
   padding: 0.25em 0.375em;
   text-align: center;
-  font-size: var(--x-small);
+  font-size: var(--font-size-x-small);
   font-weight: 500;
   border-radius: var(--border-radius-lg);
   border: 0.125rem solid var(--color-badge-border);
   color: var(--color-badge-text);
   background: var(--color-badge-bg);
-  box-shadow: theme.$box-shadow-sm;
 
   span {
     display: inline-flex;

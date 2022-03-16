@@ -13,7 +13,7 @@ const customStyles: StylesConfig = {
     color: 'var(--color-text-secondary)',
     borderWidth: '0.125rem',
     borderRadius: 'var(--border-radius)',
-    boxShadow: isFocused ? `0 0 0 1px var(--color-input-shadow)` : undefined,
+    boxShadow: isFocused ? `var(--box-shadow-sm)` : undefined,
     borderColor: isDisabled
       ? 'var(--color-input-disabled-border)'
       : isFocused

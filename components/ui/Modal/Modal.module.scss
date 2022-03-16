@@ -13,7 +13,7 @@
   align-items: center;
   outline: 0;
   background-color: var(--color-bg-backdrop);
-  z-index: theme.$z-high;
+  z-index: var(--z-high);
 }
 
 .modal {
@@ -22,7 +22,7 @@
   border-radius: var(--border-radius);
   position: relative;
   background-color: var(--color-bg-primary);
-  box-shadow: theme.$box-shadow-xl;
+  box-shadow: var(--box-shadow-lg);
 
   &:focus {
     outline: none;
@@ -42,7 +42,7 @@
 }
 
 .modalTitle {
-  font-size: var(--big);
+  font-size: var(--font-size-title);
   font-weight: 700;
 }
 

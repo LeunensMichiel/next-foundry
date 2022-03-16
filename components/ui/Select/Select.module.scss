@@ -1,9 +1,7 @@
-@use '@styles/theme';
-
 .inputLabel {
   display: block;
   margin-bottom: 0.5rem;
-  font-size: var(--small);
+  font-size: var(--font-size-small);
   font-weight: 500;
   color: var(--color-label-primary-text);
   letter-spacing: 0.02rem;
