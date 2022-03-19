@@ -9,7 +9,7 @@ import styles from './styles/404.module.scss';
 const Custom404 = () => {
   const { t } = useTranslation('common');
   return (
-    <div className={cn('container', 'mx-auto', 'padded', styles.custom404)}>
+    <div className={cn('container', styles.custom404)}>
       <h4>
         <span className={cn(styles.errCode)}>404</span> | {t('notFound.title')}
       </h4>

@@ -18,7 +18,7 @@ const Home = () => {
           description: t('seo.description'),
         }}
       />
-      <div className={cn(styles.intro, 'container', 'mx-auto')}>
+      <div className={cn(styles.intro, 'container')}>
         <h1 className={styles.title}>
           {t('welcome')}{' '}
           <a

@@ -30,7 +30,7 @@ const ComponentsPage = () => {
   const { openModal } = useUI();
 
   return (
-    <div className="container mx-auto padded">
+    <div className="container">
       <div className={cn(styles.root)}>
         <nav className={cn(styles.sidenav)}>
           <ul>

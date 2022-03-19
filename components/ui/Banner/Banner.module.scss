@@ -23,7 +23,6 @@
 
   &.floating {
     width: calc(100% - 2rem);
-    max-width: nth(mixins.$max-container-sizes, 3);
     left: 50%;
     transform: translateX(-50%);
     border-radius: var(--border-radius);

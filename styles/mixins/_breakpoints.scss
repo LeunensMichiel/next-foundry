@@ -1,28 +1,44 @@
 // We follow bootstraps' breakpoint guideline
 // https://getbootstrap.com/docs/5.0/layout/breakpoints/
-@use "sass:map";
-@use 'variables';
+@use 'sass:map';
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  xxl: 1536px,
+);
+
+$grid-breakpoints-desktop-first: (
+  xs: 639.98px,
+  sm: 767.98px,
+  md: 1023.98px,
+  lg: 1279.98px,
+  xl: 1535.98px,
+);
 
 // Mobile first (preferable)
 @mixin breakpoint-up($size) {
   @if $size == sm {
-    @media (min-width: map.get(variables.$grid-breakpoints, sm)) {
+    @media (min-width: map.get($grid-breakpoints, sm)) {
       @content;
     }
   } @else if $size == md {
-    @media (min-width: map.get(variables.$grid-breakpoints, md)) {
+    @media (min-width: map.get($grid-breakpoints, md)) {
       @content;
     }
   } @else if $size == lg {
-    @media (min-width: map.get(variables.$grid-breakpoints, lg)) {
+    @media (min-width: map.get($grid-breakpoints, lg)) {
       @content;
     }
   } @else if $size == xl {
-    @media (min-width: map.get(variables.$grid-breakpoints, xl)) {
+    @media (min-width: map.get($grid-breakpoints, xl)) {
       @content;
     }
   } @else if $size == xxl {
-    @media (min-width: map.get(variables.$grid-breakpoints, xxl)) {
+    @media (min-width: map.get($grid-breakpoints, xxl)) {
       @content;
     }
   }
@@ -31,23 +47,23 @@
 // Desktop first
 @mixin breakpoint-down($size) {
   @if $size == xs {
-    @media (max-width: map.get(variables.$grid-breakpoints-desktop-first, xs)) {
+    @media (max-width: map.get($grid-breakpoints-desktop-first, xs)) {
       @content;
     }
   } @else if $size == sm {
-    @media (max-width: map.get(variables.$grid-breakpoints-desktop-first, sm)) {
+    @media (max-width: map.get($grid-breakpoints-desktop-first, sm)) {
       @content;
     }
   } @else if $size == md {
-    @media (max-width: map.get(variables.$grid-breakpoints-desktop-first, md)) {
+    @media (max-width: map.get($grid-breakpoints-desktop-first, md)) {
       @content;
     }
   } @else if $size == lg {
-    @media (max-width: map.get(variables.$grid-breakpoints-desktop-first, lg)) {
+    @media (max-width: map.get($grid-breakpoints-desktop-first, lg)) {
       @content;
     }
   } @else if $size == xl {
-    @media (max-width: map.get(variables.$grid-breakpoints-desktop-first, xl)) {
+    @media (max-width: map.get($grid-breakpoints-desktop-first, xl)) {
       @content;
     }
   }

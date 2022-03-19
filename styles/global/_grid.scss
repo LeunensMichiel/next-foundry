@@ -4,97 +4,52 @@
 // Containers
 .container {
   width: 100%;
-  @each $size, $bp in mixins.$grid-breakpoints {
-    @if $size != xs {
-      $i: index((mixins.$grid-breakpoints), ($size $bp)) - 1;
-      @include mixins.breakpoint-up($size) {
-        max-width: nth(mixins.$max-container-sizes, $i);
-      }
-    }
-  }
-}
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
 
-.container-sm {
-  width: 100%;
-  max-width: nth(mixins.$max-container-sizes, 1);
-  @include mixins.breakpoint-up(md) {
-    max-width: nth(mixins.$max-container-sizes, 2);
-  }
   @include mixins.breakpoint-up(lg) {
-    max-width: nth(mixins.$max-container-sizes, 3);
+    padding: 0 1.5rem;
+    max-width: 1140px;
   }
-  @include mixins.breakpoint-up(xl) {
-    max-width: nth(mixins.$max-container-sizes, 4);
-  }
-  @include mixins.breakpoint-up(xxl) {
-    max-width: nth(mixins.$max-container-sizes, 5);
-  }
-}
 
-.container-md {
-  width: 100%;
-  max-width: nth(mixins.$max-container-sizes, 2);
-  @include mixins.breakpoint-up(lg) {
-    max-width: nth(mixins.$max-container-sizes, 3);
-  }
   @include mixins.breakpoint-up(xl) {
-    max-width: nth(mixins.$max-container-sizes, 4);
+    padding: 0 2rem;
+    max-width: 1320px;
   }
-  @include mixins.breakpoint-up(xxl) {
-    max-width: nth(mixins.$max-container-sizes, 5);
-  }
-}
-
-.container-lg {
-  width: 100%;
-  max-width: nth(mixins.$max-container-sizes, 3);
-  @include mixins.breakpoint-up(xl) {
-    max-width: nth(mixins.$max-container-sizes, 4);
-  }
-  @include mixins.breakpoint-up(xxl) {
-    max-width: nth(mixins.$max-container-sizes, 5);
-  }
-}
-.container-xl {
-  width: 100%;
-  max-width: nth(mixins.$max-container-sizes, 4);
-  @include mixins.breakpoint-up(xxl) {
-    max-width: nth(mixins.$max-container-sizes, 5);
-  }
-}
-.container-xxl {
-  width: 100%;
-  max-width: nth(mixins.$max-container-sizes, 5);
-}
-
-.container-fluid {
-  width: 100%;
 }
 
 .container-page {
+  width: 100%;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
   @include mixins.breakpoint-up(md) {
     width: clamp(45ch, 100%, 85ch);
   }
-}
+  @include mixins.breakpoint-up(lg) {
+    padding: 0 1.5rem;
+  }
 
-.padded {
-  padding: 0 2rem;
-}
-
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
+  @include mixins.breakpoint-up(xl) {
+    padding: 0 2rem;
+  }
 }
 
 .col-span-1 {
   grid-column: span 1;
 }
+
 .col-span-2 {
   grid-column: span 2;
 }
+
 .col-span-3 {
   grid-column: span 3;
 }
+
 .col-span-4 {
   grid-column: span 4;
 }

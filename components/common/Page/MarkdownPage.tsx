@@ -51,7 +51,7 @@ const MarkdownPage: VFC<MarkdownPageProps> = ({
       />
       {mdxSource && (
         <article className={cn(styles.article)}>
-          <header className={cn(styles.header, 'container padded')}>
+          <header className={cn(styles.header, 'container')}>
             <h1>{frontmatter.title}</h1>
             <small>{`${t(
               'common:date.published'
@@ -65,7 +65,7 @@ const MarkdownPage: VFC<MarkdownPageProps> = ({
               alt={frontmatter.title}
             />
           )}
-          <div className={cn(styles.content, 'container-page mx-auto padded')}>
+          <div className={cn(styles.content, 'container-page')}>
             <MDXRemote {...mdxSource} />
           </div>
         </article>

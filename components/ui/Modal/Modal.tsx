@@ -18,16 +18,7 @@ type ModalProps = {
   className?: string;
   open?: boolean;
   title?: string;
-  maxWidth?:
-    | 'fluid'
-    | 'container'
-    | 'page'
-    | 'xs'
-    | 'sm'
-    | 'md'
-    | 'lg'
-    | 'xl'
-    | 'xxl';
+  container?: 'container' | 'page';
   onClose(): void;
 };
 
@@ -38,7 +29,7 @@ const BODY_SCROLL_OPTIONS: BodyScrollOptions = {
 const Modal: FC<ModalProps> = ({
   children,
   className,
-  maxWidth = 'page',
+  container = 'page',
   onClose,
   open,
   title,
@@ -106,8 +97,8 @@ const Modal: FC<ModalProps> = ({
               className={cn(
                 styles.modal,
                 {
-                  container: maxWidth === 'container',
-                  [`container-${maxWidth}`]: maxWidth !== 'container',
+                  container: container === 'container',
+                  'container-page': container === 'page',
                 },
                 className
               )}

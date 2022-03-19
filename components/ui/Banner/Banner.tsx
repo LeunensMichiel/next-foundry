@@ -49,6 +49,7 @@ const Banner: FC<BannerProps> = ({
             [styles[`banner-${position}`]]: position,
             [styles[`banner-${relativeTo}`]]: relativeTo,
             [styles.floating]: floating,
+            container: floating,
           },
           className
         )}
@@ -56,7 +57,7 @@ const Banner: FC<BannerProps> = ({
         aria-hidden={!open}
         role="alert"
       >
-        <div className={cn(styles.bannerContainer, 'container', 'mx-auto')}>
+        <div className={cn(styles.bannerContainer)}>
           <CloseButton
             onClick={onClickDismissiveAction}
             className={cn(styles.closeButton)}

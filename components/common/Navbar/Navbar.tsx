@@ -55,7 +55,7 @@ const Navbar: FC<NavbarProps> = ({ children, isTransparent = false }) => {
       ref={ref}
     >
       {children}
-      <div className={cn(styles.headerContainer, 'container-lg')}>
+      <div className={cn(styles.headerContainer, 'container')}>
         <nav
           className={cn(styles.navigation, {
             [styles.navigationTransparent]: isTransparent,

@@ -13,7 +13,7 @@ type BlogProps = {
 const Blog = ({ posts }: BlogProps) => (
   <>
     <NextSeo title="Blog" />
-    <div className={cn('container mx-auto padded')}>
+    <div className={cn('container')}>
       <ul>
         {posts.map((post) => (
           <li key={post.slug}>
