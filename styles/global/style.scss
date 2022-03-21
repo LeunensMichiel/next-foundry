@@ -20,7 +20,7 @@
   --font-size-x-small: 0.75rem;
   --font-size-small: calc(var(--font-size) / var(--type-scale-ratio));
   --font-size-title: 1.125rem;
-  --font-size-h5: 105%;
+  --font-size-h5: 1.25rem;
   --font-size-h4: calc(var(--font-size) * var(--type-scale-ratio));
   --font-size-h3: calc(var(--font-size-h4) * var(--type-scale-ratio));
   --font-size-h2: calc(var(--font-size-h3) * var(--type-scale-ratio));
@@ -74,15 +74,12 @@
   --transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
   --transition-duration: 500ms;
 
-  @include mixins.breakpoint-up(md) {
-    --font-size: 105%;
-  }
   @include mixins.breakpoint-up(lg) {
-    --font-size: 110%;
+    --font-size: 105%;
     --type-scale-ratio: 1.25;
   }
   @include mixins.breakpoint-up(xxl) {
-    --font-size: 115%;
+    --font-size: 110%;
     --type-scale-ratio: 1.333;
   }
 }

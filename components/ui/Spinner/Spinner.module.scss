@@ -2,7 +2,7 @@
 @include mixins.rotate();
 
 .spinner {
-  animation: rotate 1.5s var(--transition-duration);
+  animation: rotate 1.5s var(--transition-duration) infinite;
 
   &--xs {
     height: auto;
