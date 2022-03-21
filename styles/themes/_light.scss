@@ -227,6 +227,28 @@
   --color-btn-minimal-disabled-text: var(--color-gray-100);
   --color-btn-minimal-disabled-border: transparent;
 
+  --color-btn-minimal-bright-text: var(--color-white);
+  --color-btn-minimal-bright-border: transparent;
+  --color-btn-minimal-bright-hover-text: var(--color-gray-400);
+  --color-btn-minimal-bright-hover-border: var(--color-white-fade-15);
+  --color-btn-minimal-bright-focus-text: var(--color-gray-400);
+  --color-btn-minimal-bright-focus-border: var(--color-white-fade-15);
+  --color-btn-minimal-bright-active-text: var(--color-gray-200);
+  --color-btn-minimal-bright-active-border: var(--color-white-fade-50);
+  --color-btn-minimal-bright-disabled-text: var(--color-gray-100);
+  --color-btn-minimal-bright-disabled-border: transparent;
+
+  --color-btn-minimal-dark-text: var(--color-black);
+  --color-btn-minimal-dark-border: transparent;
+  --color-btn-minimal-dark-hover-text: var(--color-gray-700);
+  --color-btn-minimal-dark-hover-border: var(--color-black-fade-15);
+  --color-btn-minimal-dark-focus-text: var(--color-gray-600);
+  --color-btn-minimal-dark-focus-border: var(--color-black-fade-15);
+  --color-btn-minimal-dark-active-text: var(--color-gray-700);
+  --color-btn-minimal-dark-active-border: var(--color-black-fade-50);
+  --color-btn-minimal-dark-disabled-text: var(--color-gray-100);
+  --color-btn-minimal-dark-disabled-border: transparent;
+
   // Form Elements
   --color-label-primary-text: var(--color-gray-700);
   --color-label-primary-icon: var(--color-gray-700);

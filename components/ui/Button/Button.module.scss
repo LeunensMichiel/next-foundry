@@ -31,7 +31,7 @@
 
 // Different variants
 $variants: default, primary, secondary, success, danger, warning, info,
-  'transparent', minimal;
+  'transparent', minimal, minimal-bright, minimal-dark;
 @each $variant in $variants {
   .button-#{$variant} {
     border: 0.125rem solid var(--color-btn-#{$variant}-border);

@@ -23,6 +23,8 @@ interface ButtonCustomProps<C extends React.ElementType> {
     | 'warning'
     | 'info'
     | 'minimal'
+    | 'minimal-bright'
+    | 'minimal-dark'
     | 'transparent';
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   outlined?: boolean;

@@ -59,6 +59,7 @@ const Banner: FC<BannerProps> = ({
       >
         <CloseButton
           onClick={onClickDismissiveAction}
+          variant="minimal-bright"
           className={cn(styles.closeButton)}
         />
         <div className={cn(styles.bannerContainer)}>
