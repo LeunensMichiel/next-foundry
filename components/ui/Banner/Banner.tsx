@@ -49,7 +49,7 @@ const Banner: FC<BannerProps> = ({
             [styles[`banner-${position}`]]: position,
             [styles[`banner-${relativeTo}`]]: relativeTo,
             [styles.floating]: floating,
-            container: floating,
+            'container-page': floating,
           },
           className
         )}
@@ -57,30 +57,34 @@ const Banner: FC<BannerProps> = ({
         aria-hidden={!open}
         role="alert"
       >
+        <CloseButton
+          onClick={onClickDismissiveAction}
+          className={cn(styles.closeButton)}
+        />
         <div className={cn(styles.bannerContainer)}>
-          <CloseButton
-            onClick={onClickDismissiveAction}
-            className={cn(styles.closeButton)}
-          />
           {icon && <span className={cn(styles.bannerIcon)}>{icon}</span>}
-          {customBody || (
-            <div className={cn(styles.bannerBody, bodyClassName)}>
-              {title && <span className={cn(styles.title)}>{title}</span>}
-              {description && <p>{description}</p>}
-            </div>
-          )}
-          <div className={cn(styles.actionRow, actionRowClassName)}>
-            {customAction ||
-              (onClickConfirmingAction && (
-                <Button
-                  type="button"
-                  size="sm"
-                  variant="primary"
-                  onClick={onClickConfirmingAction}
-                >
-                  {confirmTitle}
-                </Button>
-              ))}
+          <div className={cn(styles.bannerBody, bodyClassName)}>
+            {customBody || (
+              <div>
+                {title && <span className={cn(styles.title)}>{title}</span>}
+                {description && <p>{description}</p>}
+              </div>
+            )}
+            {(customAction || onClickConfirmingAction) && (
+              <div className={cn(styles.actionRow, actionRowClassName)}>
+                {onClickConfirmingAction && (
+                  <Button
+                    type="button"
+                    size="sm"
+                    variant="transparent"
+                    outlined
+                    onClick={onClickConfirmingAction}
+                  >
+                    {confirmTitle}
+                  </Button>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </div>

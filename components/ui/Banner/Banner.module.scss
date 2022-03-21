@@ -7,6 +7,8 @@
   color: var(--color-white);
   background-color: var(--color-bg-brand);
   box-shadow: var(--box-shadow-md);
+  display: flex;
+  flex-direction: column;
 
   &.banner-bottom {
     bottom: 0;
@@ -26,17 +28,18 @@
     left: 50%;
     transform: translateX(-50%);
     border-radius: var(--border-radius);
+    padding: 0;
+
+    @include mixins.breakpoint-up(md) {
+      width: calc(100% - 3rem);
+    }
+
+    @include mixins.breakpoint-up(xl) {
+      width: calc(100% - 4rem);
+    }
   }
 
-  &.banner-viewport {
-    position: fixed;
-  }
-  &.banner-parent {
-    position: static;
-    border-radius: var(--border-radius);
-  }
-
-  @include mixins.breakpoint-up(sm) {
+  @include mixins.breakpoint-up(md) {
     &.floating {
       &.banner-bottom {
         bottom: 1.5rem;
@@ -46,97 +49,86 @@
       }
     }
   }
+
+  @include mixins.breakpoint-up(lg) {
+    &.floating {
+      &.banner-bottom {
+        bottom: 2rem;
+      }
+      &.banner-top {
+        top: 2rem;
+      }
+    }
+  }
+}
+
+.banner-viewport {
+  position: fixed;
+}
+
+.banner-parent {
+  position: static;
+  border-radius: var(--border-radius);
 }
 
 .bannerContainer {
-  padding: 1rem;
-  display: grid;
-  grid-template-columns: minmax(auto, 3rem) 1fr auto auto;
-  grid-gap: 0.75rem;
-  align-items: center;
-
+  padding: 0 1rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
   @include mixins.breakpoint-up(md) {
-    grid-gap: 1rem;
     padding: 0 1.5rem 1.5rem 1.5rem;
-    grid-template-columns: minmax(auto, 3rem) 1fr auto;
+    flex-direction: row;
+  }
+  @include mixins.breakpoint-up(xl) {
+    padding: 0 2rem 2rem 2rem;
   }
 }
 
 .bannerIcon {
-  grid-column: 1;
-  align-self: start;
-  display: flex;
+  font-size: 5rem;
+  display: inline-flex;
   justify-content: center;
-  align-items: center;
-  font-size: 2rem;
+  margin-bottom: 1rem;
   svg {
     width: 100%;
     height: auto;
   }
 
   @include mixins.breakpoint-up(md) {
-    align-self: stretch;
-    font-size: 2.5rem;
+    font-size: 8rem;
   }
 }
 
 .closeButton {
-  grid-column: 1 / -1;
-  justify-self: end;
-  height: auto;
-  margin-top: -0.5rem !important;
-  margin-right: -1.5rem !important;
-  border: 0.125rem solid transparent !important;
-  color: var(--color-white) !important;
-  @include mixins.transition(border);
-
-  &:hover {
-    color: var(--color-white-fade-85) !important;
-    border: 0.125rem solid var(--color-white-fade-15) !important;
-  }
-  &:focus {
-    color: var(--color-white-fade-85) !important;
-    border: 0.125rem solid var(--color-white-fade-15) !important;
-  }
-  &:active {
-    color: var(--color-white-fade-50) !important;
-    border: 0.125rem solid var(--color-white-fade-15) !important;
-  }
-
-  @include mixins.breakpoint-up(md) {
-    margin-top: 0rem !important;
-    margin-bottom: -1rem !important;
-  }
+  align-self: flex-end;
 }
 
 .bannerBody {
-  grid-column: 2 / -1;
-
+  display: grid;
+  grid-gap: 1rem;
   .title {
-    font-size: var(--font-size);
+    display: inline-flex;
     font-weight: 500;
+    margin-bottom: 1rem;
+    font-size: var(--font-size-title);
+    line-height: var(--line-height-header);
   }
   p {
-    margin-top: 0.5rem;
     font-size: var(--font-size-small);
     line-height: var(--line-height-small);
   }
   @include mixins.breakpoint-up(md) {
-    padding-right: 1rem;
-    grid-column: 2;
+    grid-gap: 1.5rem;
+    padding-left: 1.5rem;
   }
 }
 
 .actionRow {
-  grid-column: 1 / -1;
-
   & > * {
     width: 100%;
   }
 
   @include mixins.breakpoint-up(md) {
-    grid-column: 3;
-
     & > * {
       width: unset;
     }

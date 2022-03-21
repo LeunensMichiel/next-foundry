@@ -19,7 +19,7 @@
   --font-size: 100%;
   --font-size-x-small: 0.75rem;
   --font-size-small: calc(var(--font-size) / var(--type-scale-ratio));
-  --font-size-title: calc(var(--font-size) * var(--type-scale-ratio));
+  --font-size-title: 1.125rem;
   --font-size-h5: 105%;
   --font-size-h4: calc(var(--font-size) * var(--type-scale-ratio));
   --font-size-h3: calc(var(--font-size-h4) * var(--type-scale-ratio));
@@ -38,9 +38,9 @@
   --font-family-base: var(--font-family-system);
   --font-family-alt: var(--font-family-system);
 
-  --line-height-header: 1.1;
+  --line-height-header: 1.125;
   --line-height-paragraph: 1.75;
-  --line-height-small: 1.4;
+  --line-height-small: 1.5;
 
   // Spacing and Radii
   --border-radius: 0.25rem;
