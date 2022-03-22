@@ -38,6 +38,7 @@ const uiReducer = (state: UIState, action: Action): UIState => {
       return {
         ...state,
         modalView: action.view,
+        displayModal: false,
         modalTitle: action.title,
       };
     }

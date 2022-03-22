@@ -183,15 +183,16 @@ h4 {
 }
 
 h5 {
-  font-size: var(--font-size);
+  font-size: var(--font-size-h5);
 }
 
 h6 {
-  font-size: var(--font-size);
+  font-size: var(--font-size-title);
 }
 
 small {
   font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
 }
 
 a {
